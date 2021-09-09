@@ -30,13 +30,12 @@ header .wrapper{
     margin-top: 10px;
 }
 ul, li {
-    list-style-type: none;
     display: flex;
-    padding: 0;
-    margin: 0;
+    list-style-type: none;
 }
 header nav{
-    margin-right: 280px;
+    margin-top: 20px;
+    margin-right: 220px;
     font-size: 18px;
     font-weight: 600;
 }
@@ -63,4 +62,33 @@ header nav .search_button .search_box {
 /* Ajuste carrinho */
 header nav .carrinho{
     color: #fff;
+}
+nav .dropdown .dropdown-menu{
+    background-color: #291616;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    display: none;
+    height: 576px;
+    left: 0;
+    position: absolute;
+    padding: 0;
+    top: 101px;
+    width: 100%;
+    z-index: 10;
+}
+.itens{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:23%;
+    width: 276px;
+}
+.dropdown-item{    
+    line-height: 15px;
+    margin-top: 40px;
+}
+.down{
+    padding-left: 283px;
+}
+nav .dropdown:hover .dropdown-menu{
+    display: block;
 }
