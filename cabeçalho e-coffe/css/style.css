@@ -4,25 +4,17 @@ html, body{
     padding: 0;
     text-align: center;
 }
-.wrapper{
+header .wrapper{
     background-color: #291616;
     border-bottom-left-radius: 11px;
     border-bottom-right-radius: 11px;
-    height: 110px;
-    width: 100%;
-    margin: 0 auto;
-}
-header{
-    -webkit-box-shadow: 0px 5px 20px 5px (122,122,122); 
-    box-shadow: 0px 5px 20px 5px (122,122,122);
-}
-header .wrapper{
     display: flex;
     flex-wrap: wrap;
+    height: 110px;
+    margin: 0 auto;
     justify-content: space-around;
-    
+    width: 100%;
 }
-
 /* ========================
           Navbar
 =========================== */
@@ -35,7 +27,7 @@ ul, li {
 }
 header nav{
     margin-top: 20px;
-    margin-right: 220px;
+    margin-right: 10%;
     font-size: 18px;
     font-weight: 600;
 }
@@ -59,11 +51,16 @@ header nav .search_button .search_box {
     text-align: center;
     width: 561px;
 }
-/* Ajuste carrinho */
 header nav .carrinho{
     color: #fff;
 }
-nav .dropdown .dropdown-menu{
+/* =============================
+    Cafeteiras dropdown
+===============================*/
+nav .dropdown-cafeteiras{
+    height: 25.5px;
+}
+nav .dropdown-cafeteiras .dropdown-menu{
     background-color: #291616;
     border-bottom-left-radius: 11px;
     border-bottom-right-radius: 11px;
@@ -89,6 +86,83 @@ nav .dropdown .dropdown-menu{
 .down{
     padding-left: 283px;
 }
-nav .dropdown:hover .dropdown-menu{
+nav .dropdown-cafeteiras:hover{
+    height: 73px;
+}
+nav .dropdown-cafeteiras:hover .dropdown-menu{
+    display: block;
+}
+/* =============================
+             Login
+===============================*/
+nav .nav-item .nav-login{
+    height: 25.5px;
+    width: 81.55px;
+}
+nav .nav-item .dropdown-menu-login{
+    background-color: #291616;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    color: #fff;
+    display: none;
+    height: 312px;
+    position: relative;
+    right: 45px;
+    top: 25px;
+    width: 195px;
+}
+h3{
+    margin-bottom: 10px;
+}
+nav .dropdown-menu-login .form-group{
+    margin-top: 16px;
+}
+nav .form-check{
+    font-size: 14px;
+    margin-top: 12px;
+    margin-right: 26px;
+}
+nav .dropdown-menu-login .login-btn{
+    background-color: #CE5F20;
+    color: #fff;
+    border: 0px;
+    border-radius: 6px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    height: 26px;
+    margin-top: 10px;
+    padding: 0;
+    width: 150px;
+}
+nav .dropdown-menu-login .register-btn{
+    background-color: #CE5F20;
+    color: #fff;
+    border: 0px;
+    border-radius: 6px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    height: 26px;
+    margin-top: 10px;
+    padding: 0;
+    width: 150px;
+}
+h4{
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+nav .dropdown-menu-login .login-options{
+    background-color: #fff;
+    border-radius: 5px;
+    color: #291616;
+    height: 64px;
+    margin-left: 22px;
+    width: 151px;
+}
+nav .nav-item .nav-login:hover{
+    height: 75px;
+}
+nav .nav-item .nav-login:hover .dropdown-menu-login{
     display: block;
 }
