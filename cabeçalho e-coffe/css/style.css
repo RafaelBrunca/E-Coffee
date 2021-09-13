@@ -19,7 +19,9 @@ header .wrapper{
           Navbar
 =========================== */
 .index{
-    margin-top: 10px;
+    position: relative;
+    right: 95px;
+    margin-top: -26px;
 }
 ul, li {
     display: flex;
@@ -27,14 +29,14 @@ ul, li {
 }
 header nav{
     margin-top: 20px;
-    margin-right: 10%;
     font-size: 18px;
     font-weight: 600;
 }
 header nav a{
     color: #FFFFFF;
     line-height: 24px;
-    margin-left: 20px;
+    
+    margin-left: 25px;
     text-decoration: none;
 }
 header nav a:hover{
@@ -76,7 +78,7 @@ nav .dropdown-cafeteiras .dropdown-menu{
 .itens{
     display: flex;
     flex-wrap: wrap;
-    margin-left:23%;
+    margin-left:22%;
     width: 276px;
 }
 .dropdown-item{    
@@ -97,7 +99,7 @@ nav .dropdown-cafeteiras:hover .dropdown-menu{
 ===============================*/
 nav .nav-item .nav-login{
     height: 25.5px;
-    width: 81.55px;
+    width: 86.55px;
 }
 nav .nav-item .dropdown-menu-login{
     background-color: #291616;
@@ -165,4 +167,39 @@ nav .nav-item .nav-login:hover{
 }
 nav .nav-item .nav-login:hover .dropdown-menu-login{
     display: block;
+}
+/*=========Desktop=========*/
+@media (min-width: 1024px) and (max-width: 1280px){
+    .navbar{
+        font-size: 85%;
+    }
+    .index{
+        right: 60px;
+        margin-top: -24px;
+    }
+    header nav .search_button .search_box {
+        height: 30%;
+        width: 45vw;
+    }
+    .itens{
+        margin-left: 5%;
+    }
+}
+@media (min-width: 1280px) and (max-width: 1680px) {
+    .navbar{
+        margin-right: 4%;
+        font-size: 85%;
+    }
+    .index{
+        margin-right: 26px;
+        margin-top: -24px;
+    }
+    header nav .search_button .search_box {
+        height: 40%;
+        
+        width: 43vw;
+    }
+    .itens{
+        margin-left: 10%;
+    }
 }
