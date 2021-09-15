@@ -3,30 +3,33 @@ html, body{
     margin: 0;
     padding: 0;
     text-align: center;
+    overflow: hidden; /* estava com rolagem vertical e esse comando tira */
 }
 header .wrapper{
     background-color: #291616;
     border-bottom-left-radius: 11px;
     border-bottom-right-radius: 11px;
     display: flex;
-    flex-wrap: wrap;
-    height: 110px;
+   /* flex-wrap: wrap; */
+    /* height: 110px; */
     margin: 0 auto;
     justify-content: space-around;
     width: 100%;
+    padding: 50px 0; /* em alguns casos é interessante definir tamanho por padding*/
 }
 /* ========================
           Navbar
 =========================== */
 .index{
-    position: relative;
-    right: 95px;
-    margin-top: -26px;
+    margin-left: 50px
 }
 ul, li {
     display: flex;
     list-style-type: none;
+    padding: 0;
 }
+
+
 header nav{
     margin-top: 20px;
     font-size: 18px;
@@ -35,12 +38,20 @@ header nav{
 header nav a{
     color: #FFFFFF;
     line-height: 24px;
-    
-    margin-left: 25px;
+    margin: 0 15px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+}
+
+header nav a .seta{
+    margin-left: 5px;
 }
 header nav a:hover{
     color: #CE5F20;
+    transition-duration: 0.25s;
+    
 }
 /* Barra de pesquisa */
 header nav .search_button .search_box {
@@ -52,7 +63,9 @@ header nav .search_button .search_box {
     padding: 4px;
     text-align: center;
     width: 561px;
+    outline: 0; /* tira a borda quando clica na barra*/
 }
+
 header nav .carrinho{
     color: #fff;
 }
@@ -74,6 +87,7 @@ nav .dropdown-cafeteiras .dropdown-menu{
     top: 101px;
     width: 100%;
     z-index: 10;
+    margin-top: 35px;
 }
 .itens{
     display: flex;
@@ -108,10 +122,11 @@ nav .nav-item .dropdown-menu-login{
     color: #fff;
     display: none;
     height: 312px;
-    position: relative;
-    right: 45px;
-    top: 25px;
+    position: absolute;
+    right: 70px;
+    top: 133px;
     width: 195px;
+    border-color: #CE5F20;
 }
 h3{
     margin-bottom: 10px;
@@ -163,10 +178,11 @@ nav .dropdown-menu-login .login-options{
     width: 151px;
 }
 nav .nav-item .nav-login:hover{
-    height: 75px;
+    
 }
 nav .nav-item .nav-login:hover .dropdown-menu-login{
     display: block;
+
 }
 /*=========Desktop=========*/
 @media (min-width: 1024px) and (max-width: 1280px){
@@ -191,11 +207,9 @@ nav .nav-item .nav-login:hover .dropdown-menu-login{
         font-size: 85%;
     }
     .index{
-        margin-right: 26px;
-        margin-top: -24px;
+
     }
     header nav .search_button .search_box {
-        height: 40%;
         
         width: 43vw;
     }
