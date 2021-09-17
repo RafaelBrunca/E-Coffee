@@ -28,8 +28,6 @@ ul, li {
     list-style-type: none;
     padding: 0;
 }
-
-
 header nav{
     margin-top: 20px;
     font-size: 18px;
@@ -128,7 +126,6 @@ nav .nav-item .dropdown-menu-login{
     visibility: hidden;
     transition: visibility 0.3s, opacity 0.3s;
 }
-}
 h3{
     margin-bottom: 10px;
 }
@@ -224,5 +221,27 @@ nav .nav-item .nav-login:hover{
     }
     .navbar{
         margin-right: 10%;
+    }
+    div .dropdown-cafeteiras .dropdown-menu{
+        top: 163px;
+    }
+    .itens{
+        margin-left: 24%
+    }
+    header nav .dropdown-menu a{
+        display: block;
+    }
+    .down{
+        padding-left: 256px;
+    }
+    nav .nav-item .dropdown-menu-login{
+        top: 169px;
+        right: 269px;
+    }
+    nav .nav-item .dropdown-menu-login{
+        height: 325px;
+    }
+    header nav .container a{
+        display: inline;
     }
 }
