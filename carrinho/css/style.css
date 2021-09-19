@@ -207,6 +207,29 @@ nav .nav-item .nav-login:hover{
     opacity: 1;
     visibility: visible;
 }
+/* =============================
+         Carrinho
+===============================*/
+main{
+    margin-left: 201px;
+    margin-right: 283px;
+    margin-top: 50px;
+}
+h1{
+    display: flex;
+}
+.container-carrinho{
+    background-color: #FFF8F0;
+    border: 1px solid #CEC9C9;
+    display: flex;
+    justify-content: space-between;
+}
+.container-carrinho .produto{
+    border: 1px solid #CEC9C9;
+}
+.container-carrinho .descricao{
+    border: 1px solid #CEC9C9;
+}
 /*=========Desktop=========*/
 @media (min-width: 1024px) and (max-width: 1280px){
     .navbar{

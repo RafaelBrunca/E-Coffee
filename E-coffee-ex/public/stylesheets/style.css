@@ -1,205 +1,266 @@
 html, body{
-  font-family: 'Red Hat Display', sans-serif;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+    font-family: 'Red Hat Display', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden; /* estava com rolagem vertical e esse comando tira */
 }
 header .wrapper{
-  background-color: #291616;
-  border-bottom-left-radius: 11px;
-  border-bottom-right-radius: 11px;
-  display: flex;
-  flex-wrap: wrap;
-  height: 110px;
-  margin: 0 auto;
-  justify-content: space-around;
-  width: 100%;
+    background-color: #291616;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    display: flex;
+   /* flex-wrap: wrap; */
+    /* height: 110px; */
+    margin: 0 auto;
+    justify-content: space-around;
+    width: 100%;
+    padding: 50px 0; /* em alguns casos é interessante definir tamanho por padding*/
 }
 /* ========================
-        Navbar
+          Navbar
 =========================== */
 .index{
-  position: relative;
-  right: 95px;
-  margin-top: -26px;
+    margin-left: 50px;
 }
 ul, li {
-  display: flex;
-  list-style-type: none;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
 }
 header nav{
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: 600;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
 }
 header nav a{
-  color: #FFFFFF;
-  line-height: 24px;
-  
-  margin-left: 25px;
-  text-decoration: none;
+    color: #FFFFFF;
+    line-height: 24px;
+    margin: 0 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+}
+header nav a .seta{
+    margin-left: 5px;
 }
 header nav a:hover{
-  color: #CE5F20;
+    color: #CE5F20;
+    transition-duration: 0.25s;
 }
 /* Barra de pesquisa */
 header nav .search_button .search_box {
-  border-bottom-left-radius: 11px;
-  border-top-right-radius: 11px;
-  height: 34px;
-  font-size: 15px;
-  margin-left: 20px;
-  padding: 4px;
-  text-align: center;
-  width: 561px;
+    border-bottom-left-radius: 11px;
+    border-top-right-radius: 11px;
+    height: 34px;
+    font-size: 15px;
+    margin-left: 20px;
+    padding: 4px;
+    text-align: center;
+    width: 561px;
+    outline: 0; /* tira a borda quando clica na barra*/
 }
 header nav .carrinho{
-  color: #fff;
+    color: #fff;
 }
 /* =============================
-  Cafeteiras dropdown
+    Cafeteiras dropdown
 ===============================*/
-nav .dropdown-cafeteiras{
-  height: 25.5px;
-}
-nav .dropdown-cafeteiras .dropdown-menu{
-  background-color: #291616;
-  border-bottom-left-radius: 11px;
-  border-bottom-right-radius: 11px;
-  display: none;
-  height: 576px;
-  left: 0;
-  position: absolute;
-  padding: 0;
-  top: 101px;
-  width: 100%;
-  z-index: 10;
+.dropdown-cafeteiras .dropdown-menu{
+    background-color: #291616;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    height: 576px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    padding: 0;
+    top: 101px;
+    transition: visibility 0.3s, opacity 0.3s;
+    visibility: hidden;
+    width: 100%;
+    z-index: 10;
 }
 .itens{
-  display: flex;
-  flex-wrap: wrap;
-  margin-left:22%;
-  width: 276px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:22%;
+    width: 276px;
 }
 .dropdown-item{    
-  line-height: 15px;
-  margin-top: 40px;
+    line-height: 15px;
+    margin-top: 40px;
 }
 .down{
-  padding-left: 283px;
+    padding-left: 283px;
 }
 nav .dropdown-cafeteiras:hover{
-  height: 73px;
+    height: 73px;
 }
-nav .dropdown-cafeteiras:hover .dropdown-menu{
-  display: block;
+.nav-item:hover .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
 }
 /* =============================
-           Login
+        Capsulas Dropdown
+===============================*/
+.dropdown-capsulas .dropdown-menu{
+    background-color: #291616;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    height: 350px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    padding: 0;
+    top: 101px;
+    transition: visibility 0.3s, opacity 0.3s;
+    visibility: hidden;
+    width: 100%;
+    z-index: 10;
+}
+.dropdown-capsulas .dropdown-item img{
+    border-radius: 5px;
+}
+.dropdown-capsulas .dropdown-item{
+    margin-right: 25px;
+    line-height: 35px;
+}
+/* =============================
+             Login
 ===============================*/
 nav .nav-item .nav-login{
-  height: 25.5px;
-  width: 86.55px;
+    width: 86.55px;
 }
 nav .nav-item .dropdown-menu-login{
-  background-color: #291616;
-  border-bottom-left-radius: 11px;
-  border-bottom-right-radius: 11px;
-  color: #fff;
-  display: none;
-  height: 312px;
-  position: relative;
-  right: 45px;
-  top: 25px;
-  width: 195px;
+    background-color: #291616;
+    border-color: #CE5F20;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    color: #fff;
+    height: 312px;
+    opacity: 0;
+    position: absolute;
+    right: 70px;
+    top: 133px;
+    transition: visibility 0.3s, opacity 0.3s;
+    visibility: hidden;
+    width: 195px;
 }
-h3{
-  margin-bottom: 10px;
+.dropdown-menu-login h3{
+    margin-bottom: 10px;
 }
 nav .dropdown-menu-login .form-group{
-  margin-top: 16px;
+    margin-top: 16px;
 }
 nav .form-check{
-  font-size: 14px;
-  margin-top: 12px;
-  margin-right: 26px;
+    font-size: 14px;
+    margin-top: 12px;
+    margin-right: 26px;
 }
 nav .dropdown-menu-login .login-btn{
-  background-color: #CE5F20;
-  color: #fff;
-  border: 0px;
-  border-radius: 6px;
-  font-family: 'Red Hat Display', sans-serif;
-  font-weight: bold;
-  font-size: 15px;
-  height: 26px;
-  margin-top: 10px;
-  padding: 0;
-  width: 150px;
+    background-color: #CE5F20;
+    color: #fff;
+    border: 0px;
+    border-radius: 6px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    height: 26px;
+    margin-top: 10px;
+    padding: 0;
+    width: 150px;
 }
 nav .dropdown-menu-login .register-btn{
-  background-color: #CE5F20;
-  color: #fff;
-  border: 0px;
-  border-radius: 6px;
-  font-family: 'Red Hat Display', sans-serif;
-  font-weight: bold;
-  font-size: 15px;
-  height: 26px;
-  margin-top: 10px;
-  padding: 0;
-  width: 150px;
+    background-color: #CE5F20;
+    color: #fff;
+    border: 0px;
+    border-radius: 6px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    height: 26px;
+    margin-top: 10px;
+    padding: 0;
+    width: 150px;
 }
-h4{
-  margin-top: 16px;
-  margin-bottom: 0;
+.login-options h4{
+    margin-top: 16px;
+    margin-bottom: 0;
 }
 nav .dropdown-menu-login .login-options{
-  background-color: #fff;
-  border-radius: 5px;
-  color: #291616;
-  height: 64px;
-  margin-left: 22px;
-  width: 151px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #291616;
+    height: 64px;
+    margin-left: 22px;
+    width: 151px;
+}
+header nav .container a{
+    display: inline;
 }
 nav .nav-item .nav-login:hover{
-  height: 75px;
+    height: 75px;
 }
-nav .nav-item .nav-login:hover .dropdown-menu-login{
-  display: block;
+.nav-item .nav-login:hover .dropdown-menu-login{
+    opacity: 1;
+    visibility: visible;
 }
 /*=========Desktop=========*/
 @media (min-width: 1024px) and (max-width: 1280px){
-  .navbar{
-      font-size: 85%;
-  }
-  .index{
-      right: 60px;
-      margin-top: -24px;
-  }
-  header nav .search_button .search_box {
-      height: 30%;
-      width: 45vw;
-  }
-  .itens{
-      margin-left: 5%;
-  }
+    .navbar{
+        font-size: 85%;
+    }
+    .index{
+        right: 60px;
+        margin-top: -24px;
+    }
+    header nav .search_button .search_box {
+        height: 30%;
+        width: 45vw;
+    }
+    .itens{
+        margin-left: 5%;
+    }
 }
 @media (min-width: 1280px) and (max-width: 1680px) {
-  .navbar{
-      margin-right: 4%;
-      font-size: 85%;
-  }
-  .index{
-      margin-right: 26px;
-      margin-top: -24px;
-  }
-  header nav .search_button .search_box {
-      height: 40%;
-      
-      width: 43vw;
-  }
-  .itens{
-      margin-left: 10%;
-  }
+    .navbar{
+        margin-right: 4%;
+        font-size: 85%;
+    }
+    header nav .search_button .search_box {
+        
+        width: 43vw;
+    }
+    .itens{
+        margin-left: 10%;
+    }
+}
+@media (min-width: 1920px){
+    .index{
+        margin-left: 6%;
+    }
+    .navbar{
+        margin-right: 10%;
+    }
+    .dropdown-cafeteiras .dropdown-menu, .dropdown-capsulas .dropdown-menu{
+        top: 163px;
+    }
+    .itens{
+        margin-left: 24%
+    }
+    header nav .dropdown-menu a{
+        display: block;
+    }
+    .down{
+        padding-left: 256px;
+    }
+    nav .nav-item .dropdown-menu-login{
+        top: 169px;
+        right: 269px;
+    }
+    nav .nav-item .dropdown-menu-login{
+        height: 325px;
+    }
 }
