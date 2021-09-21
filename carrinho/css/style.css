@@ -207,6 +207,82 @@ nav .nav-item .nav-login:hover{
     opacity: 1;
     visibility: visible;
 }
+/* =============================
+         Carrinho
+===============================*/
+main{
+    margin-left: 201px;
+    margin-right: 283px;
+    margin-top: 50px;
+}
+h1{
+    display: flex;
+}
+main .descricoes {
+    background-color: #F6EFE6;
+    border: 1px solid #CEC9C9;
+    display: flex;
+    height: 25px;
+}
+main .dsc {
+    margin-top: 3px;
+    margin-left: 11%;
+    margin-right: 57%;
+}
+main .dsc-quantidade{
+    margin-top: 3px;
+}
+main .dsc-quantidade li{
+    margin-right: 19px;
+    padding-right: 28px;
+}
+.container-carrinho{
+    background-color: #FFF8F0;
+    border: 1px solid #CEC9C9;
+    display: flex;
+}
+.container-carrinho .produto{
+    margin: 15px;
+}
+.nome-produto{
+    border-left: 1px solid #CEC9C9;
+    font-weight: bold;
+    font-size: 24px;
+    margin-right: auto;
+}
+.nome-produto p{
+    margin-top: 12px;
+    margin-left: 4px;
+}
+.nome-produto .exc{
+    display: flex;
+    margin-left: 4px;
+    margin-top: 14%;
+}
+.nome-produto .exc a{
+    color: black;
+    font-size: 12px;
+    text-decoration: none;
+}
+.container-carrinho .descricao{
+    border-left: 1px solid #CEC9C9;
+    width: 110px;
+}
+.descricao-quantidade input{
+    background-color: #F3EEE6;
+    border: 1px solid #CEC9C9;
+    height: 34px;
+    margin-top: 10px;
+    text-align: center;
+    width: 34px;
+}
+.total{
+    background-color: #291616;
+    color: white;
+    display: flex;
+    height: 70px;
+    justify-content: flex-end;
+}
 /*=========Desktop=========*/
 @media (min-width: 1024px) and (max-width: 1280px){
     .navbar{
