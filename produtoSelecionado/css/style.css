@@ -1,0 +1,59 @@
+html body {
+    font-family: 'Red Hat Display', sans-serif;
+}
+body .wrapper{
+
+}
+body .imagemProduto{
+    position: absolute;
+    padding: 75px 0px 0px 250px;
+    -moz-transform: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+body .imagemProduto:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+body .miniaturaProduto{
+    position: absolute;
+    padding: 150px 0px 0px 20px;
+}
+body .whatsappIcon{
+    
+}
+body .compraProduto{
+    padding: 50px 0px 0px 800px;
+}
+body .compraProduto h1{
+    color: #CE5F20;
+}
+body .compraProduto h2{
+    padding: 0px 0px 20px 0px;
+}
+body .compraProduto p{
+    font-size: 15px;
+}
+body .compraProduto select{
+    height: 47px;
+    width: 748px;
+    border-radius: 5px;
+}
+body .compraProduto button{
+    width: 302px;
+    height: 61px;
+    background-color: #CE5F20;
+    color:#ffff;
+    border-radius: 5px;
+    font-size: 18px;
+}
+body .descricao{
+    padding: 50px 0px 0px 25px;
+}
+body .descricao h4{
+    padding: 40px 0px 20px 15px;
+}
+body .descricao p{
+    padding: 8px 0px 8px 0px;
+}
