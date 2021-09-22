@@ -2,8 +2,7 @@ html, body{
     font-family: 'Red Hat Display', sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
-    overflow: hidden; /* estava com rolagem vertical e esse comando tira */
+    text-align: center; 
 }
 header .wrapper{
     background-color: #291616;
@@ -234,7 +233,7 @@ main .dsc-quantidade{
 }
 main .dsc-quantidade li{
     margin-right: 19px;
-    padding-right: 28px;
+    padding-right: 21px;
 }
 .container-carrinho{
     background-color: #FFF8F0;
@@ -276,12 +275,239 @@ main .dsc-quantidade li{
     text-align: center;
     width: 34px;
 }
+.limpar{
+    display: flex;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.limpar a{
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+}
+/* ====== FRETE ====== */
+.frete{
+    border: 1px solid #CEC9C9;
+    border-radius: 5px;
+    background-color: #FFF8F0;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    margin-top: 30px;
+    width: 744px;
+}
+.frete .titulo p{    
+    font-size: 24px;
+    margin-left: 14px;
+    margin-bottom: 0;
+}
+.calc-frete {
+    display: flex;
+    margin-left: 14px;
+}
+.calc-frete input{
+    background-color: #F3EDE6;
+    border: 1px solid #CEC9C9;
+    height: 22px;
+    margin-top: 14px;
+    margin-left: 10px;
+    text-align: end;
+}
+.sem-cep{
+    margin-top: -10px;
+}
+.sem-cep a{
+    color: black;
+    font-size: 14px;
+    margin-left: 46%;
+    text-decoration: none;
+}
+/* ===== DESCONTO ===== */
+.cupom{
+    border: 1px solid #CEC9C9;
+    border-radius: 5px;
+    background-color: #FFF8F0;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    margin-top: 26px;
+    margin-bottom: 26px;
+    width: 744px;
+}
+.cupom .titulo p{    
+    font-size: 24px;
+    margin-left: 14px;
+    margin-bottom: 0;
+}
+.calc-desconto {
+    display: flex;
+    margin-left: 14px;
+}
+.calc-desconto input{
+    background-color: #F3EDE6;
+    border: 1px solid #CEC9C9;
+    height: 22px;
+    margin-top: 14px;
+    margin-left: 10px;
+    text-align: end;
+}
+/* ===== RESUMO ===== */
+.resumo-pedido{
+    border-top: 1px solid #CEC9C9;
+    border-bottom: 1px solid #CEC9C9;
+    display: flex;
+    justify-content: space-between;
+    height: 197px;
+    position: absolute;
+    right: 352px;
+    top: 642.433px;
+    width: 440px;
+}
+
+/* ===== FINALIZAÇÃO =====*/
 .total{
     background-color: #291616;
     color: white;
     display: flex;
+    font-size: 22px;
     height: 70px;
     justify-content: flex-end;
+}
+.total p{
+    margin-right: 20px;
+}
+.fnz{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+.fnz .continuar input{
+    border: 1px solid #CEC9C9;
+    background-color: #FFF8F0;
+    color: black;
+    font-size: 18px;
+    height: 55px;
+    width: 195px;
+}
+.finalizar input{
+    border: 0;
+    background-color: #291616;
+    color: white;
+    font-size: 22px;
+    height: 60px;
+    width: 200px;
+}
+/* ===== whatsapp ===== */
+.whatsapp{
+    bottom: 20px;
+    -moz-transform: all 0.3s;
+    -webkit-transition: all 0.3s;
+    position: fixed;
+    right: 25px;
+    transition: all 0.3s;
+}
+.whatsapp:hover{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+/* ==== FOOTER ==== */
+footer {
+    background-color: #291616;  
+    margin-top: 100px
+}
+footer .teste {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+footer h3 {
+    color: #FFFFFF;
+}
+footer .logo {
+    padding: 30px 0 0 30px;
+}
+footer .social {
+    padding: 14px 50px 26px 6px;
+}
+footer .social a {
+    text-decoration: none;
+    margin-left: 5px;
+}
+footer .social img {
+    padding: 10px 0px 0px 0px;
+}
+footer .coluna {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+footer .coluna nav {
+    color: #FFFFFF;
+}
+footer .coluna li {
+    color: #e6d8d8;
+    display: flex;
+    line-height: 50px;
+}
+footer ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: flex;
+}
+footer .newsletter {
+    position: relative;
+    padding: 0px 0px 0px 100px;
+    padding-top: 150px;
+    flex-direction: column;
+    display: flex;
+    padding-right: 150px; /*Achei q ficaria legal o newsletter mais para o "meio" do footer. (aberto a mudanças)*/
+}
+footer .newsletter p {
+    line-height: 0px;
+    color: #FFFFFF;
+}
+footer .newsletter input {
+    width: 290px;
+    height: 30px;
+}
+footer .newsletter button {
+    width: 71px;
+    height: 29px;
+    background: #ce5f20;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+footer .newsletter button:hover {
+    background-color: rgb(255, 153, 0);
+}
+footer .seguranca {
+    padding: 20px 25px 20px 40px;
+}
+footer .footer-bottom .seguranca a {
+    color:#FFFFFF;
+    text-decoration: none;
+    position:absolute;
+    line-height: 0px;
+}
+footer .seguranca img{
+    position: absolute;
+    padding: 10px 0px 0px 9px;
+}
+.inicio-footer{
+    display: flex;
+    align-items: center;
+}
+footer .teste .coluna-principal {
+    display: flex;
+    justify-content: space-around;
+}
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+footer ul, li {
+    display: inline;
 }
 /*=========Desktop=========*/
 @media (min-width: 1024px) and (max-width: 1280px){
@@ -305,8 +531,7 @@ main .dsc-quantidade li{
         margin-right: 4%;
         font-size: 85%;
     }
-    header nav .search_button .search_box {
-        
+    header nav .search_button .search_box {        
         width: 43vw;
     }
     .itens{
