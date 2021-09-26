@@ -22,7 +22,8 @@ header .wrapper{
 .index{
     margin-left: 50px;
 }
-ul, li {
+header ul, 
+header li {
     display: flex;
     list-style-type: none;
     padding: 0;
@@ -245,6 +246,86 @@ main h1{
     justify-content: center;
     margin-top: 44px;
 }
+/* ===== CRIAR ENDEREÇO ===== */
+main .enderecos-user{
+    display: flex;
+}
+main .criarEndereco {
+    background-color: #CE5F20;
+    border-radius: 11px;
+    border: 0;
+    font-size: 18px;
+    height: 266px;
+    width: 322px;
+}
+main .criarEndereco a{
+    color: white;
+    text-decoration: none;
+}
+main .criarEndereco a:hover{
+    color: #291616;
+}
+/* ===== LISTA DE ENDEREÇOS ===== */
+.lista-enderecos{
+    background-color: #FFF1E0;
+    border-radius: 11px;
+    border: 1px solid #CE5F20;
+    height: 266px;
+    margin-left: 5%;
+    width: 322px;
+}
+.lista-enderecos .endereco ul{
+    list-style-type: none;    
+    text-align: left;    
+}
+.lista-enderecos .endereco li{
+    padding-bottom: 3px;
+}
+.editar{
+    display: flex;
+    justify-content: space-around;
+}
+.editar .alterar{
+    background-color: #CE5F20;
+    border-radius: 11px;
+    border: 0;
+    font-size: 16px;
+    height: 37px;    
+    width: 80px;
+}
+.lista-enderecos .excluir{    
+    background-color: #CE5F20;
+    border-radius: 11px;
+    border: 0;
+    font-size: 16px;
+    height: 37px;
+    width: 80px;
+}
+.editar a{    
+    color: #fff;
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: none;
+}
+.lista-enderecos .editar a:hover{
+    color: #291616;
+}
+/* ===== VOLTAR ===== */
+.voltar{
+    background-color: #301a1a;;
+    border-radius: 11px;
+    border: 0;
+    font-size: 16px;
+    height: 37px;
+    margin-top: 55px;
+    width: 80px;
+}
+.voltar a{    
+    color: #fff;
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: none;
+}
 /* ===== whatsapp ===== */
 .whatsapp{
     bottom: 20px;
@@ -354,7 +435,8 @@ footer .teste .coluna-principal {
     display: flex;
     justify-content: space-between;
 }
-footer ul, li {
+footer ul, 
+footer li {
     display: inline;
 }
 /*=========Desktop=========*/
