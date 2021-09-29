@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+}
+
+.resumo-pedido {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+.resumo-pedido h5 {
+color: #CE5F20;
+font-size: 19px;
+}
+
+.resumo-pedido .informacoes-produto{
+    display: flex;
+    width: 400px;
+}
+
+.resumo-pedido .informacoes-produto p{
+    display: flex;
+    text-align: start;
+}
+
+.produto-valor-resumo{
+display: flex;
+font-size:17px;
+text-align: center;
+width: 400px;
+justify-content: space-between;
+line-height: 3;
+border-bottom: 0.75px solid ;
+}
+
+.produto-valor-resumo .preco {
+    color: #CE5F20;
+    font-size: 20px;
+}
+
+button{
+    background-color: #F88C4D;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 50px;
+    font-size: 20px;
+}
