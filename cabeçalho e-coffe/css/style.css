@@ -3,7 +3,7 @@ html, body{
     margin: 0;
     padding: 0;
     text-align: center;
-    overflow: hidden; /* estava com rolagem vertical e esse comando tira */
+   
 }
 header .wrapper{
     background-color: #291616;
@@ -292,6 +292,36 @@ cursor: pointer;
 .is-hidden {
 	display: none;
 }
+
+/*=========Produtos-HOME=========*/
+.bloco-container{
+    display: flex;
+
+}
+
+.bloco-teste {
+    margin: 0 auto;
+    margin-top: 130px; 
+    display: flex;
+}
+
+.bloco {
+    width: 500px;
+    height: 400px;
+
+    margin: 0 100px;
+}
+
+.bloco img{
+    width: 250px;
+}
+
+.bloco:hover{
+    border-radius: 25px;
+    -webkit-box-shadow: 5px 8px 27px 6px rgba(112,112,112,0.78); 
+    box-shadow: 5px 8px 27px 6px rgba(112,112,112,0.78);
+}
+
 
 
 /*=========Desktop=========*/
