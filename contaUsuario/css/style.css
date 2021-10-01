@@ -281,11 +281,11 @@ main .criarEndereco a:hover{
 .lista-enderecos .endereco li{
     padding-bottom: 3px;
 }
-.editar{
+.lista-enderecos .editar{
     display: flex;
     justify-content: space-around;
 }
-.editar .alterar{
+.lista-enderecos .editar .alterar{
     background-color: #CE5F20;
     border-radius: 11px;
     border: 0;
@@ -301,7 +301,7 @@ main .criarEndereco a:hover{
     height: 37px;
     width: 80px;
 }
-.editar a{    
+.lista-enderecos .editar a{    
     color: #fff;
     display: inline-block;
     margin-top: 8px;
@@ -309,6 +309,61 @@ main .criarEndereco a:hover{
 }
 .lista-enderecos .editar a:hover{
     color: #291616;
+}
+/* ===== ACESSO E SEGURANCA ===== */
+.title-seguranca h1{
+    justify-content: center;
+}
+.security-options{
+    background-color: #FFF1E0;
+    border: 1px solid #CE5F20;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 18%;
+    width: 50vw;
+}
+.security-options .acessibilidade{
+    display: flex;
+    margin-left: 30px;
+    border-bottom: 1px solid black;
+    width: 94%;
+}
+.security-options .acessibilidade .editar{
+    background-color: #CE5F20;
+    border-radius: 11px;
+    height: 27px;
+    margin-left: auto;
+    margin-top: 24px;
+}
+.security-options .acessibilidade .editar a{
+    color: #fff;
+    display: inline-block;
+    margin-top: 3px;
+    text-decoration: none;
+    width: 75px;
+}
+.acessibilidade .nome{
+    margin-top: 34px;
+    margin-left: -48px;
+}
+.security-options .concluido{    
+    background-color: #CE5F20;
+    border-radius: 11px;
+    display: flex;
+    font-size: 16px;
+    height: 35px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 3%;
+    width: 85px;
+}
+.security-options .concluido a{
+    color: #fff;
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 6px;
+    text-decoration: none;
 }
 /* ===== VOLTAR ===== */
 .voltar{

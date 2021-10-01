@@ -275,17 +275,17 @@ left: -70px;
 }
 
 .carrossel_indicador { 
-border: 0;
+border: 1px solid #CE5F20;;
 border-radius: 50%;
 width: 20px;
 height: 20px;
-background: rgb(0,0,0,.3);
+
 margin: 0 15px;
 cursor: pointer;
 }
 
 .carrossel_indicador.current-slide {
-	background: black;
+	background: #CE5F20;
 
 }
 
