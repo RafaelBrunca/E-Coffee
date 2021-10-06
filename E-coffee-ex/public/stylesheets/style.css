@@ -147,6 +147,7 @@ nav .nav-item .dropdown-menu-login{
     transition: visibility 0.3s, opacity 0.3s;
     visibility: hidden;
     width: 195px;
+    z-index: 2;
 }
 .dropdown-menu-login h3{
     margin-bottom: 10px;
