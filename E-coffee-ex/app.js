@@ -3,7 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require("express-session");
 
+/* Importação de rotas */
+var loginRouter = require('./routes/login');
+var indexRouter = require('./routes/index');
+var carrinhoRouter = require('./routes/carrinho');
 var homeUserRouter = require('./routes/homeUser');
 
 var app = express();
@@ -18,6 +23,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/* ROTAS */
+app.use('/login', loginRouter);
+app.use('/', indexRouter);
+app.use('/carrinho', carrinhoRouter);
 app.use('/paginaDoUsuario', homeUserRouter);
 
 
