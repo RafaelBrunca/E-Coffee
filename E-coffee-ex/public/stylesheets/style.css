@@ -341,6 +341,13 @@ main .descricoes {
     display: flex;
     height: 25px;
 }
+.descricoes ul{
+    display: flex;
+    padding: 0;
+}
+.descricoes li{
+    display: inline;
+}
 main .dsc {
     margin-top: 3px;
     margin-left: 11%;
@@ -878,25 +885,25 @@ body .compraProduto .comprar button{
     border-radius: 5px;
     font-size: 18px;
 }
-body .descricao{
+body .descricao-pedido{
     background-color: #FFF8F0;
     border: 1px solid #CEC9C9;
     margin-top: 12%;
     text-align: left;
 }
-body .descricao .title-descri{
+body .descricao-pedido .title-descri{
     border-bottom: 1px solid #CEC9C9;
 }
-body .descricao .title-descri h4{
+body .descricao-pedido .title-descri h4{
     padding-left: 30px;
 }
-body .descricao .title-informacoes{
+body .descricao-pedido .title-informacoes{
     border-top: 1px solid #CEC9C9;
     border-bottom: 1px solid #CEC9C9;
 }
-body .descricao .title-informacoes h4{
+body .descricao-pedido .title-informacoes h4{
     padding-left: 30px;
 }
-body .descricao p{
+body .descricao-pedido p{
     padding-left: 20px;
 }
