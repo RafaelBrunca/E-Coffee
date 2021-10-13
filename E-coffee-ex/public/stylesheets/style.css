@@ -95,8 +95,9 @@ header nav .carrinho{
 .down{
     padding-left: 283px;
 }
-nav .dropdown-cafeteiras:hover{
-    height: 73px;
+nav .dropdown-cafeteiras:hover , 
+.dropdown-capsulas:hover{
+    height: 76px;
 }
 .nav-item:hover .dropdown-menu{
     opacity: 1;
@@ -206,9 +207,46 @@ header nav .container a{
     display: inline;
 }
 nav .nav-item .nav-login:hover{
-    height: 75px;
+    height: 76px;
 }
 .nav-item .nav-login:hover .dropdown-menu-login{
+    opacity: 1;
+    visibility: visible;
+}
+/* ===================
+    USUARIO  LOGADO
+===================== */
+.logado .dropdown-logado{
+    background-color: #291616;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    color: #fff;
+    height: 170px;
+    opacity: 0;
+    position: absolute;
+    right: 289.667px;
+    transition: visibility 0.3s, opacity 0.3s;
+    top: 175px;
+    visibility: hidden;
+    z-index: 2;
+}
+.dropdown-logado .log-group{
+    margin-top: 25px;
+}
+.dropdown-logado .log-group a{
+    display: inline-block;
+    background-color: #CE5F20;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    width: 118px;
+}
+.logado:hover{
+    height: 100px;
+}
+.logado:hover .dropdown-logado{
     opacity: 1;
     visibility: visible;
 }
@@ -791,7 +829,7 @@ footer li {
         margin-left: 6%;
     }
     .navbar{
-        margin-right: 10%;
+        margin-right: 13%;
     }
     .dropdown-cafeteiras .dropdown-menu, .dropdown-capsulas .dropdown-menu{
         top: 163px;

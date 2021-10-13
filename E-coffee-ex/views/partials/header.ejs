@@ -78,11 +78,19 @@
                         </div>
                     </li>
                     <% if(sessao.email) { %>
-                    <li>
-                        <h1>Olá <%= sessao.name %> </h1>
-                    </li>
-                    <li>
-                        <a href="/logout">Sair</a>
+                    <li class="nav-item">
+                        <div class="logado">
+                            <a href="#"><%= sessao.name %></a>
+                            <div class="dropdown-logado">
+                                <h4>Olá, <%= sessao.name %></h4>
+                                <div class="log-group">
+                                    <a href="#">Meu perfil</a>
+                                </div>
+                                <div class="log-group">
+                                    <a href="/logout">Sair</a>
+                                </div>                                
+                            </div>
+                        </div>                        
                     </li>
                     <li class="nav-item">
                         <div class="carrinho">
