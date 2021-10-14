@@ -14,6 +14,9 @@ const loginController = {
       res.redirect('/');
     }
   },
+  cadastro: function(req, res) {
+    res.render('cadastro');
+  }
 }
 
 module.exports = loginController;

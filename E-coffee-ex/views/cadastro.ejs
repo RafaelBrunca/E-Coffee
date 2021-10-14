@@ -1,0 +1,43 @@
+
+<%- include('./partials/header') %>
+<head>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+<div class="body-login">
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="" method="POST">
+                <h1>Cadastre-se</h1>            
+                <input type="text" name="name" placeholder="Nome" />
+                <input type="text" name="lastname" placeholder="Sobrenome" />
+                <input type="email" name="email" placeholder="E-mail" />
+                <input type="password" name="password" placeholder="Senha" />
+                <input type="password" name="confirmpassword" placeholder="Confirme a Senha" />
+                <button style="margin-top: 17px;" type="submit">Registrar-se</button>                    
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="/login" method="POST">
+                <h1>Login</h1>        
+                <input type="email" name="email" placeholder="E-mail" required />
+                <input type="password" name="password" placeholder="Senha" required />
+                <a href="#">Esqueceu sua senha?</a>
+                <button>Login</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Bem-Vindo de Volta!</h1>
+                <button class="ghost" id="signIn">Login</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Olá, Amigo!</h1>
+                <p>Insira seus dados pessoais e comece a jornada conosco</p>
+                <button class="ghost" id="signUp">Registrar-se</button>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('./partials/footer') %> 

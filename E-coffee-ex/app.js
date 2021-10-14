@@ -28,7 +28,7 @@ app.use(session({secret: 'keyboard cat',resave: true,saveUninitialized: true}));
 app.use(locals);
 
 /* ROTAS */
-app.use('/login', loginRouter);
+app.use(loginRouter);
 app.use('/', indexRouter);
 app.use('/carrinho', carrinhoRouter);
 app.use('/paginadousuario', homeUserRouter);
