@@ -9,7 +9,7 @@ const loginController = {
     if(usuarioEncontrado) {
       req.session.email = usuarioEncontrado.email;
       req.session.name = usuarioEncontrado.name;
-      res.render('carrinho');
+      res.render('index');
     } else {
       res.redirect('/');
     }

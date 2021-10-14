@@ -10,7 +10,7 @@ var locals = require('./middleware/locals');
 var loginRouter = require('./routes/login');
 var indexRouter = require('./routes/index');
 var carrinhoRouter = require('./routes/carrinho');
-var homeUserRouter = require('./routes/homeUser');
+var homeUserRouter = require('./routes/userPage');
 var sobreRouter = require('./routes/sobre');
 
 var app = express();
@@ -31,7 +31,7 @@ app.use(locals);
 app.use('/login', loginRouter);
 app.use('/', indexRouter);
 app.use('/carrinho', carrinhoRouter);
-app.use('/paginaDoUsuario', homeUserRouter);
+app.use('/paginadousuario', homeUserRouter);
 app.use('/sobre', sobreRouter);
 
 // catch 404 and forward to error handler

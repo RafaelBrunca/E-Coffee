@@ -621,6 +621,137 @@ main .criarEndereco a{
 main .criarEndereco a:hover{
     color: #291616;
 }
+/* ======= PEDIDOS DO USUARIO ====== */
+.pedido{
+    display: flex;
+    flex-direction: column;
+}
+.pedido .pedido-header{
+    background-color: #FFE1BD;
+    border: 1px solid #CE5F20;
+    border-radius: 11px;
+    width: 100%;
+    z-index: 2;
+}
+.pedido .pedido-header ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+.pedido .pedido-header p{
+    margin: 0;
+}
+.pedido .pedido-footer{
+    background-color: #FFF1E0;
+    border: 1px solid #CE5F20;
+    border-radius: 11px;
+    display: flex;
+    margin-top: -16px;
+    width: 100%;
+}
+.prev-entrega{
+    margin-left: 23px;
+}
+.produto-entrega{
+    margin-top: 4%;
+    margin-left: -22%;
+}
+.prd-entrega{
+    margin-left: 70px;
+    margin-top: 55px;
+}
+.comprar-novamente{
+    background-color: #CE5F20;
+    border-radius: 11px;    
+    font-size: 16px;
+    height: 35px;    
+    width: 168px;
+}
+.comprar-novamente a{
+    color: #fff;
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 6px;
+    text-decoration: none;
+}
+.opt-pedidos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: 19px;
+    margin-top: 24px;
+}
+.opt-pedidos .opt{
+    background-color: #CE5F20;
+    border-radius: 11px;    
+    font-size: 16px;
+    height: 35px;    
+    width: 215px;
+}
+.opt-pedidos .opt a{
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-left: 6px;
+    text-decoration: none;
+}
+/* ===== ACESSO E SEGURANCA ===== */
+.title-seguranca h1{
+    justify-content: center;
+}
+.security-options{
+    background-color: #FFF1E0;
+    border: 1px solid #CE5F20;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 18%;
+    width: 50vw;
+}
+.security-options .acessibilidade{
+    display: flex;
+    margin-left: 30px;
+    border-bottom: 1px solid black;
+    width: 94%;
+}
+.security-options .acessibilidade .editar{
+    background-color: #CE5F20;
+    border-radius: 11px;
+    height: 27px;
+    margin-left: auto;
+    margin-top: 24px;
+}
+.security-options .acessibilidade .editar a{
+    color: #fff;
+    display: inline-block;
+    margin-top: 3px;
+    text-decoration: none;
+    width: 75px;
+}
+.acessibilidade .nome{
+    margin-top: 34px;
+    margin-left: -48px;
+}
+.security-options .concluido{    
+    background-color: #CE5F20;
+    border-radius: 11px;
+    display: flex;
+    font-size: 16px;
+    height: 35px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 3%;
+    width: 85px;
+}
+.security-options .concluido a{
+    color: #fff;
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 6px;
+    text-decoration: none;
+}
 /* ===== LISTA DE ENDEREÇOS ===== */
 .lista-enderecos{
     background-color: #FFF1E0;
