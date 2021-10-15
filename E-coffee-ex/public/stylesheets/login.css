@@ -128,7 +128,7 @@ body{
   overflow: hidden;
   width: 768px;
   max-width: 100%;
-  min-height: 480px;
+  min-height: 525px;
 }
 
 .body-login .form-container {
@@ -184,7 +184,7 @@ body{
   height: 100%;
   overflow: hidden;
   transition: transform 0.6s ease-in-out;
-  z-index: 100;
+  z-index: 99;
 }
 
 .container.right-panel-active .overlay-container {

@@ -80,7 +80,7 @@ header nav .carrinho{
     transition: visibility 0.3s, opacity 0.3s;
     visibility: hidden;
     width: 100%;
-    z-index: 10;
+    z-index: 100;
 }
 .itens{
     display: flex;
@@ -119,7 +119,7 @@ nav .dropdown-cafeteiras:hover ,
     transition: visibility 0.3s, opacity 0.3s;
     visibility: hidden;
     width: 100%;
-    z-index: 10;
+    z-index: 100;
 }
 .dropdown-capsulas .dropdown-item img{
     border-radius: 5px;
@@ -926,66 +926,7 @@ footer ul,
 footer li {
     display: inline;
 }
-/*=========Desktop=========*/
-@media (min-width: 1024px) and (max-width: 1280px){
-    .navbar{
-        font-size: 85%;
-    }
-    .index{
-        right: 60px;
-        margin-top: -24px;
-    }
-    header nav .search_button .search_box {
-        height: 30%;
-        width: 45vw;
-    }
-    .itens{
-        margin-left: 5%;
-    }
-}
-@media (min-width: 1280px) and (max-width: 1680px) {
-    .navbar{
-        margin-right: 4%;
-        font-size: 85%;
-    }
-    header nav .search_button .search_box {        
-        width: 43vw;
-    }
-    .itens{
-        margin-left: 10%;
-    }
-}
-@media (min-width: 1920px){
-    .index{
-        margin-left: 6%;
-    }
-    .navbar{
-        margin-right: 13%;
-    }
-    .dropdown-cafeteiras .dropdown-menu, .dropdown-capsulas .dropdown-menu{
-        top: 163px;
-    }
-    .itens{
-        margin-left: 24%
-    }
-    header nav .dropdown-menu a{
-        display: block;
-    }
-    .down{
-        padding-left: 256px;
-    }
-    nav .nav-item .dropdown-menu-login{
-        top: 169px;
-        right: 269px;
-    }
-    nav .nav-item .dropdown-menu-login{
-        height: 325px;
-    }
-    .bloco{
-        height: 360px;
-        width: 350px;
-    }
-}
+
 /* =======================
     PRODUTO SELECIONADO
 ==================== */
@@ -1075,4 +1016,65 @@ body .descricao-pedido .title-informacoes h4{
 }
 body .descricao-pedido p{
     padding-left: 20px;
+}
+
+/*=========Desktop=========*/
+@media (min-width: 1024px) and (max-width: 1280px){
+    .navbar{
+        font-size: 85%;
+    }
+    .index{
+        right: 60px;
+        margin-top: -24px;
+    }
+    header nav .search_button .search_box {
+        height: 30%;
+        width: 45vw;
+    }
+    .itens{
+        margin-left: 5%;
+    }
+}
+@media (min-width: 1280px) and (max-width: 1680px) {
+    .navbar{
+        margin-right: 4%;
+        font-size: 85%;
+    }
+    header nav .search_button .search_box {        
+        width: 43vw;
+    }
+    .itens{
+        margin-left: 10%;
+    }
+}
+@media (min-width: 1920px){
+    .index{
+        margin-left: 6%;
+    }
+    .navbar{
+        margin-right: 15rem;
+    }
+    .dropdown-cafeteiras .dropdown-menu, .dropdown-capsulas .dropdown-menu{
+        top: 163px;
+    }
+    .itens{
+        margin-left: 24%
+    }
+    header nav .dropdown-menu a{
+        display: block;
+    }
+    .down{
+        padding-left: 256px;
+    }
+    nav .nav-item .dropdown-menu-login{
+        top: 169px;
+        right: 269px;
+    }
+    nav .nav-item .dropdown-menu-login{
+        height: 325px;
+    }
+    .bloco{
+        height: 360px;
+        width: 350px;
+    }
 }

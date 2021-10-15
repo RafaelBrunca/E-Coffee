@@ -9,6 +9,7 @@ const loginController = {
     if(usuarioEncontrado) {
       req.session.email = usuarioEncontrado.email;
       req.session.name = usuarioEncontrado.name;
+      req.session.cpf = usuarioEncontrado.cpf;
       res.render('index');
     } else {
       res.redirect('/');
