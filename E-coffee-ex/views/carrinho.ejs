@@ -1,4 +1,4 @@
-<%- include ('./partials/header')  %> 
+<%- include('./partials/header') %> 
 <main>
     <div class="title">
         <h1>Carrinho</h1>
@@ -29,7 +29,7 @@
         <div class="descricao">
             <div class="descricao-quantidade">
                 <form action="">         
-                    <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    <input type="number" name= "quantidade">
                 </form>
             </div>                
         </div>
@@ -92,18 +92,14 @@
     </div>
     <div class="fnz">
         <div class="continuar">
-            <form action="">
-                <input type="submit" value= "Continuar Comprando"> 
-            </form>
+            <a href="/">Continuar Comprando</a>
         </div>
         <div class="finalizar">
-            <form action="">
-                <input type="submit" value="Finalizar Pedido"> 
-            </form>
+            <a href="#">Finalizar Pedido</a>
         </div>
     </div>
     <div class="whatsapp">
         <a href="#"><img src="images/icons8-whatsapp-48.png"></a>
     </div>
 </main>
-<%- include ('./partials/footer')  %> 
+<%- include('./partials/footer') %> 

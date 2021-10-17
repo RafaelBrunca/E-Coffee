@@ -80,7 +80,7 @@ header nav .carrinho{
     transition: visibility 0.3s, opacity 0.3s;
     visibility: hidden;
     width: 100%;
-    z-index: 10;
+    z-index: 100;
 }
 .itens{
     display: flex;
@@ -95,8 +95,9 @@ header nav .carrinho{
 .down{
     padding-left: 283px;
 }
-nav .dropdown-cafeteiras:hover{
-    height: 73px;
+nav .dropdown-cafeteiras:hover , 
+.dropdown-capsulas:hover{
+    height: 76px;
 }
 .nav-item:hover .dropdown-menu{
     opacity: 1;
@@ -118,7 +119,7 @@ nav .dropdown-cafeteiras:hover{
     transition: visibility 0.3s, opacity 0.3s;
     visibility: hidden;
     width: 100%;
-    z-index: 10;
+    z-index: 100;
 }
 .dropdown-capsulas .dropdown-item img{
     border-radius: 5px;
@@ -147,6 +148,7 @@ nav .nav-item .dropdown-menu-login{
     transition: visibility 0.3s, opacity 0.3s;
     visibility: hidden;
     width: 195px;
+    z-index: 2;
 }
 .dropdown-menu-login h3{
     margin-bottom: 10px;
@@ -172,18 +174,22 @@ nav .dropdown-menu-login .login-btn{
     padding: 0;
     width: 150px;
 }
-nav .dropdown-menu-login .register-btn{
-    background-color: #CE5F20;
-    color: #fff;
+nav .dropdown-menu-login .register-button{
     border: 0px;
-    border-radius: 6px;
     font-family: 'Red Hat Display', sans-serif;
+    margin-left: 8px;
+    margin-top: 10px;
+    padding: 0;   
+}
+.dropdown-menu-login .register-button a{
+    background-color: #CE5F20;
+    border-radius: 6px;
+    color: #fff;
     font-weight: bold;
     font-size: 15px;
-    height: 26px;
-    margin-top: 10px;
-    padding: 0;
-    width: 150px;
+    height: 24px;
+    padding-left: 32px;
+    width: 118px;
 }
 .login-options h4{
     margin-top: 16px;
@@ -201,11 +207,160 @@ header nav .container a{
     display: inline;
 }
 nav .nav-item .nav-login:hover{
-    height: 75px;
+    height: 76px;
 }
 .nav-item .nav-login:hover .dropdown-menu-login{
     opacity: 1;
     visibility: visible;
+}
+/* ===================
+    USUARIO  LOGADO
+===================== */
+.logado .dropdown-logado{
+    background-color: #291616;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    color: #fff;
+    height: 170px;
+    opacity: 0;
+    position: absolute;
+    right: 289.667px;
+    transition: visibility 0.3s, opacity 0.3s;
+    top: 175px;
+    visibility: hidden;
+    z-index: 2;
+}
+.dropdown-logado .log-group{
+    margin-top: 25px;
+}
+.dropdown-logado .log-group a{
+    display: inline-block;
+    background-color: #CE5F20;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    width: 118px;
+}
+.logado:hover{
+    height: 100px;
+}
+.logado:hover .dropdown-logado{
+    opacity: 1;
+    visibility: visible;
+}
+/*=========Carrossel=========*/
+.carrossel {
+	position: relative;
+	height: 600px; /*Alterar para 800px*/
+	width: 80%;
+	margin: 0 auto;
+    margin-top: 100px;
+}
+
+.carrossel_img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.carrossel_track-container {
+	background-color: thistle;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+    border-radius: 25px;
+}
+
+.carrossel_track {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	position: relative;
+	height: 100%;
+	transition: transform 250ms ease-in;
+}
+
+.carrossel_slide {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+.carrossel_button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: transparent;
+	border: 0;
+}
+
+.carrossel_button--left {
+left: -70px;
+}
+
+.carrossel_button--right {
+	right: -70px;
+	transform: rotate(180deg);
+}
+	
+.carrossel_button img{
+	width: 40px;
+}
+
+.carrossel_nav {
+	display: flex;
+	justify-content: center;
+	padding: 10px 0;
+}
+
+.carrossel_indicador { 
+border: 1px solid #CE5F20;;
+border-radius: 50%;
+width: 20px;
+height: 20px;
+
+margin: 0 15px;
+cursor: pointer;
+}
+
+.carrossel_indicador.current-slide {
+	background: #CE5F20;
+
+}
+
+.is-hidden {
+	display: none;
+}
+
+/*=========Produtos-HOME=========*/
+.bloco-container{
+    display: flex;
+
+}
+
+.bloco-teste {
+    margin: 0 auto;
+    margin-top: 130px; 
+    display: flex;
+}
+
+.bloco {
+    width: 500px;
+    height: 400px;
+    margin: 0 100px;
+}
+
+.bloco img{
+    width: 250px;
+}
+
+.bloco:hover{
+    border-radius: 25px;
+    -webkit-box-shadow: 5px 8px 27px 6px rgba(112,112,112,0.78); 
+    box-shadow: 5px 8px 27px 6px rgba(112,112,112,0.78);
 }
 /* =============================
          Carrinho
@@ -223,6 +378,13 @@ main .descricoes {
     border: 1px solid #CEC9C9;
     display: flex;
     height: 25px;
+}
+.descricoes ul{
+    display: flex;
+    padding: 0;
+}
+.descricoes li{
+    display: inline;
 }
 main .dsc {
     margin-top: 3px;
@@ -382,21 +544,31 @@ main .dsc-quantidade li{
     justify-content: space-between;
     margin-top: 28px;
 }
-.fnz .continuar input{
+.fnz .continuar {
     border: 1px solid #CEC9C9;
     background-color: #FFF8F0;
-    color: black;
-    font-size: 18px;
     height: 55px;
     width: 195px;
 }
-.finalizar input{
+.fnz .continuar a{
+    color: black;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 8%;
+    text-decoration: none;
+}
+.finalizar{
     border: 0;
     background-color: #291616;
-    color: white;
-    font-size: 22px;
     height: 60px;
     width: 200px;
+}
+.finalizar a{
+    display: inline-block;
+    color: white;
+    font-size: 22px;
+    margin-top: 8%;
+    text-decoration: none;
 }
 /*  ========================
         PAGE USUARIO
@@ -458,6 +630,137 @@ main .criarEndereco a{
 }
 main .criarEndereco a:hover{
     color: #291616;
+}
+/* ======= PEDIDOS DO USUARIO ====== */
+.pedido{
+    display: flex;
+    flex-direction: column;
+}
+.pedido .pedido-header{
+    background-color: #FFE1BD;
+    border: 1px solid #CE5F20;
+    border-radius: 11px;
+    width: 100%;
+    z-index: 2;
+}
+.pedido .pedido-header ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+.pedido .pedido-header p{
+    margin: 0;
+}
+.pedido .pedido-footer{
+    background-color: #FFF1E0;
+    border: 1px solid #CE5F20;
+    border-radius: 11px;
+    display: flex;
+    margin-top: -16px;
+    width: 100%;
+}
+.prev-entrega{
+    margin-left: 23px;
+}
+.produto-entrega{
+    margin-top: 4%;
+    margin-left: -22%;
+}
+.prd-entrega{
+    margin-left: 70px;
+    margin-top: 55px;
+}
+.comprar-novamente{
+    background-color: #CE5F20;
+    border-radius: 11px;    
+    font-size: 16px;
+    height: 35px;    
+    width: 168px;
+}
+.comprar-novamente a{
+    color: #fff;
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 6px;
+    text-decoration: none;
+}
+.opt-pedidos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: 19px;
+    margin-top: 24px;
+}
+.opt-pedidos .opt{
+    background-color: #CE5F20;
+    border-radius: 11px;    
+    font-size: 16px;
+    height: 35px;    
+    width: 215px;
+}
+.opt-pedidos .opt a{
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-left: 6px;
+    text-decoration: none;
+}
+/* ===== ACESSO E SEGURANCA ===== */
+.title-seguranca h1{
+    justify-content: center;
+}
+.security-options{
+    background-color: #FFF1E0;
+    border: 1px solid #CE5F20;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 18%;
+    width: 50vw;
+}
+.security-options .acessibilidade{
+    display: flex;
+    margin-left: 30px;
+    border-bottom: 1px solid black;
+    width: 94%;
+}
+.security-options .acessibilidade .editar{
+    background-color: #CE5F20;
+    border-radius: 11px;
+    height: 27px;
+    margin-left: auto;
+    margin-top: 24px;
+}
+.security-options .acessibilidade .editar a{
+    color: #fff;
+    display: inline-block;
+    margin-top: 3px;
+    text-decoration: none;
+    width: 75px;
+}
+.acessibilidade .nome{
+    margin-top: 34px;
+    margin-left: -48px;
+}
+.security-options .concluido{    
+    background-color: #CE5F20;
+    border-radius: 11px;
+    display: flex;
+    font-size: 16px;
+    height: 35px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 3%;
+    width: 85px;
+}
+.security-options .concluido a{
+    color: #fff;
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 6px;
+    text-decoration: none;
 }
 /* ===== LISTA DE ENDEREÇOS ===== */
 .lista-enderecos{
@@ -633,62 +936,7 @@ footer ul,
 footer li {
     display: inline;
 }
-/*=========Desktop=========*/
-@media (min-width: 1024px) and (max-width: 1280px){
-    .navbar{
-        font-size: 85%;
-    }
-    .index{
-        right: 60px;
-        margin-top: -24px;
-    }
-    header nav .search_button .search_box {
-        height: 30%;
-        width: 45vw;
-    }
-    .itens{
-        margin-left: 5%;
-    }
-}
-@media (min-width: 1280px) and (max-width: 1680px) {
-    .navbar{
-        margin-right: 4%;
-        font-size: 85%;
-    }
-    header nav .search_button .search_box {        
-        width: 43vw;
-    }
-    .itens{
-        margin-left: 10%;
-    }
-}
-@media (min-width: 1920px){
-    .index{
-        margin-left: 6%;
-    }
-    .navbar{
-        margin-right: 10%;
-    }
-    .dropdown-cafeteiras .dropdown-menu, .dropdown-capsulas .dropdown-menu{
-        top: 163px;
-    }
-    .itens{
-        margin-left: 24%
-    }
-    header nav .dropdown-menu a{
-        display: block;
-    }
-    .down{
-        padding-left: 256px;
-    }
-    nav .nav-item .dropdown-menu-login{
-        top: 169px;
-        right: 269px;
-    }
-    nav .nav-item .dropdown-menu-login{
-        height: 325px;
-    }
-}
+
 /* =======================
     PRODUTO SELECIONADO
 ==================== */
@@ -728,6 +976,7 @@ body .whatsappIcon:hover {
 }
 body .compraProduto{
     padding: 50px 0px 0px 48%;
+    text-align: left;
 }
 body .compraProduto h1{
     color: #CE5F20;
@@ -756,24 +1005,86 @@ body .compraProduto .comprar button{
     border-radius: 5px;
     font-size: 18px;
 }
-body .descricao{
+body .descricao-pedido{
     background-color: #FFF8F0;
     border: 1px solid #CEC9C9;
-    margin-top: 12%;   
+    margin-top: 12%;
+    text-align: left;
 }
-body .descricao .title-descri{
+body .descricao-pedido .title-descri{
     border-bottom: 1px solid #CEC9C9;
 }
-body .descricao .title-descri h4{
+body .descricao-pedido .title-descri h4{
     padding-left: 30px;
 }
-body .descricao .title-informacoes{
+body .descricao-pedido .title-informacoes{
     border-top: 1px solid #CEC9C9;
     border-bottom: 1px solid #CEC9C9;
 }
-body .descricao .title-informacoes h4{
+body .descricao-pedido .title-informacoes h4{
     padding-left: 30px;
 }
-body .descricao p{
+body .descricao-pedido p{
     padding-left: 20px;
+}
+
+/*=========Desktop=========*/
+@media (min-width: 1024px) and (max-width: 1280px){
+    .navbar{
+        font-size: 85%;
+    }
+    .index{
+        right: 60px;
+        margin-top: -24px;
+    }
+    header nav .search_button .search_box {
+        height: 30%;
+        width: 45vw;
+    }
+    .itens{
+        margin-left: 5%;
+    }
+}
+@media (min-width: 1280px) and (max-width: 1680px) {
+    .navbar{
+        margin-right: 4%;
+        font-size: 85%;
+    }
+    header nav .search_button .search_box {        
+        width: 43vw;
+    }
+    .itens{
+        margin-left: 10%;
+    }
+}
+@media (min-width: 1920px){
+    .index{
+        margin-left: 6%;
+    }
+    .navbar{
+        margin-right: 15rem;
+    }
+    .dropdown-cafeteiras .dropdown-menu, .dropdown-capsulas .dropdown-menu{
+        top: 163px;
+    }
+    .itens{
+        margin-left: 24%
+    }
+    header nav .dropdown-menu a{
+        display: block;
+    }
+    .down{
+        padding-left: 256px;
+    }
+    nav .nav-item .dropdown-menu-login{
+        top: 169px;
+        right: 269px;
+    }
+    nav .nav-item .dropdown-menu-login{
+        height: 325px;
+    }
+    .bloco{
+        height: 360px;
+        width: 350px;
+    }
 }
