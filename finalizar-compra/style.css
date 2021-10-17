@@ -265,6 +265,10 @@ nav .nav-item .nav-login:hover{
     }
 }
 
+.Finalizar-compra {
+    display: flex;
+}
+
 .resumo-pedido h5 {
 color: #CE5F20;
 font-size: 19px;
@@ -273,9 +277,8 @@ font-size: 19px;
 .informacoes-produto{
     display: inline-flex;
     width: 400px;
-}
-.informacoes-produto img{
-    display:inline-table
+    position: absolute;
+    
 }
 
 .informacoes-produto p{
