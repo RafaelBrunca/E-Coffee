@@ -1,4 +1,5 @@
 const usuarios = require('../models/usuarios');
+const { validationResult } = require('express-validator');
 
 const loginController = {
   login: function(req, res) {
@@ -16,7 +17,21 @@ const loginController = {
     }
   },
   cadastro: function(req, res) {
-    res.render('cadastro');
+    novoUsuario = undefined;
+    res.render('cadastro', { novoUsuario });
+  },
+  create: function(req, res) {
+    let errors = validationResult(req);
+    if(!errors.isEmpty()) {
+      res.render('cadastro', {
+        errors: errors.mapped(),
+        old: req.body
+      });
+    } else {
+      const novoUsuario = req.body;
+      usuarios.push(novoUsuario);
+      res.render("cadastro", { novoUsuario });
+    }
   }
 }
 

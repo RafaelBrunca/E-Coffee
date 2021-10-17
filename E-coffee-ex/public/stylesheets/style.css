@@ -544,21 +544,31 @@ main .dsc-quantidade li{
     justify-content: space-between;
     margin-top: 28px;
 }
-.fnz .continuar input{
+.fnz .continuar {
     border: 1px solid #CEC9C9;
     background-color: #FFF8F0;
-    color: black;
-    font-size: 18px;
     height: 55px;
     width: 195px;
 }
-.finalizar input{
+.fnz .continuar a{
+    color: black;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 8%;
+    text-decoration: none;
+}
+.finalizar{
     border: 0;
     background-color: #291616;
-    color: white;
-    font-size: 22px;
     height: 60px;
     width: 200px;
+}
+.finalizar a{
+    display: inline-block;
+    color: white;
+    font-size: 22px;
+    margin-top: 8%;
+    text-decoration: none;
 }
 /*  ========================
         PAGE USUARIO

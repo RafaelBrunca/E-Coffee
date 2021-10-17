@@ -23,12 +23,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({secret: 'keyboard cat',resave: true,saveUninitialized: true}));
+app.use(session({secret: 'keyboard cat',resave: false,saveUninitialized: true}));
 
 app.use(locals);
 
 /* ROTAS */
-app.use(loginRouter);
+app.use('/login', loginRouter);
 app.use('/', indexRouter);
 app.use('/carrinho', carrinhoRouter);
 app.use('/paginadousuario', homeUserRouter);
