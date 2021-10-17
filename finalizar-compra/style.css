@@ -270,24 +270,17 @@ color: #CE5F20;
 font-size: 19px;
 }
 
- .informacoes-produto{
-    display: flex;
+.informacoes-produto{
+    display: inline-flex;
     width: 400px;
 }
-
- .informacoes-produto p{
-    display: flex;
-    text-align: start;
+.informacoes-produto img{
+    display:inline-table
 }
 
-.produto-valor-resumo{
-display: flex;
-font-size:17px;
-text-align: center;
-width: 400px;
-justify-content: space-between;
-line-height: 3;
-border-bottom: 0.75px solid ;
+.informacoes-produto p{
+    display: flex;
+    text-align: start;
 }
 
 .produto-valor-resumo .preco {
