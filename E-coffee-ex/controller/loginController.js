@@ -18,20 +18,21 @@ const loginController = {
   },
   cadastro: function(req, res) {
     novoUsuario = undefined;
-    res.render('cadastro', { novoUsuario });
+    res.render('cadastro', novoUsuario);
   },
   create: function(req, res) {
-    let errors = validationResult(req);
+    const errors = validationResult(req);
     if(!errors.isEmpty()) {
       res.render('cadastro', {
         errors: errors.mapped(),
-        old: req.body
+        old: req.body,
       });
     } else {
       const novoUsuario = req.body;
       usuarios.push(novoUsuario);
       res.render("cadastro", { novoUsuario });
     }
+    
   }
 }
 

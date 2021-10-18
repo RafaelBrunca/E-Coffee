@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap" rel="stylesheet">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/cabeçalho e-coffe/css/style.css">
@@ -125,219 +128,142 @@
             </nav>
         </div>
     </header>
-    
-    <div class="Finalizar-compra" 
-
-    <div>
-     <section class="resumo-pedido">
-        <h5>Resumo do pedido</h5>
-    </div>
-
-    <div>
+    <main>
+        <div class="res-pedido">
+            <h1>Resumo do pedido</h1>
+        </div>
         <div class="informacoes-produto">
             <img src="./images/Mondial-C-08 6.png" alt="Cafeteira">
-            <p>Cafeteira Mondial Espresso C-08 automática expresso 110V preta <br><br>
-            Entrega e vendido por: E-coffee <br><br>
-            Normal até 2 dais úteis</p>
+            <ul>
+                <li>Cafeteira Mondial Espresso C-08 automática expresso 110V preta</li>
+                <li style="width: 230px;margin-top: 15px;">Entrega e vendido por: E-coffee</li>
+                <li style="width: 160px;margin-top: 15px;">Normal até 2 dais úteis</li>
+            </ul>            
         </div>
-
-    <div>
-
-    <div class="informacoes-valores">
-        <div class="produto-valor-resumo">
-        <p>Produto</p>
-        <p class="preco">R$ xx,xx</p><br><br>
-        </div>
-        <div class="produto-valor-resumo">
-        <p>Frete</p>
-        <p class="preco">R$ xx,xx</p><br><br>
-        </div>
-        <div class="produto-valor-resumo">
-        <p>Total</p>
-        <p class="preco">R$ xx,xx</p><br><br>
-        </div>
-    <div>   
-    
-    <div>
-        <button>Finalizar compra</button>
-    </div>
-    </section class="Selecione-e-Confira-seu-endereço">
-    <div class="Selecione-uma-forma-de-pagamento">
-        <h6>Selecione e Confira seu endereço</h6>
-        <img src="./images/icons8-casinha-de-cachorro-50 1 (1).png" alt="Endereço de entrega">
-        <h4>Endereço de Entrega</h4>
-        <select name="Entrega">
-        <option value="Home">Casa</option>
-        <option value="Office"> Escritório</option>
-    
-    </select>
-    <p>Endereço</p>
-    <p>Rua fulano de tal, xx
-        00000-000
-        bairro tal tal - São Paulo - SP
-        </p>
-<input type="button" value="Editar">    
-<input type="button" value="Excluir Endereço"> 
-<input type="button" value="Adicionar Endereço"> 
-
-<p>Selecione a opção de entrega desejada:
-</p>
-
-<h4>Entregar em Outro Endereço</h4>
-
-<div class="Normal">
-    <input type="checkbox" id="scales" name="scales"
-    checked>
-<label for="scales">Scales</label>
-    <p>Normal</p>
-    <p>Até 2 dias úteis</p>
-    <p class="preço">R$ xx,xx</p>
-</div>
-
-<div class="Agendada">
-    <input type="checkbox" id="scales" name="scales"
-    checked>
-<label for="scales">Scales</label>
-    <p>Agendada</p>
-    <p>A partir de 16 dias úteis</p>
-    <p class="preço">R$ xx,xx</p>
-</div>
-
-<div class="Expressa">
-    <input type="checkbox" id="scales" name="scales"
-    checked>
-<label for="scales">Scales</label>
-    <P>Expressa</P>
-    <p>Até 1 dia útil</p>
-    <p class="preço">R$ xx,xx</p>
-</div>
-
-<h6>Selecione uma forma de pagamento</h6>
-
-<div>
-<p>Cartão de Crédito</p>
-<input type="checkbox" id="scales" name="scales"
-    checked>
-<label for="scales">Scales</label>
-
-</div>
-
-<select name="Pagamento">
-    <option value="Preço à vista">Preço à vista</option>
-    <option value="Em 2x de R$xx,xx sem juros">Em 2x de R$xx,xx sem juros</option>
-    <option value="Em 3x de R$xx,xx sem juros">Em 3x de R$xx,xx sem juros</option>
-    <option value="Em 4x de R$xx,xx sem juros">Em 4x de R$xx,xx sem juros</option>
-    <option value="Em 5x de R$xx,xx sem juros">Em 5x de R$xx,xx sem juros</option>
-    <option value="Em 6x de R$xx,xx sem juros">Em 6x de R$xx,xx sem juros</option>
-    <option value="Em 7x de R$xx,xx sem juros">Em 7x de R$xx,xx sem juros</option>
-    <option value="Em 8x de R$xx,xx sem juros">Em 8x de R$xx,xx sem juros</option>
-    <option value="Em 9x de R$xx,xx sem juros">Em 9x de R$xx,xx sem juros</option>
-    <option value="Em 10x de R$xx,xx sem juros">Em 10x de R$xx,xx sem juros</option>
-
-</select>
-
-<div>
-    <img src="./images/icons8-parte-traseira-de-cartão-de-banco-48 1.png" alt="Cartão">
-    <p>Cartão de Débito</p>
-    <input type="checkbox" id="scales" name="scales"
-        checked>
-    <label for="scales">Scales</label>
-    
-    </div>
-
-    <div>
-        <img src="./images/icon-boleto.png" alt="Boleto">
-        <p>Boleto</p>
-        <input type="checkbox" id="scales" name="scales"
-            checked>
-        <label for="scales">Scales</label>
-        
-    </div>
-
-        <div>
-            <img src="./images/icons8-pagamento-móvel-40 2.png" alt="Pix">
-            <p>Pix</p>
-            <input type="checkbox" id="scales" name="scales"
-                checked>
-            <label for="scales">Scales</label>
-            
+        <div class="info-valores">
+            <div class="info-resumo">
+                <p>Produto</p>
+                <p>Frete</p>
+                <p>Total</p>
             </div>
-
-            <footer>
-                <div class="teste">
-                    <div class="logo">
-                        <a href="#">
-                            <img src="images/coffee.png" alt="coffee" width="113" height="86"/>
-                        </a>
+            <div class="info-valor">
+                <p>R$ xx,xx</p>
+                <p>R$ xx,xx</p>
+                <p>R$ xx,xx</p>
+            </div>
+        </div>
+        <div class="finaliza-compra">
+            <button>Finalizar compra</button>
+        </div>
+        <div class="cfg-pedido">
+            <h4>Selecione e Confira seu endereço</h4>
+            <h4>Selecione uma forma de pagamento</h4>
+        </div>
+        <div class="pedido-pagamento">
+            <div class="meio-de-entrega">
+                <div class="title-meios">
+                    <img src="./images/icons8-casinha-de-cachorro-50 1 (1).png" alt="Endereço de entrega" height="38">
+                    <p style="margin-left: 9px;margin-top: 3px;">Endereço de Entrega</p>
+                </div>            
+                <div class="Selecione-uma-forma-de-pagamento">
+                    <select name="Entrega">
+                        <option value="Home">Casa</option>
+                        <option value="Office"> Escritório</option>
+                    </select>
+                    <div class="title-endereco">
+                        <p>Endereço</p>
                     </div>
-                    <div class="coluna-principal">
-                        <div class="coluna">
-                            <h3>Início</h3>
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Cafeteiras</a></li>
-                                <li><a href="#">Cápsulas</a></li>
+                    <div class="info-de-enderecos">
+                        <div class="endereco">
+                            <ul style="margin-left: 25px;">
+                                <li>Rua fulano de tal, xx</li>
+                                <li>00000-000</li>
+                                <li>bairro tal tal - São Paulo - SP</li>
                             </ul>
                         </div>
-            
-                        <div class="coluna">
-                            <h3>Sobre nós</h3>
-                            <ul>
-                                <li><a href="#">Informações</a></li>
-                                <li><a href="#">Blog</a></li>
-                            </ul> 
-                        
+                        <div class="edit-endereco">
+                            <a href="#">Editar</a> |
+                            <a href="#">Excluir Endereço</a>
+                            <div class="adc-endereco">
+                                <a href="#">Adicionar Endereço</a>
+                            </div>
                         </div>
-                        <div class="coluna">
-                            <h3>Suporte</h3>
-                            <ul>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Contato</a></li>
-                                <li><a href="#">Chat</a></li>
-                           </ul>
-            
-                        </div>
-                        <div class="coluna">
-                            <h3>Minha conta</h3>
-                                <ul>
-                                    <li><a href="#">Meus pedidos</a></li>
-                                    <li><a href="#">Endereço de entrega</a></li>
-                                    <li><a href="#">Alterar senha</a></li>
-                                    <li><a href="#">Alterar cadastro</a></li>
-                                    <li><a href="#">Minha conta</a></li>
-                                </ul>
-                        </div>
-                    </div>
-                    <div class="newsletter">
-                        <h3>Newsletter</h3>
-                        <p>Receba as ofertas e dicas</p>
-                        <label for="e-mail"></label>
-                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail aqui">
-                        <button type="submit">Enviar</button>
-                    </div>      
+                    </div> 
                 </div>
-                <div class="footer-bottom">
-                    <div class="seguranca">
-                        <a href="#">segurança</a>
-                        <img src="images/icons8-cyber-security-48.png" alt="seguranca"/>
-                    </div>
-                    <div class="social">
-                        <a href="https://twitter.com/login?lang=pt">
-                        <img src="images/icons8-twitter-48.png" alt="twitter"/>
-                        </a>
-                        <a href="https://pt-br.facebook.com">
-                        <img src="images/icons8-facebook-48.png" alt="facebook"/>
-                        </a>
-                        <a href="https://www.instagram.com">
-                        <img src="images/icons8-instagram-48.png" alt="instagram"/>
-                        </a>
-                    </div>
-                </div> 
-            </footer>
-        </body>
-        </html>
-
-
+                <div class="selecao-endereco">
+                    <h2>Selecione a Forma de Entrega</h2>
+                    <div class="box-options">
+                        <div class="Normal">
+                            <div>
+                                <input type="radio" id="normal" name="entrega" value="op1" />                       
+                                <label for="normal">Normal</label>
+                            </div>                                                
+                            <p>Até 2 dias úteis</p>
+                            <p style="color: #CE5F20;">R$ xx,xx</p>
+                        </div>
+                        <div class="Agendada">
+                            <div>
+                                <input type="radio" id="agendada" name="entrega" value="op2" />
+                                <label for="agendada">Agendada</label>
+                            </div>                        
+                            <p>A partir de 16 dias úteis</p>
+                            <p style="color: #CE5F20;">R$ xx,xx</p>
+                        </div>
+                        <div class="Expressa">
+                            <div>
+                                <input type="radio" id="expressa" name="entrega" value="op3" />
+                                <label for="expressa">Expressa</label>
+                            </div>                        
+                            <p>Até 1 dia útil</p>
+                            <p style="color: #CE5F20;">R$ xx,xx</p>
+                        </div>  
+                    </div>                           
+                </div>
+            </div>
+            <div class="formas-pagamento">
+                <div class="opcoes-pagamento">
+                    <div class="pagamento-escolhido">
+                        <label for="cartao">Cartão de Crédito</label>
+                        <input type="radio" id="cartao" name="cartao">
+                    </div>            
+                    <select name="Pagamento">
+                        <option value="Preço à vista">Preço à vista</option>
+                        <option value="Em 2x de R$xx,xx sem juros">Em 2x de R$xx,xx sem juros</option>
+                        <option value="Em 3x de R$xx,xx sem juros">Em 3x de R$xx,xx sem juros</option>
+                        <option value="Em 4x de R$xx,xx sem juros">Em 4x de R$xx,xx sem juros</option>
+                        <option value="Em 5x de R$xx,xx sem juros">Em 5x de R$xx,xx sem juros</option>
+                        <option value="Em 6x de R$xx,xx sem juros">Em 6x de R$xx,xx sem juros</option>
+                        <option value="Em 7x de R$xx,xx sem juros">Em 7x de R$xx,xx sem juros</option>
+                        <option value="Em 8x de R$xx,xx sem juros">Em 8x de R$xx,xx sem juros</option>
+                        <option value="Em 9x de R$xx,xx sem juros">Em 9x de R$xx,xx sem juros</option>
+                        <option value="Em 10x de R$xx,xx sem juros">Em 10x de R$xx,xx sem juros</option>
+                    </select>                          
+                </div>
+                <div class="box-pagamentos">
+                    <div class="debito">
+                        <div>
+                            <img src="./images/icons8-parte-traseira-de-cartão-de-banco-48 1.png" alt="Cartão">                    
+                            <input type="radio" id="debito" name="pagamento">
+                            <label for="debito" style="padding-left: 136px;">Cartão de Débito</label>
+                        </div> 
+                    </div>                               
+                    <div class="boleto">
+                        <div>
+                            <img src="./images/icon-boleto.png" alt="Boleto">                
+                            <input type="radio" id="boleto" name="pagamento">
+                            <label for="boleto" style="padding-left: 197px;">Boleto</label>
+                        </div>
+                    </div>                           
+                    <div class="pix">
+                        <div>
+                            <img src="./images/icons8-pagamento-móvel-40 2.png" alt="Pix">                        
+                            <input type="radio" id="pix" name="pagamento">
+                            <label for="pix" style="padding-left: 245px;">Pix</label>
+                        </div> 
+                    </div>                               
+                </div>                       
+            </div>
+        </div>
+    </main>
 </body>
 </html>
-</div>
