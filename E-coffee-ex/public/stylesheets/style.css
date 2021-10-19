@@ -213,6 +213,53 @@ nav .nav-item .nav-login:hover{
     opacity: 1;
     visibility: visible;
 }
+/* ======================
+    RECUPERAR SENHA
+================== */
+main .recupera-senha{
+    background-color: #FFF1E0;
+    border-radius: 30px;
+    box-shadow: 0px 5px 20px 5px rgba(122, 122, 122, 0.4);
+    height: 500px;
+    margin-right: auto;
+    margin-left: 18%;
+    -webkit-box-shadow: 0px 5px 20px 5px rgba(122, 122, 122, 0.4);    
+    width: 1000px;
+}
+.recupera-senha .title-recsenha{
+    text-align: center;
+}
+.recupera-senha .title-recsenha h1{
+    padding-top: 25px;
+}
+.recupera-senha .body-senha{
+    text-align: center;
+}
+.recupera-senha .body-senha h3{
+    margin-top: 30px;
+}
+.recupera-senha .botoes-senha{
+    display: flex;
+    flex-direction: row;
+	justify-content: center;
+	margin: 30px;    
+}
+.recupera-senha .botoes-senha .links-senha{
+    border-radius: 20px;
+    background-color: #CE5F20;
+    height: auto;
+    margin-left: 80px;
+    margin-top: 60px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+}
+.recupera-senha .botoes-senha .links-senha a{
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
 /* ===================
     USUARIO  LOGADO
 ===================== */
@@ -579,7 +626,7 @@ main{
     margin-right: 283px;
     margin-top: 50px;
 }
-main h1{
+main .title-suaconta h1{
     color: #CE5F20;
     display: flex;
 }
@@ -709,6 +756,7 @@ main .criarEndereco a:hover{
 }
 /* ===== ACESSO E SEGURANCA ===== */
 .title-seguranca h1{
+    color: #CE5F20;
     justify-content: center;
 }
 .security-options{
