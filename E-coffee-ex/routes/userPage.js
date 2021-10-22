@@ -10,5 +10,7 @@ router.get('/', paginaDoUsuario.index);
 router.get('/rastrearPedido', paginaDoUsuario.rastreio);
 router.get('/seguranca', paginaDoUsuario.seguranca);
 router.get('/enderecos', paginaDoUsuario.enderecos);
+router.get('/seguranca/editar', paginaDoUsuario.telaEditarInformacoes);
+router.put('/seguranca/editar', paginaDoUsuario.editarPerfil);
 
 module.exports = router;

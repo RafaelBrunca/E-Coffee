@@ -260,6 +260,52 @@ main .recupera-senha{
     font-size: 22px;
     text-decoration: none;
 }
+/* LOGADO COM SUCESSO */
+
+.cadastrosucesso {
+	display: flex;
+    align-items: center;
+	justify-content: center;	
+}
+
+.cadastrosucesso .container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ce5f20;
+	flex-direction: column;
+	width: 50%;
+	height: 100%;
+	margin: 5rem 0;
+	border-radius: 50px;
+	font-size: 2rem;
+	color: #fff;
+	box-shadow: 0 0 2em rgba(0, 0, 0, 0.932);
+	text-align: center;
+}
+
+.cadastrosucesso .container h3 {
+	font-size: 3rem;
+	margin: 3rem 0 1rem 0;
+	padding: 20px 40px;
+}
+
+.cadastrosucesso .container div {
+	margin: 4rem 0;
+}
+
+.cadastrosucesso .container a {
+	background-color: #291616;
+    border: none;
+	border-radius: 50px;
+    color: white;
+	font-size: 2rem;
+    font-weight: bold;	
+	padding: 1.2rem 15rem;
+	text-decoration: none;
+    text-align: center;
+}
+
 /* ===================
     USUARIO  LOGADO
 ===================== */
@@ -774,19 +820,19 @@ main .criarEndereco a:hover{
     border-bottom: 1px solid black;
     width: 94%;
 }
-.security-options .acessibilidade .editar{
+.security-options .editar{
     background-color: #CE5F20;
     border-radius: 11px;
-    height: 27px;
-    margin-left: auto;
+    height: 35px;
     margin-top: 24px;
+    margin-left: 29px;
+    width: 85px;
 }
-.security-options .acessibilidade .editar a{
+.security-options .editar a{
     color: #fff;
     display: inline-block;
-    margin-top: 3px;
+    margin-top: 6px;    
     text-decoration: none;
-    width: 75px;
 }
 .acessibilidade .nome{
     margin-top: 34px;
@@ -798,9 +844,10 @@ main .criarEndereco a:hover{
     display: flex;
     font-size: 16px;
     height: 35px;
-    margin-top: 30px;
-    margin-left: 30px;
+    margin-left: auto;
+    margin-right: 26px;
     margin-bottom: 3%;
+    margin-top: -35px;
     width: 85px;
 }
 .security-options .concluido a{
@@ -810,12 +857,69 @@ main .criarEndereco a:hover{
     margin-left: 6px;
     text-decoration: none;
 }
+/* ========== EDITAR INFORMAÇÕES DO USUARIO ======= */
+.editar-perfil{
+    background-color: #FFF1E0;
+    border: 1px solid #CE5F20;
+    border-radius: 11px;
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.932);
+    height: 575px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6rem;
+    text-align: left;
+    width: 50rem;
+}
+
+.editar-perfil .editar{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.editar-perfil .campo{
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding-bottom: 16px;
+}
+
+.editar-perfil .campo label {
+    font-weight: bold;
+    font-size: 18px;
+}
+.editar-perfil .campo input {
+    border: 1px solid #CE5F20;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 25px;
+    width: 242px;
+}
+
+.editar-perfil .newllester{
+    display: flex;
+}
+
+.editar-perfil .newllester p{
+    font-size: 16px;
+}
+.editar-perfil .newllester input {
+    width: 18px;
+}
+
+.editar-perfil .salvar button{
+    border-radius: 10px;
+    border: 1px solid #CE5F20;
+    background-color: #CE5F20;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 30px;
+}
 /* ===== LISTA DE ENDEREÇOS ===== */
 .lista-enderecos{
     background-color: #FFF1E0;
     border-radius: 11px;
     border: 1px solid #CE5F20;
-    height: 266px;
     margin-left: 5%;
     width: 322px;
 }
@@ -826,7 +930,7 @@ main .criarEndereco a:hover{
 .lista-enderecos .endereco li{
     padding-bottom: 3px;
 }
-.editar{
+.enderecos-user .editar{
     display: flex;
     justify-content: space-around;
 }
@@ -846,7 +950,7 @@ main .criarEndereco a:hover{
     height: 37px;
     width: 80px;
 }
-.editar a{    
+.enderecos-user .editar a{    
     color: #fff;
     display: inline-block;
     margin-top: 8px;
@@ -1085,8 +1189,7 @@ body .descricao-pedido p{
         right: 60px;
         margin-top: -24px;
     }
-    header nav .search_button .search_box {
-        height: 30%;
+    header nav .search_button .search_box {        
         width: 45vw;
     }
     .itens{
@@ -1129,7 +1232,7 @@ body .descricao-pedido p{
         right: 269px;
     }
     nav .nav-item .dropdown-menu-login{
-        height: 325px;
+        height: 303px;
     }
     .bloco{
         height: 360px;

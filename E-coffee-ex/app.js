@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require("express-session");
 var locals = require('./middleware/locals');
+var methodOverride = require("method-override");
 
 /* Importação de rotas */
 var loginRouter = require('./routes/login');
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret: 'keyboard cat',resave: false,saveUninitialized: true}));
+app.use(methodOverride("_method"));
 
 app.use(locals);
 

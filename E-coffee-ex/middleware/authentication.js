@@ -1,5 +1,5 @@
 function authentication(req, res, next){
-    if(!req.session.email) {
+    if(!req.session.user) {
         return res.redirect('/iniciarcessao');
     }
     next();

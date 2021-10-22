@@ -4,21 +4,22 @@ var { check } = require('express-validator');
 const validacaoRegistro = [
     /* Checar Nome */
     check("name")
-        .trim()
         .notEmpty()
         .withMessage("O nome do campo é obrigatório")
         .isLength({ min: 3 })
         .withMessage("O campo deve ter no mínimo 3 caracteres"),
     /* Checar Sobrenome */
     check("lastname")
-        .trim()
         .notEmpty()
         .withMessage("O sobre nome é obrigatório")
         .isLength({ min: 3 })
         .withMessage("O campo deve ter no mínimo 3 caracteres"),
-     /* Checar CPF */
+    /* Checar Telefone */
+    check("telefone")
+		.isLength({ min: 11, max: 11 })
+		.withMessage("Preencha o telefone corretamente"),
+    /* Checar CPF */
     check("cpf", "CPF é obrigatório")
-        .trim()
         .isNumeric()
         .notEmpty()
         .isLength({ min: 11, max: 11 })
@@ -40,14 +41,17 @@ const validacaoRegistro = [
 	}),
     /* Checar Senha */
     check("password")
-        .isLength({ min: 6 })
-        .notEmpty()
+        .isLength({ min: 6, max: 30})
         .withMessage("A senha precisa ter 6 caracteres ou mais"),
-    check("corfirmpassword")
-        .notEmpty()
-        .isLength({ min: 6 }),
+    check("confirmpassword")
+        .isLength({ min: 6, max: 30 })
+        .withMessage("A senha precisa ter 6 caracteres ou mais")
+        .custom(async (confirmpassword, { req }) => {
+            const senha = req.body.password;
+            if(senha !== confirmpassword) {
+                throw new Error("As senhas devem ser iguais!");
+            }
+        }),
 ];
 
-module.exports = {
-    validacaoRegistro
-};
+module.exports = { validacaoRegistro };

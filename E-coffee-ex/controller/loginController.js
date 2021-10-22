@@ -8,12 +8,15 @@ const loginController = {
       (usuario) => usuario.email == email && usuario.password == password
     );
     if(usuarioEncontrado) {
-      req.session.email = usuarioEncontrado.email;
-      req.session.name = usuarioEncontrado.name;
-      req.session.cpf = usuarioEncontrado.cpf;
-      res.render('index');
+      req.session.user = {};
+      req.session.user.name = usuarioEncontrado.name;
+      req.session.user.lastname = usuarioEncontrado.lastname;
+      req.session.user.telefone = usuarioEncontrado.telefone;
+      req.session.user.cpf = usuarioEncontrado.cpf;
+      req.session.user.email = usuarioEncontrado.email;
+      res.redirect('/');      
     } else {
-      res.redirect('/');
+      res.render('index');
     }
   },
   cadastro: function(req, res) {
@@ -32,7 +35,6 @@ const loginController = {
       usuarios.push(novoUsuario);
       res.render("cadastro", { novoUsuario });
     }
-    
   }
 }
 

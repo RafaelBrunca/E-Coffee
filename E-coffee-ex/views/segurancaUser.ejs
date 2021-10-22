@@ -7,38 +7,35 @@
         <div class="acessibilidade">
             <p style="font-weight: bold;">Nome:</p>
             <div class="nome">
-                <p><%= sessao.name %></p>
-            </div>
-            <div class="editar">
-                <a href="#">Editar</a>
-            </div>
+                <p><%= sessao.user.name %> <%= sessao.user.lastname %></p>
+            </div>            
+        </div>
+        <div class="acessibilidade">
+            <p style="font-weight: bold;">Telefone:</p>
+            <div class="nome">
+                <p style="margin-left: -21px;"><%= sessao.user.telefone %></p>
+            </div>            
         </div>
         <div class="acessibilidade">
             <p style="font-weight: bold;">CPF:</p>
             <div class="nome">
-                <p style="margin-left: 13px;"><%= sessao.cpf %></p>
-            </div>
-            <div class="editar">
-                <a href="#">Editar</a>
-            </div>
+                <p style="margin-left: 13px;"><%= sessao.user.cpf %></p>
+            </div>            
         </div>
         <div class="acessibilidade">
             <p style="font-weight: bold;">E-mail:</p>
             <div class="nome">
-                <p><%= sessao.email %></p>
-            </div>
-            <div class="editar">
-                <a href="#">Editar</a>
-            </div>
+                <p><%= sessao.user.email %></p>
+            </div>            
         </div>
         <div class="acessibilidade">
             <p style="font-weight: bold;">Senha:</p>
             <div class="nome">
                 <p>***************</p>
-            </div>
-            <div class="editar">
-                <a href="#">Editar</a>
-            </div>
+            </div>            
+        </div>
+        <div class="editar">
+            <a href="/paginadousuario/seguranca/editar">Editar</a>
         </div>
         <div class="concluido">
             <a href="/paginadousuario">Concluído</a>
