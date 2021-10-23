@@ -26,7 +26,6 @@ const homeUserController = {
 			usuario.password = req.body.password;
 			return (req.session.user = usuario);
 		});
-        console.log(alterarUsuario)
 		return res.redirect('/paginadousuario/seguranca');
     },
 }

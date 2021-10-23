@@ -863,7 +863,7 @@ main .criarEndereco a:hover{
     border: 1px solid #CE5F20;
     border-radius: 11px;
     box-shadow: 0 0 2em rgba(0, 0, 0, 0.932);
-    height: 575px;
+    height: 38rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 6rem;
@@ -908,12 +908,26 @@ main .criarEndereco a:hover{
 
 .editar-perfil .salvar button{
     border-radius: 10px;
-    border: 1px solid #CE5F20;
+    border: 1px solid #e96112;
     background-color: #CE5F20;
     color: #ffffff;
     font-size: 14px;
     font-weight: bold;
     padding: 12px 30px;
+}
+
+.editar-perfil .cancel-edicao{
+    margin-left: 39.8rem;
+    margin-top: -2rem;
+}
+
+.editar-perfil .cancel-edicao a{
+    border-radius: 10px;
+    background-color: #CE5F20;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 12px 30px;
+    text-decoration: none;
 }
 /* ===== LISTA DE ENDEREÇOS ===== */
 .lista-enderecos{
