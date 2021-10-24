@@ -5,49 +5,32 @@
     </div>    
     <div class="enderecos-user">
         <div class="criarEndereco">
-            <a href="#">
+            <a href="/paginadousuario/enderecos/novoendereco">
                 <img src="/images/plus.png" alt="crirar" style="margin-top: 57px;">
                 <p>Adicionar Novo Endereço</p>
             </a>
         </div>
-        <div class="lista-enderecos">
-            <div class="endereco">
-                <h2>Nome do Endereço</h2>
-                <ul>
-                    <li>Rua tal tal tal da tal, nº</li>
-                    <li>Aqui o Bairro</li>
-                    <li>Cidade, Estado, CEP</li>
-                    <li>Aqui o País</li>                    
-                </ul>
-                <div class="editar">
-                    <div class="alterar">
-                        <a href="#">Alterar</a>
-                    </div>                        
-                    <div class="excluir">
-                        <a href="#">Excluir</a>
-                    </div>
-                </div>                 
+        <% for(let i = 0; i < enderecosUser.length; i++) { %>
+            <div class="lista-enderecos">
+                <div class="endereco">
+                    <h2><%= enderecosUser[i].apelido %> </h2>
+                    <ul>
+                        <li><%= enderecosUser[i].rua %>,Nº <%= enderecosUser[i].numero %></li>
+                        <li><%= enderecosUser[i].bairro %></li>
+                        <li><%= enderecosUser[i].cidade %>, <%= enderecosUser[i].estado %>, <%= sessao.user.cep %></li>
+                        <li>Complemento: <%= enderecosUser[i].complemento %></li>
+                    </ul>
+                    <div class="editar">
+                        <div class="alterar">
+                            <a href="#">Alterar</a>
+                        </div>                        
+                        <div class="excluir">
+                            <a href="#">Excluir</a>
+                        </div>
+                    </div>                 
+                </div>
             </div>
-        </div>
-        <div class="lista-enderecos">
-            <div class="endereco">
-                <h2>Nome do Endereço</h2>
-                <ul>
-                    <li>Rua tal tal tal da tal, nº</li>
-                    <li>Aqui o Bairro</li>
-                    <li>Cidade, Estado, CEP</li>
-                    <li>Aqui o País</li>                    
-                </ul>
-                <div class="editar">
-                    <div class="alterar">
-                        <a href="#">Alterar</a>
-                    </div>                        
-                    <div class="excluir">
-                        <a href="#">Excluir</a>
-                    </div>
-                </div>  
-            </div>
-        </div>            
+        <% } %>                  
     </div>
     <div class="voltar">
         <a href="/paginadousuario">Voltar</a>

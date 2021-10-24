@@ -14,6 +14,15 @@ const loginController = {
       req.session.user.telefone = usuarioEncontrado.telefone;
       req.session.user.cpf = usuarioEncontrado.cpf;
       req.session.user.email = usuarioEncontrado.email;
+      req.session.user.apelido = usuarioEncontrado.apelido;
+      req.session.user.cep = usuarioEncontrado.cep;
+      req.session.user.rua = usuarioEncontrado.rua;
+      req.session.user.numero = usuarioEncontrado.numero;
+      req.session.user.bairro = usuarioEncontrado.bairro;
+      req.session.user.cidade = usuarioEncontrado.cidade;
+      req.session.user.estado = usuarioEncontrado.estado;
+      req.session.user.complemento = usuarioEncontrado.complemento;
+
       res.redirect('/');      
     } else {
       res.render('index');

@@ -12,5 +12,8 @@ router.get('/seguranca', paginaDoUsuario.seguranca);
 router.get('/enderecos', paginaDoUsuario.enderecos);
 router.get('/seguranca/editar', paginaDoUsuario.telaEditarInformacoes);
 router.put('/seguranca/editar', paginaDoUsuario.editarPerfil);
+router.get('/enderecos/novoendereco', paginaDoUsuario.telaCriarEndereco);
+router.post('/enderecos/novoendereco/registrarendereco', paginaDoUsuario.registrarEndereco);
+
 
 module.exports = router;
