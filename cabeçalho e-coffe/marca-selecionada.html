@@ -7,14 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Endereço</title>
+    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/marca-selecionada.css">    
+    <title>Carrinho</title>
 </head>
 <body>
     <header>
         <div class="wrapper">
             <div class="index">
-                <a href="#">
+                <a href="index.html">
                     <img src="images/E- COFFEE 3.png" alt="e-coffee" width="113" height="86"/>
                 </a>
             </div>
@@ -22,12 +23,12 @@
                 <ul class="navbar_itens" style="height: 26.5px;">
                     <li class="nav-item">
                         <div class="dropdown">
-                            <a href="#">Home</a>
+                            <a href="./index.html">Home</a>
                         </div>   
                     </li>
                     <li class="nav-item">
                         <div class="dropdown">
-                            <a href="#">Sobre nós</a>
+                            <a href="./sobre-nos.html">Sobre nós</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -116,7 +117,7 @@
                     </li>
                     <li class="nav-item">
                         <div class="carrinho">
-                            <a href="#">
+                            <a href="../carrinho/carrinho.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                                 </svg>
@@ -127,134 +128,116 @@
             </nav>
         </div>
     </header>
-    <main>
-        <h1>Seus Endereços</h1>
-        <div class="enderecos-user">
-            <div class="criarEndereco">
-                <a href="#">
-                    <img src="images/plus.png" alt="crirar" style="margin-top: 57px;">
-                    <p>Adicionar Novo Endereço</p>
-                </a>
-            </div>
-            <div class="lista-enderecos">
-                <div class="endereco">
-                    <h2>Nome do Endereço</h2>
-                    <ul>
-                        <li>Rua tal tal tal da tal, nº</li>
-                        <li>Aqui o Bairro</li>
-                        <li>Cidade, Estado, CEP</li>
-                        <li>Aqui o País</li>
-                        <li>Telefone: ###########</li>
-                    </ul>
-                    <div class="editar">
-                        <div class="alterar">
-                            <a href="#">Alterar</a>
-                        </div>                        
-                        <div class="excluir">
-                            <a href="#">Excluir</a>
-                        </div>
-                    </div>                 
-                </div>
-            </div>
-            <div class="lista-enderecos">
-                <div class="endereco">
-                    <h2>Nome do Endereço</h2>
-                    <ul>
-                        <li>Rua tal tal tal da tal, nº</li>
-                        <li>Aqui o Bairro</li>
-                        <li>Cidade, Estado, CEP</li>
-                        <li>Aqui o País</li>
-                        <li>Telefone: ###########</li>
-                    </ul>
-                    <div class="editar">
-                        <div class="alterar">
-                            <a href="#">Alterar</a>
-                        </div>                        
-                        <div class="excluir">
-                            <a href="#">Excluir</a>
-                        </div>
-                    </div>  
-                </div>
-            </div>            
-        </div>
-        <div class="voltar">
-            <a href="./homeUser.html">Voltar</a>
-        </div>
-        <div class="whatsapp">
-            <a href="#"><img src="images/icons8-whatsapp-48.png"></a>
-        </div>
-    </main>
-    <footer>
-        <link rel="stylesheet" href="css/styleFooter.css">
-        <div class="teste">
-            <div class="logo">
-                <a href="#">
-                    <img src="images/E- COFFEE 3.png" alt="coffee" width="113" height="86"/>
-                </a>
-            </div>
-            <div class="coluna-principal">
-                <div class="coluna">
-                    <h3>Início</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Cafeteiras</a></li>
-                        <li><a href="#">Cápsulas</a></li>
-                    </ul>
-                </div>
     
-                <div class="coluna">
-                    <h3>Sobre nós</h3>
-                    <ul>
-                        <li><a href="#">Informações</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul> 
-                
+    <div class="produtos_filtros">
+        <section class="filtro">
+            <a href="index.html">
+                <img src="images/E- COFFEE 3.png" alt="e-coffee" width="113" height="86"/>
+            </a>
+        
+            <div class="filtrar">
+                <select id="option-preco">
+                    <option> Filtrar preço</option>
+                    <option value="maior">Maior para o menor</option>
+                    <option value="menor">Menor para o maior</option>
+                </select>
+            </div>
+        
+        
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                  <input type="radio" name="options" id="option1" checked> Mondial
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="options" id="option2"> Dolce Gusto
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="options" id="option3"> Philco
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" id="option4"> Nespresso
+                  </label>
+              </div>
+        
+              <div class="filtrar">
+                <select id="option-cor">
+                    <option> Filtrar cor</option>
+                    <option value="red"> 🟥 Vermelho</option>
+                    <option value="black">⬛ Preto</option>
+                    <option value="white">⬜ Branco</option>
+                    <option value="gray">⬜ Cinza</option>
+                </select>   
+            </div>
+         </section>
+
+         <div class="juntar_produtos">
+            <section class="bloco-container">
+                <div class="bloco-teste">
+                    <div class="bloco01">
+                            <img src="./images/Mondial.png" alt="">            
+                        <div class='descricao-home'>
+                            <p>Mondial <br> R$: XX,XX</p></div>            
+                    </div>
+                    <div class="bloco01">
+                            <img src="./images/Nepresso.png" alt="">
+                        <div class='descricao-home'>
+                            <p>Philco <br> R$: XX,XX</p></div>
+                    </div>
+                    <div class="bloco01">
+                            <img src="./images/Philco.png" alt="">
+                        <div class='descricao-home'>
+                            <p>Nespresso <br> R$: XX,XX</p
+                         ></div>
+                    </div>
                 </div>
-                <div class="coluna">
-                    <h3>Suporte</h3>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="#">Chat</a></li>
-                   </ul>
+            </section>
+            <section class="bloco-container">
+                <div class="bloco-teste">
+                    <div class="bloco01">
+                            <img src="./images/Mondial.png" alt="">            
+                        <div class='descricao-home'>
+                            <p>Mondial <br> R$: XX,XX</p></div>            
+                    </div>
+                    <div class="bloco01">
+                            <img src="./images/Nepresso.png" alt="">
+                        <div class='descricao-home'>
+                            <p>Philco <br> R$: XX,XX</p></div>
+                    </div>
+                    <div class="bloco01">
+                            <img src="./images/Philco.png" alt="">
+                        <div class='descricao-home'>
+                            <p>Nespresso <br> R$: XX,XX</p
+                         ></div>
+                    </div>
+                </div>
+            </section>
+            <section class="bloco-container">
+                <div class="bloco-teste">
+                    <div class="bloco01">
+                            <img src="./images/Mondial.png" alt="">            
+                        <div class='descricao-home'>
+                            <p>Mondial <br> R$: XX,XX</p></div>            
+                    </div>
+                    <div class="bloco01">
+                            <img src="./images/Nepresso.png" alt="">
+                        <div class='descricao-home'>
+                            <p>Philco <br> R$: XX,XX</p></div>
+                    </div>
+                    <div class="bloco01">
+                            <img src="./images/Philco.png" alt="">
+                        <div class='descricao-home'>
+                            <p>Nespresso <br> R$: XX,XX</p
+                         ></div>
+                    </div>
+                </div>
+            </section>
+         </div>
+         
+    </div>
+
+
+
+
     
-                </div>
-                <div class="coluna">
-                    <h3>Minha conta</h3>
-                        <ul>
-                            <li><a href="#">Meus pedidos</a></li>
-                            <li><a href="#">Endereço de entrega</a></li>
-                            <li><a href="#">Alterar senha</a></li>
-                            <li><a href="#">Alterar cadastro</a></li>
-                            <li><a href="#">Minha conta</a></li>
-                        </ul>
-                </div>
-            </div>
-            <div class="newsletter">
-                <h3>Newsletter</h3>
-                <p>Receba as ofertas e dicas</p>
-                <label for="e-mail"></label>
-                <input type="email" id="email" name="email" placeholder="Digite seu e-mail aqui">
-                <button type="submit">Enviar</button>
-            </div>      
-        </div>
-        <div class="footer-bottom">
-            <div class="seguranca">
-                <a href="#">segurança</a>
-                <img src="images/icons8-cyber-security-48.png" alt="seguranca"/>
-            </div>
-            <div class="social">
-                <a href="https://twitter.com/login?lang=pt">
-                <img src="images/icons8-twitter-48.png" alt="twitter"/>
-                </a>
-                <a href="https://pt-br.facebook.com">
-                <img src="images/icons8-facebook-48.png" alt="facebook"/>
-                </a>
-                <a href="https://www.instagram.com">
-                <img src="images/icons8-instagram-48.png" alt="instagram"/>
-                </a>
-            </div>
-        </div> 
-    </footer>
 </body>
 </html>
