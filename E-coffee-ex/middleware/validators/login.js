@@ -1,4 +1,4 @@
-const usuarioModel = require('../../models/usuarios');
+const usuarioModel = require('../../Modelteste/usuarios');
 var { check } = require('express-validator');
 
 const validacaoRegistro = [

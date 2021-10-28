@@ -1,4 +1,4 @@
-const usuarios = require('../models/usuarios');
+const usuarios = require('../Modelteste/usuarios');
 
 const homeUserController = {
     index: function(req, res) {
@@ -55,6 +55,12 @@ const homeUserController = {
             complemento: complemento,
         })
         res.redirect('/paginadousuario/enderecos')
+    },
+    telaEditarEnderecos: function(req, res) {
+
+    },
+    EditarEnderecos: function(req, res) {
+
     },
 }
 

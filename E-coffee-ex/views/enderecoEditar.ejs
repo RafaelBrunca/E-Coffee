@@ -1,0 +1,53 @@
+<%- include('./partials/header') %> 
+<main>
+    <div class="editar-endereco">
+        <div class="editar">
+            <form method="POST" action="/paginadousuario/enderecos/editar?_method=PUT">
+                <div class="campo">
+                    <label for="apelido">Nome do Endereço:</label>                        
+                    <div class="input">
+                        <input type="text" id="apelido" name="apelido" placeholder="Digite um nome para o Endereço" value="<%= sessao.user.apelido %>">                            
+                    </div>            
+                </div>
+                <div class="campo">
+                    <label for="cep">Cep:</label>
+                    <div class="input">
+                        <input type="text" maxlength="8" id="cep" name="cep" placeholder="CEP" value="<%= sessao.user.cep %>">
+                    </div>                        
+                </div>
+                <div class="campo">
+                    <label for="rua">Rua:</label>
+                    <label for="numero" style="padding-left: 15rem;">Número da casa:</label>
+                    <div class="input">
+                        <input type="text" id="rua" name="rua" placeholder="Nome da Rua" value="<%= sessao.user.rua %>">
+                        <input type="text" id="numero" name="numero" placeholder="Número" value="<%= sessao.user.numero %>"style="margin-left: 1.8rem;width: 57px;">
+                    </div>                        
+                </div>                    
+                <div class="campo">
+                    <label for="bairro">Bairro:</label>
+                    <div class="input">
+                        <input type="text" id="bairro" name="bairro" placeholder="Bairro" value="<%= sessao.user.bairro %>">
+                    </div>                        
+                </div>
+                <div class="campo">
+                    <label for="cidade">Cidade:</label>
+                    <label for="estado" style="padding-left: 13.5rem;">Estado:</label>
+                    <div class="input">
+                        <input type="text" id="cidade" name="cidade" placeholder="Cidade" value="<%= sessao.user.cidade %>">
+                        <input type="text" maxlength="2" id="estado" name="estado" value="<%= sessao.user.estado %>"placeholder="estado" style="margin-left: 1.8rem;width: 57px;">
+                    </div>                        
+                </div>
+                <div class="campo">
+                    <label for="complemento">Complemento:</label>
+                    <div class="input">
+                        <input type="text" id="complemento" name="complemento" placeholder="Complemento" value="<%= sessao.user.complemento %>">
+                    </div>                        
+                </div>
+                <div class='salvar'>
+                    <button type="submit">Salvar Alterações</button>                   
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<%- include('./partials/footer') %>
