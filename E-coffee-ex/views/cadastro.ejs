@@ -3,49 +3,49 @@
 <head>
     <link rel="stylesheet" href="/stylesheets/login.css">
 </head>
-<% if(!novoUsuario) { %> 
+<% if(!result) { %> 
     <div class="body-login">
         <div class="container" id="container" <% if(locals.errors) { %> style="min-height: 41rem;" <% } %>  >
             <div class="form-container sign-up-container">
                 <form action="/login/create" method="POST">
                     <h1>Cadastre-se</h1>            
-                    <input type="text" name="name" placeholder="Nome" value="<%= locals.old && old.name %>" />
+                    <input type="text" name="name" placeholder="Nome" />
                     <% if(locals.errors && errors.name) { %>
                         <span style="color: white;">
                             <%= errors.name.msg %>
                         </span>
                     <% } %> 
-                    <input type="text" name="lastname" placeholder="Sobrenome" value="<%= locals.old && old.lastname %>" />
+                    <input type="text" name="lastname" placeholder="Sobrenome" />
                     <% if(locals.errors && errors.lastname) { %>
                         <span style="color: white;">
                             <%= errors.lastname.msg %>
                         </span>
                     <% } %>
-                    <input type="text" name="telefone" placeholder="Telefone" value="<%= locals.old && old.telefone %>" />
+                    <input type="text" name="telefone" maxlength="11" placeholder="Telefone" />
                     <% if(locals.errors && errors.telefone) { %>
                         <span style="color: white;">
                             <%= errors.telefone.msg %>
                         </span>
                     <% } %> 
-                    <input type="text" name="cpf" placeholder="CPF" value="<%= locals.old && old.cpf %>" />
+                    <input type="text" name="cpf" maxlength="11" placeholder="CPF" />
                     <% if(locals.errors && errors.cpf) { %>
                         <span style="color: white;">
                             <%= errors.cpf.msg %>
                         </span>
                     <% } %> 
-                    <input type="email" name="email" placeholder="E-mail" value="<%= locals.old && old.email %>" />
+                    <input type="email" name="email" placeholder="E-mail" />
                     <% if(locals.errors && errors.email) { %>
                         <span style="color: white;">
                             <%= errors.email.msg %>
                         </span>
                     <% } %> 
-                    <input type="password" name="password" placeholder="Senha" value="<%= locals.old && old.password %>" />
+                    <input type="password" name="password" placeholder="Senha" />
                     <% if(locals.errors && errors.password) { %>
                         <span style="color: white;">
                             <%= errors.password.msg %>
                         </span>
                     <% } %> 
-                    <input type="password" name="confirmpassword" placeholder="Confirme a Senha" value="<%= locals.old && old.confirmpassword %>" />
+                    <input type="password" name="confirmpassword" placeholder="Confirme a Senha" />
                     <% if(locals.errors && errors.confirmpassword) { %>
                         <span style="color: white;" >
                             <%= errors.confirmpassword.msg %>
@@ -79,7 +79,7 @@
     </div>
 </div>
 <% } %>
-<% if(novoUsuario) { %>
+<% if(result) { %>
     <div class="cadastrosucesso">
         <div class="container">
             <h3>
