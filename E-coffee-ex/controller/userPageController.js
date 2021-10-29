@@ -57,10 +57,10 @@ const homeUserController = {
         res.redirect('/paginadousuario/enderecos')
     },
     telaEditarEnderecos: function(req, res) {
-
+        res.render('enderecoEditar')
     },
     EditarEnderecos: function(req, res) {
-
+        
     },
 }
 
