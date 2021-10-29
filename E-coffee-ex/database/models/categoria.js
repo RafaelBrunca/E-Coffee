@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
-    const produto = sequelize.define("Categoria" , {
+    const Categoria = sequelize.define("Categoria" , {
         id_produto_categoria: {
-            type: DataTypes.INTERGER.UNSIGNED,
-            primaryKey: true
+            type: DataTypes.INTEGER.UNSIGNED,
+            primaryKey: true,
         },
         nome_categoria: DataTypes.STRING(45)
     },{
