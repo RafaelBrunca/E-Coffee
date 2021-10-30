@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs');
+
 module.exports = (sequelize, DataTypes) => {
     const Cliente = sequelize.define('Cliente', {
         id_cliente: { 
@@ -16,7 +18,13 @@ module.exports = (sequelize, DataTypes) => {
         senha: DataTypes.STRING(100),
     }, {
         tableName: 'clientes',
-        timestamps: false
+        timestamps: false,
+        instanceMethods: {
+            
+            verifyPassword: function(password,hash) {
+                return bcrypt.compareSync(password,hash);
+            }
+        }
     });
     return Cliente;
 }

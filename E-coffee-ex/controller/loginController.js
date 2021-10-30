@@ -1,19 +1,32 @@
 const db = require('../database/models');
 
-const usuarios = require('../Modelteste/usuarios'); // Model Teste
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
 const loginController = {
-  login: function(req, res) {
+  login: async function(req, res) {
     const { email, password } = req.body;
-    const usuarioEncontrado = usuarios.find(
-      (usuario) => usuario.email == email && usuario.password == password
-    );
+
+    const usuarioEncontrado = await db.Cliente.findOne({
+      where: { email: email }
+    },
+      function(err, user) {
+      if (err) {
+        return done(err);
+      }
+      if (!user) {
+        return done(null, false);
+      }
+      if (user.senha != password) {
+        return done(null, false);
+      }
+      return done(null, user);
+    });
+
     if(usuarioEncontrado) {
       req.session.user = {};
-      req.session.user.name = usuarioEncontrado.name;
-      req.session.user.lastname = usuarioEncontrado.lastname;
+      req.session.user.name = usuarioEncontrado.nome;
+      req.session.user.lastname = usuarioEncontrado.sobrenome;
       req.session.user.telefone = usuarioEncontrado.telefone;
       req.session.user.cpf = usuarioEncontrado.cpf;
       req.session.user.email = usuarioEncontrado.email;
@@ -26,7 +39,7 @@ const loginController = {
       req.session.user.estado = usuarioEncontrado.estado;
       req.session.user.complemento = usuarioEncontrado.complemento;
 
-      res.redirect('/');      
+      res.redirect('/');
     } else {
       res.render('index');
     }
@@ -59,7 +72,6 @@ const loginController = {
       }).catch((err) => {
         console.log(err);
       });
-      
     }
   }
 }
