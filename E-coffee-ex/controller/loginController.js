@@ -1,35 +1,40 @@
 const db = require('../database/models');
 
-const usuarios = require('../Modelteste/usuarios'); // Model Teste
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
 const loginController = {
-  login: function(req, res) {
-    const { email, password } = req.body;
-    const usuarioEncontrado = usuarios.find(
-      (usuario) => usuario.email == email && usuario.password == password
-    );
-    if(usuarioEncontrado) {
-      req.session.user = {};
-      req.session.user.name = usuarioEncontrado.name;
-      req.session.user.lastname = usuarioEncontrado.lastname;
-      req.session.user.telefone = usuarioEncontrado.telefone;
-      req.session.user.cpf = usuarioEncontrado.cpf;
-      req.session.user.email = usuarioEncontrado.email;
-      req.session.user.apelido = usuarioEncontrado.apelido;
-      req.session.user.cep = usuarioEncontrado.cep;
-      req.session.user.rua = usuarioEncontrado.rua;
-      req.session.user.numero = usuarioEncontrado.numero;
-      req.session.user.bairro = usuarioEncontrado.bairro;
-      req.session.user.cidade = usuarioEncontrado.cidade;
-      req.session.user.estado = usuarioEncontrado.estado;
-      req.session.user.complemento = usuarioEncontrado.complemento;
+  login: async function(req, res) {
 
-      res.redirect('/');      
-    } else {
-      res.render('index');
+    const { email, password } = req.body;
+
+    const user = await db.Cliente.findOne({ where: { email: email} });
+
+    if (!user) {
+      return res.render('index');
     }
+
+    if(!await bcrypt.compare(password, user.senha)) {
+      return res.render('index');
+    }
+
+    req.session.user = {};
+    req.session.user.id = user.id_cliente;
+    req.session.user.name = user.nome;
+    req.session.user.lastname = user.sobrenome;
+    req.session.user.telefone = user.telefone;
+    req.session.user.cpf = user.cpf;
+    req.session.user.email = user.email;
+    req.session.user.apelido = user.apelido;
+    req.session.user.cep = user.cep;
+    req.session.user.rua = user.rua;
+    req.session.user.numero = user.numero;
+    req.session.user.bairro = user.bairro;
+    req.session.user.cidade = user.cidade;
+    req.session.user.estado = user.estado;
+    req.session.user.complemento = user.complemento;
+
+    res.redirect('/');
   },
   cadastro: function(req, res) {
     result = undefined;
@@ -59,7 +64,6 @@ const loginController = {
       }).catch((err) => {
         console.log(err);
       });
-      
     }
   }
 }

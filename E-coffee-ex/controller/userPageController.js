@@ -1,3 +1,6 @@
+const db = require('../database/models');
+
+const bcrypt = require('bcryptjs');
 const usuarios = require('../Modelteste/usuarios');
 const router = require('../routes/userPage');
 
@@ -14,8 +17,36 @@ const homeUserController = {
     telaEditarInformacoes: function(req, res) {
         res.render("editarUsuario");
     },
-    editarPerfil: function(req, res) {        
-        const alterarUsuario = usuarios.map((usuario) => {
+    editarPerfil: async function(req, res) {
+        
+        const { name, lastname, telefone, cpf, email, password } = req.body;
+        
+        const senhaCriptografada = bcrypt.hashSync(password, 12);
+
+        const alterarUsuario = await db.Cliente.update({ 
+            nome: name,
+            sobrenome: lastname,
+            telefone: telefone,
+            cpf: cpf,
+            email: email,
+            password: senhaCriptografada,
+        },{
+            where: { id_cliente: req.session.user.id }
+        }
+        ).then((result) => { 
+            req.session.user.name = name;
+            req.session.user.lastname = lastname;
+            req.session.user.telefone = telefone;
+            req.session.user.cpf = cpf;
+            req.session.user.email = email;
+            res.redirect('/paginadousuario/seguranca')
+        })
+        .catch((err) => {
+            console.log(err)
+        });
+         
+        
+        /* usuarios.map((usuario) => {
 			usuario.name = req.body.name;
 			usuario.lastname = req.body.lastname;
 			usuario.telefone = req.body.telefone;
@@ -23,8 +54,11 @@ const homeUserController = {
 			usuario.email = req.body.email;
 			usuario.password = req.body.password;
 			return (req.session.user = usuario);
-		});
-		return res.redirect('/paginadousuario/seguranca');
+		}); */
+
+
+
+		
     },
     enderecos: function(req, res) {
         res.render('enderecosUser', {
