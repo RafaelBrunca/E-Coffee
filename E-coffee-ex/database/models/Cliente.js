@@ -19,12 +19,6 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         tableName: 'clientes',
         timestamps: false,
-        instanceMethods: {
-            
-            verifyPassword: function(password,hash) {
-                return bcrypt.compareSync(password,hash);
-            }
-        }
     });
     return Cliente;
 }
