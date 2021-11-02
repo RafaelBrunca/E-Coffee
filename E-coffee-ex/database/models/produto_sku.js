@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         produto_sku: DataTypes.STRING(150),
         id_produto: DataTypes.INTEGER.UNSIGNED,
     },{
-        tableName: 'clientes',
+        tableName: 'produtos_sku',
         timestamps: false
     });
     return Produto_sku

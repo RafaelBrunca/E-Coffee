@@ -5,14 +5,14 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
         },
         quantidade_produto_estoque: DataTypes.INTEGER.UNSIGNED,
-        produto_sku: DataTypes.INTEGER.UNSIGNED,
+        sku_do_produto: DataTypes.INTEGER.UNSIGNED,
     },{
-        tableName: 'produto_estoque',
+        tableName: 'produtos_estoque',
         timestamps: false
     });
 
     Produto_estoque.associate = (models) => {
-        Produto_estoque.belongsToMany(models.Produto_sku, { as: "produto_sku", foreignKey: "id" });
+        Produto_estoque.hasOne(models.Produto_sku, { as: "sku_do_produtoObj", foreignKey: "id_produto_sku" });
     }
     return Produto_estoque;
 }

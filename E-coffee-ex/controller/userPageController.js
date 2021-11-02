@@ -2,7 +2,6 @@ const db = require('../database/models');
 
 const bcrypt = require('bcryptjs');
 const usuarios = require('../Modelteste/usuarios');
-const router = require('../routes/userPage');
 
 const homeUserController = {
     index: function(req, res) {
@@ -80,40 +79,25 @@ const homeUserController = {
         res.render('enderecoEditar');
     },
 
-    //Edição de endereços via express
-    /*editarEnderecos: function(req, res) {
-        const editarEndereco = usuarios.map((usuario) => {
-            usuario.apelido = req.body.apelido;
-            usuario.cep = req.body.cep;
-            usuario.rua = req.body.rua;
-            usuario.numero = req.body.numero;
-            usuario.bairro = req.body.bairro;
-            usuario.cidade = req.body.cidade;
-            usuario.estado = req.body.estado;
-            usuario.complemento = req.body.complemento;
-            return (req.session.user = usuario)
-        });
-        return res.redirect('/paginadousuario/enderecos')
-    },*/
-    
-    //Integração de sequelize em editar endereço
-    editarEnderecos: function(req,res) {
-        db.endereco.update({
-            apelido = req.body.apelido,
-            cep = req.body.cep,
-            rua = req.body.rua,
-            numero = req.body.numero,
-            bairro = req.body.bairro,
-            cidade = req.body.cidade,
-            estado = req.body.estado,
-            complemento = req.body.complemento,
-        }).then((result) => {
+    editarEnderecos: async function(req,res) {
+        const editaEndereco = await db.Endereco.update({
+            nome_do_endereco: req.body.apelido,
+            logradouro: req.body.rua,
+            cep: req.body.cep,
+            num_residencia: req.body.numero,
+            bairro: req.body.bairro,
+            cidade: req.body.cidade,
+            uf: req.body.estado,
+            complemento: req.body.complemento,
+            },{
+                where: { id_cliente: req.session.user.id }
+            }
+        ).then((result) => {
             res.render(('enderecoEditar', {result}))
         }).catch((err) => {
             console.log(err)
-        });
+        })
     },
-    
 }
 
 module.exports = homeUserController;
