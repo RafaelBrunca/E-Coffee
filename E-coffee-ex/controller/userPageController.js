@@ -111,6 +111,7 @@ const homeUserController = {
         return res.redirect('/paginadousuario/enderecos')
     },*/
     
+    //Integração de sequelize em editar endereço
     editarEnderecos: function(req,res) {
         db.endereco.update({
             apelido = req.body.apelido,
