@@ -42,7 +42,7 @@ const loginController = {
   },
   create: async function(req, res) {
 
-    var senhaCriptografada = bcrypt.hashSync(req.body.password, 12);
+    const senhaCriptografada = bcrypt.hashSync(req.body.password, 12);
 
     const errors = validationResult(req);
 

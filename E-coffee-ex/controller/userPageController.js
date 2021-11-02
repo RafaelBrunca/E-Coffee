@@ -43,21 +43,6 @@ const homeUserController = {
         .catch((err) => {
             console.log(err)
         });
-         
-        
-        /* usuarios.map((usuario) => {
-			usuario.name = req.body.name;
-			usuario.lastname = req.body.lastname;
-			usuario.telefone = req.body.telefone;
-			usuario.cpf = req.body.cpf;
-			usuario.email = req.body.email;
-			usuario.password = req.body.password;
-			return (req.session.user = usuario);
-		}); */
-
-
-
-		
     },
     enderecos: function(req, res) {
         res.render('enderecosUser', {
