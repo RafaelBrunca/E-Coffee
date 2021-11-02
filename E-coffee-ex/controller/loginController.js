@@ -12,27 +12,13 @@ const loginController = {
 
     if (!user) {
       return res.render('index');
-    }
+    };
 
     if(!await bcrypt.compare(password, user.senha)) {
       return res.render('index');
-    }
+    };
 
-    req.session.user = {};
-    req.session.user.id = user.id_cliente;
-    req.session.user.name = user.nome;
-    req.session.user.lastname = user.sobrenome;
-    req.session.user.telefone = user.telefone;
-    req.session.user.cpf = user.cpf;
-    req.session.user.email = user.email;
-    req.session.user.apelido = user.apelido;
-    req.session.user.cep = user.cep;
-    req.session.user.rua = user.rua;
-    req.session.user.numero = user.numero;
-    req.session.user.bairro = user.bairro;
-    req.session.user.cidade = user.cidade;
-    req.session.user.estado = user.estado;
-    req.session.user.complemento = user.complemento;
+    req.session.user = user;
 
     res.redirect('/');
   },

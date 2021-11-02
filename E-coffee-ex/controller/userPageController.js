@@ -30,11 +30,11 @@ const homeUserController = {
             email: email,
             password: senhaCriptografada,
         },{
-            where: { id_cliente: req.session.user.id }
+            where: { id_cliente: req.session.user.id_cliente }
         }
         ).then((result) => { 
-            req.session.user.name = name;
-            req.session.user.lastname = lastname;
+            req.session.user.nome = name;
+            req.session.user.sobrenome = lastname;
             req.session.user.telefone = telefone;
             req.session.user.cpf = cpf;
             req.session.user.email = email;
