@@ -1,4 +1,6 @@
-const usuarioModel = require('../../Modelteste/usuarios');
+const db = require('../../database/models');
+
+const CPF = require('cpf');
 var { check } = require('express-validator');
 
 const validacaoRegistro = [
@@ -22,30 +24,37 @@ const validacaoRegistro = [
     check("cpf", "CPF é obrigatório")
         .isNumeric()
         .notEmpty()
-        .isLength({ min: 11, max: 11 })
-        .withMessage("Um CPF valido é obrigatório"),
+        .custom( async (cpfBody) => {
+            const formatCpf = await CPF.format(cpfBody);
+            const validaCpf = CPF.isValid(formatCpf);
+
+            if (!validaCpf) {
+                return Promise.reject("Digite um CPF válido!");
+            };
+        }),
     /* Checar E-mail */
-    check("email").custom((emailBody) => {
-		const procuraEmail = usuarioModel.find(
-			(email) => email.email == emailBody
-		);
+    check("email").custom( async (emailBody) => {
+        /* Recupera e compara informações com o db */
+		const procuraEmail = await db.Cliente.findOne({
+            where: {email: emailBody}
+        });
 		if (!emailBody) {
 			return Promise.reject("E-mail é obrigatório");
-		}
+		};
 		if (!procuraEmail) {
 			return emailBody;
-		}
+		};
 		if (procuraEmail.email) {
 			return Promise.reject("E-mail já cadastrado");
-		}
+		};
 	}),
     /* Checar Senha */
     check("password")
-        .isLength({ min: 6, max: 30})
+        .isLength({ min: 6, max: 100})
         .withMessage("A senha precisa ter 6 caracteres ou mais"),
     check("confirmpassword")
-        .isLength({ min: 6, max: 30 })
-        .withMessage("A senha precisa ter 6 caracteres ou mais")
+        .isLength({ min: 6, max: 100 })
+        .withMessage("As senhas devem ser iguais!")
         .custom(async (confirmpassword, { req }) => {
             const senha = req.body.password;
             if(senha !== confirmpassword) {

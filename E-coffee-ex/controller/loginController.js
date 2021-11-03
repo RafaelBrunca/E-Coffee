@@ -11,11 +11,11 @@ const loginController = {
     const user = await db.Cliente.findOne({ where: { email: email} });
 
     if (!user) {
-      return res.render('index');
+      return res.send({ error: 'E-mail não encontrado' });
     };
 
     if(!await bcrypt.compare(password, user.senha)) {
-      return res.render('index');
+      return res.send({ error: 'Senha incorreta' });
     };
 
     req.session.user = user;

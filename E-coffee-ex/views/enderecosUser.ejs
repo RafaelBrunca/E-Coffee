@@ -13,11 +13,11 @@
         <% for(let i = 0; i < enderecosUser.length; i++) { %>
             <div class="lista-enderecos">
                 <div class="endereco">
-                    <h2><%= enderecosUser[i].apelido %> </h2>
+                    <h2><%= enderecosUser[i].nome_do_endereco %> </h2>
                     <ul>
-                        <li><%= enderecosUser[i].rua %>,Nº <%= enderecosUser[i].numero %></li>
+                        <li><%= enderecosUser[i].logradouro %>,Nº <%= enderecosUser[i].num_residencia %></li>
                         <li><%= enderecosUser[i].bairro %></li>
-                        <li><%= enderecosUser[i].cidade %>, <%= enderecosUser[i].estado %>, <%= sessao.user.cep %></li>
+                        <li><%= enderecosUser[i].cidade %>, <%= enderecosUser[i].uf %>, <%= sessao.user.cep %></li>
                         <li>Complemento: <%= enderecosUser[i].complemento %></li>
                     </ul>
                     <div class="editar">

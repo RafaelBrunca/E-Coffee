@@ -44,36 +44,34 @@ const homeUserController = {
             console.log(err)
         });
     },
-    enderecos: function(req, res) {
+    enderecos: async function(req, res) {
+        const enderecos = await db.Endereco.findAll( {where: { cliente: req.session.user.id_cliente } })
         res.render('enderecosUser', {
-            enderecosUser: usuarios
+            enderecosUser: enderecos,
         });
     },
     telaCriarEndereco: function(req, res) {
         res.render('enderecoCriar');
     },
     registrarEndereco: function(req, res) {
-        
-        const apelidoEndereco = req.body.apelido;
-        const cep = req.body.cep;
-        const rua = req.body.rua;
-        const numero = req.body.numero;
-        const bairro = req.body.bairro;
-        const cidade = req.body.cidade;
-        const estado = req.body.estado;
-        const complemento = req.body.complemento;
-        
-        usuarios.push({
-            apelido: apelidoEndereco,
+
+        const { apelidodoendereco, rua, cep, numero, bairro, cidade, estado, complemento } = req.body;
+
+        const criarEndereco = db.Endereco.create({
+            nome_do_endereco: apelidodoendereco,
+            logradouro: rua,
             cep: cep,
-            rua: rua,
-            numero: numero,
+            num_residencia: numero,
             bairro: bairro,
             cidade: cidade,
-            estado: estado,
+            uf: estado,
             complemento: complemento,
+            cliente: req.session.user.id_cliente
+        }).then((result) => {
+            return res.redirect('/paginadousuario/enderecos');
+        }).catch((err) => {
+            console.log(err);
         });
-        res.redirect('/paginadousuario/enderecos')
     },
     telaEditarEnderecos: function(req, res) {
         res.render('enderecoEditar');
