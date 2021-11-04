@@ -14,7 +14,6 @@ html, body{
    /* flex-wrap: wrap; */
     /* height: 110px; */
     margin: 0 auto;
-    margin-left: 50px;
     justify-content: space-around;
     width: 100%;
     padding: 50px 0; /* em alguns casos é interessante definir tamanho por padding*/
@@ -72,81 +71,34 @@ h1{
     
 }
 
-.Painel{
-    font-size: 14px;
-    float: inline-start;
+.painel ul{
+    display: flex;
     margin-right: 3%;
-    width: auto;
 }
-.Vendas{
-    font-size: 14px;
-    float: left;
-    margin-right: 3%;
-    width: auto;
+.painel a{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 2rem;
+    text-decoration: none;
 }
-.Catálogo{
-    font-size: 14px;
-    float: left;
-    margin-right: 3%;
-    width: auto;
-}
-.Clientes{
-    font-size: 14px;
-    float: left;
-    margin-right: 3%;
-    width: auto;
-}
-.Métodos{
-    font-size: 14px;
-    float: left;
-    margin-right: 3%;
-    width: auto;
-}
-.Promoções{
-    font-size: 14px;
-    float: left;
-    margin-right: 3%;
-    width: auto;
-}
-.CMS{
-    font-size: 14px;
-    float: left;
-    margin-right: 3%;
-    width: auto;
-}
-.Google{
-    font-size: 14px;
-    float: left;
-    margin-right: 3%;
-    width: auto;
-}
-.Relatórios{
-    font-size: 14px;
-    float: left;
-    width: auto;
-}
+
 .Ciclo{
     margin-top: 2%;
     font-size: 14px;
-    float: inline-start;
     background-color: #CE5F20;
-    justify-content: space-around;
     border-radius: 11px;
     width: 30%;
     padding: 10px;
-    flex-direction: column;
 }
 .ValorCiclo{
     font-size: 14px;
     background-color: #FFF1E0;
-    justify-content: space-around;
-    float: inline-start;
     border-radius: 11px;
     width: 30%;
     padding: 10px;
     height: 40px;
     margin-right: 10px;
     margin-top: 50px;
-    flex-direction: column;
 }
 
