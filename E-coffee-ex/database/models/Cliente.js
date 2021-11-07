@@ -1,5 +1,3 @@
-const bcrypt = require('bcryptjs');
-
 module.exports = (sequelize, DataTypes) => {
     const Cliente = sequelize.define('Cliente', {
         id_cliente: { 
@@ -20,5 +18,10 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'clientes',
         timestamps: false,
     });
+
+    Cliente.associate = (models) => {
+        Cliente.hasMany(models.Endereco, { foreignKey: "cliente", as: "enderecos" });
+    };
+
     return Cliente;
 }

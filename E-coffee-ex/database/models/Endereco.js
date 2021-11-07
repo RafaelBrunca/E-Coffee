@@ -11,14 +11,13 @@ module.exports = (sequelize, DataTypes) => {
         bairro: DataTypes.STRING(200),
         cidade: DataTypes.STRING(200),
         uf: DataTypes.STRING(2),
-        complemento: DataTypes.STRING(250),
-        cliente: DataTypes.INTEGER.UNSIGNED
+        complemento: DataTypes.STRING(250)
     }, {
         tableName: 'cli_enderecos',
         timestamps: false,
     });
     Endereco.associate = (models) => {
-        Endereco.hasOne(models.Cliente, { as: "clienteObj", foreignKey: "id_cliente" });
+        Endereco.belongsTo(models.Cliente, { foreignKey: "cliente", as: "id_cliente" });
     };
     return Endereco;
 }

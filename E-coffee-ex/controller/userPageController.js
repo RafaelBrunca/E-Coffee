@@ -2,6 +2,7 @@ const db = require('../database/models');
 
 const bcrypt = require('bcryptjs');
 const usuarios = require('../Modelteste/usuarios');
+const { ExpectationFailed } = require('http-errors');
 
 const homeUserController = {
     index: function(req, res) {
@@ -38,7 +39,7 @@ const homeUserController = {
             req.session.user.telefone = telefone;
             req.session.user.cpf = cpf;
             req.session.user.email = email;
-            res.redirect('/paginadousuario/seguranca')
+            res.redirect('/paginadousuario/'+ req.session.user.id_cliente + '/seguranca')
         })
         .catch((err) => {
             console.log(err)
@@ -46,18 +47,19 @@ const homeUserController = {
     },
     enderecos: async function(req, res) {
         const enderecos = await db.Endereco.findAll( {where: { cliente: req.session.user.id_cliente } })
+        req.session.user.enderecos = enderecos;
         res.render('enderecosUser', {
-            enderecosUser: enderecos,
+            enderecos: enderecos,
         });
     },
     telaCriarEndereco: function(req, res) {
         res.render('enderecoCriar');
     },
-    registrarEndereco: function(req, res) {
+    registrarEndereco: async function(req, res) {
 
         const { apelidodoendereco, rua, cep, numero, bairro, cidade, estado, complemento } = req.body;
 
-        const criarEndereco = db.Endereco.create({
+        const criarEndereco = await  db.Endereco.create({
             nome_do_endereco: apelidodoendereco,
             logradouro: rua,
             cep: cep,
@@ -68,13 +70,21 @@ const homeUserController = {
             complemento: complemento,
             cliente: req.session.user.id_cliente
         }).then((result) => {
-            return res.redirect('/paginadousuario/enderecos');
+            return res.redirect('/paginadousuario/' + req.session.user.id_cliente + '/enderecos');
         }).catch((err) => {
             console.log(err);
         });
     },
-    telaEditarEnderecos: function(req, res) {
-        res.render('enderecoEditar');
+    telaEditarEnderecos: async function(req, res) {
+        const { id_cli_enderecos } = req.params;
+        
+        const editar = await db.Endereco.findByPk(id_cli_enderecos)
+
+        .then((result) => 
+        {return res.render('enderecoEditar', 
+            { editarEndereco: result})})
+        .catch((err) => 
+            {console.log(err)});
     },
 
     editarEnderecos: async function(req,res) {
@@ -88,14 +98,18 @@ const homeUserController = {
             uf: req.body.estado,
             complemento: req.body.complemento,
             },{
-                where: { id_cliente: req.session.user.id }
+                where: { id_cli_enderecos: req.params.id_cli_enderecos }
             }
         ).then((result) => {
-            res.render(('enderecoEditar', {result}))
+            return res.redirect('/paginadousuario/' + req.session.user.id_cliente + '/enderecos');
         }).catch((err) => {
             console.log(err)
         })
     },
+    excluir: async function(req, res) {
+        await db.Endereco.destroy({ where: { id_cli_enderecos: req.params.id_cli_enderecos } });
+        return res.redirect('/paginadousuario/' + req.session.user.id_cliente + '/enderecos');
+    }
 }
 
 module.exports = homeUserController;

@@ -14,7 +14,8 @@ router.get('/seguranca/editar', paginaDoUsuario.telaEditarInformacoes);
 router.put('/seguranca/editar', paginaDoUsuario.editarPerfil);
 router.get('/enderecos/novoendereco', paginaDoUsuario.telaCriarEndereco);
 router.post('/enderecos/novoendereco/registrarendereco', paginaDoUsuario.registrarEndereco);
-router.get('/enderecos/editar', paginaDoUsuario.telaEditarEnderecos);
-router.put('/enderecos/editar', paginaDoUsuario.editarEnderecos);
+router.get('/enderecos/editar/:id_cli_enderecos', paginaDoUsuario.telaEditarEnderecos);
+router.put('/enderecos/editar/:id_cli_enderecos', paginaDoUsuario.editarEnderecos);
+router.get('/enderecos/excluir/:id_cli_enderecos', paginaDoUsuario.excluir)
 
 module.exports = router;

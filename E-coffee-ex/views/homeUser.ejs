@@ -9,21 +9,21 @@
                 <h2>Seus Pedidos</h2>
                 <div class="redirect">
                     <img src= "/images/package.png" alt="Pedidos" style="width: 77px;height: 64px;">
-                    <a href="/paginadousuario/rastrearPedido">Rastrear Seus Pedidos ou Comprar Novamente</a>
+                    <a href="/paginadousuario/<%= sessao.user.id_cliente %>/rastrearPedido">Rastrear Seus Pedidos ou Comprar Novamente</a>
                 </div>                
             </div>
             <div class="options">
                 <h2>Acesso e Segurança</h2>
                 <div class="redirect">
                     <img src= "/images/shield.png" alt="Segurança" style="width: 77px;height: 64px;">
-                    <a href="/paginadousuario/seguranca">Alterar informações pessoais</a>
+                    <a href="/paginadousuario/<%= sessao.user.id_cliente %>/seguranca">Alterar informações pessoais</a>
                 </div>                
             </div>
             <div class="options">
                 <h2>Seus Endereços</h2>
                 <div class="redirect">
                     <img src= "/images/home.png" alt="home" style="width: 77px;height: 64px;">
-                    <a href="/paginadousuario/enderecos">Cadastrar novos endereços ou alterá-los</a>
+                    <a href="/paginadousuario/<%= sessao.user.id_cliente %>/enderecos">Cadastrar novos endereços ou alterá-los</a>
                 </div>     
             </div>
         </div>

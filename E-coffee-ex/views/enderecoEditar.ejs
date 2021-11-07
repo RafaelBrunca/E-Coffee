@@ -2,45 +2,45 @@
 <main>
     <div class="editar-endereco">
         <div class="editar">
-            <form method="POST" action="/paginadousuario/enderecos/editar?_method=PUT">
+            <form method="POST" action="/paginadousuario/<%= sessao.user.id_cliente %>/enderecos/editar/<%= editarEndereco.id_cli_enderecos %>/?_method=PUT">
                 <div class="campo">
                     <label for="apelido">Nome do Endereço:</label>                        
                     <div class="input">
-                        <input type="text" id="apelido" name="apelido" placeholder="Digite um nome para o Endereço" value="<%= sessao.user.apelido %>">                            
+                        <input type="text" id="apelido" name="apelido" placeholder="Digite um nome para o Endereço" value="<%= editarEndereco.nome_do_endereco%>">                            
                     </div>            
                 </div>
                 <div class="campo">
                     <label for="cep">Cep:</label>
                     <div class="input">
-                        <input type="text" maxlength="8" id="cep" name="cep" placeholder="CEP" value="<%= sessao.user.cep %>">
+                        <input type="text" maxlength="8" id="cep" name="cep" placeholder="CEP" value="<%= editarEndereco.cep %>">
                     </div>                        
                 </div>
                 <div class="campo">
                     <label for="rua">Rua:</label>
                     <label for="numero" style="padding-left: 15rem;">Número da casa:</label>
                     <div class="input">
-                        <input type="text" id="rua" name="rua" placeholder="Nome da Rua" value="<%= sessao.user.rua %>">
-                        <input type="text" id="numero" name="numero" placeholder="Número" value="<%= sessao.user.numero %>"style="margin-left: 1.8rem;width: 57px;">
+                        <input type="text" id="rua" name="rua" placeholder="Nome da Rua" value="<%= editarEndereco.logradouro %>">
+                        <input type="text" id="numero" name="numero" placeholder="Número" value="<%= editarEndereco.num_residencia %>"style="margin-left: 1.8rem;width: 57px;">
                     </div>                        
                 </div>                    
                 <div class="campo">
                     <label for="bairro">Bairro:</label>
                     <div class="input">
-                        <input type="text" id="bairro" name="bairro" placeholder="Bairro" value="<%= sessao.user.bairro %>">
+                        <input type="text" id="bairro" name="bairro" placeholder="Bairro" value="<%= editarEndereco.bairro %>">
                     </div>                        
                 </div>
                 <div class="campo">
                     <label for="cidade">Cidade:</label>
                     <label for="estado" style="padding-left: 13.5rem;">Estado:</label>
                     <div class="input">
-                        <input type="text" id="cidade" name="cidade" placeholder="Cidade" value="<%= sessao.user.cidade %>">
-                        <input type="text" maxlength="2" id="estado" name="estado" value="<%= sessao.user.estado %>"placeholder="estado" style="margin-left: 1.8rem;width: 57px;">
+                        <input type="text" id="cidade" name="cidade" placeholder="Cidade" value="<%= editarEndereco.cidade %>">
+                        <input type="text" maxlength="2" id="estado" name="estado" value="<%= editarEndereco.uf %>"placeholder="estado" style="margin-left: 1.8rem;width: 57px;">
                     </div>                        
                 </div>
                 <div class="campo">
                     <label for="complemento">Complemento:</label>
                     <div class="input">
-                        <input type="text" id="complemento" name="complemento" placeholder="Complemento" value="<%= sessao.user.complemento %>">
+                        <input type="text" id="complemento" name="complemento" placeholder="Complemento" value="<%= editarEndereco.complemento %>">
                     </div>                        
                 </div>
                 <div class='salvar'>

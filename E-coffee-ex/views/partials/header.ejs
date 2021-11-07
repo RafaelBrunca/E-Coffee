@@ -80,11 +80,11 @@
                     <% if(sessao.user) { %>
                     <li class="nav-item">
                         <div class="logado">
-                            <a href="/paginadousuario"><%= sessao.user.nome %></a>
+                            <a href="/paginadousuario/<%= sessao.user.id_cliente %> "><%= sessao.user.nome %></a>
                             <div class="dropdown-logado">
                                 <h4>Olá, <%= sessao.user.nome %></h4>
                                 <div class="log-group">
-                                    <a href="/paginadousuario">Meu perfil</a>
+                                    <a href="/paginadousuario/<%= sessao.user.id_cliente %> ">Meu perfil</a>
                                 </div>
                                 <div class="log-group">
                                     <a href="/logout">Sair</a>

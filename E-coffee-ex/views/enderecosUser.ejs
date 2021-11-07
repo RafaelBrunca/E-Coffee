@@ -5,27 +5,27 @@
     </div>    
     <div class="enderecos-user">
         <div class="criarEndereco">
-            <a href="/paginadousuario/enderecos/novoendereco">
+            <a href="/paginadousuario/<%= sessao.user.id_cliente %>/enderecos/novoendereco">
                 <img src="/images/plus.png" alt="crirar" style="margin-top: 57px;">
                 <p>Adicionar Novo Endereço</p>
             </a>
         </div>
-        <% for(let i = 0; i < enderecosUser.length; i++) { %>
+        <% for(let i = 0; i < enderecos.length; i++) { %>
             <div class="lista-enderecos">
                 <div class="endereco">
-                    <h2><%= enderecosUser[i].nome_do_endereco %> </h2>
+                    <h2><%= enderecos[i].nome_do_endereco %> </h2>
                     <ul>
-                        <li><%= enderecosUser[i].logradouro %>,Nº <%= enderecosUser[i].num_residencia %></li>
-                        <li><%= enderecosUser[i].bairro %></li>
-                        <li><%= enderecosUser[i].cidade %>, <%= enderecosUser[i].uf %>, <%= sessao.user.cep %></li>
-                        <li>Complemento: <%= enderecosUser[i].complemento %></li>
+                        <li><%= enderecos[i].logradouro %>,Nº <%= enderecos[i].num_residencia %></li>
+                        <li><%= enderecos[i].bairro %></li>
+                        <li><%= enderecos[i].cidade %>, <%= enderecos[i].uf %>, <%= enderecos.cep %></li>
+                        <li>Complemento: <%= enderecos[i].complemento %></li>
                     </ul>
                     <div class="editar">
                         <div class="alterar">
-                            <a href="/paginadousuario/enderecos/editar<% enderecosUser[i].id %>">Alterar</a>
+                            <a href="/paginadousuario/<%= sessao.user.id_cliente %>/enderecos/editar/<%= enderecos[i].id_cli_enderecos %>">Alterar</a>
                         </div>                        
                         <div class="excluir">
-                            <a href="#">Excluir</a>
+                            <a href="/paginadousuario/<%= sessao.user.id_cliente %>/enderecos/excluir/<%= enderecos[i].id_cli_enderecos %>">Excluir</a>
                         </div>
                     </div>                 
                 </div>
@@ -33,7 +33,7 @@
         <% } %>                  
     </div>
     <div class="voltar">
-        <a href="/paginadousuario">Voltar</a>
+        <a href="/paginadousuario/<%= sessao.user.id_cliente %>">Voltar</a>
     </div>
     <div class="whatsapp">
         <a href="#"><img src="images/icons8-whatsapp-48.png"></a>

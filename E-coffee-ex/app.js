@@ -33,7 +33,7 @@ app.use(locals);
 app.use('/login', loginRouter);
 app.use('/', indexRouter);
 app.use('/carrinho', carrinhoRouter);
-app.use('/paginadousuario', homeUserRouter);
+app.use('/paginadousuario/:id_cliente', homeUserRouter);
 app.use('/sobre', sobreRouter);
 
 // catch 404 and forward to error handler
