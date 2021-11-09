@@ -1,0 +1,44 @@
+html, body{
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.login{
+    margin-top: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 12.2rem;
+}
+
+.logo img{
+    margin-left: 1rem;
+}
+
+.logo p{
+    margin-top: 0;
+    margin-left: -21px;
+    width: max-content;
+}
+
+.login-form input{
+    height: 20px;
+    width: 160px;
+}
+
+.login-form .user{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.login-form .senha{
+    margin-bottom: 1rem;
+}
+
+.login-form button{
+    background-color: #CE5F20;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: larger;
+    height: 1.8rem;
+    width: 10.5rem;
+}

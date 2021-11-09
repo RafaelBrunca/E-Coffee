@@ -1,7 +1,6 @@
 const db = require('../database/models');
 
 const bcrypt = require('bcryptjs');
-const usuarios = require('../Modelteste/usuarios');
 const { ExpectationFailed } = require('http-errors');
 
 const homeUserController = {
