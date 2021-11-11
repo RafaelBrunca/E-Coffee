@@ -1,0 +1,104 @@
+html, body{
+    font-family: 'Red Hat Display', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #C4C4C4;
+}
+
+.wrapper{
+    background-color: #291616;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    display: flex;
+   /* flex-wrap: wrap; */
+    /* height: 110px; */
+    margin: 0 auto;
+    justify-content: space-around;
+    width: 100%;
+    padding: 50px 0; /* em alguns casos é interessante definir tamanho por padding*/
+}
+
+/* ========================
+          Navbar
+=========================== */
+.index{
+    margin-left: 50px;
+}
+header ul, header li {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+ul,li{
+    list-style-type: none;
+    padding: 0;
+}
+header nav{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+header nav a{
+    color: #FFFFFF;
+    line-height: 24px;
+    margin: 0 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+}
+header nav a .seta{
+    margin-left: 5px;
+}
+header nav a:hover{
+    color: #CE5F20;
+    transition-duration: 0.25s;
+}
+
+main{
+    margin-left: 201px;
+    margin-right: 283px;
+    margin-top: 50px;
+}
+h1{
+    display: flex;
+}
+
+.index{
+    font-size: 32px;
+    margin-right: 0%;
+    
+}
+
+.painel ul{
+    display: flex;
+    margin-right: 3%;
+}
+.painel a{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 2rem;
+    text-decoration: none;
+}
+
+.Ciclo{
+    margin-top: 2%;
+    font-size: 14px;
+    background-color: #CE5F20;
+    border-radius: 11px;
+    width: 30%;
+    padding: 10px;
+}
+.ValorCiclo{
+    font-size: 14px;
+    background-color: #FFF1E0;
+    border-radius: 11px;
+    width: 30%;
+    padding: 10px;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 50px;
+}
+

@@ -1,0 +1,48 @@
+<%- include('./partials/header') %>
+<main>
+    <div class="title-seguranca">
+        <h1>Acesso e Segurança</h1>
+    </div>
+    <div class="security-options">
+        <div class="acessibilidade">
+            <p style="font-weight: bold;">Nome:</p>
+            <div class="nome">
+                <p><%= sessao.user.nome %> <%= sessao.user.sobrenome %></p>
+            </div>            
+        </div>
+        <div class="acessibilidade">
+            <p style="font-weight: bold;">Telefone:</p>
+            <div class="nome">
+                <p style="margin-left: -21px;"><%= sessao.user.telefone %></p>
+            </div>            
+        </div>
+        <div class="acessibilidade">
+            <p style="font-weight: bold;">CPF:</p>
+            <div class="nome">
+                <p style="margin-left: 13px;"><%= sessao.user.cpf %></p>
+            </div>            
+        </div>
+        <div class="acessibilidade">
+            <p style="font-weight: bold;">E-mail:</p>
+            <div class="nome">
+                <p><%= sessao.user.email %></p>
+            </div>            
+        </div>
+        <div class="acessibilidade">
+            <p style="font-weight: bold;">Senha:</p>
+            <div class="nome">
+                <p>***************</p>
+            </div>            
+        </div>
+        <div class="editar">
+            <a href="/paginadousuario/<%= sessao.user.id_cliente %>/seguranca/editar">Editar</a>
+        </div>
+        <div class="concluido">
+            <a href="/paginadousuario/<%= sessao.user.id_cliente %>">Concluído</a>
+        </div>
+    </div>
+    <div class="whatsapp">
+        <a href="#"><img src="images/icons8-whatsapp-48.png"></a>
+    </div>
+</main>
+<%- include('./partials/footer') %> 

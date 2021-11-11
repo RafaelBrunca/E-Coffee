@@ -1,0 +1,105 @@
+<%- include('./partials/header') %> 
+<main>
+    <div class="title">
+        <h1>Carrinho</h1>
+    </div>    
+    <div class="descricoes">
+        <ul class="dsc">
+            <li>Nome do Produto</li>
+        </ul>
+        <ul class="dsc-quantidade">
+            <li style="margin-left: 5px;">Preço unitário</li>
+            <li>Qtd.</li>
+            <li style="margin-right: 0px;margin-left: 27px;">Subtotal</li>
+        </ul>                        
+    </div>
+    <div class="container-carrinho">
+        <div class="produto">
+            <img src="images/Mondial-C-08 3.png" alt="Mondial">
+        </div>
+        <div class="nome-produto">                
+            <p>Cafeteira Mondial Espresso C-08 automática expresso 110V preta</p>
+            <div class="exc">
+                <a href = "#">Remover Produto</a>
+            </div>             
+        </div>
+        <div class="descricao">                
+            <p>R$XX,XX</p>
+        </div>
+        <div class="descricao">
+            <div class="descricao-quantidade">
+                <form action="">         
+                    <input type="number" name= "quantidade">
+                </form>
+            </div>                
+        </div>
+        <div class="descricao">                
+            <p>R$XX,XX</p>
+        </div>
+    </div>
+    <div class="limpar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+        </svg>
+        <a href="#">Limpar Carrinho</a>
+    </div>
+    <div class="frete">
+        <div class="titulo">
+            <p style="width: 158px;">Calcular Frete</p>
+        </div>
+        <div class="calc-frete">
+            <p>Digite o CEP para calcular o valor do frete e o prazo de entrega</p>
+            <form action="">
+                <input type="text" placeholder="CEP" onkeypress="return event.charCode >= 48 && event.charCode <= 57" style="margin-top: 12px;">
+            </form>                
+            <form action="">
+                <input type="button" value="OK">
+            </form>                
+        </div>
+        <div class="sem-cep">
+            <a href="#">Não sei meu CEP</a>
+        </div>
+    </div>
+    <div class="cupom">
+        <div class="titulo">
+            <p style="width: 226px;">Cupom de Desconto</p>
+        </div>
+        <div class="calc-desconto">
+            <p>Utilize o Cupom para calcular seu desconto</p>
+            <form action="">
+                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" style="margin-top: 12px;">
+            </form>
+            <form action="">
+                <input type="button" value="OK">
+            </form>
+        </div>            
+    </div>
+    <div class="resumo-pedido">
+        <div class="resumo-descri">
+            <p>Produto 01</p>
+            <p style="width: 39.567px;">Frete</p>
+        </div>
+        <div class="resumo-preco">
+            <p>R$ XX,XX</p>
+            <p>R$ XX,XX</p>
+        </div>
+    </div>
+    <div class="total">
+        <p>Valor Total</p>
+        <div class="valor-emDinheiro">
+            <p>R$XX,XX</p>
+        </div>
+    </div>
+    <div class="fnz">
+        <div class="continuar">
+            <a href="/">Continuar Comprando</a>
+        </div>
+        <div class="finalizar">
+            <a href="#">Finalizar Pedido</a>
+        </div>
+    </div>
+    <div class="whatsapp">
+        <a href="#"><img src="images/icons8-whatsapp-48.png"></a>
+    </div>
+</main>
+<%- include('./partials/footer') %> 

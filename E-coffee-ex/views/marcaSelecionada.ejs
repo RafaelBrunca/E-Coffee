@@ -1,0 +1,120 @@
+<%- include('./partials/header'); %>
+<div class="produtos_filtros">
+    <section class="filtro">
+        <a href="index.html">
+            <img src="images/E- COFFEE 3.png" alt="e-coffee" width="113" height="86"/>
+        </a>
+    
+        <div class="filtrar">
+            <select id="option-preco">
+                <option> Filtrar preço</option>
+                <option value="maior">Maior para o menor</option>
+                <option value="menor">Menor para o maior</option>
+            </select>
+        </div>
+    
+    
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary active">
+              <input type="radio" name="options" id="option1" checked> Mondial
+            </label>
+            <label class="btn btn-primary">
+              <input type="radio" name="options" id="option2"> Dolce Gusto
+            </label>
+            <label class="btn btn-primary">
+              <input type="radio" name="options" id="option3"> Philco
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option4"> Nespresso
+              </label>
+          </div>
+    
+          <div class="filtrar">
+            <select id="option-cor">
+                <option> Filtrar cor</option>
+                <option value="red"> 🟥 Vermelho</option>
+                <option value="black">⬛ Preto</option>
+                <option value="white">⬜ Branco</option>
+                <option value="gray">⬜ Cinza</option>
+            </select>   
+        </div>
+     </section>
+
+     <div class="juntar_produtos">
+        <section class="bloco-container">
+            <div class="bloco-teste">
+                <a href="">
+                    <div class="bloco01">
+                        <img src="./images/Mondial.png" alt="">            
+                    <div class='descricao-home'>
+                        <p>Mondial <br> R$: XX,XX</p></div>            
+                </div>
+                </a> 
+    
+                <a href="#">
+                    <div class="bloco01">
+                        <img src="./images/Nepresso.png" alt="">
+                    <div class='descricao-home'>
+                        <p>Philco <br> R$: XX,XX</p></div>
+                </div>
+                </a>
+                
+                <a href=""><div class="bloco01">
+                    <img src="./images/Philco.png" alt="">
+                <div class='descricao-home'>
+                    <p>Nespresso <br> R$: XX,XX</p
+                 ></div>
+            </div></a>    
+            </div>
+        </section>
+        <section class="bloco-container">
+            <div class="bloco-teste">
+                <a href="">
+                    <div class="bloco01">
+                        <img src="./images/Mondial.png" alt="">            
+                    <div class='descricao-home'>
+                        <p>Mondial <br> R$: XX,XX</p></div>            
+                </div>
+                </a>    
+                <a href="#">
+                    <div class="bloco01">
+                        <img src="./images/Nepresso.png" alt="">
+                    <div class='descricao-home'>
+                        <p>Philco <br> R$: XX,XX</p></div>
+                    </div>
+                </a>                
+                <a href=""><div class="bloco01">
+                    <img src="./images/Philco.png" alt="">
+                <div class='descricao-home'>
+                    <p>Nespresso <br> R$: XX,XX</p>
+                </div>
+            </div></a>    
+            </div>
+        </section>
+        <section class="bloco-container">
+            <div class="bloco-teste">
+                <a href="">
+                    <div class="bloco01">
+                        <img src="./images/Mondial.png" alt="">            
+                    <div class='descricao-home'>
+                        <p>Mondial <br> R$: XX,XX</p></div>            
+                    </div>
+                </a>    
+                <a href="#">
+                    <div class="bloco01">
+                        <img src="./images/Nepresso.png" alt="">
+                    <div class='descricao-home'>
+                        <p>Philco <br> R$: XX,XX</p></div>
+                    </div>
+                </a>                
+                <a href=""><div class="bloco01">
+                    <img src="./images/Philco.png" alt="">
+                <div class='descricao-home'>
+                    <p>Nespresso <br> R$: XX,XX</p>
+                </div>
+            </div></a>    
+            </div>
+        </section>
+     </div>     
+</div>
+<%- include('./partials/footer') %>
