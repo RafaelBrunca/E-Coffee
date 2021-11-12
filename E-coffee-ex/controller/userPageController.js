@@ -108,7 +108,26 @@ const homeUserController = {
     excluir: async function(req, res) {
         await db.Endereco.destroy({ where: { id_cli_enderecos: req.params.id_cli_enderecos } });
         return res.redirect('/paginadousuario/' + req.session.user.id_cliente + '/enderecos');
-    }
+    },
+
+// Criar e editar produtos //
+
+    produtos: async function(req, res) {
+        const produtos = await db.produtos.findAll( {where: { cliente: req.session.user.id_cliente } })
+        req.session.user.produtos = produtos;
+        res.render('produtosUser', {
+            produtos: produtos,
+        });
+    },
+
+    telaCriarProduto: function(req, res) {
+        res.render('produtoCriar');
+    },
+
+    registrarProduto: async function(req, res) {
+        
+    },
+
 }
 
 module.exports = homeUserController;
