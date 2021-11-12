@@ -20,10 +20,13 @@ const adminController = {
       return res.send({ error: 'Senha incorreta' });
     };
     
-    res.send('LOGADOOO')
+    res.send('logado')
   },
   gerenciarProdutos: function(req, res) {
     res.render('admin/gerenciarProdutos')
+  },
+  telaAdicionar: function(req, res) {
+    res.render('admin/adicionarProduto');
   },
 };
 

@@ -140,3 +140,120 @@ li.acoes{
 .descricao a{
     color: black;
 }
+
+/* =================
+    ADICIONAR PRODUTO   
+================= */
+.new-produto .container-adicionar{
+    display: flex;
+    margin-left: 9rem;
+}
+
+.new-produto .novo-produto{
+    background-color: #E5E5E5;
+    display: inline-block;
+    width: 80%;
+}
+
+.new-produto .novo-produto label{
+    font-weight: bold;
+}
+
+.new-produto .form-produto{
+    display: flex;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.new-produto .nome-produto input{
+    width: 50rem;
+}
+
+.new-produto .codigo-produto{
+    margin-top: 1rem;
+    margin-left: 8rem;
+}
+
+.new-produto .codigo-produto #sku{
+    margin-right: 5rem;
+}
+
+.new-produto .status{
+    margin-top: 1rem;
+    margin-left: 8rem;
+}
+
+.new-produto .status #categoria{
+    margin-left: 8rem;
+}
+
+.new-produto .descricao{
+    margin-top: 1rem;
+}
+
+.new-produto #descricao{
+    height: 7rem;
+    width: 120%;
+}
+
+.new-produto #infotecnica{
+    height: 5rem;
+    width: 120%;
+}
+
+.new-produto .ficha{
+    margin-left: 7rem;
+}
+
+.new-produto #peso{
+    margin-right: 2rem;
+}
+
+.new-produto #preco{
+    margin-right: 2rem;
+}
+.new-produto .info-tecnicas{
+    margin-top: 1rem;
+}
+
+.new-produto .ficha{
+    margin-top: 1rem;
+}
+
+.new-produto .title-pagina{
+    margin-top: 1rem;
+}
+
+.new-produto #titulo{
+    width: 84%;
+}
+
+.new-produto .palavra-chave{
+    margin-top: 1rem;
+}
+
+.new-produto #palavrachave{
+    height: 4rem;
+    width: 120%;
+}
+
+.new-produto .imagem{
+    margin-top: 1rem;
+}
+
+.new-produto #imagem{
+    margin-right: 2rem;
+}
+
+.new-produto #register{
+    background-color: #CE5F20;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    height: 2rem;
+    margin-top: 3rem;
+    width: 7rem;
+}

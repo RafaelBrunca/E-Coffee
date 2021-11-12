@@ -1,0 +1,75 @@
+<%- include('../partials/admin/header') %>
+    <main class="new-produto">
+        <div class="container-adicionar">
+            <h2>Novo Produto</h2>
+        </div>
+        <div class="novo-produto">
+            <div class="form-produto">
+                <form action="POST" action="">
+                    <div class="nome-produto">
+                        <label for="nomeproduto">Nome:</label>
+                        <input type="text" name="nomeproduto" id="nomeproduto" >
+                    </div>
+                    <div class="codigo-produto">
+                    <label for="sku">SKU:</label>
+                        <input type="text" name="sku" id="sku" >
+                    <label for="codigobarras">Código EAN/GTIN:</label>
+                        <input type="text" name="codigobarras" id="codigobarras" >
+                    </div>
+                    <div class="status">
+                        <label for="status">Status:</label>
+                        <select name="status">
+                            <option value="Habilitado" select>Habilitado</option>
+                            <option value="Desabilitado" >Desabilitado</option>
+                        </select>
+                        <label for="categoria" id="categoria">Categoria:</label>
+                        <select name="categoria">
+                            <option value="Cafeteira" >Cafeteira</option>
+                            <option value="Cápsula" >Cápsula</option>
+                        </select>
+                    </div>
+                    <div class="descricao">
+                        <label for="descricao">Descrição do Produto:</label>
+                        <div>
+                            <textarea id="descricao" name="descricao"></textarea>
+                        </div>                        
+                    </div>                    
+                    <div class="info-tecnicas">
+                        <label for="infotecnica">Informações técnicas:</label>
+                        <div>
+                            <textarea id="infotecnica" name="infotecnica"></textarea>
+                        </div>                        
+                    </div>
+                    <div class="ficha">
+                        <label for="peso">Peso:</label>
+                        <input type="text" name="peso" id="peso" >
+                        <label for="preco">Preço:</label>
+                        <input type="text" name="preco" id="preco" >
+                        <label for="custo">Custo:</label>
+                        <input type="text" name="custo" id="custo" >
+                    </div>                    
+                    <div class="title-pagina">
+                        <label for="titulo">Título da Página:</label>
+                        <input type="text" name="titulo" id="titulo" >
+                    </div>
+                    <div class="palavra-chave">
+                        <label for="palavrachave">Palavras-chave:</label>
+                        <div>
+                            <textarea id="palavrachave" name="palavrachave"></textarea>
+                        </div>
+                    </div>
+                    <div class="imagem">
+                        <label for="imagem">Imagem:</label>
+                        <div>
+                            <input type="file" name="imagem" id="imagem" />
+                            <label for="estoque">Estoque:</label>
+                            <input type="text" name="estoque" id="estoque" />
+                        </div>
+                    </div>
+                    <button type="submit" id="register">Registrar</button>              
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
