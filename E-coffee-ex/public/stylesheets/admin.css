@@ -16,10 +16,32 @@ html, body{
     width: 100%;
     padding: 50px 0;
 }
+.wrapper .user{
+    display: ruby;
+    color: #fff;
+    margin-top: 3rem;
+    margin-right: 13rem;
+}
+
+.wrapper .user p{
+    border-right: 1px solid #fff;
+    padding-right: 6px;
+    text-decoration: underline;
+}
+
+.wrapper .user a{
+    color: #fff;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+.wrapper .user a:hover{
+    color: #CE5F20;
+}
 
 .index{
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 34.3rem;
 }
 
 main{
@@ -28,7 +50,7 @@ main{
     margin-top: 50px;
 }
 
-.navbar_itens ul, .navbar_itens li {
+ul.navbar_itens, .navbar_itens li {
     padding: 0;
     list-style: none;
 }

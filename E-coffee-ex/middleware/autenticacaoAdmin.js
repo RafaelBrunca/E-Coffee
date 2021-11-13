@@ -1,5 +1,5 @@
 function autenticacaoAdmin(req, res, next){
-    if(!true) {
+    if(!req.session.admin) {
         return res.redirect('/admin');
     }
     next();

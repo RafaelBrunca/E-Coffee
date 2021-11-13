@@ -19,14 +19,16 @@ const adminController = {
     if(!await bcrypt.compare(senha, user.senha)) {
       return res.send({ error: 'Senha incorreta' });
     };
+
+    req.session.admin = user;
     
-    res.send('logado')
+    res.send('logado');
   },
   gerenciarProdutos: function(req, res) {
-    res.render('admin/gerenciarProdutos')
+    return res.render('admin/gerenciarProdutos');
   },
   telaAdicionar: function(req, res) {
-    res.render('admin/adicionarProduto');
+    return res.render('admin/adicionarProduto');
   },
 };
 
