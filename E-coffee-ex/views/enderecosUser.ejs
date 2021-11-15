@@ -4,15 +4,18 @@
         <h1>Seus Endereços</h1>
     </div>    
     <div class="enderecos-user">
-        <div class="criarEndereco">
-            <a href="/paginadousuario/<%= sessao.user.id_cliente %>/enderecos/novoendereco">
-                <img src="/images/plus.png" alt="crirar" style="margin-top: 57px;">
-                <p>Adicionar Novo Endereço</p>
-            </a>
-        </div>
+        <% if(enderecos.length == 3) { %>
+        <% }else{ %> 
+            <div class="criarEndereco">
+                <a href="/paginadousuario/<%= sessao.user.id_cliente %>/enderecos/novoendereco">
+                    <img src="/images/plus.png" alt="crirar" style="margin-top: 57px;">
+                    <p>Adicionar Novo Endereço</p>
+                </a>
+            </div>
+        <% } %> 
         <% for(let i = 0; i < enderecos.length; i++) { %>
             <div class="lista-enderecos">
-                <div class="endereco">
+                <div class="endereco" <% if(enderecos.length == 3) { %> style="padding-bottom: 1em;" <% } %>>
                     <h2><%= enderecos[i].nome_do_endereco %> </h2>
                     <ul>
                         <li><%= enderecos[i].logradouro %>,Nº <%= enderecos[i].num_residencia %></li>
