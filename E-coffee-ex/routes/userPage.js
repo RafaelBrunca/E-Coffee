@@ -19,5 +19,8 @@ router.put('/enderecos/editar/:id_cli_enderecos', paginaDoUsuario.editarEndereco
 router.get('/enderecos/excluir/:id_cli_enderecos', paginaDoUsuario.excluir)
 router.get('/produtos/novoproduto', paginaDoUsuario.telaCriarProduto);
 router.post('/produtos/novoproduto/registrarproduto', paginaDoUsuario.registrarProduto);
+router.get('produtos/editar/:id_produtos', paginaDoUsuario.telaEditarProduto);
+router.put('/produtos/editar/:id_produtos', paginaDoUsuario.editarProduto);
+router.get('produtos/excluir/:id_produtos', paginaDoUsuario.excluirProduto);
 
 module.exports = router;
