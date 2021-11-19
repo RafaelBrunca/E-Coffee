@@ -15,7 +15,7 @@
         <% } %> 
         <% for(let i = 0; i < enderecos.length; i++) { %>
             <div class="lista-enderecos">
-                <div class="endereco" <% if(enderecos.length == 3) { %> style="padding-bottom: 1em;" <% } %>>
+                <div class="endereco" <% if(enderecos.length >= 3) { %> style="padding-bottom: 1em;" <% } %>>
                     <h2><%= enderecos[i].nome_do_endereco %> </h2>
                     <ul>
                         <li><%= enderecos[i].logradouro %>,Nº <%= enderecos[i].num_residencia %></li>

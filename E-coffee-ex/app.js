@@ -13,6 +13,7 @@ var indexRouter = require('./routes/index');
 var carrinhoRouter = require('./routes/carrinho');
 var homeUserRouter = require('./routes/userPage');
 var sobreRouter = require('./routes/sobre');
+var produtoRouter = require('./routes/produto');
 const adminRouter = require('./routes/admin/admin')
 
 
@@ -34,6 +35,7 @@ app.use(locals);
 /* ROTAS */
 app.use('/login', loginRouter);
 app.use('/', indexRouter);
+app.use('/produto', produtoRouter);
 app.use('/carrinho', carrinhoRouter);
 app.use('/paginadousuario/:id_cliente', homeUserRouter);
 app.use('/sobre', sobreRouter);
