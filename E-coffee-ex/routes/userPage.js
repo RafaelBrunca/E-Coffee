@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var authentication = require('../middleware/authentication');
-
 var paginaDoUsuario = require('../controller/userPageController');
 
 /* Middleware de autenticação de Login */

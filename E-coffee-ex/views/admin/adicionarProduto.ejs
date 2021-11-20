@@ -5,7 +5,7 @@
         </div>
         <div class="novo-produto">
             <div class="form-produto">
-                <form action="POST" action="">
+                <form action="/admin/gerenciamentodeprodutos/adicionarproduto" method="POST" enctype="multipart/form-data">
                     <div class="nome-produto">
                         <label for="nomeproduto">Nome:</label>
                         <input type="text" name="nomeproduto" id="nomeproduto" >
@@ -61,7 +61,7 @@
                     <div class="imagem">
                         <label for="imagem">Imagem:</label>
                         <div>
-                            <input type="file" name="imagem" id="imagem" />
+                            <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp" />
                             <label for="estoque">Estoque:</label>
                             <input type="text" name="estoque" id="estoque" />
                         </div>

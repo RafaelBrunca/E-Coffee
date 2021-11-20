@@ -42,29 +42,32 @@
                 <li class="acoes">Ações</li>
             </ul>                 
         </div>
-        <div class="container">
-            <div class="produto">
-                <p>1</p>
+
+        <% for(let i=0; i < produtos.length; i++) {%> 
+            <div class="container">
+                <div class="produto">
+                    <p><%= produtos[i].id_produto %></p>
+                </div>
+                <div class="nome-produto">                
+                    <p><%= produtos[i].nome_produto %></p>         
+                </div>
+                <div class="descricao" style="width: 200px;">                
+                    <p><%= produtos[i].sku %></p>
+                </div>
+                <div class="descricao" style="width: 90px;">
+                    <p>R$:<%= produtos[i].preco %></p>
+                </div>
+                <div class="descricao" style="width: 80px;">                
+                    <p><%= produtos[i].estoque %></p>
+                </div>
+                <div class="descricao" style="width: 85px;">                
+                    <p><%= produtos[i].status_produto %></p>
+                </div>
+                <div class="descricao" style="width: 60px; padding-top:17px;">                
+                    <a href="#">Editar</a>
+                </div>
             </div>
-            <div class="nome-produto">                
-                <p>Cafeteira Mondial Espresso C-08 automática expresso 110V preta</p>         
-            </div>
-            <div class="descricao" style="width: 200px;">                
-                <p>produtoteste001-preto-G </p>
-            </div>
-            <div class="descricao" style="width: 90px;">
-                <p>R$XX,XX</p>
-            </div>
-            <div class="descricao" style="width: 80px;">                
-                <p>2</p>
-            </div>
-            <div class="descricao" style="width: 85px;">                
-                <p>Habilitado</p>
-            </div>
-            <div class="descricao" style="width: 60px; padding-top:17px;">                
-                <a href="#">Editar</a>
-            </div>
-        </div>
+        <% } %> 
     </main>
 </body>
 </html>

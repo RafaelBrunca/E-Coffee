@@ -9,5 +9,10 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'categorias',
         timestamps: false
     });
+
+    Categoria.associate = (models) => {
+        Categoria.hasOne(models.Produto, { foreignKey: "categoria", as: "produtoOj" })
+    };
+
     return Categoria;
-}
+};

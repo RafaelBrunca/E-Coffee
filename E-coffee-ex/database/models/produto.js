@@ -4,18 +4,66 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
         },
-        nome_produto: DataTypes.STRING(200),
-        imagem: DataTypes.STRING(200),
-        id_categoria: DataTypes.INTEGER.UNSIGNED,
-        descricao_produto: DataTypes.INTEGER,
-        informacoes_tecnicas: DataTypes.INTEGER,
-        produto_preco: DataTypes.DOUBLE,
-        cod_barra_produto: { type: DataTypes.STRING(13),
-        unique: true
-        }
+        nome_produto: { 
+            type: DataTypes.STRING(200),
+            allowNull: false
+        },
+        sku: { 
+            type: DataTypes.STRING(150),
+            allowNull: false
+        },
+        cod_barra: { 
+            type: DataTypes.STRING(13),
+            allowNull: false
+        },
+        status_produto: { 
+            type: DataTypes.STRING(15),
+            allowNull: false
+        },
+        categoria: { 
+            type: DataTypes.STRING(40),
+            allowNull: false
+        },
+        descricao_produto: { 
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        informacoes_tecnicas: { 
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        peso: { 
+            type: DataTypes.DOUBLE.UNSIGNED,
+            allowNull: false
+        },
+        preco: { 
+            type: DataTypes.DOUBLE.UNSIGNED,
+            allowNull: false
+        },
+        custo: { 
+            type: DataTypes.DOUBLE.UNSIGNED,
+            allowNull: false
+        },
+        title_pagina: { 
+            type: DataTypes.STRING(200),
+            allowNull: false
+        },
+        palavras_chave: { 
+            type: DataTypes.STRING(200),
+            allowNull: false
+        },
+        imagem: { 
+            type: DataTypes.STRING(200),
+            allowNull: false
+        },
+        estoque: { 
+            type: DataTypes.DOUBLE.UNSIGNED,
+            allowNull: false
+        },
     },{
         tableName: 'produtos',
         timestamps: false
     });
+
     return Produto;
-}
+};

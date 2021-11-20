@@ -5,14 +5,14 @@
     </div>    
     <div class="enderecos-user">
         <% if(enderecos.length == 3) { %>
-        <% }else{ %> 
-            <div class="criarEndereco">
-                <a href="/paginadousuario/<%= sessao.user.id_cliente %>/enderecos/novoendereco">
-                    <img src="/images/plus.png" alt="crirar" style="margin-top: 57px;">
-                    <p>Adicionar Novo Endereço</p>
-                </a>
-            </div>
-        <% } %> 
+            <% }else{ %> 
+                <div class="criarEndereco">
+                    <a href="/paginadousuario/<%= sessao.user.id_cliente %>/enderecos/novoendereco">
+                        <img src="/images/plus.png" alt="crirar" style="margin-top: 57px;">
+                        <p>Adicionar Novo Endereço</p>
+                    </a>
+                </div>
+            <% } %> 
         <% for(let i = 0; i < enderecos.length; i++) { %>
             <div class="lista-enderecos">
                 <div class="endereco" <% if(enderecos.length >= 3) { %> style="padding-bottom: 1em;" <% } %>>

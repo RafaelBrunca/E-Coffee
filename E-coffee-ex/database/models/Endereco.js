@@ -20,4 +20,4 @@ module.exports = (sequelize, DataTypes) => {
         Endereco.belongsTo(models.Cliente, { foreignKey: "cliente", as: "id_cliente" });
     };
     return Endereco;
-}
+};
