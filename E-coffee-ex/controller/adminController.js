@@ -35,7 +35,9 @@ const adminController = {
     ).catch((err) => { console.log(err) });
   },
   telaAdicionar: function(req, res) {
-    return res.render('admin/adicionarProduto');
+    return res.render('admin/adicionarProduto', { 
+      isEditing: false
+    });
   },
   adicionarProduto: async function(req, res) {
 
@@ -60,7 +62,52 @@ const adminController = {
       imagem: imagem,
       estoque: estoque,
 
-    }).then((result) => {console.log(result)}).catch((err) => {console.log(err)})
+    });
+
+    return res.redirect('/admin/gerenciamentodeprodutos');
+  },
+  telaEditar: async function(req, res) {
+    const id = req.params.id;
+    const informacoes = await db.Produto.findByPk(id)
+    .then((result) => {
+      return res.render('admin/adicionarProduto', {
+        id: id,
+        produto: result,
+        isEditing: true
+      });
+    });
+  },
+  editarProduto: async function(req, res) {
+
+    const { id } = req.params;
+
+    const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, imagem, estoque } = req.body;
+    
+    if(req.file){
+      imagem = "images/uploads/imagemDoProduto"+req.file.filename;
+    };
+
+    /* Busca o Produto selecionado */
+    const buscarProduto = await db.Produto.findByPk(id);
+
+    /* Editar Produto */
+    const editar = {
+      nome_produto: nomeproduto,
+      sku: sku,
+      cod_barra: codigobarras,
+      status_produto: status,
+      categoria: categoria,
+      descricao_produto: descricao,
+      informacoes_tecnicas: infotecnica,
+      peso: peso,
+      preco: preco,
+      custo: custo,
+      title_pagina: titulo,
+      palavras_chave: palavrachave,
+      imagem: imagem,
+      estoque: estoque,
+    };
+    buscarProduto.update(editar);
 
     return res.redirect('/admin/gerenciamentodeprodutos');
   }

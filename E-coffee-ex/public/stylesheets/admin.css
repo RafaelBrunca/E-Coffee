@@ -182,7 +182,6 @@ li.acoes{
 }
 
 .new-produto .form-produto{
-    display: flex;
     margin-top: 3rem;
     margin-left: 3rem;
     margin-bottom: 3rem;
@@ -217,12 +216,12 @@ li.acoes{
 
 .new-produto #descricao{
     height: 7rem;
-    width: 120%;
+    width: 97%;
 }
 
 .new-produto #infotecnica{
     height: 5rem;
-    width: 120%;
+    width: 97%;
 }
 
 .new-produto .ficha{
@@ -258,7 +257,7 @@ li.acoes{
 
 .new-produto #palavrachave{
     height: 4rem;
-    width: 120%;
+    width: 97%;
 }
 
 .new-produto .imagem{
@@ -278,4 +277,23 @@ li.acoes{
     height: 2rem;
     margin-top: 3rem;
     width: 7rem;
+}
+
+.new-produto .cancela{
+    background-color: #CE5F20;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: 2em;
+    margin-top: -1.7em;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: center;
+    width: 7rem;
+}
+
+.new-produto .cancela a{
+    color: #fff;
+    text-decoration: none;
 }

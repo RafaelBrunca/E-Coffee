@@ -16,5 +16,7 @@ router.post('/', adminController.login);
 router.get('/gerenciamentodeprodutos', autenticacaoAdmin, adminController.gerenciarProdutos);
 router.get('/gerenciamentodeprodutos/adicionarproduto', autenticacaoAdmin, adminController.telaAdicionar);
 router.post('/gerenciamentodeprodutos/adicionarproduto', autenticacaoAdmin, uplodaImage.single("imagem"), adminController.adicionarProduto);
+router.get('/gerenciamentodeprodutos/:id', autenticacaoAdmin, adminController.telaEditar);
+router.post('/gerenciamentodeprodutos/editar/:id', autenticacaoAdmin, uplodaImage.single("imagem"), adminController.editarProduto);
 
 module.exports = router;

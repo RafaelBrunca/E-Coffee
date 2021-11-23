@@ -42,7 +42,6 @@
                 <li class="acoes">Ações</li>
             </ul>                 
         </div>
-
         <% for(let i=0; i < produtos.length; i++) {%> 
             <div class="container">
                 <div class="produto">
@@ -64,7 +63,7 @@
                     <p><%= produtos[i].status_produto %></p>
                 </div>
                 <div class="descricao" style="width: 60px; padding-top:17px;">                
-                    <a href="#">Editar</a>
+                    <a href="/admin/gerenciamentodeprodutos/<%=produtos[i].id_produto%>">Editar</a>
                 </div>
             </div>
         <% } %> 
