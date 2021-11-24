@@ -5,21 +5,21 @@
             <div class="produto">
                 <div class="miniaturaProduto" style="height: 0px;">
                     <div class="miniatura">
-                        <img src="images/minicafeteira2.png" alt="miniatura1" width="80px" height="80px">
+                        <img src="/<%= produto.imagem %>" alt="miniatura1" width="80px" height="80px">
                     </div>                    
                     <div class="miniatura">
-                        <img src="images/minicafeteira3.png" alt="miniatura2" width="80px" height="80px">
+                        <img src="/<%= produto.imagem %>" alt="miniatura2" width="80px" height="80px">
                     </div>   
                 </div>
                 <div class="imagemProduto" style="height: 0px;">
-                    <img  src="images/cafeteira1.png" alt="Cafeteira" width="380px" height="380px">
+                    <img src="/<%= produto.imagem %>" alt="Cafeteira" width="380px" height="380px">
                 </div>                    
             </div>                
             <div class="whatsappIcon">
                 <img src="images/icons8-whatsapp-48.png" alt="whatsappIcon" width="60px" height="60px"> 
             </div>
             <div class="compraProduto">
-                <h2>Cafeteira Mondial Expresso C-08 automática 110V</h2>
+                <h2><%= produto.title_pagina %></h2>
                 <h4>Confirme a cor:</h4>
                 <label for="cor"></label>
                 <select id="cor">
@@ -28,7 +28,7 @@
                     <option value="branco">Branco</option>
                     <option value="vermelho">Vermelho</option>
                 </select>
-                <h1>R$ xxx,xx</h1>
+                <h1>R$ <%= produto.preco %></h1>
                 <p>Ou em até 10x de R$xx,xx sem juros</p>
                 <div class="comprar">
                     <button type="button">Comprar</button>
@@ -38,35 +38,15 @@
             <div class="title-descri">
                 <h4>Descrição do Produto</h4>
             </div>
-            <p>Dê uma pausa para si mesmo.
-                <br></br>
-            Comece o seu dia com energia e da melhor maneira, desfrutando da textura e qualidade de um bom café no conforto da sua casa. 
-            </p> 
-            <p>Café da manhã ao instante    
-                Se você é apaixonado pelo café moído, não vai poder se resistir ao arama deliciosa de um café expresso pela manhã. Prepare os melhores cafés de forma simples e rápida. 
-            </p>
-            <p>Café para paladares exigentes
-                Em alguns minutos e seguindo passos simples, seu café estará pronto com resultados profissionais. Programe a sua cafeteira e comece a desfrutar de seu aroma e sabor intenso. 
-                Deliciosos e espumantes. 
-            <p>Com a vaporizador, o leite fica doce, cremoso e com espuma aveludada. Prepare o melhor café expressa, os cappuccinos mais tentadores e as mais saborosos lattes.
-            </p>
+            <ul id="descri-produto">
+                <li><%= produto.descricao_produto %></li>
+            </ul>
             <div class="title-informacoes">
                 <h4>Informacoes Técnicas</h4>
             </div>
-            <p>Dê uma pausa para si mesmo.
-                <br></br> 
-                Comece o seu dia com energia e da melhor maneira, desfrutando da textura e qualidade de um bom café no conforto da sua casa. 
-            </p>        
-            <p>Café da manhã ao instante   
-                Se você é apaixonado pelo café moído, não vai poder se resistir ao arama deliciosa de um café expresso pela manhã. Prepare os melhores cafés de forma simples e rápida. 
-            </p>        
-            <p>Café para paladares exigentes 
-                Em alguns minutos e seguindo passos simples, seu café estará pronto com resultados profissionais. Programe a sua cafeteira e comece a desfrutar de seu aroma e sabor intenso. 
-                Deliciosos e espumantes 
-            </p>        
-            <p>
-                Com a vaporizador, o leite fica doce, cremoso e com espuma aveludada. Prepare o melhor café expressa, os cappuccinos mais tentadores e as mais saborosos lattes.
-            </p>
+            <ul id="descri-produto">
+                <li><%= produto.informacoes_tecnicas %></li>
+            </ul>
         </div>
     </div>
 </main>

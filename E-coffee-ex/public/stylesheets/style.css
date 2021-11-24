@@ -1357,8 +1357,10 @@ body .descricao-pedido .title-informacoes{
 body .descricao-pedido .title-informacoes h4{
     padding-left: 30px;
 }
-body .descricao-pedido p{
-    padding-left: 20px;
+
+ul#descri-produto{
+    list-style: none;
+    padding-right: 40px;
 }
 
 /*=========Desktop=========*/
