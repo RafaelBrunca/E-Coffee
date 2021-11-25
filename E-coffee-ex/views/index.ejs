@@ -21,7 +21,6 @@
     <button class="carrossel_button carrossel_button--right">
         <img src="./images/seta-carrosel.png" alt="">
     </button>
-
     <div class="carrossel_nav">
         <button class="carrossel_indicador current-slide"></button>
         <button class="carrossel_indicador"></button>
@@ -32,86 +31,53 @@
 <!---cards-->
 <section class="bloco-container">
     <div class="bloco-teste">
-        <a href="/produto/1">
-            <div class="bloco">
-                <img src="./images/Mondial.png" alt="">            
-                <div class='descricao-home'>
-                    <p>Cafeteira Mondial Expresso C-08 <br> R$: 90,92" </p>
-                </div>            
+        <% for(let i =  0; i < produtos.length; i++) { %>
+            <div class="cards">
+                <a href="/produto/<%= produtos[i].id_produto %>">
+                    <div class="bloco">
+                        <img src="/<%= produtos[i].imagem %>" alt="">            
+                        <div class='descricao-home'>
+                            <p><%= produtos[i].nome_produto %><br> R$: <%= produtos[i].preco %> </p>
+                        </div>
+                        <span class="buy">Comprar</span>            
+                    </div>
+                </a>
             </div>
-        </a>
-        <a href="/produto/2">
-            <div class="bloco">
-                <img src="./images/Philco.png" alt="">
-                <div class='descricao-home'>
-                    <p>Philco <br> R$: 55,83</p>
-                </div>
-            </div>
-        </a>
-        <a href="">
-            <div class="bloco">
-                <img src="./images/Nepresso.png" alt="">
-                <div class='descricao-home'>
-                    <p>Nespresso <br> R$: XX,XX</p>
-                </div>
-            </div>
-        </a>    
+        <% } %>
     </div>
 </section>
 <section class="bloco-container">
     <div class="bloco-teste">
-        <a href="/cafeteiras">
-            <div class="bloco">
-                <img src="./images/Mondial.png" alt="">            
-                <div class='descricao-home'>
-                    <p>Mondial <br> R$: XX,XX</p>
-                </div>            
+        <% for(let i =  0; i < produtos.length; i++) { %>
+            <div class="cards">
+                <a href="/produto/<%= produtos[i].id_produto %>">
+                    <div class="bloco">
+                        <img src="/<%= produtos[i].imagem %>" alt="">            
+                        <div class='descricao-home'>
+                            <p><%= produtos[i].nome_produto %><br> R$: <%= produtos[i].preco %> </p>
+                        </div>
+                        <span class="buy">Comprar</span>         
+                    </div>
+                </a>
             </div>
-        </a>
-        <a href="#">
-            <div class="bloco">
-                <img src="./images/Nepresso.png" alt="">
-                <div class='descricao-home'>
-                    <p>Philco <br> R$: XX,XX</p>
-                </div>
-            </div>
-        </a>
-        <a href="">
-            <div class="bloco">
-                <img src="./images/Philco.png" alt="">
-                <div class='descricao-home'>
-                    <p>Nespresso <br> R$: XX,XX</p>
-                </div>
-            </div>
-        </a>    
+        <% } %>
     </div>
 </section>
 <section class="bloco-container">
     <div class="bloco-teste">
-        <a href="/cafeteiras">
-            <div class="bloco">
-                <img src="./images/Mondial.png" alt="">            
-                <div class='descricao-home'>
-                    <p>Mondial <br> R$: XX,XX</p>
-                </div>            
+        <% for(let i =  0; i < produtos.length; i++) { %>
+            <div class="cards">
+                <a href="/produto/<%= produtos[i].id_produto %>">
+                    <div class="bloco">
+                        <img src="/<%= produtos[i].imagem %>" alt="">            
+                        <div class='descricao-home'>
+                            <p><%= produtos[i].nome_produto %><br> R$: <%= produtos[i].preco %> </p>
+                        </div>
+                        <span class="buy">Comprar</span>         
+                    </div>
+                </a>
             </div>
-        </a>
-        <a href="#">
-            <div class="bloco">
-                <img src="./images/Nepresso.png" alt="">
-                <div class='descricao-home'>
-                    <p>Philco <br> R$: XX,XX</p>
-                </div>
-            </div>
-        </a>
-        <a href="">
-            <div class="bloco">
-                <img src="./images/Philco.png" alt="">
-                <div class='descricao-home'>
-                    <p>Nespresso <br> R$: XX,XX</p>
-                </div>
-            </div>
-        </a>    
+        <% } %>
     </div>
 </section>
 <%- include('./partials/footer') %>

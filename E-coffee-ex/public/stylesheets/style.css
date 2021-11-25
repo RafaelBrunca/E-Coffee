@@ -558,14 +558,44 @@ cursor: pointer;
     display: flex;
 }
 
+.bloco-teste .cards{
+    margin-right: 6em;
+    margin-left: 6em;
+}
+
 .bloco {
     width: 500px;
-    height: 400px;
-    margin: 0 100px;
+    height: 420px;
+    margin: 0;
+}
+
+.cards a{
+    color: black;
+    text-decoration: none;
 }
 
 .bloco img{
+    height: 270px;
     width: 250px;
+}
+
+.bloco p{
+    padding-bottom: 10px;
+}
+
+.bloco p:hover {
+    color:#CE5F20
+}
+
+.bloco .buy{
+    color: #fff;
+    background-color:#CE5F20;
+    border-radius: 10px;
+    padding: 7px 70px;
+}
+
+.bloco .buy:hover{
+    color: #301a1a;
 }
 
 .bloco:hover{
@@ -1418,7 +1448,7 @@ ul#descri-produto{
         height: 303px;
     }
     .bloco{
-        height: 360px;
+        height: 420px;
         width: 350px;
     }
 }
