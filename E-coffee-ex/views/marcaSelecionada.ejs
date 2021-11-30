@@ -39,82 +39,46 @@
             </select>   
         </div>
      </section>
-
      <div class="juntar_produtos">
         <section class="bloco-container">
-            <div class="bloco-teste">
-                <a href="">
-                    <div class="bloco01">
-                        <img src="./images/Mondial.png" alt="">            
-                    <div class='descricao-home'>
-                        <p>Mondial <br> R$: XX,XX</p></div>            
-                </div>
-                </a> 
-    
-                <a href="#">
-                    <div class="bloco01">
-                        <img src="./images/Nepresso.png" alt="">
-                    <div class='descricao-home'>
-                        <p>Philco <br> R$: XX,XX</p></div>
-                </div>
-                </a>
-                
-                <a href=""><div class="bloco01">
-                    <img src="./images/Philco.png" alt="">
-                <div class='descricao-home'>
-                    <p>Nespresso <br> R$: XX,XX</p
-                 ></div>
-            </div></a>    
+            <div class="bloco-marcas">
+                <% if(capsulas == false) { %> 
+                    <% for(let i = 0; i < cafeteiras.length; i++) { %>
+                        <div class="marcaSelecionada">
+                            <a href="/produto/<%= cafeteiras[i].id_produto %>">
+                                <div class="bloco">
+                                    <img src="/<%= cafeteiras[i].imagem %>" alt="">            
+                                    <div class='descricao-home'>
+                                        <p><%= cafeteiras[i].nome_produto %><br> R$: <%= cafeteiras[i].preco %> </p>
+                                    </div>
+                                    <span class="buy">Comprar</span>         
+                                </div>
+                            </a>
+                        </div>
+                    <% } %>
+                <% } %>
             </div>
         </section>
         <section class="bloco-container">
-            <div class="bloco-teste">
-                <a href="">
-                    <div class="bloco01">
-                        <img src="./images/Mondial.png" alt="">            
-                    <div class='descricao-home'>
-                        <p>Mondial <br> R$: XX,XX</p></div>            
-                </div>
-                </a>    
-                <a href="#">
-                    <div class="bloco01">
-                        <img src="./images/Nepresso.png" alt="">
-                    <div class='descricao-home'>
-                        <p>Philco <br> R$: XX,XX</p></div>
-                    </div>
-                </a>                
-                <a href=""><div class="bloco01">
-                    <img src="./images/Philco.png" alt="">
-                <div class='descricao-home'>
-                    <p>Nespresso <br> R$: XX,XX</p>
-                </div>
-            </div></a>    
+            <div class="bloco-marcas">
+                <% if(capsulas == false) { %> 
+                    <% for(let i = 0; i < cafeteiras.length; i++) { %>
+                        <div class="marcaSelecionada">
+                            <a href="/produto/<%= cafeteiras[i].id_produto %>">
+                                <div class="bloco">
+                                    <img src="/<%= cafeteiras[i].imagem %>" alt="">            
+                                    <div class='descricao-home'>
+                                        <p><%= cafeteiras[i].nome_produto %><br> R$: <%= cafeteiras[i].preco %> </p>
+                                    </div>
+                                    <span class="buy">Comprar</span>         
+                                </div>
+                            </a>
+                        </div>
+                    <% } %>
+                <% } %>
             </div>
         </section>
-        <section class="bloco-container">
-            <div class="bloco-teste">
-                <a href="">
-                    <div class="bloco01">
-                        <img src="./images/Mondial.png" alt="">            
-                    <div class='descricao-home'>
-                        <p>Mondial <br> R$: XX,XX</p></div>            
-                    </div>
-                </a>    
-                <a href="#">
-                    <div class="bloco01">
-                        <img src="./images/Nepresso.png" alt="">
-                    <div class='descricao-home'>
-                        <p>Philco <br> R$: XX,XX</p></div>
-                    </div>
-                </a>                
-                <a href=""><div class="bloco01">
-                    <img src="./images/Philco.png" alt="">
-                <div class='descricao-home'>
-                    <p>Nespresso <br> R$: XX,XX</p>
-                </div>
-            </div></a>    
-            </div>
-        </section>
+        
      </div>     
 </div>
 <%- include('./partials/footer') %>

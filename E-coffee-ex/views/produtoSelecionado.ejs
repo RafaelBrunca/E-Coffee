@@ -29,7 +29,7 @@
                     <option value="vermelho">Vermelho</option>
                 </select>
                 <h1>R$ <%= produto.preco %></h1>
-                <p>Ou em até 10x de R$xx,xx sem juros</p>
+                <p>Ou em até 10x de R$<%= produto.preco / 10 %>  sem juros</p>
                 <div class="comprar">
                     <button type="button">Comprar</button>
                 </div>                    

@@ -6,7 +6,21 @@ const produtoController = {
         const { id } = req.params;
 
         const product = await db.Produto.findByPk(id)
-        .then((result) =>{ return res.render('produtoSelecionado', { produto: result }) }).catch((err) =>{console.log(err)})
+        .then((result) =>{ 
+            return res.render('produtoSelecionado', { produto: result }) 
+        })        
+    },
+    cafeteiras: function(req, res) {
+
+        const cafeteiras = db.Produto.findAll({ 
+            where: { categoria: "Cafeteira" }
+        })
+        .then((cafeteiras) => {
+            return res.render('marcaSelecionada', { 
+                cafeteiras: cafeteiras,
+                capsulas: false
+            });
+        })
 
         
     }

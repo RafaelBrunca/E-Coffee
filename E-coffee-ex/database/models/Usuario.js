@@ -4,8 +4,14 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER.UNSIGNED,
             primaryKey: true,
         },
-        usuario: DataTypes.STRING(40),
-        senha: DataTypes.STRING(100)
+        usuario: { 
+            type: DataTypes.STRING(40),
+            allowNull: false
+        },
+        senha: { 
+            type: DataTypes.STRING(100),
+            allowNull: false
+        },
     },{
         tableName: 'usuarios',
         timestamps: false
