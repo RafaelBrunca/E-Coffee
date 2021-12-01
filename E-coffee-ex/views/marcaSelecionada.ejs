@@ -38,11 +38,10 @@
                 <option value="gray">⬜ Cinza</option>
             </select>   
         </div>
-     </section>
-     <div class="juntar_produtos">
+     </section>     
         <section class="bloco-container">
             <div class="bloco-marcas">
-                <% if(capsulas == false) { %> 
+                <% if(capsulas === false) { %> 
                     <% for(let i = 0; i < cafeteiras.length; i++) { %>
                         <div class="marcaSelecionada">
                             <a href="/produto/<%= cafeteiras[i].id_produto %>">
@@ -57,18 +56,14 @@
                         </div>
                     <% } %>
                 <% } %>
-            </div>
-        </section>
-        <section class="bloco-container">
-            <div class="bloco-marcas">
-                <% if(capsulas == false) { %> 
-                    <% for(let i = 0; i < cafeteiras.length; i++) { %>
+                <% if(capsulas === true) { %> 
+                    <% for(let i = 0; i < capsula.length; i++) { %>
                         <div class="marcaSelecionada">
-                            <a href="/produto/<%= cafeteiras[i].id_produto %>">
+                            <a href="/produto/<%= capsula[i].id_produto %>">
                                 <div class="bloco">
-                                    <img src="/<%= cafeteiras[i].imagem %>" alt="">            
+                                    <img src="/<%= capsula[i].imagem %>" alt="">            
                                     <div class='descricao-home'>
-                                        <p><%= cafeteiras[i].nome_produto %><br> R$: <%= cafeteiras[i].preco %> </p>
+                                        <p><%= capsula[i].nome_produto %><br> R$: <%= capsula[i].preco %> </p>
                                     </div>
                                     <span class="buy">Comprar</span>         
                                 </div>
@@ -77,8 +72,6 @@
                     <% } %>
                 <% } %>
             </div>
-        </section>
-        
-     </div>     
+        </section>             
 </div>
 <%- include('./partials/footer') %>

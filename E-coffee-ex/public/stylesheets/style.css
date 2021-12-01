@@ -238,6 +238,7 @@ nav .nav-item .nav-login:hover{
     background-image: url(../images/page_about/bACKGROUNS\ 1.png);
     width: 245px;
     align-items: start;
+    margin-left: 18em;
     padding-left: 10px;
     height: 650px;
     justify-content: space-around;
@@ -561,9 +562,8 @@ cursor: pointer;
 .bloco-marcas {
     margin-bottom: 0;
     margin-right: auto;
-    margin-left: 3em;
-    margin-top: 130px; 
-    display: flex;
+    margin-top: 100px;
+    width: 94%;
 }
 
 .bloco-teste .cards{
@@ -613,8 +613,10 @@ cursor: pointer;
 }
 
 .marcaSelecionada {
+    display: inline-flex;
     margin-left: 2em;
     margin-right: 2em;
+    margin-top: 2em;
 }
 
 .marcaSelecionada a{

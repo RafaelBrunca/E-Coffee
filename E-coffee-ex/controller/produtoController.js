@@ -12,8 +12,13 @@ const produtoController = {
     },
     cafeteiras: function(req, res) {
 
+        /* Busca todas as Cafeteiras Habilitadas no sistema */
+
         const cafeteiras = db.Produto.findAll({ 
-            where: { categoria: "Cafeteira" }
+            where: { 
+                status_produto: "Habilitado", 
+                categoria: "Cafeteira"
+            }
         })
         .then((cafeteiras) => {
             return res.render('marcaSelecionada', { 
@@ -21,9 +26,24 @@ const produtoController = {
                 capsulas: false
             });
         })
+    },
+    capsulas: function(req, res) {
 
-        
+        /* Busca todas as Cápsulas Habilitadas no sistema */
+
+        const capsulas = db.Produto.findAll({ 
+            where: { 
+                status_produto: "Habilitado", 
+                categoria: "Cápsula"
+            }
+        })
+        .then((capsulas) => {
+            return res.render('marcaSelecionada', { 
+                capsula: capsulas,
+                capsulas: true
+            });
+        })
     }
-}
+};
 
 module.exports = produtoController;
