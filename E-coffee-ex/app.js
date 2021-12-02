@@ -35,6 +35,7 @@ app.use(locals);
 app.use('/login', loginRouter);
 app.use('/', indexRouter);
 app.use('/carrinho', carrinhoRouter);
+app.use('/produtoSelecionado/carrinho', carrinhoRouter);
 app.use('/paginadousuario/:id_cliente', homeUserRouter);
 app.use('/sobre', sobreRouter);
 app.use('/admin', adminRouter);
