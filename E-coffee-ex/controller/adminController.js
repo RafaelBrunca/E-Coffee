@@ -43,7 +43,7 @@ const adminController = {
 
     const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
     
-    let imagem = "images/uploads/imagemDoProduto"+req.file.filename;
+    let imagem = "images/uploads/imagemDoProduto/"+req.file.filename;
     
     /* Criação de produto */
     const criarProduto = await db.Produto.create({
@@ -84,7 +84,7 @@ const adminController = {
     const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, imagem, estoque } = req.body;
     
     if(req.file){
-      imagem = "images/uploads/imagemDoProduto"+req.file.filename;
+      imagem = "images/uploads/imagemDoProduto/"+req.file.filename;
     };
 
     /* Busca o Produto selecionado */

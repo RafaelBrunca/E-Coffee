@@ -4,16 +4,30 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER.UNSIGNED, 
             primaryKey: true,
         },
-        nome: DataTypes.STRING(100),
-        sobrenome: DataTypes.STRING(100),
-        telefone: DataTypes.STRING(11),
+        nome: { 
+            type: DataTypes.STRING(100),
+            allowNull: false
+        },
+        sobrenome: { 
+            type: DataTypes.STRING(100),
+            allowNull: false
+        },
+        telefone: { 
+            type: DataTypes.STRING(11),
+            allowNull: false
+        },
         cpf: { type: DataTypes.STRING(11),
         unique: true,
+        allowNull: false
         },
         email: { type: DataTypes.STRING(80),
         unique: true,
+        allowNull: false
         },
-        senha: DataTypes.STRING(100),
+        senha: { 
+            type: DataTypes.STRING(100),
+            allowNull: false
+        }
     }, {
         tableName: 'clientes',
         timestamps: false,

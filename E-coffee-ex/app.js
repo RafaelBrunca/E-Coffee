@@ -10,6 +10,7 @@ var methodOverride = require("method-override");
 /* Importação de rotas */
 var loginRouter = require('./routes/login');
 var indexRouter = require('./routes/index');
+var produtoRouter = require('./routes/produto');
 var carrinhoRouter = require('./routes/carrinho');
 var homeUserRouter = require('./routes/userPage');
 var sobreRouter = require('./routes/sobre');
@@ -34,6 +35,7 @@ app.use(locals);
 /* ROTAS */
 app.use('/login', loginRouter);
 app.use('/', indexRouter);
+app.use('/produto', produtoRouter);
 app.use('/carrinho', carrinhoRouter);
 app.use('/produtoSelecionado/carrinho', carrinhoRouter);
 app.use('/paginadousuario/:id_cliente', homeUserRouter);

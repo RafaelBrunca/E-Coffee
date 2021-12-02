@@ -238,6 +238,7 @@ nav .nav-item .nav-login:hover{
     background-image: url(../images/page_about/bACKGROUNS\ 1.png);
     width: 245px;
     align-items: start;
+    margin-left: 18em;
     padding-left: 10px;
     height: 650px;
     justify-content: space-around;
@@ -261,18 +262,18 @@ nav .nav-item .nav-login:hover{
 }
 
 #option-preco{
-    margin-bottom: 30px;
     border: 1px solid #F8CAB0;
     background: #FFEBDF;
     border-radius: 5px;
-    padding: 5px 35px;
+    padding: 5px 14px;
+    margin-right: 2em;
 }
 
 #option-cor{
     border: 1px solid #F8CAB0;
     background: #FFEBDF;
     border-radius: 5px;
-    padding: 5px 53px;
+    padding: 5px 34px;
 }
 
 
@@ -558,20 +559,68 @@ cursor: pointer;
     display: flex;
 }
 
+.bloco-marcas {
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 94%;
+}
+
+.bloco-teste .cards{
+    margin-right: 6em;
+    margin-left: 6em;
+}
+
 .bloco {
-    width: 500px;
-    height: 400px;
-    margin: 0 100px;
+    height: 420px;
+    width: 350px;
+    margin: 0;
+}
+
+.cards a{
+    color: black;
+    text-decoration: none;
 }
 
 .bloco img{
+    height: 270px;
     width: 250px;
+}
+
+.bloco p{
+    padding-bottom: 10px;
+}
+
+.bloco p:hover {
+    color:#CE5F20
+}
+
+.bloco .buy{
+    color: #fff;
+    background-color:#CE5F20;
+    border-radius: 10px;
+    padding: 7px 70px;
+}
+
+.bloco .buy:hover{
+    color: #301a1a;
 }
 
 .bloco:hover{
     border-radius: 25px;
     -webkit-box-shadow: 5px 8px 27px 6px rgba(112,112,112,0.78); 
     box-shadow: 5px 8px 27px 6px rgba(112,112,112,0.78);
+}
+
+.marcaSelecionada {
+    display: inline-flex;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 2em;
+}
+
+.marcaSelecionada a{
+    text-decoration: none;
 }
 /* =============================
          Carrinho
@@ -1357,8 +1406,10 @@ body .descricao-pedido .title-informacoes{
 body .descricao-pedido .title-informacoes h4{
     padding-left: 30px;
 }
-body .descricao-pedido p{
-    padding-left: 20px;
+
+ul#descri-produto{
+    list-style: none;
+    padding-right: 40px;
 }
 
 /*=========Desktop=========*/
@@ -1416,7 +1467,7 @@ body .descricao-pedido p{
         height: 303px;
     }
     .bloco{
-        height: 360px;
+        height: 420px;
         width: 350px;
     }
 }
