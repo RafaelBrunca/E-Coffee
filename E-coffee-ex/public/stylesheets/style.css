@@ -262,18 +262,18 @@ nav .nav-item .nav-login:hover{
 }
 
 #option-preco{
-    margin-bottom: 30px;
     border: 1px solid #F8CAB0;
     background: #FFEBDF;
     border-radius: 5px;
-    padding: 5px 35px;
+    padding: 5px 14px;
+    margin-right: 2em;
 }
 
 #option-cor{
     border: 1px solid #F8CAB0;
     background: #FFEBDF;
     border-radius: 5px;
-    padding: 5px 53px;
+    padding: 5px 34px;
 }
 
 

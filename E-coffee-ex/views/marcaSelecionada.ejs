@@ -1,10 +1,9 @@
 <%- include('./partials/header'); %>
 <div class="produtos_filtros">
     <section class="filtro">
-        <a href="index.html">
-            <img src="images/E- COFFEE 3.png" alt="e-coffee" width="113" height="86"/>
-        </a>
-    
+        <a href="/">
+            <img src="/images/E- COFFEE 3.png" alt="e-coffee" width="113" height="86"/>
+        </a>    
         <div class="filtrar">
             <select id="option-preco">
                 <option> Filtrar preço</option>
@@ -12,24 +11,49 @@
                 <option value="menor">Menor para o maior</option>
             </select>
         </div>
-    
-    
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-primary active">
-              <input type="radio" name="options" id="option1" checked> Mondial
+              <input type="radio" name="options" id="option1" checked> <% if(capsulas === true) { %>
+                Baggio
+                <% } else { %>
+                    Mondial
+                <% }  %>
             </label>
             <label class="btn btn-primary">
-              <input type="radio" name="options" id="option2"> Dolce Gusto
+                <% if(capsulas === false) { %>
+                    <input type="radio" name="options" id="option2"> Oster 
+                <% }  %> 
             </label>
             <label class="btn btn-primary">
-              <input type="radio" name="options" id="option3"> Philco
+              <input type="radio" name="options" id="option3"> <% if(capsulas === true) { %>
+                Starbucks
+                <% } else { %>
+                    Dolce Gusto
+                <% }  %> 
             </label>
             <label class="btn btn-primary">
-                <input type="radio" name="options" id="option4"> Nespresso
-              </label>
-          </div>
-    
-          <div class="filtrar">
+              <input type="radio" name="options" id="option4"> <% if(capsulas === true) { %>
+                Nespresso
+                <% } else { %>
+                    Philco
+                <% }  %> 
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option5"> <% if(capsulas === true) { %>
+                    Lor
+                    <% } else { %>
+                        Nespresso
+                    <% }  %> 
+            </label>
+            <label class="btn btn-primary">
+                <% if(capsulas === false) { %>
+                    <input type="radio" name="options" id="option6"> Lirika 
+                <% }  %> 
+            </label>
+        </div>
+        <% if(capsulas === true) { %>
+        <% } else { %>
+        <div class="filtrar">
             <select id="option-cor">
                 <option> Filtrar cor</option>
                 <option value="red"> 🟥 Vermelho</option>
@@ -38,6 +62,7 @@
                 <option value="gray">⬜ Cinza</option>
             </select>   
         </div>
+        <% } %> 
      </section>     
         <section class="bloco-container">
             <div class="bloco-marcas">
