@@ -6,6 +6,6 @@ var carrinhoController = require('../controller/carrinhoController');
 /* Middleware de autenticação de Login */
 router.use(authentication);
 
-router.post('/', carrinhoController.adicionar);
+router.get('/', carrinhoController.produto);
 
 module.exports = router;
