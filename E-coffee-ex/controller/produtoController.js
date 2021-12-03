@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const { Op } = require("sequelize");
 
 const produtoController = {
     detalhes: async function(req, res) {
@@ -23,7 +24,9 @@ const produtoController = {
         .then((cafeteiras) => {
             return res.render('marcaSelecionada', { 
                 cafeteiras: cafeteiras,
-                capsulas: false
+                cafeteira: true,
+                capsulas: false,
+                marcaSelecionada: false
             });
         })
     },
@@ -40,9 +43,30 @@ const produtoController = {
         .then((capsulas) => {
             return res.render('marcaSelecionada', { 
                 capsula: capsulas,
-                capsulas: true
+                cafeteira: false,
+                capsulas: true,
+                marcaSelecionada: false
             });
         })
+    },
+    mondial: function(req, res) {
+
+        const { marca } = req.params;
+
+        const mondial = db.Produto.findAll({
+            where: { 
+                nome_produto: {[Op.like]: '%Mondial%'}
+            }
+        }).then((marca) => {
+            return res.render("marcaSelecionada", { 
+                marca: marca, 
+                capsulas: false, 
+                cafeteira: false, 
+                marcaSelecionada: true 
+            });
+        })
+
+        
     }
 };
 

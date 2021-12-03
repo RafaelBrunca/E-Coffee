@@ -31,13 +31,13 @@
 <!---cards-->
 <section class="bloco-container">
     <div class="bloco-teste">
-        <% for(let i =  0; i < produtos.length; i++) { %>
+        <% for(let i =  0; i < cafeteiras.length; i++) { %>
             <div class="cards">
-                <a href="/produto/<%= produtos[i].id_produto %>">
+                <a href="/produto/<%= cafeteiras[i].id_produto %>">
                     <div class="bloco">
-                        <img src="/<%= produtos[i].imagem %>" alt="">            
+                        <img src="/<%= cafeteiras[i].imagem %>" alt="">            
                         <div class='descricao-home'>
-                            <p><%= produtos[i].nome_produto %><br> R$: <%= produtos[i].preco %> </p>
+                            <p><%= cafeteiras[i].nome_produto %><br> R$: <%= cafeteiras[i].preco %> </p>
                         </div>
                         <span class="buy">Comprar</span>            
                     </div>
@@ -48,30 +48,13 @@
 </section>
 <section class="bloco-container">
     <div class="bloco-teste">
-        <% for(let i =  0; i < produtos.length; i++) { %>
+        <% for(let i =  0; i < capsulas.length; i++) { %>
             <div class="cards">
-                <a href="/produto/<%= produtos[i].id_produto %>">
+                <a href="/produto/<%= capsulas[i].id_produto %>">
                     <div class="bloco">
-                        <img src="/<%= produtos[i].imagem %>" alt="">            
+                        <img src="/<%= capsulas[i].imagem %>" alt="">            
                         <div class='descricao-home'>
-                            <p><%= produtos[i].nome_produto %><br> R$: <%= produtos[i].preco %> </p>
-                        </div>
-                        <span class="buy">Comprar</span>         
-                    </div>
-                </a>
-            </div>
-        <% } %>
-    </div>
-</section>
-<section class="bloco-container">
-    <div class="bloco-teste">
-        <% for(let i =  0; i < produtos.length; i++) { %>
-            <div class="cards">
-                <a href="/produto/<%= produtos[i].id_produto %>">
-                    <div class="bloco">
-                        <img src="/<%= produtos[i].imagem %>" alt="">            
-                        <div class='descricao-home'>
-                            <p><%= produtos[i].nome_produto %><br> R$: <%= produtos[i].preco %> </p>
+                            <p><%= capsulas[i].nome_produto %><br> R$: <%= capsulas[i].preco %> </p>
                         </div>
                         <span class="buy">Comprar</span>         
                     </div>

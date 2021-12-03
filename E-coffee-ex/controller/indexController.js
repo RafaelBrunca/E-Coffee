@@ -3,11 +3,24 @@ const db = require('../database/models');
 const indexController = {
     index: async function(req, res){
 
-        const listar = await db.Produto.findAll({
+        //Tras Cafeteiras do banco
+
+        const cafeteiras = await db.Produto.findAll({
+            where: { categoria: "Cafeteira"},
             limit: 3
         });
 
-        res.render('index', { produtos: listar});
+        // Tras cápsulas do banco
+
+        const capsulas = await db.Produto.findAll({
+            where: { categoria: "Cápsula"},
+            limit: 3
+        });
+
+        res.render('index', { 
+            cafeteiras: cafeteiras, 
+            capsulas: capsulas
+        });
     },
     produtos: function(req, res) {
         res.render('marcaSelecionada');
