@@ -49,13 +49,18 @@ const produtoController = {
             });
         })
     },
-    mondial: function(req, res) {
+    marcasCafeteiras: function(req, res) {
 
+        //Recupera marca da URL
         const { marca } = req.params;
 
-        const mondial = db.Produto.findAll({
+        const query = `%${marca}%`;
+
+        //Busca marca selecionada
+        const buscarMarca = db.Produto.findAll({
             where: { 
-                nome_produto: {[Op.like]: '%Mondial%'}
+                nome_produto: {[Op.like]: query},
+                categoria: "Cafeteira"
             }
         }).then((marca) => {
             return res.render("marcaSelecionada", { 
@@ -64,9 +69,28 @@ const produtoController = {
                 cafeteira: false, 
                 marcaSelecionada: true 
             });
-        })
+        })        
+    },
+    marcasCapsulas: function(req, res) {
+        //Recupera marca da URL
+        const { marca } = req.params;
 
+        const query = `%${marca}%`;
         
+        //Busca marca selecionada
+        const buscarMarca = db.Produto.findAll({
+            where: { 
+                nome_produto: {[Op.like]: query},
+                categoria: "Cápsula"
+            }
+        }).then((marca) => {
+            return res.render("marcaSelecionada", { 
+                marca: marca, 
+                capsulas: false, 
+                cafeteira: false, 
+                marcaSelecionada: true 
+            });
+        })  
     }
 };
 
