@@ -13,11 +13,11 @@ const adminController = {
     const user = await db.Usuario.findOne({ where: { usuario: usuario} });
     
     if (!user) {
-      return res.send({ error: 'Usuário não encontrado' });
+      return
     };
     
     if(!await bcrypt.compare(senha, user.senha)) {
-      return res.send({ error: 'Senha incorreta' });
+      return
     };
 
     req.session.admin = user;

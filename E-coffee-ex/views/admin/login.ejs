@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/loginAdmin.css">
+    
     <title>Administração</title>
 </head>
 <body>
@@ -21,16 +22,17 @@
                 <form action="admin" method="POST">
                     <div class="user">
                         <label for="usuario">Usuário:</label>
-                        <input name="usuario" id="usuario" type="text">
+                        <input name="usuario" id="usuario" type="text" class="userInput">
                     </div>
                     <div class="senha">
                         <label for="senha">Senha:</label>
-                        <input name="senha" id="senha" type="password"> 
+                        <input name="senha" id="senha" type="password" class="senhaInput"> 
                     </div>                  
                     <button type="submit">Entrar</button>
                 </form>
             </div>
         </div>
     </main>
+    <script src="/javascripts/admin.js" type="text/javascript"></script>
 </body>
 </html>

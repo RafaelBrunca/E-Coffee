@@ -1369,18 +1369,7 @@ body .compraProduto h2{
 body .compraProduto p{
     font-size: 15px;
 }
-body .compraProduto .colocarCarrinho button {
-    width: 380px; 
-    height: 61px;
-    background-color: #CE5F20;
-    color:#ffff;
-    border-radius: 5px;
-    font-size: 18px;
-}
-body .compraProduto .colocarCarrinho {
-    margin-left: 19vw;
-    margin-top: 5px;
-}
+
 body .compraProduto select{
     height: 47px;
     width: 748px;
