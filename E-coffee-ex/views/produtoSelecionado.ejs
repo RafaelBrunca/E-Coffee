@@ -29,9 +29,11 @@
                 </select>
                 <h1>R$ <%= produto.preco %></h1>
                 <p>Ou em até 10x de R$<%= produto.preco / 10 %>  sem juros</p>
-                <div class="comprar">
-                    <button type="button">Colocar no Carrinho</button>
-                </div>             
+                <form action="carrinho/<%= produto.id_produto %>" method="POST">
+                    <div class="comprar">
+                        <button type="submit">Colocar no Carrinho</button>
+                    </div>  
+                </form>           
             </div>
         <div class="descricao-pedido">
             <div class="title-descri">

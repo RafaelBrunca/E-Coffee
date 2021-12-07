@@ -12,6 +12,7 @@ var loginRouter = require('./routes/login');
 var indexRouter = require('./routes/index');
 var produtoRouter = require('./routes/produto');
 var carrinhoRouter = require('./routes/carrinho');
+var finalizarCompraRouter = require('./routes/finalizarCompra')
 var homeUserRouter = require('./routes/userPage');
 var sobreRouter = require('./routes/sobre');
 const adminRouter = require('./routes/admin/admin');
@@ -38,7 +39,7 @@ app.use('/login', loginRouter);
 app.use('/', indexRouter);
 app.use('/produto', produtoRouter);
 app.use('/carrinho', carrinhoRouter);
-app.use('/finalizarCompra', finalizarCompraRouter);
+app.use('/carrinho/finalizarCompra', finalizarCompraRouter);
 app.use('/paginadousuario/:id_cliente', homeUserRouter);
 app.use('/sobre', sobreRouter);
 app.use('/admin', adminRouter);

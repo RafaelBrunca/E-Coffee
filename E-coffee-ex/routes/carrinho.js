@@ -7,6 +7,6 @@ var carrinhoController = require('../controller/carrinhoController');
 router.use(authentication);
 
 router.get('/', carrinhoController.produto);
-router.get('/produtoSelecionado/carrinho', carrinhoController.produto);
+router.get('/produto/carrinho', carrinhoController.produto);
 
 module.exports = router;
