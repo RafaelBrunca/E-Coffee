@@ -1,13 +1,12 @@
-
 <%- include('./partials/header') %>
 <head>
     <link rel="stylesheet" href="/stylesheets/login.css">
 </head>
-<% if(!result) { %> 
+<% if(!created) { %> 
     <div class="body-login">
         <div class="container" id="container" <% if(locals.errors) { %> style="min-height: 41rem;" <% } %>  >
             <div class="form-container sign-up-container">
-                <form action="/login/create" method="POST">
+                <form action="/iniciarsessao/create" method="POST">
                     <h1>Cadastre-se</h1>            
                     <input type="text" name="name" placeholder="Nome" />
                     <% if(locals.errors && errors.name) { %>
@@ -55,12 +54,16 @@
                 </form>
             </div>    
             <div class="form-container sign-in-container">
-                <form action="/login" method="POST">
-                    <h1>Login</h1>        
-                    <input type="email" name="email" placeholder="E-mail" required class="userInput" /> 
-                    <input type="password" name="password" placeholder="Senha" required class="senhaInput" />
+                <form action="/iniciarsessao/login" method="POST" id="formularioLogin">
+                    <h1>Login</h1>
+                    <div class="form-Login">
+                        <input type="email" name="email" placeholder="E-mail" id="loginemail" />
+                    </div>
+                    <div class="form-Login">
+                        <input type="password" name="password" placeholder="Senha" id="loginsenha" />
+                    </div>                    
                     <a href="/login/recuperarsenha">Esqueceu sua senha?</a>
-                    <button>Login</button>
+                    <button type="submit">Login</button>
                 </form>
             </div>
             <div class="overlay-container">
@@ -79,7 +82,7 @@
     </div>
 </div>
 <% } %>
-<% if(result) { %>
+<% if(created) { %>
     <div class="cadastrosucesso">
         <div class="container">
             <h3>

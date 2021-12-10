@@ -260,3 +260,7 @@ body{
 footer{
   margin-top: 0;
 }
+
+.body-login .form-Login {
+  width: -moz-available;
+}

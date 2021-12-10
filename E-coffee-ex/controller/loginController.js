@@ -11,14 +11,10 @@ const loginController = {
     const user = await db.Cliente.findOne({ where: { email: email} });
 
     if (!user) {
-      return res.render("cadastro", { 
-        errorModel: "E-mail incorreto"
-      });
+      return;
     };
     if(!await bcrypt.compare(password, user.senha)) {
-      return res.render("cadastro", { 
-        errorSenha: "Senha incorreta"
-      })
+      return
     };
 
     req.session.user = user;
@@ -26,8 +22,9 @@ const loginController = {
     res.redirect('/');
   },
   cadastro: function(req, res) {
-    result = undefined;
-    res.render('cadastro');
+    res.render('cadastro', {
+      created: null,
+    });
   },
   create: async function(req, res) {
 
@@ -39,6 +36,7 @@ const loginController = {
       res.render('cadastro', {
         errors: errors.mapped(),
         old: req.body,
+        created: null
       });
     } else {
       await db.Cliente.create({
@@ -49,7 +47,9 @@ const loginController = {
         email: req.body.email,
         senha: senhaCriptografada
       }).then((result) => {
-        res.render("cadastro", {result});
+        res.render("cadastro", {
+          created: true
+        });
       }).catch((err) => {
         console.log(err);
       });

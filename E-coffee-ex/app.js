@@ -35,8 +35,8 @@ app.use(methodOverride("_method"));
 app.use(locals);
 
 /* ROTAS */
-app.use('/login', loginRouter);
 app.use('/', indexRouter);
+app.use('/iniciarsessao', loginRouter);
 app.use('/produto', produtoRouter);
 app.use('/carrinho', carrinhoRouter);
 app.use('/carrinho/finalizarCompra', finalizarCompraRouter);
