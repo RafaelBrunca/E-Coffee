@@ -14,7 +14,7 @@ const loginController = {
       return;
     };
     if(!await bcrypt.compare(password, user.senha)) {
-      return
+      return;
     };
 
     req.session.user = user;
@@ -55,6 +55,6 @@ const loginController = {
       });
     }
   }
-}
+};
 
 module.exports = loginController;

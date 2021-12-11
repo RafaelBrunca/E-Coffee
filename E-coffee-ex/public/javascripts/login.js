@@ -1,7 +1,8 @@
-const signUpButton = document.getElementById("signUp");
-const signInButton = document.getElementById("signIn");
-const container = document.getElementById("container");
-let estilo = document.querySelector(".dropdown-menu-login");
+let signUpButton = document.getElementById("signUp");
+let signInButton = document.getElementById("signIn");
+let container = document.getElementById("container");
+let dropdown = document.querySelector(".dropdown-menu-login");
+let cadastro = document.querySelector(".body-login .container");
 
 //Valida campos no DropDown de Login
 let loginDropDown = document.querySelector(".nav-item .formDropdown");
@@ -31,7 +32,7 @@ loginDropDown.onsubmit = function(event) {
       campoDropdown.parentElement.append(error);
       valido = false;
 
-      estilo.style.height = "328px";
+      dropdown.style.height = "328px";
     };
 
     campoDropdown.addEventListener("blur", () => {
@@ -69,10 +70,12 @@ formLogin.onsubmit = function(event) {
     if(formCampo.value.length == 0){
       formCampo.style.backgroundColor = "#fffbc7";
       formCampo.style.border = "1px solid red";
+
       let error = document.createElement("div");
       error.className = "error";
       error.innerText = "Este campo é obrigatório"
       formCampo.parentElement.append(error);
+
       valido = false;
     };
 
@@ -88,6 +91,46 @@ formLogin.onsubmit = function(event) {
     formLogin.onsubmit = null;
     formLogin.submit();
   };
+};
+
+// Valida campos de cadastro
+let formCadastro = document.getElementById("formCadastro");
+
+formCadastro.onsubmit = function(event) {
+  event.preventDefault();
+
+  let valido = true;
+
+  let camposObrigatorios = ["nome", "sobrenome", "telefone", "cpf", "email", "senha", "confirmasenha" ];
+  camposObrigatorios.forEach(function(campo){
+    let form = document.getElementById(campo);
+
+    if(form.value.length == 0){
+      form.style.backgroundColor = "#fffbc7";
+      form.style.border = "1px solid red";
+
+      let error = document.createElement("div");
+      error.className = "error";
+      error.innerText = "Este campo é obrigatório";
+      form.parentElement.append(error);
+
+      valido = false;
+
+      cadastro.style.minHeight = "669px";
+    };
+
+    form.addEventListener("blur", () => {
+      if(form.value.length > 0){
+        form.style.backgroundColor = "#ffff";
+        form.style.border = "1px solid #8f8f9d";
+      };
+    });
+
+    if(valido == true){
+      formCadastro.onsubmit = null;
+      formCadastro.submit;
+    };
+  });
 };
 
 signUpButton.addEventListener("click", () => {

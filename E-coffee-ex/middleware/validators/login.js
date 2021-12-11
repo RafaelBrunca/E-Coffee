@@ -1,5 +1,6 @@
 const db = require('../../database/models');
 
+/* Validador de CPF */
 const CPF = require('cpf');
 var { check } = require('express-validator');
 
@@ -13,7 +14,7 @@ const validacaoRegistro = [
     /* Checar Sobrenome */
     check("lastname")
         .notEmpty()
-        .withMessage("O sobre nome é obrigatório")
+        .withMessage("O sobrenome é obrigatório")
         .isLength({ min: 3 })
         .withMessage("O campo deve ter no mínimo 3 caracteres"),
     /* Checar Telefone */
@@ -27,11 +28,8 @@ const validacaoRegistro = [
         .custom( async (cpfBody) => {
             const formatCpf = await CPF.format(cpfBody);
             const validaCpf = CPF.isValid(formatCpf);
-
-            if (!validaCpf) {
-                return Promise.reject("Digite um CPF válido!");
-            };
-        }),
+        })
+        .withMessage("Digite um CPF válido!"),
     /* Checar E-mail */
     check("email").custom( async (emailBody) => {
         /* Recupera e compara informações com o db */
