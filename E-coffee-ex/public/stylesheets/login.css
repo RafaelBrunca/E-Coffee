@@ -260,3 +260,8 @@ body{
 footer{
   margin-top: 0;
 }
+
+.body-login .form-Login,
+.body-login .formCadastro {
+  width: -moz-available;
+}

@@ -1,6 +1,6 @@
 function authentication(req, res, next){
     if(!req.session.user) {
-        return res.redirect('/login/iniciarsessao');
+        return res.redirect('/iniciarsessao');
     }
     next();
 }

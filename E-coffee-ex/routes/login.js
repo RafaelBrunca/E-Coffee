@@ -9,8 +9,8 @@ var usuarioLogado = require('../middleware/usuarioLogado');
 
 router.use(usuarioLogado);
 
-router.post('/',loginController.login);
-router.get('/iniciarsessao', loginController.cadastro);
+router.get('/', loginController.cadastro);
+router.post('/login', loginController.login);
 router.post('/create', validacaoRegistro, loginController.create);
 router.get('/recuperarsenha', recuperarSenha.recupera);
 
