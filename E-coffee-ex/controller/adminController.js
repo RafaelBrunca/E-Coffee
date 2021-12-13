@@ -110,7 +110,17 @@ const adminController = {
     buscarProduto.update(editar);
 
     return res.redirect('/admin/gerenciamentodeprodutos');
+  },
+  excluirProduto: async function(req, res) {
+
+    const excluir = await db.Produto.destroy({
+      where: {  }
+    })
+    return res.redirect('/admin/gerenciarProdutos')
   }
 };
 
 module.exports = adminController;
+
+
+console.log("Servidor Rodando!")
