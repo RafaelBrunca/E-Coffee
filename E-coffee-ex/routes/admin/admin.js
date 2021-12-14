@@ -18,5 +18,6 @@ router.get('/gerenciamentodeprodutos/adicionarproduto', autenticacaoAdmin, admin
 router.post('/gerenciamentodeprodutos/adicionarproduto', autenticacaoAdmin, uplodaImage.single("imagem"), adminController.adicionarProduto);
 router.get('/gerenciamentodeprodutos/:id', autenticacaoAdmin, adminController.telaEditar);
 router.post('/gerenciamentodeprodutos/editar/:id', autenticacaoAdmin, uplodaImage.single("imagem"), adminController.editarProduto);
+router.get('/gerenciamentodeprodutos/excluir/:id', autenticacaoAdmin,adminController.removerProduto)
 
 module.exports = router;

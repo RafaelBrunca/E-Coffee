@@ -111,12 +111,13 @@ const adminController = {
 
     return res.redirect('/admin/gerenciamentodeprodutos');
   },
-  excluirProduto: async function(req, res) {
+  removerProduto: async function(req, res) {
+    const id = req.params.id;
 
-    const excluir = await db.Produto.destroy({
-      where: {  }
+    await db.Produto.destroy({
+      where: { id_produto: id }
     })
-    return res.redirect('/admin/gerenciarProdutos')
+    return res.redirect('/admin/gerenciamentodeprodutos')
   }
 };
 

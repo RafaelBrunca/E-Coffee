@@ -16,7 +16,7 @@ var finalizarCompraRouter = require('./routes/finalizarCompra')
 var homeUserRouter = require('./routes/userPage');
 var sobreRouter = require('./routes/sobre');
 const adminRouter = require('./routes/admin/admin');
-const finalizarCompraController = require('./controller/finalizarCompraController');
+
 
 
 var app = express();
