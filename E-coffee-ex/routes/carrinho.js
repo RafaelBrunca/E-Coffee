@@ -8,5 +8,6 @@ router.use(authentication);
 
 router.get('/', carrinhoController.produto);
 router.get('/produto/carrinho', carrinhoController.produto);
+router.get('/carrinho/excluir/:id', carrinhoController.removerProdutoCarrinho)
 
 module.exports = router;
