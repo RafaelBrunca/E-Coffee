@@ -61,20 +61,13 @@ header nav .search .search_box {
     width: 561px;
     outline: 0; /* tira a borda quando clica na barra*/
 }
-<<<<<<< HEAD
 header .nav-item:hover .search_box {
     background-color: #F5F5DC;
-=======
+}
 header nav .search .search_button {
     margin-left: auto;
     margin-top: -27px;
     width: min-content;
-}
-
-header nav .search .search_button a {
-    color: black;
-    text-decoration: none;
->>>>>>> 7aca390c54b20b1e82e5cbd6ead2f5e9c57aada5
 }
 header nav .carrinho{
     color: #fff;
