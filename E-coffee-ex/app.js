@@ -6,24 +6,24 @@ var logger = require('morgan');
 var session = require("express-session");
 var locals = require('./middleware/locals');
 var methodOverride = require("method-override");
+var cors = require('cors');
 
 /* Importação de rotas */
 var loginRouter = require('./routes/login');
 var indexRouter = require('./routes/index');
 var produtoRouter = require('./routes/produto');
+const encontrarprodutosRouter = require('./routes/encontrarprodutos');
 var carrinhoRouter = require('./routes/carrinho');
-var finalizarCompraRouter = require('./routes/finalizarCompra')
 var homeUserRouter = require('./routes/userPage');
 var sobreRouter = require('./routes/sobre');
 const adminRouter = require('./routes/admin/admin');
-
-
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -39,9 +39,9 @@ app.use('/', indexRouter);
 app.use('/iniciarsessao', loginRouter);
 app.use('/produto', produtoRouter);
 app.use('/carrinho', carrinhoRouter);
-app.use('/carrinho/finalizarCompra', finalizarCompraRouter);
-app.use('/paginadousuario/:id_cliente', homeUserRouter);
+app.use('/paginadousuario', homeUserRouter);
 app.use('/sobre', sobreRouter);
+app.use('/encontrarprodutos', encontrarprodutosRouter);
 app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler

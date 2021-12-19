@@ -7,7 +7,7 @@
         <% if(enderecos.length == 3) { %>
             <% }else{ %> 
                 <div class="criarEndereco">
-                    <a href="/paginadousuario/<%= sessao.user.id_cliente %>/enderecos/novoendereco">
+                    <a href="/paginadousuario/enderecos/novoendereco">
                         <img src="/images/plus.png" alt="crirar" style="margin-top: 57px;">
                         <p>Adicionar Novo Endereço</p>
                     </a>
@@ -25,10 +25,10 @@
                     </ul>
                     <div class="editar">
                         <div class="alterar">
-                            <a href="/paginadousuario/<%= sessao.user.id_cliente %>/enderecos/editar/<%= enderecos[i].id_cli_enderecos %>">Alterar</a>
+                            <a href="/paginadousuario/enderecos/editar/<%= enderecos[i].id_cli_enderecos %>">Alterar</a>
                         </div>                        
                         <div class="excluir">
-                            <a href="/paginadousuario/<%= sessao.user.id_cliente %>/enderecos/excluir/<%= enderecos[i].id_cli_enderecos %>">Excluir</a>
+                            <a href="/paginadousuario/enderecos/excluir/<%= enderecos[i].id_cli_enderecos %>">Excluir</a>
                         </div>
                     </div>                 
                 </div>
@@ -36,10 +36,10 @@
         <% } %>                  
     </div>
     <div class="voltar">
-        <a href="/paginadousuario/<%= sessao.user.id_cliente %>">Voltar</a>
+        <a href="/paginadousuario">Voltar</a>
     </div>
     <div class="whatsapp">
-        <a href="#"><img src="images/icons8-whatsapp-48.png"></a>
+        <a href="#"><img src="/images/icons8-whatsapp-48.png"></a>
     </div>
 </main>
 <%- include('./partials/footer') %>

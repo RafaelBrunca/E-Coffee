@@ -90,7 +90,7 @@
                         </div>                        
                     </div>
                     <div class="ficha">
-                        <label for="peso">Peso:</label>
+                        <label for="peso">Peso <small>Em KG</small>:</label>
                         <% if(isEditing) { %>
                             <input type="text" name="peso" id="peso" value="<%= produto.peso %> ">
                         <% }else{ %>
@@ -134,13 +134,13 @@
                                 <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp" value="<%= produto.imagem %> "/>
                             <% }else{ %>
                                 <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp" />
-                            <% } %>                            
+                            <% } %>     
                             <label for="estoque">Estoque:</label>
                             <% if(isEditing) { %>
-                                <input type="text" name="estoque" id="estoque" value="<%= produto.estoque %>"/>
+                                <input type="text" name="estoque" id="quantidade" value="<%= produto.estoque %>"/>
                             <% }else{ %>
-                                <input type="text" name="estoque" id="estoque" />
-                            <% } %>                            
+                                <input type="text" name="estoque" id="quantidade" />
+                            <% } %>
                         </div>
                     </div>
                     <% if(isEditing) { %>

@@ -2,7 +2,7 @@
 <main>
     <div class="editar-perfil">
         <div class="editar">
-            <form method="POST" action="/paginadousuario/<%= sessao.user.id_cliente %>/seguranca/editar?_method=PUT">
+            <form method="POST" action="/paginadousuario/seguranca/editar?_method=PUT">
                 <div class="campo">
                     <label for="name">Nome:</label>
                     <label for="lastname" style="padding-left: 14rem;">Sobrenome:</label>
@@ -44,7 +44,7 @@
                 <div class='salvar'>
                     <button type="submit">Salvar alterações</button>
                     <div class="cancel-edicao">
-                        <a href="/paginadousuario/<%= sessao.user.id_cliente %>/seguranca">Cancelar</a>
+                        <a href="/paginadousuario/seguranca">Cancelar</a>
                     </div>                    
                 </div>
             </form>

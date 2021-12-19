@@ -22,30 +22,31 @@ const adminController = {
 
     req.session.admin = user;
     
-    res.send('logado');
+    res.redirect('/admin/painel');
   },
 
-  /* Gerenciar, Adicionar, Editar produtos */
-
-  gerenciarProdutos: async function(req, res) {
-
-    const listar = await db.Produto.findAll()
-    .then((result) => { return res.render('admin/gerenciarProdutos', { produtos: result }); 
-    }
-    ).catch((err) => { console.log(err) });
+  painel: function(req, res) {
+    res.render('admin/painel');
   },
+
+  gerenciarProdutos: function(req, res) {
+
+    db.Produto.findAll().then((result) => 
+    { return res.render('admin/gerenciarProdutos', { produtos: result }); }).catch((err) => { console.log(err) });
+  },
+
   telaAdicionar: function(req, res) {
     return res.render('admin/adicionarProduto', { 
       isEditing: false
     });
   },
+
   adicionarProduto: async function(req, res) {
 
     const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
     
     let imagem = "images/uploads/imagemDoProduto/"+req.file.filename;
     
-    /* Criação de produto */
     const criarProduto = await db.Produto.create({
       nome_produto: nomeproduto,
       sku: sku,
@@ -87,10 +88,8 @@ const adminController = {
       imagem = "images/uploads/imagemDoProduto/"+req.file.filename;
     };
 
-    /* Busca o Produto selecionado */
     const buscarProduto = await db.Produto.findByPk(id);
 
-    /* Editar Produto */
     const editar = {
       nome_produto: nomeproduto,
       sku: sku,
@@ -122,6 +121,3 @@ const adminController = {
 };
 
 module.exports = adminController;
-
-
-console.log("Servidor Rodando!")

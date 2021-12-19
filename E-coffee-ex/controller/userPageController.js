@@ -38,7 +38,7 @@ const homeUserController = {
             req.session.user.telefone = telefone;
             req.session.user.cpf = cpf;
             req.session.user.email = email;
-            res.redirect('/paginadousuario/'+ req.session.user.id_cliente + '/seguranca')
+            res.redirect('/paginadousuario/seguranca')
         })
         .catch((err) => {
             console.log(err)
@@ -69,7 +69,7 @@ const homeUserController = {
             complemento: complemento,
             cliente: req.session.user.id_cliente
         }).then((result) => {
-            return res.redirect('/paginadousuario/' + req.session.user.id_cliente + '/enderecos');
+            return res.redirect('/paginadousuario/enderecos');
         }).catch((err) => {
             console.log(err);
         });
@@ -100,14 +100,14 @@ const homeUserController = {
                 where: { id_cli_enderecos: req.params.id_cli_enderecos }
             }
         ).then((result) => {
-            return res.redirect('/paginadousuario/' + req.session.user.id_cliente + '/enderecos');
+            return res.redirect('/paginadousuario/enderecos');
         }).catch((err) => {
             console.log(err)
         })
     },
     excluir: async function(req, res) {
         await db.Endereco.destroy({ where: { id_cli_enderecos: req.params.id_cli_enderecos } });
-        return res.redirect('/paginadousuario/' + req.session.user.id_cliente + '/enderecos');
+        return res.redirect('/paginadousuario/enderecos');
     }
 }
 

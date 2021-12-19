@@ -13,6 +13,7 @@ const uplodaImage = middleMulter.uploadImage;
 
 router.get('/', adminController.telaLogin);
 router.post('/', adminController.login);
+router.get('/painel', adminController.painel);
 router.get('/gerenciamentodeprodutos', autenticacaoAdmin, adminController.gerenciarProdutos);
 router.get('/gerenciamentodeprodutos/adicionarproduto', autenticacaoAdmin, adminController.telaAdicionar);
 router.post('/gerenciamentodeprodutos/adicionarproduto', autenticacaoAdmin, uplodaImage.single("imagem"), adminController.adicionarProduto);

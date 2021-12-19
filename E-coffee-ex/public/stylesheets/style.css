@@ -69,6 +69,12 @@ header nav .search .search_button {
     margin-top: -27px;
     width: min-content;
 }
+
+header nav .search .search_button  button{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
 header nav .carrinho{
     color: #fff;
 }

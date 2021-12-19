@@ -1,5 +1,5 @@
 const carrinhoController = {
-    produto: function(req, res){
+    carrinho: function(req, res){
         res.render('carrinho');
     },
 

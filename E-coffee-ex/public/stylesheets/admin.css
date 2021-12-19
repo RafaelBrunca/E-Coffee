@@ -106,6 +106,41 @@ main .dsc {
     padding: 0;
     margin-top: 3px;
 }
+
+/* =================
+        PAINEL
+==================== */
+.painel ul{
+    display: flex;
+    margin-right: 3%;
+}
+.painel a{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 2rem;
+    text-decoration: none;
+}
+
+.Ciclo{
+    margin-top: 2%;
+    font-size: 14px;
+    background-color: #CE5F20;
+    border-radius: 11px;
+    width: 30%;
+    padding: 10px;
+}
+.ValorCiclo{
+    font-size: 14px;
+    background-color: #FFF1E0;
+    border-radius: 11px;
+    width: 30%;
+    padding: 10px;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 50px;
+}
+
 li.id_produto {
     padding-left: 10px;
 }

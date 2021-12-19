@@ -1,21 +1,36 @@
-let formulario = document.getElementById("formEndereco");
-let cep = document.getElementById("cep");
+const formulario = document.getElementById("formEndereco");
+const cep = document.getElementById("cep");
+const rua = document.getElementById('rua');
+const bairro = document.getElementById('bairro');
+const cidade = document.getElementById('cidade');
+const estado = document.getElementById('estado');
 
 //Preenche os campos de endereço do usuairo a partir do cep
 cep.addEventListener("change", function() {
-    let endereco = `https://viacep.com.br/ws/${cep.value}/json/`;
-    fetch(endereco).then((data) => {
-        return data.json();
-    })
-    .then(resultado =>{
-        document.getElementById('rua').value = resultado.logradouro;
-        document.getElementById('bairro').value = resultado.bairro;
-        document.getElementById('cidade').value = resultado.localidade;
-        document.getElementById('estado').value = resultado.uf;
-    })
-    .catch((err) => {
-        console.log(err);
-    })
+  const URL = `https://viacep.com.br/ws/${this.value}/json/`;
+  const travarCampos = document.querySelectorAll(".respostaCEP");
+  travarCampos.forEach(function(campo) {
+    campo.setAttribute("disabled", "disabled");
+  });
+
+  fetch(URL).then((result) => {
+    return result.json();
+  })
+  .then(data =>{
+    rua.value = data.logradouro;
+    bairro.value = data.bairro;
+    cidade.value = data.localidade;
+    estado.value = data.uf;
+
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(function() {
+    travarCampos.forEach(function(campo) {
+      campo.removeAttribute("disabled");
+    });
+  })
 });
 
 //Valida formulario de Endereço
@@ -39,7 +54,7 @@ formulario.onsubmit = function(event) {
     form.addEventListener("blur", () => {
       if(form.value.length > 0){
         form.style.backgroundColor = "#ffff";
-        form.style.border = "1px solid #8f8f9d";
+        form.style.border = "1px solid #CE5F20";
       };
     });
 
