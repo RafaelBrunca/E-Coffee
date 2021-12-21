@@ -229,6 +229,12 @@ nav .nav-item .nav-login:hover{
 }
 
 /* ====== MARCA SELECIONADA ========== */
+.result-empty {
+    font-size: 28px;
+    margin-right: 17em;
+    padding-left: 20px;
+    width: max-content;
+}
 .produtos_filtros {
     display: flex;
     justify-content: center; 

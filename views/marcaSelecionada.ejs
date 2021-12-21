@@ -115,6 +115,11 @@
                         </div>
                     <% } %>
                 <% } %>
+                <% if(!marca.length) { %>
+                    <div class="result-empty">
+                        Nenhum resultado foi encontrado.
+                    </div>
+                <% } %>
             </div>
         </section>          
 </div>

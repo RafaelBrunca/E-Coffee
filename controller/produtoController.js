@@ -11,6 +11,30 @@ const produtoController = {
             return res.render('produtoSelecionado', { produto: result })
         })
     },
+
+    encontrarprodutos: async function(req, res) {
+        const { produto } = req.params;
+
+        const query = `%${produto}%`;
+
+        const buscarMarca = await db.Produto.findAll({
+            where: {
+                nome_produto: { [Op.like]: query },
+                [Op.or]: [
+                    {categoria: "Cafeteira"},
+                    {categoria: "Cápsula"}    
+                ],
+                status_produto: "Habilitado"
+            }
+        });
+        return res.render("marcaSelecionada", {
+            marca: buscarMarca,
+            capsulas: false,
+            cafeteira: false,
+            marcaSelecionada: true
+        });
+    },
+
     cafeteiras: function (req, res) {
         const cafeteiras = db.Produto.findAll({
             where: {
