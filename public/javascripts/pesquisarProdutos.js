@@ -12,8 +12,19 @@ pesquisa.addEventListener('keyup', function() {
             console.log(data)
         })
     };    
-})
+});
 
-pesquisa.addEventListener('submit', function() {
-    pesquisa.setAttribute('action', '/produto/encontrar/'+barraDePesquisa.value)
+pesquisa.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valido = false;
+
+    if(barraDePesquisa.value.trim().length > 0) {
+        pesquisa.setAttribute('action', '/produto/encontrar/'+barraDePesquisa.value.trim());
+        valido = true;
+    };
+
+    if(valido == true) {
+        pesquisa.addEventListener = null;
+        pesquisa.submit()
+    };
 });
