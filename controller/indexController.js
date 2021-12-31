@@ -4,12 +4,20 @@ const indexController = {
     index: async function(req, res){
 
         const cafeteiras = await db.Produto.findAll({
-            where: { categoria: "Cafeteira"},
+            where: 
+            {   
+                categoria: "Cafeteira",
+                status_produto: "Habilitado"
+            },
             limit: 3
         });
 
         const capsulas = await db.Produto.findAll({
-            where: { categoria: "Cápsula"},
+            where: 
+            { 
+                categoria: "Cápsula",
+                status_produto: "Habilitado"
+            },
             limit: 3
         });
 

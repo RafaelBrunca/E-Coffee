@@ -44,6 +44,7 @@ const produtoController = {
         })
         .then((cafeteiras) => {
             return res.render('marcaSelecionada', {
+                marca: cafeteiras,
                 cafeteiras: cafeteiras,
                 cafeteira: true,
                 capsulas: false,
@@ -60,7 +61,7 @@ const produtoController = {
         })
         .then((capsulas) => {
             return res.render('marcaSelecionada', {
-                capsula: capsulas,
+                marca: capsulas,
                 cafeteira: false,
                 capsulas: true,
                 marcaSelecionada: false
@@ -75,7 +76,8 @@ const produtoController = {
         const buscarMarca = db.Produto.findAll({
             where: {
                 nome_produto: { [Op.like]: query },
-                categoria: "Cafeteira"
+                categoria: "Cafeteira",
+                status_produto: "Habilitado"
             }
         }).then((marca) => {
             return res.render("marcaSelecionada", {
@@ -94,7 +96,8 @@ const produtoController = {
         const buscarMarca = db.Produto.findAll({
             where: {
                 nome_produto: { [Op.like]: query },
-                categoria: "Cápsula"
+                categoria: "Cápsula",
+                status_produto: "Habilitado"
             }
         }).then((marca) => {
             return res.render("marcaSelecionada", {

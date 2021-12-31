@@ -71,13 +71,13 @@
         <section class="bloco-container">
             <div class="bloco-marcas">
                 <% if(cafeteira === true) { %> 
-                    <% for(let i = 0; i < cafeteiras.length; i++) { %>
+                    <% for(let i = 0; i < marca.length; i++) { %>
                         <div class="marcaSelecionada">
-                            <a href="/produto/<%= cafeteiras[i].id_produto %>">
+                            <a href="/produto/<%= marca[i].id_produto %>">
                                 <div class="bloco">
-                                    <img src="/<%= cafeteiras[i].imagem %>" alt="">            
+                                    <img src="/<%= marca[i].imagem %>" alt="">            
                                     <div class='descricao-home'>
-                                        <p><%= cafeteiras[i].nome_produto %><br> R$: <%= cafeteiras[i].preco %> </p>
+                                        <p><%= marca[i].nome_produto %><br> R$: <%= marca[i].preco %> </p>
                                     </div>
                                     <span class="buy">Comprar</span>         
                                 </div>
@@ -86,13 +86,13 @@
                     <% } %>
                 <% } %>
                 <% if(capsulas === true) { %> 
-                    <% for(let i = 0; i < capsula.length; i++) { %>
+                    <% for(let i = 0; i < marca.length; i++) { %>
                         <div class="marcaSelecionada">
-                            <a href="/produto/<%= capsula[i].id_produto %>">
+                            <a href="/produto/<%= marca[i].id_produto %>">
                                 <div class="bloco">
-                                    <img src="/<%= capsula[i].imagem %>" alt="">            
+                                    <img src="/<%= marca[i].imagem %>" alt="">            
                                     <div class='descricao-home'>
-                                        <p><%= capsula[i].nome_produto %><br> R$: <%= capsula[i].preco %> </p>
+                                        <p><%= marca[i].nome_produto %><br> R$: <%= marca[i].preco %> </p>
                                     </div>
                                     <span class="buy">Comprar</span>         
                                 </div>

@@ -78,6 +78,45 @@ header nav .search .search_button  button{
 header nav .carrinho{
     color: #fff;
 }
+
+.produtos_encontrados{
+    background-color: #FFF1E0;
+    border: 1px solid #CE5F20;
+    border-radius: 0px 1px 10px 10px;
+    left: 19px;
+    max-height: 435px;      
+    margin-top: 11px;
+    position: relative;
+    width: 562px;
+    z-index: 1000;
+}
+
+.produtos_encontrados .linkProduto{
+    border-bottom: 1px solid #CE5F20;
+    display: grid;
+    grid-template-columns: 100px 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.produtos_encontrados .linkProduto:hover {
+    background-color: dimgrey;
+}
+
+.produtos_encontrados img{
+    margin-left: 17px;
+    margin-top: 17px;
+}
+
+.produtos_encontrados .nome{
+    color: black;
+    margin-bottom: 0px;
+    margin-top: 110%;
+    margin-left: 103%;
+    height: 80px;
+    width: max-content;
+}
+
 /* =============================
     Cafeteiras dropdown
 ===============================*/
