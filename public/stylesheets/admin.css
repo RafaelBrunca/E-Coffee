@@ -95,13 +95,52 @@ ul, li{
     text-decoration: none;
 }
 
-main .descricoes {
-    background-color: #CE5F20;
-    border: 1px solid #CEC9C9;
-    display: flex;
-    height: 25px;
-    margin-top: 3rem;
+table {
+    margin-top: 15px;
+    margin-left: -1px;
 }
+
+main thead  {
+    background-color: #CE5F20;
+}
+
+.descricoes td {
+    padding: 0;
+}
+
+.descricoes .id {
+    width: 34px;
+}
+
+.descricoes .nome{
+    width: 878px;
+}
+
+table .nome {
+    padding-left: 10px;
+    text-align: left;
+}
+
+.descricoes .sku{
+    width: 199.333px;
+}
+
+.descricoes .preco{
+    width: 88.7px;
+}
+
+.descricoes .quantidade{
+    width: 78.567px;
+}
+
+.descricoes .status{
+    width: 84.967px;
+}
+
+.descricoes .acoes{
+    width: 58.133px;
+}
+
 main .dsc {
     padding: 0;
     margin-top: 3px;
@@ -141,60 +180,15 @@ main .dsc {
     margin-top: 50px;
 }
 
-li.id_produto {
-    padding-left: 10px;
-}
-li.nome{
-    padding-left: 22px;
-}
-li.sku{
-    margin-right: 11rem;
-}
-li.preco{
-    margin-right: 2rem;
-}
-li.quantidade{
-    margin-right: 1.5rem;
-}
-li.status{
-    margin-right: 1.6rem;
-}
-li.acoes{
-    margin-right: 0.5rem;
-}
-
-.container{
+table .produtos {
     background-color: #FFF8F0;
-    border: 1px solid #CEC9C9;
-    display: flex;
-}
-.container .produto{
-    margin: 15px;
-}
-.nome-produto{
-    border-left: 1px solid #CEC9C9;
-    font-size: 14px;
-    margin-right: auto;
-}
-.nome-produto p{
-    margin-top: 32px;
-    margin-left: 4px;
-}
-.nome-produto .exc{
-    display: flex;
-    margin-left: 4px;
-    margin-top: 14%;
-}
-.nome-produto .exc a{
-    color: black;
-    font-size: 12px;
-    text-decoration: none;
-}
-.container .descricao{
-    border-left: 1px solid #CEC9C9;
 }
 
-.descricao a{
+table .editar {
+    padding: 0;
+}
+
+table .editar a {
     color: black;
 }
 

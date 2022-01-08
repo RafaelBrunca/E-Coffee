@@ -7,7 +7,7 @@ let cadastro = document.querySelector(".body-login .container");
 //Valida campos no DropDown de Login
 let loginDropDown = document.querySelector(".nav-item .formDropdown");
 
-loginDropDown.onsubmit = function(event) {
+loginDropDown.addEventListener('submit', function(event) {
   event.preventDefault();
 
   let valido = true;
@@ -44,15 +44,15 @@ loginDropDown.onsubmit = function(event) {
   });
 
   if(valido == true){
-    loginDropDown.onsubmit = null;
+    loginDropDown.addEventListener = null;
     loginDropDown.submit();
   };
-};
+});
 
 //Valida campos na pagina de login
 let formLogin = document.getElementById("formularioLogin");
 
-formLogin.onsubmit = function(event) {
+formLogin.addEventListener('submit', function(event) {
   event.preventDefault();
 
   let valido = true;
@@ -88,18 +88,24 @@ formLogin.onsubmit = function(event) {
   });
 
   if(valido == true){
-    formLogin.onsubmit = null;
+    formLogin.addEventListener = null;
     formLogin.submit();
   };
-};
+});
 
 // Valida campos de cadastro
 let formCadastro = document.getElementById("formCadastro");
 
-formCadastro.onsubmit = function(event) {
+formCadastro.addEventListener('submit', function(event) {
   event.preventDefault();
 
   let valido = true;
+
+  if(this.querySelectorAll(".error")){
+    this.querySelectorAll(".error").forEach((divError) => {
+        divError.remove();
+    });
+  };
 
   let camposObrigatorios = ["nome", "sobrenome", "telefone", "cpf", "email", "senha", "confirmasenha" ];
   camposObrigatorios.forEach(function(campo){
@@ -127,11 +133,11 @@ formCadastro.onsubmit = function(event) {
     });
 
     if(valido == true){
-      formCadastro.onsubmit = null;
-      formCadastro.submit;
+      formCadastro.addEventListener = null;
+      formCadastro.submit();
     };
   });
-};
+});
 
 signUpButton.addEventListener("click", () => {
   container.classList.add("right-panel-active");

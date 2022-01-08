@@ -1,6 +1,6 @@
 let formLogin = document.getElementById("formularioLogin");
 
-formLogin.onsubmit = function(event) {
+formLogin.addEventListener('submit', function(event) {
   event.preventDefault();
 
   let valido = true;
@@ -37,4 +37,4 @@ formLogin.onsubmit = function(event) {
     formLogin.onsubmit = null;
     formLogin.submit();
   };
-};
+});

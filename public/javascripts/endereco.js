@@ -21,7 +21,6 @@ cep.addEventListener("change", function() {
     bairro.value = data.bairro;
     cidade.value = data.localidade;
     estado.value = data.uf;
-
   })
   .catch((err) => {
     console.log(err);
@@ -34,7 +33,7 @@ cep.addEventListener("change", function() {
 });
 
 //Valida formulario de Endereço
-formulario.onsubmit = function(event) {
+formulario.addEventListener('submit', function(event) {
   event.preventDefault();
 
   let valido = true;
@@ -59,8 +58,8 @@ formulario.onsubmit = function(event) {
     });
 
     if(valido == true){
-        formulario.onsubmit = null;
+        formulario.addEventListener = null;
         formulario.submit;
     };
   });
-};
+});

@@ -36,7 +36,7 @@ formProduto.onsubmit = function(event) {
 
     if(valido == true){
       formProduto.onsubmit = null;
-      formProduto.submit;
+      formProduto.submit();
     };
   });
-}
+};

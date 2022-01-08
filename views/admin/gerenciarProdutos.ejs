@@ -17,57 +17,35 @@
             <h2>Gerenciar Produtos</h2>
             <a href="/admin/gerenciamentodeprodutos/adicionarproduto">Adicionar Produto</a>
         </div>
-        <div class="descricoes">
-            <ul class="dsc">
-                <li class="id_produto">
-                    ID
-                </li>
-            </ul>
-            <ul class="dsc">
-                <li class="nome">Nome</li>
-            </ul>
-            <ul class="dsc" style="margin-left: auto;">
-                <li class="sku">SKU</li>
-            </ul>
-            <ul class="dsc">
-                <li class="preco">Preço</li>
-            </ul>
-            <ul class="dsc">
-                <li class="quantidade">Quantidade</li>
-            </ul>
-            <ul class="dsc">
-                <li class="status">Status</li>
-            </ul>
-            <ul class="dsc">
-                <li class="acoes">Ações</li>
-            </ul>                 
-        </div>
-        <% for(let i=0; i < produtos.length; i++) {%> 
-            <div class="container">
-                <div class="produto">
-                    <p><%= produtos[i].id_produto %></p>
-                </div>
-                <div class="nome-produto">                
-                    <p><%= produtos[i].nome_produto %></p>         
-                </div>
-                <div class="descricao" style="width: 200px;">                
-                    <p><%= produtos[i].sku %></p>
-                </div>
-                <div class="descricao" style="width: 90px;">
-                    <p>R$:<%= produtos[i].preco %></p>
-                </div>
-                <div class="descricao" style="width: 80px;">                
-                    <p><%= produtos[i].estoque %></p>
-                </div>
-                <div class="descricao" style="width: 85px;">                
-                    <p><%= produtos[i].status_produto %></p>
-                </div>
-                <div class="descricao" style="width: 60px; padding-top:17px;">                
-                    <a href="/admin/gerenciamentodeprodutos/<%=produtos[i].id_produto%>">Editar</a>
-                    <a href="/admin/gerenciamentodeprodutos/excluir/<%=produtos[i].id_produto%>">Excluir</a>
-                </div>
-            </div>
-        <% } %> 
+        <table>
+            <thead class="descricoes">
+                <tr>
+                    <td class="id">ID</td>
+                    <td class="nome">Nome</td>
+                    <td class="sku">SKU</td>
+                    <td class="preco">Preço</td>
+                    <td class="quantidade">qtde.</td>
+                    <td class="status">Status</td>
+                    <td class="acoes">Ações</td>
+                </tr>
+            </thead>
+            <% for(let i=0; i <produtos.length; i++) {%>
+                <tbody class="produtos">
+                    <tr>
+                        <td><%= produtos[i].id_produto %></td>
+                        <td class="nome"><%= produtos[i].nome_produto %></td>
+                        <td><%= produtos[i].sku %></td>
+                        <td>R$:<%= produtos[i].preco %></td>
+                        <td><%= produtos[i].estoque %></td>
+                        <td><%= produtos[i].status_produto %></td>
+                        <td><ul class="editar">
+                            <li><a href="/admin/gerenciamentodeprodutos/<%=produtos[i].id_produto%>">Editar</a></li>
+                            <li><a href="/admin/gerenciamentodeprodutos/excluir/<%=produtos[i].id_produto%>">Excluir</a></li>
+                        </ul></td>
+                    </tr>
+                </tbody>
+            <% } %>
+        </table>
     </main>
 </body>
 </html>

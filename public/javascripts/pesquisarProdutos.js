@@ -1,9 +1,7 @@
 let pesquisa = document.getElementById('formPesquisar');
 let barraDePesquisa = document.getElementById('pesquisa');
-let botaoPesquisa = document.getElementById('btn-pesquisar');
 
 pesquisa.addEventListener('keyup', function() {
-
     if(barraDePesquisa.value.trim().length >= 2){
 
         fetch("/encontrarprodutos/"+barraDePesquisa.value.trim()).then(function(response) {
@@ -44,13 +42,11 @@ pesquisa.addEventListener('keyup', function() {
             })
         })
     };
-
     document.querySelector('body').onclick = function () {
         if(document.querySelector(".produtos_encontrados")){
             document.querySelector(".produtos_encontrados").remove();
         };    
     };
-
     if(document.querySelectorAll(".produtos_encontrados")){
         document.querySelectorAll(".produtos_encontrados").forEach((div) => {
             div.remove();
