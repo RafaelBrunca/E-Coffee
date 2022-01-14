@@ -1264,6 +1264,12 @@ main .criarEndereco a:hover{
     margin-top: 8px;
     text-decoration: none;
 }
+/* ERROS */
+.error-lastname {
+    display: flex;
+    justify-content: center;
+    margin-left: 241px;
+}
 /* ===== whatsapp ===== */
 .whatsapp{
     bottom: 20px;

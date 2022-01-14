@@ -22,12 +22,13 @@ module.exports = {
         allowNull: false
       },
       cpf: { 
-        type: Sequelize.STRING.UUID(11),
+        type: Sequelize.STRING(11),
+        unique: true,
         allowNull: false,
-        
       },
       email: { 
-        type: Sequelize.STRING(80).UUID,
+        type: Sequelize.STRING(80),
+        unique: true,
         allowNull: false
       },
       senha: { 

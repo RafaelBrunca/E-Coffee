@@ -62,4 +62,38 @@ const validacaoRegistro = [
         }),
 ];
 
-module.exports = { validacaoRegistro };
+const validaUsuario = [
+    check("name").notEmpty().withMessage("Informe seu nome").isLength({ min: 3 }).withMessage("Informe seu nome"),
+    check("lastname").notEmpty().withMessage("Informe seu sobrenome").isLength({ min: 3 }).withMessage("Informe seu sobrenome"),
+    check("telefone").notEmpty().withMessage("digite um numero de telefone"),
+    check("cpf").isNumeric().notEmpty().withMessage("CPF é obrigatório")
+    .custom( async (cpfBody) => {
+        const formatCpf = await CPF.format(cpfBody);
+        const validaCpf = CPF.isValid(formatCpf);
+    })
+    .withMessage("Digite um CPF válido!"),
+    check("email").custom( async (emailBody) => {
+		const procuraEmail = await db.Cliente.findOne({
+            where: {email: emailBody}
+        });
+		if (!emailBody) {
+			return Promise.reject("E-mail é obrigatório");
+		};
+		if (!procuraEmail) {
+			return emailBody;
+		};
+	}),
+    check("password")
+        .isLength({ max: 100}),
+    check("confirmpassword")
+        .isLength({ max: 100 })
+        .withMessage("As senhas devem ser iguais!")
+        .custom(async (confirmpassword, { req }) => {
+            const senha = req.body.password;
+            if(senha !== confirmpassword) {
+                throw new Error("As senhas devem ser iguais!");
+            }
+        }),
+];
+
+module.exports = { validacaoRegistro, validaUsuario };
