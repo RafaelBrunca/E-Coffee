@@ -185,76 +185,7 @@ nav .dropdown-cafeteiras:hover ,
              Login
 ===============================*/
 nav .nav-item .nav-login{
-    width: 86.55px;
-}
-nav .nav-item .dropdown-menu-login{
-    background-color: #291616;
-    border-color: #CE5F20;
-    border-bottom-left-radius: 11px;
-    border-bottom-right-radius: 11px;
-    color: #fff;
-    height: 312px;
-    opacity: 0;
-    position: absolute;
-    right: 70px;
-    top: 133px;
-    transition: visibility 0.3s, opacity 0.3s;
-    visibility: hidden;
-    width: 195px;
-    z-index: 2;
-}
-.dropdown-menu-login h3{
-    margin-bottom: 10px;
-}
-nav .dropdown-menu-login .form-group{
-    margin-top: 16px;
-}
-nav .form-check{
-    font-size: 14px;
-    margin-top: 12px;
-    margin-right: 26px;
-}
-nav .dropdown-menu-login .login-btn{
-    background-color: #CE5F20;
-    color: #fff;
-    border: 0px;
-    border-radius: 6px;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-    height: 26px;
-    margin-top: 10px;
-    padding: 0;
-    width: 150px;
-}
-nav .dropdown-menu-login .register-button{
-    border: 0px;
-    font-family: 'Red Hat Display', sans-serif;
-    margin-left: 8px;
-    margin-top: 10px;
-    padding: 0;   
-}
-.dropdown-menu-login .register-button a{
-    background-color: #CE5F20;
-    border-radius: 6px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 15px;
-    height: 24px;
-    padding-left: 32px;
-    width: 118px;
-}
-.login-options h4{
-    margin-top: 16px;
-    margin-bottom: 0;
-}
-nav .dropdown-menu-login .login-options{
-    background-color: #fff;
-    border-radius: 5px;
-    color: #291616;
-    height: 64px;
-    margin-left: 22px;
-    width: 151px;
+    width: max-content;
 }
 header nav .container a{
     display: inline;
@@ -262,7 +193,7 @@ header nav .container a{
 nav .nav-item .nav-login:hover{
     height: 76px;
 }
-.nav-item .nav-login:hover .dropdown-menu-login{
+.nav-item .nav-login:hover {
     opacity: 1;
     visibility: visible;
 }
@@ -437,51 +368,6 @@ main .recupera-senha{
     font-weight: bold;
     font-size: 22px;
     text-decoration: none;
-}
-/* LOGADO COM SUCESSO */
-
-.cadastrosucesso {
-	display: flex;
-    align-items: center;
-	justify-content: center;	
-}
-
-.cadastrosucesso .container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #ce5f20;
-	flex-direction: column;
-	width: 50%;
-	height: 100%;
-	margin: 5rem 0;
-	border-radius: 50px;
-	font-size: 2rem;
-	color: #fff;
-	box-shadow: 0 0 2em rgba(0, 0, 0, 0.932);
-	text-align: center;
-}
-
-.cadastrosucesso .container h3 {
-	font-size: 3rem;
-	margin: 3rem 0 1rem 0;
-	padding: 20px 40px;
-}
-
-.cadastrosucesso .container div {
-	margin: 4rem 0;
-}
-
-.cadastrosucesso .container a {
-	background-color: #291616;
-    border: none;
-	border-radius: 50px;
-    color: white;
-	font-size: 2rem;
-    font-weight: bold;	
-	padding: 1.2rem 15rem;
-	text-decoration: none;
-    text-align: center;
 }
 
 /* ===================
@@ -723,7 +609,10 @@ main .dsc-quantidade li{
     display: flex;
 }
 .container-carrinho .produto{
-    margin: 15px;
+    margin: 10px;
+}
+.container-carrinho .produto img{
+    width: 56px;
 }
 .nome-produto{
     border-left: 1px solid #CEC9C9;
@@ -1696,7 +1585,7 @@ ul#descri-produto{
         margin-left: 6%;
     }
     .navbar{
-        margin-right: 15rem;
+        margin-right: 4%;
     }
     .dropdown-cafeteiras .dropdown-menu, .dropdown-capsulas .dropdown-menu{
         top: 163px;

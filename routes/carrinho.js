@@ -8,8 +8,10 @@ var finalizarCompraController = require('../controller/finalizarCompraController
 router.use(authentication);
 
 router.get('/', carrinhoController.carrinho);
+router.post('/:id_produto', carrinhoController.adicionarNoCarrinho);
 router.get('/produto/carrinho', carrinhoController.carrinho);
-router.get('/carrinho/excluir/:id', carrinhoController.removerProdutoCarrinho);
+router.get('/remover/:id_produto', carrinhoController.removerProdutoCarrinho);
+router.get('/limpar', carrinhoController.limparCarrinho);
 router.get('/finalizarCompra', finalizarCompraController.produto);
 
 module.exports = router;

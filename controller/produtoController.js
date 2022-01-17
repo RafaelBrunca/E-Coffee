@@ -108,35 +108,6 @@ const produtoController = {
             });
         })
     },
-    produto: async function (req, res) {
-
-        const { id_produto } = req.params;
-        const id_cliente = req.session.user.id_cliente;
-        const quantidade = 1;
-
-        await db.Carrinho.create({
-            id_produto: id_produto,
-            quantidade: quantidade,
-            id_cliente: id_cliente
-
-        }).then((result) => {
-
-            //Busca todos os itens do carrinho
-            const resultadoCarrinho = db.Carrinho.findAll({
-                where: {
-                    id_cliente: id_cliente
-                }
-            }).then((resultadoCarrinho) => {
-                console.log(resultadoCarrinho)
-                res.render("carrinho", { resultadoCarrinho });
-            })
-
-            
-        }).catch((err) => {
-            console.log(err);
-        });
-
-    }
 };
 
 module.exports = produtoController;

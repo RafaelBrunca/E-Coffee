@@ -29,7 +29,7 @@
                 </select>
                 <h1>R$ <%= produto.preco %></h1>
                 <p>Ou em até 10x de R$<%= produto.preco / 10 %>  sem juros</p>
-                <form action="carrinho/<%= produto.id_produto %>" method="POST">
+                <form action="/carrinho/<%= produto.id_produto %>" method="POST">
                     <div class="comprar">
                         <button type="submit">Colocar no Carrinho</button>
                     </div>  

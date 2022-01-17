@@ -11,38 +11,38 @@
             <li style="margin-left: 5px;">Preço unitário</li>
             <li>Qtd.</li>
             <li style="margin-right: 0px;margin-left: 27px;">Subtotal</li>
-        </ul>                        
-    </div>
-    <div class="container-carrinho">
-        <div class="produto">
-            <img src="images/Mondial-C-08 3.png" alt="Mondial">
+        </ul>          
+    </div> 
+    <% for(let i = 0; i < produtos.length; i++) { %>
+        <div class="container-carrinho">
+            <div class="produto">
+                <img src="/<%= produtos[i].imagem %>" alt="Mondial">
+            </div>
+            <div class="nome-produto">                
+                <p><%= produtos[i].nome_produto %></p>
+                <div class="exc">
+                    <a href="/carrinho/remover/<%= produtos[i].id_produto%> ">Remover Produto</a>
+                </div>             
+            </div>
+            <div class="descricao">                
+                <p>R$<%= produtos[i].preco %></p>
+            </div>
+            <div class="descricao">
+                <div class="descricao-quantidade">
+                    <input type="text" name="quantidade" value="<%= quantidade %>">
+                </div>                
+            </div>
+            <div class="descricao">                
+                <p>R$XX,XX</p>
+            </div>
         </div>
-        <div class="nome-produto">                
-            <p>Cafeteira Mondial Espresso C-08 automática expresso 110V preta</p>
-            <div class="exc">
-                <a href = "#">Remover Produto</a>
-            </div>             
-        </div>
-        <div class="descricao">                
-            <p>R$XX,XX</p>
-        </div>
-        <div class="descricao">
-            <div class="descricao-quantidade">
-                <form action="">         
-                    <input type="number" name= "quantidade">
-                </form>
-            </div>                
-        </div>
-        <div class="descricao">                
-            <p>R$XX,XX</p>
-        </div>
-    </div>
+    <% } %> 
     <div class="limpar">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
             <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
         </svg>
 
-        <a href="#">Limpar Carrinho</a>
+        <a href="/carrinho/limpar">Limpar Carrinho</a>
 
     </div>
     <div class="frete">
@@ -79,12 +79,15 @@
     <div class="pedidoCompleto">
         <div class="resumo-pedido">
             <div class="resumo-descri">
-                <p>Produto 01</p>
+                <% for(let i = 0; i < produtos.length; i++) {%>
+                <p>Produto <%= [i+1] %> </p>
+                <% } %> 
                 <p style="width: 39.567px;">Frete</p>
             </div>
             <div class="resumo-preco">
-                <p>R$ XX,XX</p>
-                <p>R$ XX,XX</p>
+                <% for(let i = 0; i < produtos.length; i++) {%>
+                    <p>R$ <%= produtos[i].preco%></p>
+                <% } %>
             </div>
         </div>
         <div class="total">

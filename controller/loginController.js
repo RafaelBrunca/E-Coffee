@@ -8,22 +8,30 @@ const loginController = {
 
     const { email, password } = req.body;
 
-    const user = await db.Cliente.findOne({ where: { email: email} });
+    const user = await db.Cliente.findOne({ where: { email: email} })
 
-    if (!user) {
-      return;
+    if(!user){
+      return res.render('cadastro', {
+        old: [],
+        message: "E-mail ou senha inválidos"
+      });
     };
+
     if(!await bcrypt.compare(password, user.senha)) {
-      return;
+      return res.render('cadastro', {
+        old: [],
+        message: "E-mail ou senha inválidos"
+      });
     };
 
     req.session.user = user;
 
-    res.redirect('/');
+    return res.redirect('/');
   },
   cadastro: function(req, res) {
     res.render('cadastro', {
-      created: null,
+      old: [],
+      message: []
     });
   },
   create: async function(req, res) {
@@ -36,7 +44,7 @@ const loginController = {
       res.render('cadastro', {
         errors: errors.mapped(),
         old: req.body,
-        created: null
+        message: []
       });
     } else {
       await db.Cliente.create({
@@ -47,9 +55,7 @@ const loginController = {
         email: req.body.email,
         senha: senhaCriptografada
       }).then((result) => {
-        res.render("cadastro", {
-          created: true
-        });
+        return res.redirect('/iniciarsessao')
       }).catch((err) => {
         console.log(err);
       });

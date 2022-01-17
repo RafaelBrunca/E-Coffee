@@ -2,6 +2,7 @@ const db = require('../../database/models');
 
 /* Validador de CPF */
 const CPF = require('cpf');
+const bcrypt = require('bcryptjs');
 var { check } = require('express-validator');
 
 const validacaoRegistro = [
