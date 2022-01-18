@@ -13,7 +13,7 @@ const carrinhoController = {
         })
         .then((result) => {
             result.forEach((item) => {
-                produtosEncontrados.push({...item.dataValues,...item.produto})
+                produtosEncontrados.push(item.dataValues,item.produto)
             });
 
             return res.render('carrinho', {
