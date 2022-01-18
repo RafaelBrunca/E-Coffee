@@ -6,7 +6,6 @@ const carrinhoController = {
         const cliente = req.session.user.id_cliente;
 
         let produtosEncontrados = [];
-        let quantidade = [];
 
         const buscaCarrinho = await db.Carrinho.findAll({
             where: {id_cliente: cliente},
@@ -14,14 +13,16 @@ const carrinhoController = {
         })
         .then((result) => {
             result.forEach((item) => {
-                produtosEncontrados.push(item.produto.dataValues);
-                if(quantidade == ''){
-                    quantidade.push(item.quantidade)
-                }
+                produtosEncontrados.push({...item.dataValues,...item.produto})
             });
 
-            return res.render('carrinho', {produtos: produtosEncontrados, quantidade: quantidade});
-        })    
+            return res.render('carrinho', {
+                produtos: produtosEncontrados
+            });
+        })
+        .catch((err) => {
+            console.error(err);
+        })
     },
     adicionarNoCarrinho: async function (req, res) {
 

@@ -13,23 +13,24 @@
             <li style="margin-right: 0px;margin-left: 27px;">Subtotal</li>
         </ul>          
     </div> 
+    <!-- <% console.log(produtos) %>  -->
     <% for(let i = 0; i < produtos.length; i++) { %>
         <div class="container-carrinho">
             <div class="produto">
-                <img src="/<%= produtos[i].imagem %>" alt="Mondial">
+                <img src="/<%= produtos[i].dataValues.imagem %>" alt="Mondial">
             </div>
             <div class="nome-produto">                
-                <p><%= produtos[i].nome_produto %></p>
+                <p><%= produtos[i].dataValues.nome_produto %></p>
                 <div class="exc">
-                    <a href="/carrinho/remover/<%= produtos[i].id_produto%> ">Remover Produto</a>
+                    <a href="/carrinho/remover/<%= produtos[i].dataValues.id_produto%> ">Remover Produto</a>
                 </div>             
             </div>
             <div class="descricao">                
-                <p>R$<%= produtos[i].preco %></p>
+                <p>R$<%= produtos[i].dataValues.preco %></p>
             </div>
             <div class="descricao">
                 <div class="descricao-quantidade">
-                    <input type="text" name="quantidade" value="<%= quantidade %>">
+                    <input type="text" name="quantidade" value="<%= produtos[i].quantidade %>" >
                 </div>                
             </div>
             <div class="descricao">                
@@ -86,7 +87,7 @@
             </div>
             <div class="resumo-preco">
                 <% for(let i = 0; i < produtos.length; i++) {%>
-                    <p>R$ <%= produtos[i].preco%></p>
+                    <p>R$ <%= produtos[i].dataValues.preco%></p>
                 <% } %>
             </div>
         </div>
