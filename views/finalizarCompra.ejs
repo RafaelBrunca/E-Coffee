@@ -4,24 +4,31 @@
         <div class="res-pedido">
             <h1>Resumo do pedido</h1>
         </div>
-        <div class="informacoes-produto">
-            <img src="/images/Mondial-C-08 6.png" alt="Cafeteira">
-            <ul>
-                <li>Cafeteira Mondial Espresso C-08 automática expresso 110V preta</li>
-                <li style="width: 230px;margin-top: 15px;">Entrega e vendido por: E-coffee</li>
-                <li style="width: 160px;margin-top: 15px;">Normal até 2 dais úteis</li>
-            </ul>
-        </div>
+        <% for(let i = 0; i < produtos.length; i++) {%>
+            <div class="informacoes-produto">
+                <img src="/<%= produtos[i].dataValues.imagem %>" alt="Cafeteira">
+                <ul>
+                    <li><%= produtos[i].dataValues.nome_produto %></li>
+                    <li style="width: 110px;margin-top: 15px;">Quantidade(<%= produtos[i].quantidade %>)</li>
+                    <li style="width: 230px;margin-top: 15px;">Entrega e vendido por: E-coffee</li>
+                    <li style="width: 160px;margin-top: 15px;">Normal até 2 dais úteis</li>
+                </ul>
+            </div>
+        <% } %> 
         <div class="info-valores">
             <div class="info-resumo">
-                <p>Produto</p>
+                <% for(let i = 0; i < produtos.length; i++) {%>
+                    <p>Produto <%= [i+1] %> </p>
+                <% } %> 
                 <p>Frete</p>
                 <p>Total</p>
             </div>
             <div class="info-valor">
+                <% for(let i = 0; i < produtos.length; i++) {%>
+                    <p>R$ <%= produtos[i].total%></p>
+                <% } %>
                 <p>R$ xx,xx</p>
-                <p>R$ xx,xx</p>
-                <p>R$ xx,xx</p>
+                <p>R$ <%= produtos.reduce((total, valor) => total + valor.total, 0) %></p>
             </div>
         </div>
         <div class="finaliza-compra">
@@ -37,30 +44,35 @@
                     <img src="/images/icons8-casinha-de-cachorro-50 1 (1).png" alt="Endereço de entrega" height="38">
                     <p style="margin-left: 9px;margin-top: 3px;">Endereço de Entrega</p>
                 </div>
-                <div class="Selecione-uma-forma-de-pagamento">
-                    <select name="Entrega">
-                        <option value="Home">Casa</option>
-                        <option value="Office"> Escritório</option>
-                    </select>
-                    <div class="title-endereco">
-                        <p>Endereço</p>
-                    </div>
-                    <div class="info-de-enderecos">
-                        <div class="endereco">
-                            <ul style="margin-left: 25px;">
-                                <li>Rua fulano de tal, xx</li>
-                                <li>00000-000</li>
-                                <li>bairro tal tal - São Paulo - SP</li>
-                            </ul>
+                <div class="enderecos-cliente">
+                    <% if(!endereco.length) { %>
+                        <h3>Você não possui nenhum endereço cadastrado</h3>
+                        <p>Acesse a página do usuário para cadastrar um novo endereço ou clique <a href="/paginadousuario/enderecos/novoendereco">Aqui</a></p>
+                    <% } else { %>  
+                        <select name="Entrega">
+                            <% for(let i = 0; i < endereco.length; i++) { %>
+                                <option value="<%= endereco[i].nome_do_endereco %>"><%= endereco[i].nome_do_endereco %></option>
+                            <% } %>
+                        </select>
+                        <div class="title-endereco">
+                            <p>Endereço</p>
                         </div>
-                        <div class="edit-endereco">
-                            <a href="#">Editar</a> |
-                            <a href="#">Excluir Endereço</a>
-                            <div class="adc-endereco">
-                                <a href="#">Adicionar Endereço</a>
+                        <div class="info-de-enderecos">
+                            <div class="endereco">
+                                <ul style="margin-left: 25px;">
+                                    <li>Rua fulano de tal, xx</li>
+                                    <li>00000-000</li>
+                                    <li>bairro tal tal - São Paulo - SP</li>
+                                </ul>
+                            </div>
+                            <div class="edit-endereco">
+                                <a href="#">Editar</a>
+                                <div class="adc-endereco">
+                                    <a href="#">Adicionar Endereço</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <% } %> 
                 </div>
                 <div class="selecao-endereco">
                     <h2>Selecione a Forma de Entrega</h2>
@@ -96,27 +108,22 @@
                 <div class="opcoes-pagamento">
                     <div class="pagamento-escolhido">
                         <label for="cartao">Cartão de Crédito</label>
-                        <input type="radio" id="cartao" name="cartao">
                     </div>
                     <select name="Pagamento">
                         <option value="Preço à vista">Preço à vista</option>
-                        <option value="Em 2x de R$xx,xx sem juros">Em 2x de R$xx,xx sem juros</option>
-                        <option value="Em 3x de R$xx,xx sem juros">Em 3x de R$xx,xx sem juros</option>
-                        <option value="Em 4x de R$xx,xx sem juros">Em 4x de R$xx,xx sem juros</option>
-                        <option value="Em 5x de R$xx,xx sem juros">Em 5x de R$xx,xx sem juros</option>
-                        <option value="Em 6x de R$xx,xx sem juros">Em 6x de R$xx,xx sem juros</option>
-                        <option value="Em 7x de R$xx,xx sem juros">Em 7x de R$xx,xx sem juros</option>
-                        <option value="Em 8x de R$xx,xx sem juros">Em 8x de R$xx,xx sem juros</option>
-                        <option value="Em 9x de R$xx,xx sem juros">Em 9x de R$xx,xx sem juros</option>
-                        <option value="Em 10x de R$xx,xx sem juros">Em 10x de R$xx,xx sem juros</option>
+                        <% for(let i = 2; i <= 10; i++) { %>
+                            <option value="Em <%= [i] %>x de R$<%= produtos.reduce((total, valor) => total + valor.total / [i], 0).toFixed(2) %> sem juros">
+                                Em <%= [i] %>x de R$<%= produtos.reduce((total, valor) => total + valor.total / [i], 0).toFixed(2) %> sem juros
+                            </option>
+                        <% } %>
                     </select>
                 </div>
                 <div class="box-pagamentos">
                     <div class="debito">
                         <div>
                             <img src="/images/icons8-parte-traseira-de-cartão-de-banco-48 1.png" alt="Cartão">
-                            <input type="radio" id="debito" name="pagamento">
-                            <label for="debito" style="padding-left: 136px;">Cartão de Débito</label>
+                            <input type="radio" id="debito" name="pagamento" checked>
+                            <label for="debito" style="padding-left: 136px;">Cartão de Crédito</label>
                         </div>
                     </div>
                     <div class="boleto">

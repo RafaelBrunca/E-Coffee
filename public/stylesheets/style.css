@@ -1380,7 +1380,9 @@ ul#descri-produto{
 }
 
 .informacoes-produto{
+    border-bottom: 1px solid #CCC;
     display: flex;
+    width: max-content;
 }
 
 .informacoes-produto p{
@@ -1389,6 +1391,12 @@ ul#descri-produto{
 }
 .informacoes-produto li{
     margin-left: 20px;
+    width: 140px;
+}
+
+.informacoes-produto img {
+    height: 120px;
+    width: 120px;
 }
 
 .info-valores{
@@ -1437,7 +1445,7 @@ ul#descri-produto{
     margin-left: 15px;
     margin-top: 15px;
 }
-.Selecione-uma-forma-de-pagamento select{
+.enderecos-cliente select{
     border-radius: 5px;
     border: 2px solid #F5C0A2;
     background-color: #FFF8F0;
@@ -1448,14 +1456,19 @@ ul#descri-produto{
     padding-bottom: 20px;
     width: 90%;
 }
-.Selecione-uma-forma-de-pagamento .title-endereco{
+.enderecos-cliente .title-endereco{
     display: flex;
     margin-left: 30px;
     margin-top: 18px;
 }
-.Selecione-uma-forma-de-pagamento .endereco{
+.enderecos-cliente .endereco{
     display: flex;
 }
+
+.enderecos-cliente a{
+    color: #CE5F20;
+}
+
 .info-de-enderecos{
     background-color: #FFF1E0;
     border-radius: 5px;
@@ -1529,7 +1542,6 @@ ul#descri-produto{
     background-color: #FFF1E0;
     height: 40px;
     margin-top: 20px;
-    width: 110px;
 }
 .box-pagamentos{
     display: flex;
