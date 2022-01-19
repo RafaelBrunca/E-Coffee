@@ -19,6 +19,7 @@
                 <img src="/images/icons8-whatsapp-48.png" alt="whatsappIcon" width="60px" height="60px"> 
             </div>
             <div class="compraProduto">
+                <form action="/carrinho/<%= produto.id_produto %>" method="POST">
                 <h2><%= produto.title_pagina %></h2>
                 <h4>Confirme a cor:</h4>
                 <label for="cor"></label>
@@ -27,9 +28,13 @@
                     <option value="branco">Branco</option>
                     <option value="vermelho">Vermelho</option>
                 </select>
+                <select id="qtd" name="quantidade">
+                    <% for(let i =  1; i <= 10; i++) { %> 
+                        <option value="<%= [i] %> "><%= [i] %> </option>
+                    <% } %> 
+                </select>
                 <h1>R$ <%= produto.preco %></h1>
                 <p>Ou em até 10x de R$<%= produto.preco / 10 %>  sem juros</p>
-                <form action="/carrinho/<%= produto.id_produto %>" method="POST">
                     <div class="comprar">
                         <button type="submit">Colocar no Carrinho</button>
                     </div>  

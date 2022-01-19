@@ -12,7 +12,7 @@
             <li>Qtd.</li>
             <li style="margin-right: 0px;margin-left: 27px;">Subtotal</li>
         </ul>          
-    </div>
+    </div> 
     <% for(let i = 0; i < produtos.length; i++) { %>
         <div class="container-carrinho">
             <div class="produto">
@@ -29,11 +29,11 @@
             </div>
             <div class="descricao">
                 <div class="descricao-quantidade">
-                    <input type="text" name="quantidade" value="<%= produtos[i].quantidade %>" >
+                    <input type="text" name="quantidade" value="<%= produtos[i].quantidade %>" disabled="disabled" >
                 </div>                
             </div>
             <div class="descricao">                
-                <p>R$XX,XX</p>
+                <p>R$<%= produtos[i].total %></p>
             </div>
         </div>
     <% } %> 
@@ -93,7 +93,7 @@
         <div class="total">
             <p>Valor Total</p>
             <div class="valor-emDinheiro">
-                <p>R$XX,XX</p>
+                <p>R$<%= produtos.reduce((total, valor) => total + valor.total, 0) %></p>
             </div>
         </div>
     </div>

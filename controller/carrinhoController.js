@@ -12,8 +12,12 @@ const carrinhoController = {
             include: { model: db.Produto, association: "produto"}
         })
         .then((result) => {
-            result.forEach((item) => {
-                produtosEncontrados.push(item.dataValues,item.produto)
+            result.forEach((item) => {  
+                let valorTotal = {
+                    total: item.quantidade*item.produto.preco
+                };
+
+                produtosEncontrados.push({...item.dataValues,...item.produto, ...valorTotal});
             });
 
             return res.render('carrinho', {
@@ -28,7 +32,7 @@ const carrinhoController = {
 
         const { id_produto } = req.params;
         const id_cliente = req.session.user.id_cliente;
-        const quantidade = 1;
+        const quantidade = req.body.quantidade;
 
         await db.Carrinho.create({
             id_produto: id_produto,
