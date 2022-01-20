@@ -48,30 +48,29 @@
                     <% if(!endereco.length) { %>
                         <h3>Você não possui nenhum endereço cadastrado</h3>
                         <p>Acesse a página do usuário para cadastrar um novo endereço ou clique <a href="/paginadousuario/enderecos/novoendereco">Aqui</a></p>
-                    <% } else { %>  
-                        <select name="Entrega">
-                            <% for(let i = 0; i < endereco.length; i++) { %>
-                                <option value="<%= endereco[i].nome_do_endereco %>"><%= endereco[i].nome_do_endereco %></option>
-                            <% } %>
-                        </select>
+                    <% } else { %>
                         <div class="title-endereco">
-                            <p>Endereço</p>
+                            <p>Endereços</p>
                         </div>
-                        <div class="info-de-enderecos">
-                            <div class="endereco">
-                                <ul style="margin-left: 25px;">
-                                    <li>Rua fulano de tal, xx</li>
-                                    <li>00000-000</li>
-                                    <li>bairro tal tal - São Paulo - SP</li>
-                                </ul>
-                            </div>
-                            <div class="edit-endereco">
-                                <a href="#">Editar</a>
-                                <div class="adc-endereco">
-                                    <a href="#">Adicionar Endereço</a>
+                        <% for(let i = 0; i < endereco.length; i++) { %> 
+                            <div class="info-de-enderecos">
+                                <div class="endereco">
+                                    <input type="radio" id="enderecoSelect" name="enderecoSelecionado" <% if([i] == 0){ %> checked <% } %>/>
+                                    <ul id="infoEndereco-selecionado">
+                                        <li><h3 id="apelido-endereco"><%= endereco[i].nome_do_endereco %></h3></li>
+                                        <li><%= endereco[i].logradouro %>, N°<%= endereco[i].num_residencia %></li>
+                                        <li><%= endereco[i].cep %></li>
+                                        <li><%= endereco[i].bairro %> - <%= endereco[i].cidade %> - <%= endereco[i].uf %></li>
+                                    </ul>
+                                </div>
+                                <div class="edit-endereco">
+                                    <a href="/paginadousuario/enderecos/editar/<%= endereco[i].id_cli_enderecos %>">Editar</a>
+                                    <div class="adc-endereco">
+                                        <a href="/paginadousuario/enderecos">Adicionar Endereço</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        <% } %> 
                     <% } %> 
                 </div>
                 <div class="selecao-endereco">

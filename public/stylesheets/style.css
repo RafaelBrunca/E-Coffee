@@ -665,7 +665,7 @@ main .dsc-quantidade li{
     flex-direction: column;
     height: 200px;
     margin-top: 30px;
-    width: 744px;
+    width: 52.5%;;
 }
 .frete .titulo p{    
     font-size: 24px;
@@ -703,7 +703,7 @@ main .dsc-quantidade li{
     height: 150px;
     margin-top: 26px;
     margin-bottom: 26px;
-    width: 744px;
+    width: 52.5%;
 }
 .cupom .titulo p{    
     font-size: 24px;
@@ -723,6 +723,9 @@ main .dsc-quantidade li{
     text-align: end;
 }
 /* ===== RESUMO ===== */
+.calculos-gerais{
+    position: relative;
+}
 .resumo-pedido{
     border-top: 1px solid #CEC9C9;
     border-bottom: 1px solid #CEC9C9;
@@ -730,8 +733,8 @@ main .dsc-quantidade li{
     justify-content: space-between;
     height: 197px;
     position: absolute;
-    right: 352px;
-    top: 642.433px;
+    right: 0;
+    top: 0;
     width: 440px;
 }
 
@@ -1278,6 +1281,7 @@ footer li {
 ==================== */
 .produto{
     display: flex;
+    flex-wrap: wrap;
 }
 body .miniaturaProduto{
     display: flex;
@@ -1311,7 +1315,7 @@ body .whatsappIcon:hover {
     transform: scale(1.1);
 }
 body .compraProduto{
-    padding: 50px 0px 0px 48%;
+    padding: 50px 0px 0px 3%;
     text-align: left;
 }
 body .compraProduto h1{
@@ -1413,7 +1417,7 @@ ul#descri-produto{
 .finaliza-compra{
     display: flex;
     justify-content: flex-end;
-    margin-top: 10%;
+    margin-top: 4%;
     margin-bottom: 40px;
 }
 .finaliza-compra button{
@@ -1445,21 +1449,10 @@ ul#descri-produto{
     margin-left: 15px;
     margin-top: 15px;
 }
-.enderecos-cliente select{
-    border-radius: 5px;
-    border: 2px solid #F5C0A2;
-    background-color: #FFF8F0;
-    font-size: 14px;
-    height: 5%;
-    padding-top: 20px;
-    padding-left: 15px;
-    padding-bottom: 20px;
-    width: 90%;
-}
+
 .enderecos-cliente .title-endereco{
     display: flex;
     margin-left: 30px;
-    margin-top: 18px;
 }
 .enderecos-cliente .endereco{
     display: flex;
@@ -1472,9 +1465,17 @@ ul#descri-produto{
 .info-de-enderecos{
     background-color: #FFF1E0;
     border-radius: 5px;
-    height: 130px;
     margin-left: 32px;
     margin-right: 16px;
+    margin-top: 15px;
+}
+
+.info-de-enderecos #enderecoSelect {
+    margin-left: 3%;
+}
+
+#infoEndereco-selecionado #apelido-endereco{
+    margin: 0;
 }
 
 .info-de-enderecos .endereco li{
