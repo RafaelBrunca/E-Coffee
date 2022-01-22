@@ -6,5 +6,6 @@ var authentication = require('../middleware/authentication');
 router.use(authentication);
 
 router.get('/', checkout.finalizarCompra);
+router.post('/', checkout.confirmar);
 
 module.exports = router;
