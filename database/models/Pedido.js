@@ -4,15 +4,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER.UNSIGNED, 
             primaryKey: true,
         },
-        id_cliente: { 
-            type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false
-        },
         id_endereco: { 
-            type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false
-        },
-        id_produto: { 
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
@@ -32,6 +24,14 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'pedidos',
         timestamps: false,
     });
+
+    Pedido.associate = (models) => {
+        Pedido.belongsTo(models.Cliente, { foreignKey: "id_cliente", as: "clientes" });
+    };
+
+    Pedido.associate = (models) => {
+        Pedido.belongsTo(models.Produto, { foreignKey: "id_produto", as: "produtoPedido" });
+    };
 
     return Pedido;
 };

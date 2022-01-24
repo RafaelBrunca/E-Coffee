@@ -846,6 +846,7 @@ main .criarEndereco a:hover{
 .pedido{
     display: flex;
     flex-direction: column;
+    margin-bottom: 15px;
 }
 .pedido .pedido-header{
     background-color: #FFE1BD;

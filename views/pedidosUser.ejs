@@ -2,81 +2,52 @@
 <main>
     <div class="title-suaconta">
         <h1>Seus Pedidos</h1>
-    </div>    
-    <div class="pedido">
-        <div class="pedido-header">
-            <ul>
-                <li style="margin-left: 22px;"><p style="font-weight: bold;">Pedido Realizado em</p><p>##/##/####</p></li>                    
-                <li style="margin-left: 91px;"><p style="font-weight: bold;">Total</p><p>R$XX,XX</p></li>
-                <li style="margin-left: 33%;"><p style="font-weight: bold;">Quantidade</p><p>##</p></li>
-                <li style="margin-left: 23%;"><p style="font-weight: bold;">N° do Pedido:</p><p>#######</p></li>
-            </ul>
-        </div>
-        <div class="pedido-footer">
-            <div class="prev-entrega">
-                <p style="font-weight: bold;font-size: 20px;">Previsão de Entrega:</p>
-            </div>
-            <div class="prev-entrega">
-                <p style="font-size: 20px;">##/##/####</p>
-            </div>
-            <div class="produto-entrega">                
-                <img src="/images/Mondial-C-08 3.png" alt="Mondial" width=112 height=119 >
-            </div>
-            <div class="prd-entrega">
-                <p style="font-weight: bold;font-size: 20px;">Cafeteira Mondial C-08</p>
-                <div class="comprar-novamente">
-                    <a href="#">Comprar Novamente</a>
-                </div>             
-            </div>
-            <div class="opt-pedidos">
-                <div class="opt">
-                    <a href="#">Rastrear Pacote</a>
-                </div>
-                <div class="opt">
-                    <a href="#">Avaliar Produto</a>
-                </div>
-                <div class="opt">
-                    <a href="#">Detalhes do Pedido</a>
-                </div>                    
-            </div>
-        </div>
-        <div class="pedido-header" style="margin-top: 30px;">
-            <ul>
-                <li style="margin-left: 22px;"><p style="font-weight: bold;">Pedido Realizado em</p><p>##/##/####</p></li>                    
-                <li style="margin-left: 91px;"><p style="font-weight: bold;">Total</p><p>R$XX,XX</p></li>
-                <li style="margin-left: 33%;"><p style="font-weight: bold;">Quantidade</p><p>##</p></li>
-                <li style="margin-left: 23%;"><p style="font-weight: bold;">N° do Pedido:</p><p>#######</p></li>
-            </ul>
-        </div>
-        <div class="pedido-footer">
-            <div class="prev-entrega">
-                <p style="font-weight: bold;font-size: 20px;">Entregue em:</p>
-            </div>
-            <div class="prev-entrega">
-                <p style="font-size: 20px;">##/##/####</p>
-            </div>
-            <div class="produto-entrega" style="margin-left: -19%;">                
-                <img src="/images/Mondial-C-08 3.png" alt="Mondial" width=112 height=119 >
-            </div>
-            <div class="prd-entrega">
-                <p style="font-weight: bold;font-size: 20px;">Cafeteira Mondial C-08</p>
-                <div class="comprar-novamente">
-                    <a href="#">Comprar Novamente</a>
-                </div>             
-            </div>
-            <div class="opt-pedidos">
-                <div class="opt">
-                    <a href="#">Rastrear Pacote</a>
-                </div>
-                <div class="opt">
-                    <a href="#">Avaliar Produto</a>
-                </div>
-                <div class="opt">
-                    <a href="#">Detalhes do Pedido</a>
-                </div>                    
-            </div>
-        </div>
     </div>
+
+    <% if(pedidos.length == 0) { %>
+        <h2>Você não possui nenhum pedido</h2>
+    <% } else { %>
+        <% for(let i = 0; i < pedidos.length; i++) { %>
+            <div class="pedido"> 
+                <div class="pedido-header">
+                    <ul>
+                        <li style="margin-left: 22px;"><p style="font-weight: bold;">Pedido Realizado em</p><p><%= pedidos[i].data_pedido %></p></li>                    
+                        <li style="margin-left: 91px;"><p style="font-weight: bold;">Total</p><p>R$<%= pedidos[i].preco_total %></p></li>
+                        <li style="margin-left: 33%;"><p style="font-weight: bold;">Quantidade</p><p><%= pedidos[i].quantidade %></p></li>
+                        <li style="margin-left: 23%;"><p style="font-weight: bold;">N° do Pedido:</p><p><%= pedidos[i].id_pedido %></p></li>
+                    </ul>
+                </div>
+                <div class="pedido-footer">
+                    <div class="prev-entrega">
+                        <p style="font-weight: bold;font-size: 20px;">Previsão de Entrega:</p>
+                    </div>
+                    <div class="prev-entrega">
+                        <p style="font-size: 20px;">##/##/####</p>
+                    </div>
+                    <div class="produto-entrega">                
+                        <img src="/<%= pedidos[i].dataValues.imagem %>" alt="<%= pedidos[i].dataValues.nome_produto %>" width=112 height=119 >
+                    </div>
+                    <div class="prd-entrega">
+                        <p style="font-weight: bold;font-size: 20px;"><%= pedidos[i].dataValues.nome_produto %></p>
+                        <div class="comprar-novamente">
+                            <a href="#">Comprar Novamente</a>
+                        </div>             
+                    </div>
+                    <div class="opt-pedidos">
+                        <div class="opt">
+                            <a href="#">Rastrear Pacote</a>
+                        </div>
+                        <div class="opt">
+                            <a href="#">Avaliar Produto</a>
+                        </div>
+                        <div class="opt">
+                            <a href="#">Detalhes do Pedido</a>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    <% } %>
     <div class="voltar">
         <a href="/paginadousuario">Voltar</a>
     </div>

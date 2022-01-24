@@ -9,7 +9,7 @@ var { validaUsuario } = require('../middleware/validators/validator');
 router.use(authentication);
 
 router.get('/', paginaDoUsuario.index);
-router.get('/rastrearPedido', paginaDoUsuario.rastreio);
+router.get('/rastrearPedido', paginaDoUsuario.pedidosRealizados);
 router.get('/seguranca', paginaDoUsuario.seguranca);
 router.get('/enderecos', paginaDoUsuario.enderecos);
 router.get('/seguranca/editar', paginaDoUsuario.telaEditarInformacoes);

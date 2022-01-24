@@ -7,9 +7,28 @@ const homeUserController = {
     index: function(req, res) {
         res.render('homeUser');
     },
-    rastreio: function(req, res) {
-        res.render('pedidosUser');
+
+    pedidosRealizados: async function(req, res) {
+
+        const cliente = req.session.user.id_cliente;
+
+        let produtos = [];
+
+        await db.Pedido.findAll({
+            where: { id_cliente: cliente },
+            include: { model: db.Produto, as: "produtoPedido" }
+        }).then((itens) => {
+
+            itens.forEach((produto) => {
+                produtos.push({...produto.dataValues,...produto.produtoPedido});
+            });
+            
+            res.render('pedidosUser', {
+                pedidos: produtos
+            });
+        })
     },
+
     seguranca: function(req, res) {
         res.render('segurancaUser');
     },
