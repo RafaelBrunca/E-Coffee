@@ -32,9 +32,12 @@
                     <p>R$ <%= produtos.reduce((total, valor) => total + valor.total, 0) %></p>
                 </div>
             </div>
-            <div class="finaliza-compra">
-                <button type="submit">Finalizar compra</button>
-            </div>
+            <% if(!endereco.length) { %>
+            <% } else { %> 
+                <div class="finaliza-compra">
+                    <button type="submit">Finalizar compra</button>
+                </div>
+            <% } %> 
             <div class="cfg-pedido">
                 <h4>Selecione e Confira seu endereço</h4>
                 <h4>Selecione uma forma de pagamento</h4>
@@ -48,7 +51,7 @@
                     <div class="enderecos-cliente">
                         <% if(!endereco.length) { %>
                             <h3>Você não possui nenhum endereço cadastrado</h3>
-                            <p>Acesse a página do usuário para cadastrar um novo endereço ou clique <a href="/paginadousuario/enderecos/novoendereco">Aqui</a></p>
+                            <p>Acesse a página do usuário para cadastrar um novo endereço ou clique <a href="paginadousuario/enderecos/novoendereco">Aqui</a></p>
                         <% } else { %>
                             <div class="title-endereco">
                                 <p>Endereços</p>
@@ -72,7 +75,10 @@
                                     </div>
                                 </div>
                             <% } %> 
-                        <% } %> 
+                        <% } %>
+                        <% if(!endereco.length) { %>
+                            <h3 style="text-decoration: underline;">É necessário criar um endereço para finalizar a compra!</h3>
+                        <% } %>  
                     </div>
                     <div class="selecao-endereco">
                         <h2>Selecione a Forma de Entrega</h2>

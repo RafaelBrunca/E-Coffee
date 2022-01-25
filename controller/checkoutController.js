@@ -4,7 +4,7 @@ const moment = require('moment');
 const checkout = {
     finalizarCompra: async function(req, res) {
         const cliente = req.session.user.id_cliente;
-
+        
         let produtosEncontrados = [];
 
         const buscaCarrinho = await db.Carrinho.findAll({
@@ -30,17 +30,18 @@ const checkout = {
 
             return res.render('finalizarCompra', {
                 produtos: produtosEncontrados,
-                endereco: data
+                endereco: data,
+                erroEndereco: []
             });
         })    
     },
 
-    confirmar: async function(req, res) {
+    confirmar: function(req, res) {
 
         const cliente = req.session.user.id_cliente;
-        const enderecoSelecionado = req.body.enderecoSelecionado
+        const enderecoSelecionado = req.body.enderecoSelecionado;
 
-        let produto = await db.Carrinho.findAll({
+        let produto = db.Carrinho.findAll({
             where: { id_cliente: cliente },
             include: { model: db.Produto, association: "produto"}
         })

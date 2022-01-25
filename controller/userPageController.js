@@ -16,7 +16,8 @@ const homeUserController = {
 
         await db.Pedido.findAll({
             where: { id_cliente: cliente },
-            include: { model: db.Produto, as: "produtoPedido" }
+            include: { model: db.Produto, as: "produtoPedido" },
+            order: [ [ 'data_pedido', 'DESC' ] ]
         }).then((itens) => {
 
             itens.forEach((produto) => {
