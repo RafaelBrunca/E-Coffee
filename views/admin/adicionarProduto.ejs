@@ -1,0 +1,159 @@
+<%- include('../partials/admin/header') %>
+    <main class="new-produto">
+        <div class="container-adicionar">
+            <h2>Novo Produto</h2>
+        </div>
+        <div class="novo-produto">
+            <div class="form-produto">
+                <% if(isEditing) { %> 
+                    <form action="/admin/gerenciamentodeprodutos/editar/<%=id%>" method="POST" enctype="multipart/form-data" id="formularioProduto">
+                <% }else { %>
+                    <form action="/admin/gerenciamentodeprodutos/adicionarproduto" method="POST" enctype="multipart/form-data" id="formularioProduto">
+                <% } %>
+                    <div class="nome-produto">
+                        <label for="nomeproduto">Nome:</label>
+                        <% if(isEditing) { %>
+                            <input type="text" name="nomeproduto" id="nomeproduto" value="<%= produto.nome_produto %>">
+                        <% }else{%>
+                            <input type="text" name="nomeproduto" id="nomeproduto" >
+                        <% } %>
+                    </div>
+                    <div class="codigo-produto">
+                    <label for="sku">SKU:</label>
+                    <% if(isEditing) { %>
+                        <input type="text" name="sku" id="sku" value="<%= produto.sku %>">
+                    <% }else{ %>
+                        <input type="text" name="sku" id="sku" >
+                    <% } %>
+                    <label for="codigobarras">Código EAN/GTIN:</label>
+                    <% if(isEditing) { %>
+                        <input type="text" name="codigobarras" id="codigobarras" value="<%= produto.cod_barra %> ">
+                    <% }else{ %>
+                        <input type="text" name="codigobarras" id="codigobarras">
+                    <% } %>                        
+                    </div>
+
+                    <div class="status">
+                        <label for="status">Status:</label>
+                        <% if(isEditing) {%>                            
+                            <select name="status">                           
+                                <% if(produto.status_produto == "Habilitado") { %>
+                                    <option value="Habilitado" select>Habilitado</option>
+                                    <option value="Desabilitado" >Desabilitado</option>
+                                <% } else{ %>
+                                    <option value="Desabilitado" select>Desabilitado</option>
+                                    <option value="Habilitado" >Habilitado</option>                                    
+                                <% } %>
+                            </select>                            
+                        <% }else{ %>
+                            <select name="status"> 
+                                <option value="Habilitado">Habilitado</option>
+                                <option value="Desabilitado" >Desabilitado</option>
+                            </select>
+                        <% } %>
+                        <label for="categoria" id="categoria">Categoria:</label>
+                            <% if(isEditing) { %>
+                                <select name="categoria">
+                                    <% if(produto.categoria == "Cafeteira") { %>
+                                        <option value="Cafeteira" select >Cafeteira</option>
+                                        <option value="Cápsula" >Cápsula</option>
+                                    <% }else{ %>
+                                        <option value="Cápsula" select >Cápsula</option>
+                                        <option value="Cafeteira" >Cafeteira</option>                                        
+                                    <% } %>                                    
+                                </select>
+                        <% }else{ %>
+                            <select name="categoria">
+                                <option value="Cafeteira" >Cafeteira</option>
+                                <option value="Cápsula" >Cápsula</option>
+                            </select>
+                        <% } %>
+                    </div>
+                    <div class="descricao">
+                        <label for="descricao">Descrição do Produto:</label>
+                        <div>
+                            <% if(isEditing) { %>
+                                <textarea id="descricao" name="descricao"><%= produto.descricao_produto %></textarea>
+                            <% }else{ %>
+                                <textarea id="descricao" name="descricao"></textarea>
+                            <% } %>                           
+                        </div>                        
+                    </div>                    
+                    <div class="info-tecnicas">
+                        <label for="infotecnica">Informações técnicas:</label>
+                        <div>
+                            <% if(isEditing) { %>
+                                <textarea id="infotecnica" name="infotecnica"><%= produto.informacoes_tecnicas %></textarea>
+                            <% }else{ %>
+                                <textarea id="infotecnica" name="infotecnica"></textarea>
+                            <% } %>                            
+                        </div>                        
+                    </div>
+                    <div class="ficha">
+                        <label for="peso">Peso <small>Em KG</small>:</label>
+                        <% if(isEditing) { %>
+                            <input type="text" name="peso" id="peso" value="<%= produto.peso %> ">
+                        <% }else{ %>
+                            <input type="text" name="peso" id="peso" >
+                        <% } %>
+                        <label for="preco">Preço:</label>
+                        <% if(isEditing) { %>
+                            <input type="text" name="preco" id="preco" value="<%= produto.preco %> ">
+                        <% }else{ %>
+                            <input type="text" name="preco" id="preco" >
+                        <% } %>                        
+                        <label for="custo">Custo:</label>
+                        <% if(isEditing) { %>
+                            <input type="text" name="custo" id="custo" value="<%= produto.custo %> ">
+                        <% }else{ %>
+                            <input type="text" name="custo" id="custo" >
+                        <% } %>                        
+                    </div>                    
+                    <div class="title-pagina">
+                        <label for="titulo">Título da Página:</label>
+                        <% if(isEditing) { %>
+                            <input type="text" name="titulo" id="titulo" value="<%= produto.title_pagina %> ">
+                        <% }else{ %>
+                            <input type="text" name="titulo" id="titulo" >
+                        <% } %>                        
+                    </div>
+                    <div class="palavra-chave">
+                        <label for="palavrachave">Palavras-chave:</label>
+                        <div>
+                            <% if(isEditing) { %>
+                                <textarea id="palavrachave" name="palavrachave"><%= produto.palavras_chave %> </textarea>
+                            <% }else{ %>
+                                <textarea id="palavrachave" name="palavrachave"></textarea>
+                            <% } %>                           
+                        </div>
+                    </div>
+                    <div class="imagem">
+                        <label for="imagem">Imagem:</label>
+                        <div>
+                            <% if(isEditing) { %>
+                                <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp" value="<%= produto.imagem %> "/>
+                            <% }else{ %>
+                                <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp" />
+                            <% } %>     
+                            <label for="estoque">Estoque:</label>
+                            <% if(isEditing) { %>
+                                <input type="text" name="estoque" id="quantidade" value="<%= produto.estoque %>"/>
+                            <% }else{ %>
+                                <input type="text" name="estoque" id="quantidade" />
+                            <% } %>
+                        </div>
+                    </div>
+                    <% if(isEditing) { %>
+                        <button type="submit" id="register">Editar</button>
+                    <% }else{ %>
+                        <button type="submit" id="register">Registrar</button>
+                    <% } %>                                  
+                </form>
+                <div class="cancela">
+                    <a href="/admin/gerenciamentodeprodutos">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

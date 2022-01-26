@@ -1,0 +1,113 @@
+<%- include('./partials/header') %>
+<head>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+<% if(!created) { %> 
+    <div class="body-login">
+        <div class="container" id="container" <% if(locals.errors) { %> style="min-height: 41rem;" <% } %>  >
+            <div class="form-container sign-up-container">
+                <form action="/iniciarsessao/create" method="POST" id="formCadastro">
+                    <h1>Cadastre-se</h1>
+                    <div class="formCadastro">
+                        <input type="text" name="name" placeholder="Nome" id="nome"/>
+                    <% if(locals.errors && errors.name) { %>
+                        <span style="color: white;">
+                            <%= errors.name.msg %>
+                        </span>
+                    <% } %>
+                    </div>
+                    <div class="formCadastro">
+                        <input type="text" name="lastname" placeholder="Sobrenome" id="sobrenome" />
+                    <% if(locals.errors && errors.lastname) { %>
+                        <span style="color: white;">
+                            <%= errors.lastname.msg %>
+                        </span>
+                    <% } %>
+                    </div>
+                    <div class="formCadastro">
+                        <input type="text" name="telefone" maxlength="11" placeholder="Telefone" id="telefone" />
+                    <% if(locals.errors && errors.telefone) { %>
+                        <span style="color: white;">
+                            <%= errors.telefone.msg %>
+                        </span>
+                    <% } %> 
+                    </div>
+                    <div class="formCadastro">
+                        <input type="text" name="cpf" maxlength="30" placeholder="CPF" id="cpf" />
+                    <% if(locals.errors && errors.cpf) { %>
+                        <span style="color: white;">
+                            <%= errors.cpf.msg %>
+                        </span>
+                    <% } %>
+                    </div>
+                    <div class="formCadastro">
+                        <input type="email" name="email" placeholder="E-mail" id="email" />
+                    <% if(locals.errors && errors.email) { %>
+                        <span style="color: white;">
+                            <%= errors.email.msg %>
+                        </span>
+                    <% } %>
+                    </div>
+                    <div class="formCadastro">
+                        <input type="password" name="password" placeholder="Senha" id="senha" />
+                    <% if(locals.errors && errors.password) { %>
+                        <span style="color: white;">
+                            <%= errors.password.msg %>
+                        </span>
+                    <% } %>
+                    </div>
+                    <div class="formCadastro">
+                        <input type="password" name="confirmpassword" placeholder="Confirme a Senha" id="confirmasenha" />
+                    <% if(locals.errors && errors.confirmpassword) { %>
+                        <span style="color: white;" >
+                            <%= errors.confirmpassword.msg %>
+                        </span>
+                    <% } %>
+                    </div>
+                    <button style="margin-top: 17px;" type="submit">Registrar-se</button>                    
+                </form>
+            </div>    
+            <div class="form-container sign-in-container">
+                <form action="/iniciarsessao/login" method="POST" id="formularioLogin">
+                    <h1>Login</h1>
+                    <div class="form-Login">
+                        <input type="email" name="email" placeholder="E-mail" id="loginemail" />
+                    </div>
+                    <div class="form-Login">
+                        <input type="password" name="password" placeholder="Senha" id="loginsenha" />
+                    </div>                    
+                    <a href="/login/recuperarsenha">Esqueceu sua senha?</a>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Olá, Amigo!</h1>
+                    <p>Insira seus dados pessoais e comece a jornada conosco</p>
+                    <button class="ghost" id="signIn">Registrar-se</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Bem-Vindo de Volta!</h1>
+                    <button class="ghost" id="signUp">Login</button>                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>
+<% if(created) { %>
+    <div class="cadastrosucesso">
+        <div class="container">
+            <h3>
+                Parabéns! O cadastro foi realizado com sucesso!<br /> <br />
+                Seja Bem-Vindo!<br /> <br />
+                Clique no botão abaixo e realize o Login com suas credencias!<br />
+            </h3>
+            <div>
+                <a href="/">Login</a>
+            </div>
+        </div>
+    </div>
+<% } %> 
+<%- include('./partials/footer') %> 

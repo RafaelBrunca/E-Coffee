@@ -1,0 +1,328 @@
+html, body{
+    font-family: 'Red Hat Display', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #C4C4C4;
+}
+
+.wrapper{
+    background-color: #291616;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    width: 100%;
+    padding: 50px 0;
+}
+.wrapper .user{
+    display: ruby;
+    color: #fff;
+    margin-top: 3rem;
+    margin-right: 13rem;
+}
+
+.wrapper .user p{
+    border-right: 1px solid #fff;
+    padding-right: 6px;
+    text-decoration: underline;
+}
+
+.wrapper .user a{
+    color: #fff;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+.wrapper .user a:hover{
+    color: #CE5F20;
+}
+
+.index{
+    margin-left: auto;
+    margin-right: 34.3rem;
+}
+
+main{
+    margin-left: 201px;
+    margin-right: 283px;
+    margin-top: 50px;
+}
+
+ul.navbar_itens, .navbar_itens li {
+    padding: 0;
+    list-style: none;
+}
+
+ul, li{
+    list-style: none;
+}
+
+.navbar_itens a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.painel ul{
+    display: flex;
+    margin-right: 3%;
+}
+.painel a{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 2rem;
+    text-decoration: none;
+}
+
+.gerenciamento{
+    display: flex;
+    justify-content: space-between
+}
+
+.gerenciamento h2{
+    margin-left: 2.5rem;
+}
+
+.gerenciamento a{
+    background-color: #CE5F20;
+    border-radius: 10px;
+    color: #fff;
+    margin-top: 2rem;
+    margin-right: 10rem;
+    padding: 10px 7px;
+    text-decoration: none;
+}
+
+table {
+    margin-top: 15px;
+    margin-left: -1px;
+}
+
+main thead  {
+    background-color: #CE5F20;
+}
+
+.descricoes td {
+    padding: 0;
+}
+
+.descricoes .id {
+    width: 34px;
+}
+
+.descricoes .nome{
+    width: 878px;
+}
+
+table .nome {
+    padding-left: 10px;
+    text-align: left;
+}
+
+.descricoes .sku{
+    width: 199.333px;
+}
+
+.descricoes .preco{
+    width: 88.7px;
+}
+
+.descricoes .quantidade{
+    width: 78.567px;
+}
+
+.descricoes .status{
+    width: 84.967px;
+}
+
+.descricoes .acoes{
+    width: 58.133px;
+}
+
+main .dsc {
+    padding: 0;
+    margin-top: 3px;
+}
+
+/* =================
+        PAINEL
+==================== */
+.painel ul{
+    display: flex;
+    margin-right: 3%;
+}
+.painel a{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 2rem;
+    text-decoration: none;
+}
+
+.Ciclo{
+    margin-top: 2%;
+    font-size: 14px;
+    background-color: #CE5F20;
+    border-radius: 11px;
+    width: 30%;
+    padding: 10px;
+}
+.ValorCiclo{
+    font-size: 14px;
+    background-color: #FFF1E0;
+    border-radius: 11px;
+    width: 30%;
+    padding: 10px;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 50px;
+}
+
+table .produtos {
+    background-color: #FFF8F0;
+}
+
+table .editar {
+    padding: 0;
+}
+
+table .editar a {
+    color: black;
+}
+
+/* =================
+    ADICIONAR PRODUTO   
+================= */
+.new-produto .container-adicionar{
+    display: flex;
+    margin-left: 9rem;
+}
+
+.new-produto .novo-produto{
+    background-color: #E5E5E5;
+    display: inline-block;
+    width: 80%;
+}
+
+.new-produto .novo-produto label{
+    font-weight: bold;
+}
+
+.new-produto .form-produto{
+    margin-top: 3rem;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.new-produto .nome-produto input{
+    width: 50rem;
+}
+
+.new-produto .codigo-produto{
+    margin-top: 1rem;
+    margin-left: 8rem;
+}
+
+.new-produto .codigo-produto #sku{
+    margin-right: 5rem;
+}
+
+.new-produto .status{
+    margin-top: 1rem;
+    margin-left: 8rem;
+}
+
+.new-produto .status #categoria{
+    margin-left: 8rem;
+}
+
+.new-produto .descricao{
+    margin-top: 1rem;
+}
+
+.new-produto #descricao{
+    height: 7rem;
+    width: 97%;
+}
+
+.new-produto #infotecnica{
+    height: 5rem;
+    width: 97%;
+}
+
+.new-produto .ficha{
+    margin-left: 7rem;
+}
+
+.new-produto #peso{
+    margin-right: 2rem;
+}
+
+.new-produto #preco{
+    margin-right: 2rem;
+}
+.new-produto .info-tecnicas{
+    margin-top: 1rem;
+}
+
+.new-produto .ficha{
+    margin-top: 1rem;
+}
+
+.new-produto .title-pagina{
+    margin-top: 1rem;
+}
+
+.new-produto #titulo{
+    width: 84%;
+}
+
+.new-produto .palavra-chave{
+    margin-top: 1rem;
+}
+
+.new-produto #palavrachave{
+    height: 4rem;
+    width: 97%;
+}
+
+.new-produto .imagem{
+    margin-top: 1rem;
+}
+
+.new-produto #imagem{
+    margin-right: 2rem;
+}
+
+.new-produto #register{
+    background-color: #CE5F20;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    height: 2rem;
+    margin-top: 3rem;
+    width: 7rem;
+}
+
+.new-produto .cancela{
+    background-color: #CE5F20;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: 2em;
+    margin-top: -1.7em;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: center;
+    width: 7rem;
+}
+
+.new-produto .cancela a{
+    color: #fff;
+    text-decoration: none;
+}

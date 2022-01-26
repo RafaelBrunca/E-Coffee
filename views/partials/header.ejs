@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script defer src="/javascripts/login.js" type="text/javascript"></script>
+    <script defer src="/javascripts/endereco.js" type="text/javascript"></script>
+    <script defer src="/javascripts/pesquisarProdutos.js" type="text/javascript"></script>
+    <title>E-Coffee</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="index">
+                <a href="/">
+                    <img src="/images/E- COFFEE 3.png" alt="e-coffee" width="113" height="86"/>
+                </a>
+            </div>
+            <nav class="navbar" <% if(sessao.user) { %> style="margin-right: 10rem;" <% } %> >            
+                <ul class="navbar_itens" style="height: 26.5px;">
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a href="/">Home</a>
+                        </div>   
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a href="/sobre">Sobre nós</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="search" id="search-div">
+                            <!-- Barra de pesquisa -->
+                            <form action="" id="formPesquisar">
+                                <input class="search_box" placeholder="Pesquisar" type="search" id="pesquisa">
+                                <div class="search_button">
+                                    <button type="submit" id="btn-pesquisar"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown-cafeteiras">
+                            <a href="/produto/cafeteiras">Cafeteiras
+                                <svg class="seta" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 15 15">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="itens">
+                                    <ul>
+                                        <li><a class="dropdown-item" href="/produto/cafeteiras/mondial"><img src="/images/Mondial-C-08 1.png" alt= "Mondial">Mondial</a></li>
+                                        <li><a class="dropdown-item" href="/produto/cafeteiras/philco"><img src="/images/20-Bar-Philco 1.png" alt= "Philico">Philco</a></li>
+                                        <li><a class="dropdown-item" href="/produto/cafeteiras/oster"><img src="/images/Oster-Prima-Latte-II 1.png" alt= "Oster">Oster</a></li>
+                                        <li><a class="dropdown-item" href="/produto/cafeteiras/dolce"><img src="/images/Dolce-Gusto-Mini-Me 1.png" alt= "Dolce" width= "214" height= "201">Dolce</a></li>                                        
+                                    </ul>
+                                    <ul class="down">
+                                        <li><a class="dropdown-item" href="/produto/cafeteiras/nespresso"><img src="/images/Nepresso-Expert- 1.png" alt= "Nespresso">Nespresso</a></li>
+                                        <li><a class="dropdown-item" href="/produto/cafeteiras/lirika"><img src="/images/Lirika-Plus 1.png" alt= "Lirika">Lirika</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown-capsulas">
+                            <a href="/produto/capsulas">Cápsulas
+                                <svg class="seta" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 15 15">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="itens">
+                                    <ul>
+                                        <li><a class="dropdown-item" href="/produto/capsulas/baggio"><img src="/images/Baggio.jpeg" alt= "Baggio" width= "214" height= "201">Baggio</a></li>
+                                        <li><a class="dropdown-item" href="/produto/capsulas/starbucks"><img src="/images/Starbucks.jpeg" alt= "Starbucks"width= "214" height= "201">Starbucks</a></li>
+                                        <li><a class="dropdown-item" href="/produto/capsulas/nespresso"><img src="/images/Nespresso.jpeg" alt= "Nespresso" width= "214" height= "201">Nespresso</a></li>
+                                        <li><a class="dropdown-item" href="/produto/capsulas/lor"><img src="/images/Lor.jpeg" alt= "Lor" width= "214" height= "201">Lor</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <% if(sessao.user) { %>
+                    <li class="nav-item">
+                        <div class="logado">
+                            <a href="/paginadousuario"><%= sessao.user.nome %></a>
+                            <div class="dropdown-logado">
+                                <h4>Olá, <%= sessao.user.nome %></h4>
+                                <div class="log-group">
+                                    <a href="/paginadousuario">Meu perfil</a>
+                                </div>
+                                <div class="log-group">
+                                    <a href="/logout">Sair</a>
+                                </div>                                
+                            </div>
+                        </div>                        
+                    </li>
+                    <li class="nav-item">
+                        <div class="carrinho">
+                            <a href="/carrinho">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </li>
+                    <% } else { %> 
+                    <li class="nav-item">
+                        <div class="nav-login">
+                            <a href="/iniciarsessao">login
+                                <svg class="seta" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 15 15">
+                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu-login">                         
+                                <form action="/iniciarsessao/login" method="POST" class="formDropdown">
+                                    <h3>Bem-Vindo</h3>
+                                    <div class="form-group">                            
+                                        <label for="DropdownFormEmail"></label>
+                                        <input type="email" class="form-control" name="email" id="dropemail" placeholder="E-mail">                                
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="DropdownFormPassword"></label>
+                                        <input type="password" class="form-control" name="password" id="droppassword" placeholder="Senha">
+                                    </div>
+                                    <div class="login-button">
+                                        <button type="submit" class="login-btn">Login</button>
+                                    </div>
+                                </form>
+                                    <div class="register-button">
+                                        <a href="/iniciarsessao">Registrar-se</a>
+                                    </div>
+                                    <div class="login-options">
+                                        <div class="container">
+                                            <h4>Entrar com</h4>                                    
+                                            <a href="#" style="margin-left: 12px;"><img src="/images/google-logo.png" alt="Google"style="padding-bottom: 3px;"></a>
+                                            <a href="#"><img src="/images/facebook-logo.png" alt="Facebook"></a>
+                                        </div>
+                                    </div>
+                            </div>                         
+                        </div>                        
+                    </li>
+                    <% } %>
+                </ul>
+            </nav>
+        </div>
+    </header>

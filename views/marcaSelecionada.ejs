@@ -1,0 +1,126 @@
+<%- include('./partials/header'); %>
+<div class="produtos_filtros">
+    <section class="filtro">
+        <a href="/">
+            <img src="/images/E- COFFEE 3.png" alt="e-coffee" width="113" height="86"/>
+        </a>    
+        <div class="filtrar">
+            <select id="option-preco">
+                <option> Filtrar preço</option>
+                <option value="maior">Maior para o menor</option>
+                <option value="menor">Menor para o maior</option>
+            </select>
+        </div>
+
+        <% if(marcaSelecionada === true) { %>
+        <% } else { %> 
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary active">
+              <input type="radio" name="options" id="option1" checked> <% if(capsulas === true) { %>
+                Baggio
+                <% } else { %>
+                    Mondial
+                <% }  %>
+            </label>
+            <label class="btn btn-primary">
+                <% if(capsulas === false) { %>
+                    <input type="radio" name="options" id="option2"> Oster 
+                <% }  %> 
+            </label>
+            <label class="btn btn-primary">
+              <input type="radio" name="options" id="option3"> <% if(capsulas === true) { %>
+                Starbucks
+                <% } else { %>
+                    Dolce Gusto
+                <% }  %> 
+            </label>
+            <label class="btn btn-primary">
+              <input type="radio" name="options" id="option4"> <% if(capsulas === true) { %>
+                Nespresso
+                <% } else { %>
+                    Philco
+                <% }  %> 
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="options" id="option5"> <% if(capsulas === true) { %>
+                    Lor
+                    <% } else { %>
+                        Nespresso
+                    <% }  %> 
+            </label>
+            <label class="btn btn-primary">
+                <% if(capsulas === false) { %>
+                    <input type="radio" name="options" id="option6"> Lirika 
+                <% }  %> 
+            </label>
+        </div>
+        <% } %> 
+        <% if(capsulas === true) { %>
+        <% } else { %>
+        <div class="filtrar">
+            <select id="option-cor">
+                <option> Filtrar cor</option>
+                <option value="red"> 🟥 Vermelho</option>
+                <option value="black">⬛ Preto</option>
+                <option value="white">⬜ Branco</option>
+                <option value="gray">⬜ Cinza</option>
+            </select>   
+        </div>
+        <% } %> 
+     </section>     
+        <section class="bloco-container">
+            <div class="bloco-marcas">
+                <% if(cafeteira === true) { %> 
+                    <% for(let i = 0; i < marca.length; i++) { %>
+                        <div class="marcaSelecionada">
+                            <a href="/produto/<%= marca[i].id_produto %>">
+                                <div class="bloco">
+                                    <img src="/<%= marca[i].imagem %>" alt="">            
+                                    <div class='descricao-home'>
+                                        <p><%= marca[i].nome_produto %><br> R$: <%= marca[i].preco %> </p>
+                                    </div>
+                                    <span class="buy">Comprar</span>         
+                                </div>
+                            </a>
+                        </div>
+                    <% } %>
+                <% } %>
+                <% if(capsulas === true) { %> 
+                    <% for(let i = 0; i < marca.length; i++) { %>
+                        <div class="marcaSelecionada">
+                            <a href="/produto/<%= marca[i].id_produto %>">
+                                <div class="bloco">
+                                    <img src="/<%= marca[i].imagem %>" alt="">            
+                                    <div class='descricao-home'>
+                                        <p><%= marca[i].nome_produto %><br> R$: <%= marca[i].preco %> </p>
+                                    </div>
+                                    <span class="buy">Comprar</span>         
+                                </div>
+                            </a>
+                        </div>
+                    <% } %>
+                <% } %>
+                <% if(marcaSelecionada === true) { %> 
+                    <% for(let i = 0; i < marca.length; i++) { %>
+                        <div class="marcaSelecionada">
+                            <a href="/produto/<%= marca[i].id_produto %>">
+                                <div class="bloco">
+                                    <img src="/<%= marca[i].imagem %>" alt="">            
+                                    <div class='descricao-home'>
+                                        <p><%= marca[i].nome_produto %><br> R$: <%= marca[i].preco %> </p>
+                                    </div>
+                                    <span class="buy">Comprar</span>         
+                                </div>
+                            </a>
+                        </div>
+                    <% } %>
+                <% } %>
+                <% if(!marca.length) { %>
+                    <div class="result-empty">
+                        Nenhum resultado foi encontrado.
+                    </div>
+                <% } %>
+            </div>
+        </section>          
+</div>
+<%- include('./partials/footer') %>

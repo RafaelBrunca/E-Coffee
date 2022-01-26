@@ -1,0 +1,53 @@
+<%- include('./partials/header') %> 
+<main>
+    <div class="editar-endereco">
+        <div class="editar">
+            <form method="POST" action="/paginadousuario/enderecos/editar/<%= editarEndereco.id_cli_enderecos %>/?_method=PUT">
+                <div class="campo">
+                    <label for="apelido">Nome do Endereço:</label>                        
+                    <div class="input">
+                        <input type="text" id="apelido" name="apelido" placeholder="Digite um nome para o Endereço" value="<%= editarEndereco.nome_do_endereco%>">                            
+                    </div>            
+                </div>
+                <div class="campo">
+                    <label for="cep">Cep:</label>
+                    <div class="input">
+                        <input type="text" maxlength="8" name="cep" placeholder="CEP" value="<%= editarEndereco.cep %>">
+                    </div>                        
+                </div>
+                <div class="campo">
+                    <label for="rua">Rua:</label>
+                    <label for="numero" style="padding-left: 15rem;">Número da casa:</label>
+                    <div class="input">
+                        <input type="text" name="rua" placeholder="Nome da Rua" value="<%= editarEndereco.logradouro %>">
+                        <input type="text" name="numero" placeholder="Número" value="<%= editarEndereco.num_residencia %>"style="margin-left: 1.8rem;width: 57px;">
+                    </div>                        
+                </div>                    
+                <div class="campo">
+                    <label for="bairro">Bairro:</label>
+                    <div class="input">
+                        <input type="text" name="bairro" placeholder="Bairro" value="<%= editarEndereco.bairro %>">
+                    </div>                        
+                </div>
+                <div class="campo">
+                    <label for="cidade">Cidade:</label>
+                    <label for="estado" style="padding-left: 13.5rem;">Estado:</label>
+                    <div class="input">
+                        <input type="text" name="cidade" placeholder="Cidade" value="<%= editarEndereco.cidade %>">
+                        <input type="text" maxlength="2" name="estado" value="<%= editarEndereco.uf %>"placeholder="estado" style="margin-left: 1.8rem;width: 57px;">
+                    </div>                        
+                </div>
+                <div class="campo">
+                    <label for="complemento">Complemento:</label>
+                    <div class="input">
+                        <input type="text" name="complemento" placeholder="Complemento" value="<%= editarEndereco.complemento %>">
+                    </div>                        
+                </div>
+                <div class='salvar'>
+                    <button type="submit">Salvar Alterações</button>                   
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<%- include('./partials/footer') %>

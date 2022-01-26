@@ -1,0 +1,51 @@
+<%- include('../partials/admin/header') %>
+    <main>
+        <div class="painel">
+            <ul>
+                <li><a href="/admin/painel">Painel</a></li>
+                <li><a href="#">Vendas</a></li>
+                <li><a href="/admin/gerenciamentodeprodutos">Produtos</a></li>
+                <li><a href="#">Clientes</a></li>
+                <li><a href="#">Métodos de entrega</a></li>
+                <li><a href="#">Promoções</a></li>
+                <li><a href="#">CMS</a></li>
+                <li><a href="#">Google Shopping</a></li>
+                <li><a href="#">Relatórios</a></li>
+            </ul>
+        </div>
+        <div class="gerenciamento">
+            <h2>Gerenciar Produtos</h2>
+            <a href="/admin/gerenciamentodeprodutos/adicionarproduto">Adicionar Produto</a>
+        </div>
+        <table>
+            <thead class="descricoes">
+                <tr>
+                    <td class="id">ID</td>
+                    <td class="nome">Nome</td>
+                    <td class="sku">SKU</td>
+                    <td class="preco">Preço</td>
+                    <td class="quantidade">qtde.</td>
+                    <td class="status">Status</td>
+                    <td class="acoes">Ações</td>
+                </tr>
+            </thead>
+            <% for(let i=0; i <produtos.length; i++) {%>
+                <tbody class="produtos">
+                    <tr>
+                        <td><%= produtos[i].id_produto %></td>
+                        <td class="nome"><%= produtos[i].nome_produto %></td>
+                        <td><%= produtos[i].sku %></td>
+                        <td>R$:<%= produtos[i].preco %></td>
+                        <td><%= produtos[i].estoque %></td>
+                        <td><%= produtos[i].status_produto %></td>
+                        <td><ul class="editar">
+                            <li><a href="/admin/gerenciamentodeprodutos/<%=produtos[i].id_produto%>">Editar</a></li>
+                            <li><a href="/admin/gerenciamentodeprodutos/excluir/<%=produtos[i].id_produto%>">Excluir</a></li>
+                        </ul></td>
+                    </tr>
+                </tbody>
+            <% } %>
+        </table>
+    </main>
+</body>
+</html>

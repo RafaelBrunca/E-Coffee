@@ -1,0 +1,53 @@
+<%- include('./partials/header') %> 
+<main>
+    <div class="editar-endereco">
+        <div class="editar">
+            <form method="POST" id="formEndereco" action="/paginadousuario/enderecos/novoendereco/registrarendereco">
+                <div class="campo">
+                    <label for="apelido">Nome do Endereço:</label>                        
+                    <div class="input">
+                        <input type="text" id="apelido" name="apelidodoendereco" placeholder="Digite um nome para o Endereço">                            
+                    </div>            
+                </div>
+                <div class="campo">
+                    <label for="cep">Cep:</label>
+                    <div class="input">
+                        <input type="text" maxlength="8" id="cep" name="cep" placeholder="CEP">
+                    </div>                        
+                </div>
+                <div class="campo">
+                    <label for="rua">Rua:</label>
+                    <label for="numero" style="padding-left: 15rem;">Número da casa:</label>
+                    <div class="input">
+                        <input type="text" id="rua" class="respostaCEP" name="rua" placeholder="Nome da Rua">
+                        <input type="text" id="numero" name="numero" placeholder="Número" style="margin-left: 1.8rem;width: 57px;">
+                    </div>
+                </div>
+                <div class="campo">
+                    <label for="bairro">Bairro:</label>
+                    <div class="input">
+                        <input type="text" id="bairro" class="respostaCEP" name="bairro" placeholder="Bairro">
+                    </div>
+                </div>
+                <div class="campo">
+                    <label for="cidade">Cidade:</label>
+                    <label for="estado" style="padding-left: 13.5rem;">Estado:</label>
+                    <div class="input">
+                        <input type="text" id="cidade" name="cidade" class="respostaCEP" placeholder="Cidade">
+                        <input type="text" maxlength="2" id="estado" class="respostaCEP" name="estado" placeholder="estado" style="margin-left: 1.8rem;width: 57px;">
+                    </div>
+                </div>
+                <div class="campo">
+                    <label for="complemento">Complemento:</label>
+                    <div class="input">
+                        <input type="text" id="complemento" name="complemento" placeholder="Complemento">
+                    </div>
+                </div>
+                <div class='salvar'>
+                    <button type="submit">Registar Endereço</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<%- include('./partials/footer') %>

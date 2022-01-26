@@ -1,0 +1,66 @@
+<%- include('./partials/header'); %>
+
+<!---Carrossel-->
+<div class="carrossel">
+    <button class="carrossel_button carrossel_button--left is-hidden">
+        <img src="./images/seta-carrosel.png" alt="">
+    </button>
+    <div class="carrossel_track-container">
+        <ul class="carrossel_track">
+            <li class="carrossel_slide current-slide">
+                <img class="carrossel_img" src="./images/ima-carrossel01.png" alt="">
+            </li>
+            <li class="carrossel_slide">
+                <img class="carrossel_img" src="./images/capsulas-carrossel.jpg" alt="">
+            </li>
+            <li class="carrossel_slide">
+                <img class="carrossel_img" src="./images/2coffees.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <button class="carrossel_button carrossel_button--right">
+        <img src="./images/seta-carrosel.png" alt="">
+    </button>
+    <div class="carrossel_nav">
+        <button class="carrossel_indicador current-slide"></button>
+        <button class="carrossel_indicador"></button>
+        <button class="carrossel_indicador"></button>
+    </div>
+</div>
+
+<!---cards-->
+<section class="bloco-container">
+    <div class="bloco-teste">
+        <% for(let i =  0; i < cafeteiras.length; i++) { %>
+            <div class="cards">
+                <a href="/produto/<%= cafeteiras[i].id_produto %>">
+                    <div class="bloco">
+                        <img src="/<%= cafeteiras[i].imagem %>" alt="">            
+                        <div class='descricao-home'>
+                            <p><%= cafeteiras[i].nome_produto %><br> R$: <%= cafeteiras[i].preco %> </p>
+                        </div>
+                        <span class="buy">Comprar</span>            
+                    </div>
+                </a>
+            </div>
+        <% } %>
+    </div>
+</section>
+<section class="bloco-container">
+    <div class="bloco-teste">
+        <% for(let i =  0; i < capsulas.length; i++) { %>
+            <div class="cards">
+                <a href="/produto/<%= capsulas[i].id_produto %>">
+                    <div class="bloco">
+                        <img src="/<%= capsulas[i].imagem %>" alt="">            
+                        <div class='descricao-home'>
+                            <p><%= capsulas[i].nome_produto %><br> R$: <%= capsulas[i].preco %> </p>
+                        </div>
+                        <span class="buy">Comprar</span>         
+                    </div>
+                </a>
+            </div>
+        <% } %>
+    </div>
+</section>
+<%- include('./partials/footer') %>

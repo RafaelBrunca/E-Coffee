@@ -1,0 +1,54 @@
+
+<%- include('./partials/header') %> 
+<main>
+    <div class="wrapper">
+            <div class="produto">
+                <div class="miniaturaProduto" style="height: 0px;">
+                    <div class="miniatura">
+                        <img src="/<%= produto.imagem %>" alt="miniatura1" width="80px" height="80px">
+                    </div>                    
+                    <div class="miniatura">
+                        <img src="/<%= produto.imagem %>" alt="miniatura2" width="80px" height="80px">
+                    </div>   
+                </div>
+                <div class="imagemProduto" style="height: 0px;">
+                    <img src="/<%= produto.imagem %>" alt="Cafeteira" width="380px" height="380px">
+                </div>                    
+            </div>                
+            <div class="whatsappIcon">
+                <img src="/images/icons8-whatsapp-48.png" alt="whatsappIcon" width="60px" height="60px"> 
+            </div>
+            <div class="compraProduto">
+                <h2><%= produto.title_pagina %></h2>
+                <h4>Confirme a cor:</h4>
+                <label for="cor"></label>
+                <select id="cor">
+                    <option value="preto">Preto</option>
+                    <option value="branco">Branco</option>
+                    <option value="vermelho">Vermelho</option>
+                </select>
+                <h1>R$ <%= produto.preco %></h1>
+                <p>Ou em até 10x de R$<%= produto.preco / 10 %>  sem juros</p>
+                <form action="carrinho/<%= produto.id_produto %>" method="POST">
+                    <div class="comprar">
+                        <button type="submit">Colocar no Carrinho</button>
+                    </div>  
+                </form>           
+            </div>
+        <div class="descricao-pedido">
+            <div class="title-descri">
+                <h4>Descrição do Produto</h4>
+            </div>
+            <ul id="descri-produto">
+                <li><%= produto.descricao_produto %></li>
+            </ul>
+            <div class="title-informacoes">
+                <h4>Informacoes Técnicas</h4>
+            </div>
+            <ul id="descri-produto">
+                <li><%= produto.informacoes_tecnicas %></li>
+            </ul>
+        </div>
+    </div>
+</main>
+<%- include('./partials/footer') %> 
