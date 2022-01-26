@@ -41,7 +41,7 @@ const checkout = {
         const cliente = req.session.user.id_cliente;
         const enderecoSelecionado = req.body.enderecoSelecionado;
 
-        let produto = db.Carrinho.findAll({
+        db.Carrinho.findAll({
             where: { id_cliente: cliente },
             include: { model: db.Produto, association: "produto"}
         })
@@ -50,21 +50,40 @@ const checkout = {
             for(item of result){
 
                 let valorTotal = item.quantidade*item.produto.preco;
+                let quantidade = item.quantidade;
 
                 const pedido = await db.Pedido.create({
                     id_cliente: cliente,
                     id_endereco: enderecoSelecionado,
                     id_produto: item.produto.id_produto,
-                    quantidade: item.quantidade,
+                    quantidade: quantidade,
                     data_pedido: moment().format('L'),
                     preco_total: valorTotal
                 }).then( async function (){
+                    
+                    // Primeiro subtrai quantidade pedida no total estoque
+                    const subtraiEstoque = await db.Produto.findOne({
+                        where: { id_produto: item.produto.id_produto }
+                    })
+                    .then((produto) => {
+
+                        let novoEstoque = produto.estoque-quantidade;
+
+                        db.Produto.update({
+                            estoque: novoEstoque,
+                        }, {
+                            where: { id_produto: item.produto.id_produto }
+                        })
+                    })
+
+                    // Segundo, limpa o carrinho do usuario
                     const limparCarrinho = await db.Carrinho.destroy({
                         where: {
                             id_cliente: cliente,
                             id_produto: item.produto.id_produto
                         }
                     });
+
                 }).catch( (err) => {
                     console.error(err);
                 })

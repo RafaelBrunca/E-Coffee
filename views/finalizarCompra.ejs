@@ -10,9 +10,9 @@
                     <img src="/<%= produtos[i].dataValues.imagem %>" alt="Cafeteira">
                     <ul>
                         <li><%= produtos[i].dataValues.nome_produto %></li>
-                        <li style="width: 110px;margin-top: 15px;">Quantidade(<%= produtos[i].quantidade %>)</li>
-                        <li style="width: 230px;margin-top: 15px;">Entrega e vendido por: E-coffee</li>
-                        <li style="width: 160px;margin-top: 15px;">Normal até 2 dais úteis</li>
+                        <li class="quantidade-pedido">Quantidade(<%= produtos[i].quantidade %>)</li>
+                        <li class="vendidopor">Entrega e vendido por: E-coffee</li>
+                        <li class="entrega">Normal até 2 dais úteis</li>
                     </ul>
                 </div>
             <% } %> 
@@ -51,7 +51,7 @@
                     <div class="enderecos-cliente">
                         <% if(!endereco.length) { %>
                             <h3>Você não possui nenhum endereço cadastrado</h3>
-                            <p>Acesse a página do usuário para cadastrar um novo endereço ou clique <a href="paginadousuario/enderecos/novoendereco">Aqui</a></p>
+                            <p>Acesse a página do usuário para cadastrar um novo endereço ou clique <a href="/paginadousuario/enderecos/novoendereco">Aqui</a></p>
                         <% } else { %>
                             <div class="title-endereco">
                                 <p>Endereços</p>

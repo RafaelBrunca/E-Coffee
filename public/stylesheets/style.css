@@ -1399,6 +1399,21 @@ ul#descri-produto{
     width: 140px;
 }
 
+.informacoes-produto .quantidade-pedido {
+    margin-top: 15px;
+    width: max-content;
+}
+
+.informacoes-produto .vendidopor {
+    margin-top: 15px;
+    width: 230px;
+}
+
+.informacoes-produto .entrega {
+    margin-top: 15px;
+    width: 160px;
+}
+
 .informacoes-produto img {
     height: 120px;
     width: 120px;

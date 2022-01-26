@@ -47,11 +47,12 @@ module.exports = {
         allowNull: false,
         references: { 
           model: { 
-            tableName: 'clientes',
+            tableName: 'clientes'
           },
           key: 'id_cliente'
         }
-      },
+      }
+      
     });
   },
   down: async (queryInterface, Sequelize) => {
