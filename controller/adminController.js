@@ -113,6 +113,10 @@ const adminController = {
   removerProduto: async function(req, res) {
     const id = req.params.id;
 
+    await db.Carrinho.destroy({
+      where: { id_produto: id }
+    })
+
     await db.Produto.destroy({
       where: { id_produto: id }
     })
