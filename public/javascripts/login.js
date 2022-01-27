@@ -1,53 +1,7 @@
 let signUpButton = document.getElementById("signUp");
 let signInButton = document.getElementById("signIn");
 let container = document.getElementById("container");
-let dropdown = document.querySelector(".dropdown-menu-login");
 let cadastro = document.querySelector(".body-login .container");
-
-//Valida campos no DropDown de Login
-let loginDropDown = document.querySelector(".nav-item .formDropdown");
-
-loginDropDown.addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  let valido = true;
-
-  if(this.querySelectorAll(".error")){
-    this.querySelectorAll(".error").forEach((divError) => {
-        divError.remove();
-    });
-  };
-
-  let obrigatorios = ["dropemail", "droppassword"];
-  obrigatorios.forEach((campo) => {
-    let campoDropdown = document.getElementById(campo);
-
-    if(campoDropdown.value.length == 0){
-      campoDropdown.style.backgroundColor = "#fffbc7";
-      campoDropdown.style.border = "1px solid red";
-
-      let error = document.createElement("div");
-      error.className = "error";
-      error.innerText = "Este campo é obrigatório"
-      campoDropdown.parentElement.append(error);
-      valido = false;
-
-      dropdown.style.height = "328px";
-    };
-
-    campoDropdown.addEventListener("blur", () => {
-      if(campoDropdown.value.length > 0){
-        campoDropdown.style.backgroundColor = "#ffff";
-        campoDropdown.style.border = "1px solid #8f8f9d";
-      };
-    });
-  });
-
-  if(valido == true){
-    loginDropDown.addEventListener = null;
-    loginDropDown.submit();
-  };
-});
 
 //Valida campos na pagina de login
 let formLogin = document.getElementById("formularioLogin");

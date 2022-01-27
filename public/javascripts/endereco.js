@@ -1,4 +1,4 @@
-const formulario = document.getElementById("formEndereco");
+let formulario = document.getElementById("formEndereco");
 const cep = document.getElementById("cep");
 const rua = document.getElementById('rua');
 const bairro = document.getElementById('bairro');
@@ -59,7 +59,7 @@ formulario.addEventListener('submit', function(event) {
 
     if(valido == true){
         formulario.addEventListener = null;
-        formulario.submit;
+        formulario.submit();
     };
   });
 });

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var loginController = require('../controller/loginController');
-var { validacaoRegistro } = require('../middleware/validators/login');
+var { validacaoRegistro } = require('../middleware/validators/validator');
 var recuperarSenha = require('../controller/recuperarSenhacontroller');
 
 /* Middleware validando usuario logado */

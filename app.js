@@ -13,8 +13,8 @@ var indexRouter = require('./routes/index');
 var produtoRouter = require('./routes/produto');
 const encontrarprodutosRouter = require('./routes/encontrarprodutos');
 var carrinhoRouter = require('./routes/carrinho');
+var checkoutRouter = require('./routes/checkout');
 var homeUserRouter = require('./routes/userPage');
-var sobreRouter = require('./routes/sobre');
 const adminRouter = require('./routes/admin/admin');
 
 var app = express();
@@ -37,8 +37,8 @@ app.use('/', indexRouter);
 app.use('/iniciarsessao', loginRouter);
 app.use('/produto', produtoRouter);
 app.use('/carrinho', carrinhoRouter);
+app.use('/finalizarcompra', checkoutRouter);
 app.use('/paginadousuario', homeUserRouter);
-app.use('/sobre', sobreRouter);
 app.use('/encontrarprodutos', encontrarprodutosRouter);
 app.use('/admin', adminRouter);
 

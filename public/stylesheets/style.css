@@ -185,76 +185,7 @@ nav .dropdown-cafeteiras:hover ,
              Login
 ===============================*/
 nav .nav-item .nav-login{
-    width: 86.55px;
-}
-nav .nav-item .dropdown-menu-login{
-    background-color: #291616;
-    border-color: #CE5F20;
-    border-bottom-left-radius: 11px;
-    border-bottom-right-radius: 11px;
-    color: #fff;
-    height: 312px;
-    opacity: 0;
-    position: absolute;
-    right: 70px;
-    top: 133px;
-    transition: visibility 0.3s, opacity 0.3s;
-    visibility: hidden;
-    width: 195px;
-    z-index: 2;
-}
-.dropdown-menu-login h3{
-    margin-bottom: 10px;
-}
-nav .dropdown-menu-login .form-group{
-    margin-top: 16px;
-}
-nav .form-check{
-    font-size: 14px;
-    margin-top: 12px;
-    margin-right: 26px;
-}
-nav .dropdown-menu-login .login-btn{
-    background-color: #CE5F20;
-    color: #fff;
-    border: 0px;
-    border-radius: 6px;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-    height: 26px;
-    margin-top: 10px;
-    padding: 0;
-    width: 150px;
-}
-nav .dropdown-menu-login .register-button{
-    border: 0px;
-    font-family: 'Red Hat Display', sans-serif;
-    margin-left: 8px;
-    margin-top: 10px;
-    padding: 0;   
-}
-.dropdown-menu-login .register-button a{
-    background-color: #CE5F20;
-    border-radius: 6px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 15px;
-    height: 24px;
-    padding-left: 32px;
-    width: 118px;
-}
-.login-options h4{
-    margin-top: 16px;
-    margin-bottom: 0;
-}
-nav .dropdown-menu-login .login-options{
-    background-color: #fff;
-    border-radius: 5px;
-    color: #291616;
-    height: 64px;
-    margin-left: 22px;
-    width: 151px;
+    width: max-content;
 }
 header nav .container a{
     display: inline;
@@ -262,7 +193,7 @@ header nav .container a{
 nav .nav-item .nav-login:hover{
     height: 76px;
 }
-.nav-item .nav-login:hover .dropdown-menu-login{
+.nav-item .nav-login:hover {
     opacity: 1;
     visibility: visible;
 }
@@ -437,51 +368,6 @@ main .recupera-senha{
     font-weight: bold;
     font-size: 22px;
     text-decoration: none;
-}
-/* LOGADO COM SUCESSO */
-
-.cadastrosucesso {
-	display: flex;
-    align-items: center;
-	justify-content: center;	
-}
-
-.cadastrosucesso .container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #ce5f20;
-	flex-direction: column;
-	width: 50%;
-	height: 100%;
-	margin: 5rem 0;
-	border-radius: 50px;
-	font-size: 2rem;
-	color: #fff;
-	box-shadow: 0 0 2em rgba(0, 0, 0, 0.932);
-	text-align: center;
-}
-
-.cadastrosucesso .container h3 {
-	font-size: 3rem;
-	margin: 3rem 0 1rem 0;
-	padding: 20px 40px;
-}
-
-.cadastrosucesso .container div {
-	margin: 4rem 0;
-}
-
-.cadastrosucesso .container a {
-	background-color: #291616;
-    border: none;
-	border-radius: 50px;
-    color: white;
-	font-size: 2rem;
-    font-weight: bold;	
-	padding: 1.2rem 15rem;
-	text-decoration: none;
-    text-align: center;
 }
 
 /* ===================
@@ -723,7 +609,10 @@ main .dsc-quantidade li{
     display: flex;
 }
 .container-carrinho .produto{
-    margin: 15px;
+    margin: 10px;
+}
+.container-carrinho .produto img{
+    width: 56px;
 }
 .nome-produto{
     border-left: 1px solid #CEC9C9;
@@ -776,7 +665,7 @@ main .dsc-quantidade li{
     flex-direction: column;
     height: 200px;
     margin-top: 30px;
-    width: 744px;
+    width: 52.5%;;
 }
 .frete .titulo p{    
     font-size: 24px;
@@ -814,7 +703,7 @@ main .dsc-quantidade li{
     height: 150px;
     margin-top: 26px;
     margin-bottom: 26px;
-    width: 744px;
+    width: 52.5%;
 }
 .cupom .titulo p{    
     font-size: 24px;
@@ -834,6 +723,9 @@ main .dsc-quantidade li{
     text-align: end;
 }
 /* ===== RESUMO ===== */
+.calculos-gerais{
+    position: relative;
+}
 .resumo-pedido{
     border-top: 1px solid #CEC9C9;
     border-bottom: 1px solid #CEC9C9;
@@ -841,8 +733,8 @@ main .dsc-quantidade li{
     justify-content: space-between;
     height: 197px;
     position: absolute;
-    right: 352px;
-    top: 642.433px;
+    right: 0;
+    top: 0;
     width: 440px;
 }
 
@@ -954,6 +846,7 @@ main .criarEndereco a:hover{
 .pedido{
     display: flex;
     flex-direction: column;
+    margin-bottom: 15px;
 }
 .pedido .pedido-header{
     background-color: #FFE1BD;
@@ -1264,6 +1157,12 @@ main .criarEndereco a:hover{
     margin-top: 8px;
     text-decoration: none;
 }
+/* ERROS */
+.error-lastname {
+    display: flex;
+    justify-content: center;
+    margin-left: 241px;
+}
 /* ===== whatsapp ===== */
 .whatsapp{
     bottom: 20px;
@@ -1383,6 +1282,7 @@ footer li {
 ==================== */
 .produto{
     display: flex;
+    flex-wrap: wrap;
 }
 body .miniaturaProduto{
     display: flex;
@@ -1416,7 +1316,7 @@ body .whatsappIcon:hover {
     transform: scale(1.1);
 }
 body .compraProduto{
-    padding: 50px 0px 0px 48%;
+    padding: 50px 0px 0px 3%;
     text-align: left;
 }
 body .compraProduto h1{
@@ -1431,7 +1331,6 @@ body .compraProduto p{
 
 body .compraProduto select{
     height: 47px;
-    width: 748px;
     border-radius: 8px;
     border-color: black;
 }
@@ -1486,7 +1385,9 @@ ul#descri-produto{
 }
 
 .informacoes-produto{
+    border-bottom: 1px solid #CCC;
     display: flex;
+    width: max-content;
 }
 
 .informacoes-produto p{
@@ -1495,6 +1396,27 @@ ul#descri-produto{
 }
 .informacoes-produto li{
     margin-left: 20px;
+    width: 140px;
+}
+
+.informacoes-produto .quantidade-pedido {
+    margin-top: 15px;
+    width: max-content;
+}
+
+.informacoes-produto .vendidopor {
+    margin-top: 15px;
+    width: 230px;
+}
+
+.informacoes-produto .entrega {
+    margin-top: 15px;
+    width: 160px;
+}
+
+.informacoes-produto img {
+    height: 120px;
+    width: 120px;
 }
 
 .info-valores{
@@ -1511,7 +1433,7 @@ ul#descri-produto{
 .finaliza-compra{
     display: flex;
     justify-content: flex-end;
-    margin-top: 10%;
+    margin-top: 4%;
     margin-bottom: 40px;
 }
 .finaliza-compra button{
@@ -1543,31 +1465,33 @@ ul#descri-produto{
     margin-left: 15px;
     margin-top: 15px;
 }
-.Selecione-uma-forma-de-pagamento select{
-    border-radius: 5px;
-    border: 2px solid #F5C0A2;
-    background-color: #FFF8F0;
-    font-size: 14px;
-    height: 5%;
-    padding-top: 20px;
-    padding-left: 15px;
-    padding-bottom: 20px;
-    width: 90%;
-}
-.Selecione-uma-forma-de-pagamento .title-endereco{
+
+.enderecos-cliente .title-endereco{
     display: flex;
     margin-left: 30px;
-    margin-top: 18px;
 }
-.Selecione-uma-forma-de-pagamento .endereco{
+.enderecos-cliente .endereco{
     display: flex;
 }
+
+.enderecos-cliente a{
+    color: #CE5F20;
+}
+
 .info-de-enderecos{
     background-color: #FFF1E0;
     border-radius: 5px;
-    height: 130px;
     margin-left: 32px;
     margin-right: 16px;
+    margin-top: 15px;
+}
+
+.info-de-enderecos #enderecoSelect {
+    margin-left: 3%;
+}
+
+#infoEndereco-selecionado #apelido-endereco{
+    margin: 0;
 }
 
 .info-de-enderecos .endereco li{
@@ -1635,7 +1559,6 @@ ul#descri-produto{
     background-color: #FFF1E0;
     height: 40px;
     margin-top: 20px;
-    width: 110px;
 }
 .box-pagamentos{
     display: flex;
@@ -1690,7 +1613,7 @@ ul#descri-produto{
         margin-left: 6%;
     }
     .navbar{
-        margin-right: 15rem;
+        margin-right: 4%;
     }
     .dropdown-cafeteiras .dropdown-menu, .dropdown-capsulas .dropdown-menu{
         top: 163px;

@@ -2,14 +2,13 @@
 <head>
     <link rel="stylesheet" href="/stylesheets/login.css">
 </head>
-<% if(!created) { %> 
     <div class="body-login">
         <div class="container" id="container" <% if(locals.errors) { %> style="min-height: 41rem;" <% } %>  >
             <div class="form-container sign-up-container">
                 <form action="/iniciarsessao/create" method="POST" id="formCadastro">
                     <h1>Cadastre-se</h1>
                     <div class="formCadastro">
-                        <input type="text" name="name" placeholder="Nome" id="nome"/>
+                        <input type="text" name="name" placeholder="Nome" id="nome" value="<%= old.name %>"/>
                     <% if(locals.errors && errors.name) { %>
                         <span style="color: white;">
                             <%= errors.name.msg %>
@@ -17,7 +16,7 @@
                     <% } %>
                     </div>
                     <div class="formCadastro">
-                        <input type="text" name="lastname" placeholder="Sobrenome" id="sobrenome" />
+                        <input type="text" name="lastname" placeholder="Sobrenome" id="sobrenome" value="<%= old.lastname %>" />
                     <% if(locals.errors && errors.lastname) { %>
                         <span style="color: white;">
                             <%= errors.lastname.msg %>
@@ -25,7 +24,7 @@
                     <% } %>
                     </div>
                     <div class="formCadastro">
-                        <input type="text" name="telefone" maxlength="11" placeholder="Telefone" id="telefone" />
+                        <input type="text" name="telefone" maxlength="11" placeholder="Telefone" id="telefone" value="<%= old.telefone %>" />
                     <% if(locals.errors && errors.telefone) { %>
                         <span style="color: white;">
                             <%= errors.telefone.msg %>
@@ -33,7 +32,7 @@
                     <% } %> 
                     </div>
                     <div class="formCadastro">
-                        <input type="text" name="cpf" maxlength="30" placeholder="CPF" id="cpf" />
+                        <input type="text" name="cpf" maxlength="30" placeholder="CPF" id="cpf" value="<%= old.cpf %>" />
                     <% if(locals.errors && errors.cpf) { %>
                         <span style="color: white;">
                             <%= errors.cpf.msg %>
@@ -41,7 +40,7 @@
                     <% } %>
                     </div>
                     <div class="formCadastro">
-                        <input type="email" name="email" placeholder="E-mail" id="email" />
+                        <input type="email" name="email" placeholder="E-mail" id="email" value="<%= old.email %>" />
                     <% if(locals.errors && errors.email) { %>
                         <span style="color: white;">
                             <%= errors.email.msg %>
@@ -72,9 +71,19 @@
                     <h1>Login</h1>
                     <div class="form-Login">
                         <input type="email" name="email" placeholder="E-mail" id="loginemail" />
+                        <% if(message) { %>
+                            <span style="color: white;" >
+                                <%= message %>
+                            </span>
+                        <% } %>  
                     </div>
                     <div class="form-Login">
                         <input type="password" name="password" placeholder="Senha" id="loginsenha" />
+                        <% if(message) { %>
+                            <span style="color: white;" >
+                                <%= message %>
+                            </span>
+                        <% } %> 
                     </div>                    
                     <a href="/login/recuperarsenha">Esqueceu sua senha?</a>
                     <button type="submit">Login</button>
@@ -95,19 +104,4 @@
         </div>
     </div>
 </div>
-<% } %>
-<% if(created) { %>
-    <div class="cadastrosucesso">
-        <div class="container">
-            <h3>
-                Parabéns! O cadastro foi realizado com sucesso!<br /> <br />
-                Seja Bem-Vindo!<br /> <br />
-                Clique no botão abaixo e realize o Login com suas credencias!<br />
-            </h3>
-            <div>
-                <a href="/">Login</a>
-            </div>
-        </div>
-    </div>
-<% } %> 
 <%- include('./partials/footer') %> 

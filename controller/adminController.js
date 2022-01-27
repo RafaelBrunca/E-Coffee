@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 
 const adminController = {
   telaLogin: function(req, res) {
-   res.render('admin/login')
+   res.render('admin/login', { error: undefined });
   },
   login: async function(req, res) {
 
@@ -13,11 +13,11 @@ const adminController = {
     const user = await db.Usuario.findOne({ where: { usuario: usuario} });
     
     if (!user) {
-      return
+      return res.render('admin/login', { error: "Usuário ou senha incorretos!"});
     };
     
     if(!await bcrypt.compare(senha, user.senha)) {
-      return
+      return res.render('admin/login', { error: "Usuário ou senha incorretos!"});
     };
 
     req.session.admin = user;
@@ -31,8 +31,11 @@ const adminController = {
 
   gerenciarProdutos: function(req, res) {
 
-    db.Produto.findAll().then((result) => 
-    { return res.render('admin/gerenciarProdutos', { produtos: result }); }).catch((err) => { console.log(err) });
+    db.Produto.findAll()
+    .then((result) => { 
+      return res.render('admin/gerenciarProdutos', { produtos: result }); 
+    })
+    .catch((err) => { console.log(err) });
   },
 
   telaAdicionar: function(req, res) {
@@ -104,7 +107,7 @@ const adminController = {
       title_pagina: titulo,
       palavras_chave: palavrachave,
       imagem: imagem,
-      estoque: estoque,
+      estoque: estoque
     };
     buscarProduto.update(editar);
 
@@ -112,10 +115,6 @@ const adminController = {
   },
   removerProduto: async function(req, res) {
     const id = req.params.id;
-
-    await db.Carrinho.destroy({
-      where: { id_produto: id }
-    })
 
     await db.Produto.destroy({
       where: { id_produto: id }

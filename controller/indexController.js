@@ -26,6 +26,9 @@ const indexController = {
             capsulas: capsulas
         });
     },
+    sobre: function(req, res){
+        res.render('sobre');
+    },
     logout: function(req, res) {
         req.session.destroy();
         res.redirect('/')
