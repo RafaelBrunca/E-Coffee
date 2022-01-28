@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+//const nodemailer = require ('nodemailer');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -16,6 +17,7 @@ var carrinhoRouter = require('./routes/carrinho');
 var checkoutRouter = require('./routes/checkout');
 var homeUserRouter = require('./routes/userPage');
 const adminRouter = require('./routes/admin/admin');
+const { info } = require('console');
 
 var app = express();
 

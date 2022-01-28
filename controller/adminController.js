@@ -86,9 +86,9 @@ const adminController = {
     const { id } = req.params;
 
     const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, imagem, estoque } = req.body;
-    
+    let image;
     if(req.file){
-      imagem = "images/uploads/imagemDoProduto/"+req.file.filename;
+      image = "images/uploads/imagemDoProduto/"+req.file.filename;
     };
 
     const buscarProduto = await db.Produto.findByPk(id);
@@ -106,7 +106,7 @@ const adminController = {
       custo: custo,
       title_pagina: titulo,
       palavras_chave: palavrachave,
-      imagem: imagem,
+      imagem: image,
       estoque: estoque
     };
     buscarProduto.update(editar);
@@ -115,6 +115,10 @@ const adminController = {
   },
   removerProduto: async function(req, res) {
     const id = req.params.id;
+
+    await db.Carrinho.destroy({
+      where: { id_produto: id }
+    })
 
     await db.Produto.destroy({
       where: { id_produto: id }
