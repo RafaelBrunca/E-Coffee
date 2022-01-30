@@ -36,7 +36,8 @@ const produtoController = {
     },
 
     cafeteiras: function (req, res) {
-        const cafeteiras = db.Produto.findAll({
+
+        db.Produto.findAll({
             where: {
                 status_produto: "Habilitado",
                 categoria: "Cafeteira"
@@ -49,7 +50,7 @@ const produtoController = {
                 cafeteira: true,
                 capsulas: false,
                 marcaSelecionada: false
-            });
+            })
         })
     },
     capsulas: function (req, res) {

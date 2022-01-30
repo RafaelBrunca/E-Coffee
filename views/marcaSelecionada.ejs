@@ -5,10 +5,10 @@
             <img src="/images/E- COFFEE 3.png" alt="e-coffee" width="113" height="86"/>
         </a>    
         <div class="filtrar">
+            <h4 class="filter-title">Filtrar preço</h4>
             <select id="option-preco">
-                <option> Filtrar preço</option>
-                <option value="maior">Maior para o menor</option>
-                <option value="menor">Menor para o maior</option>
+                <option value="maior para o menor" select>Maior para o menor</option>
+                <option value="menor para o maior">Menor para o maior</option>
             </select>
         </div>
 
@@ -55,31 +55,20 @@
             </label>
         </div>
         <% } %> 
-        <% if(capsulas === true) { %>
-        <% } else { %>
-        <div class="filtrar">
-            <select id="option-cor">
-                <option> Filtrar cor</option>
-                <option value="red"> 🟥 Vermelho</option>
-                <option value="black">⬛ Preto</option>
-                <option value="white">⬜ Branco</option>
-                <option value="gray">⬜ Cinza</option>
-            </select>   
-        </div>
-        <% } %> 
      </section>     
         <section class="bloco-container">
             <div class="bloco-marcas">
                 <% if(cafeteira === true) { %> 
                     <% for(let i = 0; i < marca.length; i++) { %>
-                        <div class="marcaSelecionada">
+                        <div class="marcaSelecionada" id="<%= marca[i].preco %>">
                             <a href="/produto/<%= marca[i].id_produto %>">
                                 <div class="bloco">
                                     <img src="/<%= marca[i].imagem %>" alt="">            
                                     <div class='descricao-home'>
-                                        <p><%= marca[i].nome_produto %><br> R$: <%= marca[i].preco %> </p>
+                                        <p class="name-product"><%= marca[i].nome_produto %></p> 
+                                        <p id="preco-produto">R$: <%= marca[i].preco %></p>
                                     </div>
-                                    <span class="buy">Comprar</span>         
+                                    <span class="buy">Comprar</span>
                                 </div>
                             </a>
                         </div>
@@ -87,12 +76,13 @@
                 <% } %>
                 <% if(capsulas === true) { %> 
                     <% for(let i = 0; i < marca.length; i++) { %>
-                        <div class="marcaSelecionada">
+                        <div class="marcaSelecionada" id="<%= marca[i].preco %>">
                             <a href="/produto/<%= marca[i].id_produto %>">
                                 <div class="bloco">
                                     <img src="/<%= marca[i].imagem %>" alt="">            
                                     <div class='descricao-home'>
-                                        <p><%= marca[i].nome_produto %><br> R$: <%= marca[i].preco %> </p>
+                                        <p class="name-product"><%= marca[i].nome_produto %></p> 
+                                        <p id="preco-produto">R$: <%= marca[i].preco %></p>
                                     </div>
                                     <span class="buy">Comprar</span>         
                                 </div>
@@ -102,12 +92,13 @@
                 <% } %>
                 <% if(marcaSelecionada === true) { %> 
                     <% for(let i = 0; i < marca.length; i++) { %>
-                        <div class="marcaSelecionada">
+                        <div class="marcaSelecionada"id="<%= marca[i].preco %>">
                             <a href="/produto/<%= marca[i].id_produto %>">
                                 <div class="bloco">
                                     <img src="/<%= marca[i].imagem %>" alt="">            
                                     <div class='descricao-home'>
-                                        <p><%= marca[i].nome_produto %><br> R$: <%= marca[i].preco %> </p>
+                                        <p class="name-product"><%= marca[i].nome_produto %></p> 
+                                        <p id="preco-produto">R$: <%= marca[i].preco %></p>
                                     </div>
                                     <span class="buy">Comprar</span>         
                                 </div>

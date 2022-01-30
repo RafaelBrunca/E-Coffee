@@ -13,7 +13,7 @@ formLogin.addEventListener('submit', function(event) {
 
   if(this.querySelectorAll(".error")){
     this.querySelectorAll(".error").forEach((divError) => {
-        divError.remove();
+      divError.remove();
     });
   };
 
