@@ -21,10 +21,7 @@ formProduto.onsubmit = function(event) {
       form.style.backgroundColor = "#fffbc7";
       form.style.border = "1px solid red";
 
-      form.value = "Campo Obrigatório"
-
       valido = false;
-
     };
 
     form.addEventListener("blur", () => {

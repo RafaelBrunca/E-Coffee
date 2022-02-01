@@ -1,6 +1,7 @@
 const db = require('../database/models');
 
 const bcrypt = require('bcryptjs');
+const { validationResult } = require('express-validator');
 
 const adminController = {
   telaLogin: function(req, res) {
@@ -40,35 +41,48 @@ const adminController = {
 
   telaAdicionar: function(req, res) {
     return res.render('admin/adicionarProduto', { 
-      isEditing: false
+      isEditing: false,
+      error: [],
+      old: []
     });
   },
 
   adicionarProduto: async function(req, res) {
 
-    const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
-    
-    let imagem = "images/uploads/imagemDoProduto/"+req.file.filename;
-    
-    const criarProduto = await db.Produto.create({
-      nome_produto: nomeproduto,
-      sku: sku,
-      cod_barra: codigobarras,
-      status_produto: status,
-      categoria: categoria,
-      descricao_produto: descricao,
-      informacoes_tecnicas: infotecnica,
-      peso: peso,
-      preco: preco,
-      custo: custo,
-      title_pagina: titulo,
-      palavras_chave: palavrachave,
-      imagem: imagem,
-      estoque: estoque,
+    const error = validationResult(req);
 
-    });
+    if(!error.isEmpty()) {
+      return res.render('admin/adicionarProduto',{
+        error: error.mapped(),
+        old: req.body,
+        isEditing: false
+      });
+    } else {
+      
+      const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
+    
+      let imagem = "images/uploads/imagemDoProduto/"+req.file.filename;
+      
+      const criarProduto = await db.Produto.create({
+        nome_produto: nomeproduto,
+        sku: sku,
+        cod_barra: codigobarras,
+        status_produto: status,
+        categoria: categoria,
+        descricao_produto: descricao,
+        informacoes_tecnicas: infotecnica,
+        peso: peso,
+        preco: preco,
+        custo: custo,
+        title_pagina: titulo,
+        palavras_chave: palavrachave,
+        imagem: imagem,
+        estoque: estoque,
 
-    return res.redirect('/admin/gerenciamentodeprodutos');
+      });
+
+      return res.redirect('/admin/gerenciamentodeprodutos');
+    };
   },
   telaEditar: async function(req, res) {
     const id = req.params.id;
@@ -84,8 +98,9 @@ const adminController = {
   editarProduto: async function(req, res) {
 
     const { id } = req.params;
+    let imagem = undefined;
 
-    const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, imagem, estoque } = req.body;
+    const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
     
     if(req.file){
       imagem = "images/uploads/imagemDoProduto/"+req.file.filename;

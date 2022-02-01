@@ -38,22 +38,26 @@ const loginController = {
 
     const senhaCriptografada = bcrypt.hashSync(req.body.password, 12);
 
-    const errors = validationResult(req);
+    const erro = validationResult(req);
 
-    if(!errors.isEmpty()) {
+    if(!erro.isEmpty()) {
       res.render('cadastro', {
-        errors: errors.mapped(),
+        erro: erro.mapped(),
         old: req.body,
         message: []
       });
     } else {
+
+      const { name, lastname, telefone, cpf, email } = req.body;
+
       await db.Cliente.create({
-        nome: req.body.name,
-        sobrenome: req.body.lastname,
-        telefone: req.body.telefone,
-        cpf: req.body.cpf,
-        email: req.body.email,
+        nome: name,
+        sobrenome: lastname,
+        telefone: telefone,
+        cpf: cpf,
+        email: email,
         senha: senhaCriptografada
+
       }).then((result) => {
         return res.redirect('/iniciarsessao')
       }).catch((err) => {
