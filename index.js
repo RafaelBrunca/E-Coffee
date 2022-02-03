@@ -18,17 +18,17 @@ const transporter = nodemailer.createTransport({
 });
 
 async function run() {
-    const mailSent = transporter.sendMail({ /* obs: Isso se trata de uma promise */
-        text: "Se você leu esse email é porque deu certo!",
-        subject: "Email Teste",
+    const mandarEmail = transporter.sendMail({ /* obs: Isso se trata de uma promise, logo, precisa de um ".then" e um ".catch" */
+        text: "Obrigado " + nomeEmail + " por se cadastrar",
+        subject: "Cadastro de um novo Email",
         from: "ecoffe.teste@gmail.com",
-        to: ['rafael.brunca@gmail.com']
+        to: ['/']
     }).then(info => {
         res.send(info)
     }).catch(error => {
         res.send(error)
     });
-    console.log(mailSent);
+    console.log(mandarEmail);
 }
 
 run();
