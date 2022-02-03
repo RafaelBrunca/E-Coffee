@@ -1,6 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
-//const nodemailer = require ('nodemailer');
+var nodemailer = require('nodemailer');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
