@@ -52,14 +52,23 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(200),
             allowNull: false
         },
-        imagem: { 
-            type: DataTypes.STRING(200),
-            allowNull: false
-        },
         estoque: { 
             type: DataTypes.DOUBLE.UNSIGNED,
             allowNull: false
         },
+        imagem: { 
+            type: DataTypes.STRING(200),
+            allowNull: false
+        },
+        miniaturaUm: { 
+            type: DataTypes.STRING(200),
+            allowNull: false
+        },
+        miniaturaDois: { 
+            type: DataTypes.STRING(200),
+            allowNull: false
+        }
+
     },{
         tableName: 'produtos',
         timestamps: false

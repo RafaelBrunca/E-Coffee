@@ -1822,6 +1822,7 @@ ul#descri-produto{
         margin-left: 6%;
     }
     .navbar{
+        font-size: 100%;
         margin-right: 4%;
     }
     .dropdown-cafeteiras .dropdown-menu, .dropdown-capsulas .dropdown-menu{

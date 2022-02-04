@@ -150,16 +150,8 @@
                             <% } %>                           
                         </div>
                     </div>
-                    <div class="imagem">
-                        <label for="imagem">Imagem:</label>
-                        <div>
-                            <% if(isEditing) { %>
-                                <img src="/<%= produto.imagem %>" style="width: 121px; height: 124px;" alt="<%= produto.nome_produto %>">
-                                <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp"/>
-                            <% }else{ %>
-                                <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp" />
-                            <% } %>     
-                            <label for="estoque">Estoque:</label>
+                    <br/>
+                    <label for="estoque">Estoque:</label>
                             <% if(isEditing) { %>
                                 <input type="text" name="estoque" id="quantidade" value="<%= produto.estoque %>"/>
                             <% }else{ %>
@@ -168,6 +160,39 @@
                                     <%= error.estoque.msg %> 
                                 <% } %>
                             <% } %>
+                    <div class="imagem">
+                        <label for="imagem">Imagem:</label>
+                        <div>
+                            <% if(isEditing) { %>
+                                <img src="/<%= produto.imagem %>" style="width: 121px; height: 124px;" alt="<%= produto.nome_produto %>">
+                                <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp"/>
+                            <% }else{ %>
+                                <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp" />
+                            <% } %>
+                            
+                            
+                            <div class="miniatura">
+
+                                <label for="miniaturaUm">Miniatura 1:</label><br />
+                                <% if(isEditing) { %>
+                                    <img src="/<%= produto.miniaturaUm %>" style="width: 121px; height: 124px;" alt="<%= produto.nome_produto %>">
+                                <% } %>
+                                <input type="file" name="miniaturaUm" id="miniaturaUm" accept=".jpg, .jpeg, .png, .webp"/>
+
+                            </div>
+                            
+                            
+                            <div class="miniatura">
+
+                                <label for="miniaturaDois">Miniatura 2:</label><br />
+                                <% if(isEditing) { %>
+                                    <img src="/<%= produto.miniaturaDois %>" style="width: 121px; height: 124px;" alt="<%= produto.nome_produto %>">
+                                <% } %>
+                                <input type="file" name="miniaturaDois" id="miniaturaDois" accept=".jpg, .jpeg, .png, .webp"/>
+
+                            </div>
+
+                            
                         </div>
                     </div>
                     <% if(isEditing) { %>

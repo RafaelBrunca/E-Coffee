@@ -16,7 +16,6 @@ var carrinhoRouter = require('./routes/carrinho');
 var checkoutRouter = require('./routes/checkout');
 var homeUserRouter = require('./routes/userPage');
 const adminRouter = require('./routes/admin/admin');
-const { info } = require('console');
 
 var app = express();
 

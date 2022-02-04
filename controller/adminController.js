@@ -60,8 +60,22 @@ const adminController = {
     } else {
       
       const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
-    
-      let imagem = "images/uploads/imagemDoProduto/"+req.file.filename;
+
+      let nomeImg = [];
+      Array(req.files).forEach((item) => {
+
+        for(img in item){
+          item[img].forEach((nome) => {
+
+            nomeImg.push(nome.filename);
+
+          });
+        };
+      });
+
+      let imagem = "images/uploads/imagemDoProduto/"+nomeImg[0];
+      let miniaturaUm = "images/uploads/imagemDoProduto/"+nomeImg[1];
+      let miniaturaDois = "images/uploads/imagemDoProduto/"+nomeImg[2];
       
       const criarProduto = await db.Produto.create({
         nome_produto: nomeproduto,
@@ -76,9 +90,10 @@ const adminController = {
         custo: custo,
         title_pagina: titulo,
         palavras_chave: palavrachave,
-        imagem: imagem,
         estoque: estoque,
-
+        imagem: imagem,
+        miniaturaUm: miniaturaUm,
+        miniaturaDois: miniaturaDois
       });
 
       return res.redirect('/admin/gerenciamentodeprodutos');
@@ -99,11 +114,32 @@ const adminController = {
 
     const { id } = req.params;
     let imagem = undefined;
+    let miniaturaUm = undefined;
+    let miniaturaDois = undefined;
+    let nomeImg = [];
 
     const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
-    
-    if(req.file){
-      imagem = "images/uploads/imagemDoProduto/"+req.file.filename;
+
+    if(req.files){
+
+      Array(req.files).forEach((item) => {
+
+        for(img in item){
+
+          item[img].forEach((nome) => {
+
+            nomeImg.push(nome.filename)
+
+          });
+
+        };
+        
+      });
+
+      imagem = "images/uploads/imagemDoProduto/"+nomeImg[0];
+      miniaturaUm = "images/uploads/imagemDoProduto/"+nomeImg[1];
+      miniaturaDois = "images/uploads/imagemDoProduto/"+nomeImg[2];
+
     };
 
     const buscarProduto = await db.Produto.findByPk(id);
@@ -121,8 +157,10 @@ const adminController = {
       custo: custo,
       title_pagina: titulo,
       palavras_chave: palavrachave,
+      estoque: estoque,
       imagem: imagem,
-      estoque: estoque
+      miniaturaUm: miniaturaUm,
+      miniaturaDois: miniaturaDois
     };
     buscarProduto.update(editar);
 
