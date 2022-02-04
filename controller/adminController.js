@@ -1,6 +1,10 @@
 const db = require('../database/models');
 
 const bcrypt = require('bcryptjs');
+<<<<<<< HEAD
+=======
+const { validationResult } = require('express-validator');
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
 
 const adminController = {
   telaLogin: function(req, res) {
@@ -40,12 +44,19 @@ const adminController = {
 
   telaAdicionar: function(req, res) {
     return res.render('admin/adicionarProduto', { 
+<<<<<<< HEAD
       isEditing: false
+=======
+      isEditing: false,
+      error: [],
+      old: []
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
     });
   },
 
   adicionarProduto: async function(req, res) {
 
+<<<<<<< HEAD
     const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
     
     let imagem = "images/uploads/imagemDoProduto/"+req.file.filename;
@@ -69,6 +80,42 @@ const adminController = {
     });
 
     return res.redirect('/admin/gerenciamentodeprodutos');
+=======
+    const error = validationResult(req);
+
+    if(!error.isEmpty()) {
+      return res.render('admin/adicionarProduto',{
+        error: error.mapped(),
+        old: req.body,
+        isEditing: false
+      });
+    } else {
+      
+      const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
+    
+      let imagem = "images/uploads/imagemDoProduto/"+req.file.filename;
+      
+      const criarProduto = await db.Produto.create({
+        nome_produto: nomeproduto,
+        sku: sku,
+        cod_barra: codigobarras,
+        status_produto: status,
+        categoria: categoria,
+        descricao_produto: descricao,
+        informacoes_tecnicas: infotecnica,
+        peso: peso,
+        preco: preco,
+        custo: custo,
+        title_pagina: titulo,
+        palavras_chave: palavrachave,
+        imagem: imagem,
+        estoque: estoque,
+
+      });
+
+      return res.redirect('/admin/gerenciamentodeprodutos');
+    };
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
   },
   telaEditar: async function(req, res) {
     const id = req.params.id;
@@ -84,11 +131,20 @@ const adminController = {
   editarProduto: async function(req, res) {
 
     const { id } = req.params;
+<<<<<<< HEAD
 
     const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, imagem, estoque } = req.body;
     let image;
     if(req.file){
       image = "images/uploads/imagemDoProduto/"+req.file.filename;
+=======
+    let imagem = undefined;
+
+    const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
+    
+    if(req.file){
+      imagem = "images/uploads/imagemDoProduto/"+req.file.filename;
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
     };
 
     const buscarProduto = await db.Produto.findByPk(id);
@@ -106,7 +162,7 @@ const adminController = {
       custo: custo,
       title_pagina: titulo,
       palavras_chave: palavrachave,
-      imagem: image,
+      imagem: imagem,
       estoque: estoque
     };
     buscarProduto.update(editar);
@@ -115,10 +171,6 @@ const adminController = {
   },
   removerProduto: async function(req, res) {
     const id = req.params.id;
-
-    await db.Carrinho.destroy({
-      where: { id_produto: id }
-    })
 
     await db.Produto.destroy({
       where: { id_produto: id }

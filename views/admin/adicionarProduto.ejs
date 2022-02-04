@@ -15,7 +15,14 @@
                         <% if(isEditing) { %>
                             <input type="text" name="nomeproduto" id="nomeproduto" value="<%= produto.nome_produto %>">
                         <% }else{%>
+<<<<<<< HEAD
                             <input type="text" name="nomeproduto" id="nomeproduto" >
+=======
+                            <input type="text" name="nomeproduto" id="nomeproduto" value="<%= old.nomeproduto %>">
+                            <% if(error.nomeproduto) { %>
+                                <%= error.nomeproduto.msg %> 
+                            <% } %>
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
                         <% } %>
                     </div>
                     <div class="codigo-produto">
@@ -23,6 +30,7 @@
                     <% if(isEditing) { %>
                         <input type="text" name="sku" id="sku" value="<%= produto.sku %>">
                     <% }else{ %>
+<<<<<<< HEAD
                         <input type="text" name="sku" id="sku" >
                     <% } %>
                     <label for="codigobarras">Código EAN/GTIN:</label>
@@ -30,6 +38,21 @@
                         <input type="text" name="codigobarras" id="codigobarras" value="<%= produto.cod_barra %> ">
                     <% }else{ %>
                         <input type="text" name="codigobarras" id="codigobarras">
+=======
+                        <input type="text" name="sku" id="sku" value="<%= old.sku %>" <% if(error.sku) { %>style="margin-right: 0px !important;"<% } %>/>
+                        <% if(error.sku) { %>
+                            <%= error.sku.msg %>
+                        <% } %>
+                    <% } %>
+                    <label for="codigobarras">Código EAN/GTIN:</label>
+                    <% if(isEditing) { %>
+                        <input type="text" name="codigobarras" id="codigobarras" value="<%= produto.cod_barra %>">
+                    <% }else{ %>
+                        <input type="text" name="codigobarras" id="codigobarras" value="<%= old.codigobarras %>" />
+                        <% if(error.codigobarras) { %>
+                            <%= error.codigobarras.msg %>
+                        <% } %>
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
                     <% } %>                        
                     </div>
 
@@ -75,38 +98,53 @@
                             <% if(isEditing) { %>
                                 <textarea id="descricao" name="descricao"><%= produto.descricao_produto %></textarea>
                             <% }else{ %>
+<<<<<<< HEAD
                                 <textarea id="descricao" name="descricao"></textarea>
                             <% } %>                           
                         </div>                        
                     </div>                    
+=======
+                                <textarea id="descricao" name="descricao"><%= old.descricao %></textarea>
+                                <% if(error.descricao) { %>
+                                    <%= error.descricao.msg %> 
+                                <% } %>
+                            <% } %>                           
+                        </div>                        
+                    </div>
+                    <p>*Utilize <span style="font-weight:bold">#</span> para indicar quebra de linhas</p>
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
                     <div class="info-tecnicas">
                         <label for="infotecnica">Informações técnicas:</label>
                         <div>
                             <% if(isEditing) { %>
                                 <textarea id="infotecnica" name="infotecnica"><%= produto.informacoes_tecnicas %></textarea>
                             <% }else{ %>
-                                <textarea id="infotecnica" name="infotecnica"></textarea>
+                                <textarea id="infotecnica" name="infotecnica"><%= old.infotecnica %></textarea>
+                                <% if(error.infotecnica) { %>
+                                    <%= error.infotecnica.msg %> 
+                                <% } %>
                             <% } %>                            
                         </div>                        
                     </div>
+                    <p>*Utilize <span style="font-weight:bold">#</span> para indicar quebra de linhas</p>
                     <div class="ficha">
                         <label for="peso">Peso <small>Em KG</small>:</label>
                         <% if(isEditing) { %>
                             <input type="text" name="peso" id="peso" value="<%= produto.peso %> ">
                         <% }else{ %>
-                            <input type="text" name="peso" id="peso" >
+                            <input type="text" name="peso" id="peso" <% if(error.peso) { %>value="<%= error.peso.msg %>"<% } %> />
                         <% } %>
                         <label for="preco">Preço:</label>
                         <% if(isEditing) { %>
                             <input type="text" name="preco" id="preco" value="<%= produto.preco %> ">
                         <% }else{ %>
-                            <input type="text" name="preco" id="preco" >
+                            <input type="text" name="preco" id="preco" <% if(error.preco) { %>value="<%= error.preco.msg %>"<% } %> />
                         <% } %>                        
                         <label for="custo">Custo:</label>
                         <% if(isEditing) { %>
                             <input type="text" name="custo" id="custo" value="<%= produto.custo %> ">
                         <% }else{ %>
-                            <input type="text" name="custo" id="custo" >
+                            <input type="text" name="custo" id="custo" <% if(error.custo) { %>value="<%= error.custo.msg %>"<% } %> />
                         <% } %>                        
                     </div>                    
                     <div class="title-pagina">
@@ -114,7 +152,10 @@
                         <% if(isEditing) { %>
                             <input type="text" name="titulo" id="titulo" value="<%= produto.title_pagina %> ">
                         <% }else{ %>
-                            <input type="text" name="titulo" id="titulo" >
+                            <input type="text" name="titulo" id="titulo" value="<%= old.titulo %>" >
+                            <% if(error.titulo) { %>
+                                <%= error.titulo.msg %> 
+                            <% } %>
                         <% } %>                        
                     </div>
                     <div class="palavra-chave">
@@ -123,7 +164,10 @@
                             <% if(isEditing) { %>
                                 <textarea id="palavrachave" name="palavrachave"><%= produto.palavras_chave %> </textarea>
                             <% }else{ %>
-                                <textarea id="palavrachave" name="palavrachave"></textarea>
+                                <textarea id="palavrachave" name="palavrachave"><%= old.palavrachave %></textarea>
+                                <% if(error.palavrachave) { %>
+                                    <%= error.palavrachave.msg %> 
+                                <% } %>
                             <% } %>                           
                         </div>
                     </div>
@@ -131,7 +175,8 @@
                         <label for="imagem">Imagem:</label>
                         <div>
                             <% if(isEditing) { %>
-                                <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp" value="<%= produto.imagem %> "/>
+                                <img src="/<%= produto.imagem %>" style="width: 121px; height: 124px;" alt="<%= produto.nome_produto %>">
+                                <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp"/>
                             <% }else{ %>
                                 <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp" />
                             <% } %>     
@@ -139,7 +184,10 @@
                             <% if(isEditing) { %>
                                 <input type="text" name="estoque" id="quantidade" value="<%= produto.estoque %>"/>
                             <% }else{ %>
-                                <input type="text" name="estoque" id="quantidade" />
+                                <input type="text" name="estoque" id="quantidade" value="<%= old.estoque %>" />
+                                <% if(error.estoque) { %>
+                                    <%= error.estoque.msg %> 
+                                <% } %>
                             <% } %>
                         </div>
                     </div>

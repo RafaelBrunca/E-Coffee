@@ -17,13 +17,7 @@
                 <div class="compraProduto">
                     <form action="/carrinho/<%= produto.id_produto %>" method="POST">
                     <h2><%= produto.title_pagina %></h2>
-                    <h4>Confirme a cor e quantidade:</h4>
-                    <label for="cor"></label>
-                    <select id="cor">
-                        <option value="preto">Preto</option>
-                        <option value="branco">Branco</option>
-                        <option value="vermelho">Vermelho</option>
-                    </select>
+                    <h4>Selecione a quantidade:</h4>
                     <select id="qtd" name="quantidade">
                         <% for(let i =  1; i <= 10; i++) { %> 
                             <option value="<%= [i] %> "><%= [i] %> </option>
@@ -45,13 +39,21 @@
                 <h4>Descrição do Produto</h4>
             </div>
             <ul id="descri-produto">
+<<<<<<< HEAD
                 <li><%= produto.descricao_produto %></li>
+=======
+                <li id="text-product"><%= produto.descricao_produto %></li>
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
             </ul>
             <div class="title-informacoes">
                 <h4>Informacoes Técnicas</h4>
             </div>
             <ul id="descri-produto">
+<<<<<<< HEAD
                 <li><%= produto.informacoes_tecnicas %></li>
+=======
+                <li id="text-product"><%= produto.informacoes_tecnicas %></li>
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
             </ul>
         </div>
     </div>

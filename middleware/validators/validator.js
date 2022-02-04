@@ -2,7 +2,6 @@ const db = require('../../database/models');
 
 /* Validador de CPF */
 const CPF = require('cpf');
-const bcrypt = require('bcryptjs');
 var { check } = require('express-validator');
 
 const validacaoRegistro = [
@@ -23,18 +22,21 @@ const validacaoRegistro = [
         .isNumeric()
         .notEmpty()
         .custom( async (cpfBody) => {
-            const formatCpf = await CPF.format(cpfBody);
-            const validaCpf = CPF.isValid(formatCpf);
-
-            const procuraCpf = db.Cliente.findOne({
+            const procuraCpf = await db.Cliente.findOne({
                 where: {cpf: cpfBody}
             });
 
-            if(procuraCpf.cpf){
-                return Promise.reject("Tente outro CPF");
-            }
-        })
-        .withMessage("Digite um CPF válido!"),
+            if(procuraCpf){
+                throw new Error("Tente outro CPF");
+            };
+
+            const formatCpf = CPF.format(cpfBody);
+            const validaCpf = CPF.isValid(formatCpf);
+
+            if(!validaCpf){
+                throw new Error("Digite um CPF válido!");
+            };
+        }),
     check("email").custom( async (emailBody) => {
 		const procuraEmail = await db.Cliente.findOne({
             where: {email: emailBody}
@@ -67,12 +69,15 @@ const validaUsuario = [
     check("name").notEmpty().withMessage("Informe seu nome").isLength({ min: 3 }).withMessage("Informe seu nome"),
     check("lastname").notEmpty().withMessage("Informe seu sobrenome").isLength({ min: 3 }).withMessage("Informe seu sobrenome"),
     check("telefone").notEmpty().withMessage("digite um numero de telefone"),
-    check("cpf").isNumeric().notEmpty().withMessage("CPF é obrigatório")
-    .custom( async (cpfBody) => {
-        const formatCpf = await CPF.format(cpfBody);
+    check("cpf", "CPF é obrigatório!").isNumeric().notEmpty().withMessage("CPF é obrigatório")
+    .custom((cpfBody) => {
+        const formatCpf = CPF.format(cpfBody);
         const validaCpf = CPF.isValid(formatCpf);
-    })
-    .withMessage("Digite um CPF válido!"),
+
+        if(!validaCpf){
+            throw new Error("Digite um CPF válido!");
+        }
+    }),
     check("email").custom( async (emailBody) => {
 		const procuraEmail = await db.Cliente.findOne({
             where: {email: emailBody}
@@ -97,4 +102,28 @@ const validaUsuario = [
         }),
 ];
 
-module.exports = { validacaoRegistro, validaUsuario };
+const validacaoProduto = [
+    check("nomeproduto").notEmpty().withMessage('Digite o nome do produto'),
+
+    check("sku").notEmpty().withMessage('Digite o SKU do produto'),
+
+    check("codigobarras").notEmpty().withMessage('Digite o código de barras do produto').isNumeric().withMessage('somente números são aceitos'),
+
+    check("descricao").notEmpty().withMessage('Digite a descrição do produto'),
+
+    check("infotecnica").notEmpty().withMessage('Digite as informações técnicas do produto'),
+
+    check("peso").notEmpty().withMessage('Digite o peso do produto').isNumeric().withMessage('somente números são aceitos'),
+
+    check("preco").notEmpty().withMessage('Digite o preço do produto').isNumeric().withMessage('somente números são aceitos'),
+
+    check("custo").notEmpty().withMessage('Digite o custo do produto').isNumeric().withMessage('somente números são aceitos'),
+
+    check("titulo").notEmpty().withMessage('Digite titulo do produto'),
+
+    check("palavrachave").notEmpty().withMessage('Digite palavras chave do produto'),
+
+    check("estoque").notEmpty().withMessage('Digite a quantidade do produto').isNumeric().withMessage('somente números são aceitos')
+];
+
+module.exports = { validacaoRegistro, validaUsuario, validacaoProduto };

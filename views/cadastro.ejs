@@ -3,63 +3,63 @@
     <link rel="stylesheet" href="/stylesheets/login.css">
 </head>
     <div class="body-login">
-        <div class="container" id="container" <% if(locals.errors) { %> style="min-height: 41rem;" <% } %>  >
+        <div class="container" id="container" <% if(locals.erro) { %> style="min-height: 41rem;" <% } %>  >
             <div class="form-container sign-up-container">
                 <form action="/iniciarsessao/create" method="POST" id="formCadastro">
                     <h1>Cadastre-se</h1>
                     <div class="formCadastro">
                         <input type="text" name="name" placeholder="Nome" id="nome" value="<%= old.name %>"/>
-                    <% if(locals.errors && errors.name) { %>
+                    <% if(locals.erro && erro.name) { %>
                         <span style="color: white;">
-                            <%= errors.name.msg %>
+                            <%= erro.name.msg %>
                         </span>
                     <% } %>
                     </div>
                     <div class="formCadastro">
                         <input type="text" name="lastname" placeholder="Sobrenome" id="sobrenome" value="<%= old.lastname %>" />
-                    <% if(locals.errors && errors.lastname) { %>
+                    <% if(locals.erro && erro.lastname) { %>
                         <span style="color: white;">
-                            <%= errors.lastname.msg %>
+                            <%= erro.lastname.msg %>
                         </span>
                     <% } %>
                     </div>
                     <div class="formCadastro">
                         <input type="text" name="telefone" maxlength="11" placeholder="Telefone" id="telefone" value="<%= old.telefone %>" />
-                    <% if(locals.errors && errors.telefone) { %>
+                    <% if(locals.erro && erro.telefone) { %>
                         <span style="color: white;">
-                            <%= errors.telefone.msg %>
+                            <%= erro.telefone.msg %>
                         </span>
                     <% } %> 
                     </div>
                     <div class="formCadastro">
                         <input type="text" name="cpf" maxlength="30" placeholder="CPF" id="cpf" value="<%= old.cpf %>" />
-                    <% if(locals.errors && errors.cpf) { %>
+                    <% if(locals.erro && erro.cpf) { %>
                         <span style="color: white;">
-                            <%= errors.cpf.msg %>
+                            <%= erro.cpf.msg %>
                         </span>
                     <% } %>
                     </div>
                     <div class="formCadastro">
                         <input type="email" name="email" placeholder="E-mail" id="email" value="<%= old.email %>" />
-                    <% if(locals.errors && errors.email) { %>
+                    <% if(locals.erro && erro.email) { %>
                         <span style="color: white;">
-                            <%= errors.email.msg %>
+                            <%= erro.email.msg %>
                         </span>
                     <% } %>
                     </div>
                     <div class="formCadastro">
                         <input type="password" name="password" placeholder="Senha" id="senha" />
-                    <% if(locals.errors && errors.password) { %>
+                    <% if(locals.erro && erro.password) { %>
                         <span style="color: white;">
-                            <%= errors.password.msg %>
+                            <%= erro.password.msg %>
                         </span>
                     <% } %>
                     </div>
                     <div class="formCadastro">
                         <input type="password" name="confirmpassword" placeholder="Confirme a Senha" id="confirmasenha" />
-                    <% if(locals.errors && errors.confirmpassword) { %>
+                    <% if(locals.erro && erro.confirmpassword) { %>
                         <span style="color: white;" >
-                            <%= errors.confirmpassword.msg %>
+                            <%= erro.confirmpassword.msg %>
                         </span>
                     <% } %>
                     </div>

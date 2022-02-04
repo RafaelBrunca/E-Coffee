@@ -5,10 +5,10 @@
             <img src="/images/E- COFFEE 3.png" alt="e-coffee" width="113" height="86"/>
         </a>    
         <div class="filtrar">
+            <h4 class="filter-title">Filtrar preço</h4>
             <select id="option-preco">
-                <option> Filtrar preço</option>
-                <option value="maior">Maior para o menor</option>
-                <option value="menor">Menor para o maior</option>
+                <option value="maior para o menor" select>Maior para o menor</option>
+                <option value="menor para o maior">Menor para o maior</option>
             </select>
         </div>
 
@@ -55,6 +55,7 @@
             </label>
         </div>
         <% } %> 
+<<<<<<< HEAD
         <% if(capsulas === true) { %>
         <% } else { %>
         <div class="filtrar">
@@ -67,19 +68,32 @@
             </select>   
         </div>
         <% } %> 
+=======
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
      </section>     
         <section class="bloco-container">
             <div class="bloco-marcas">
                 <% if(cafeteira === true) { %> 
                     <% for(let i = 0; i < marca.length; i++) { %>
+<<<<<<< HEAD
                         <div class="marcaSelecionada">
+=======
+                        <div class="marcaSelecionada" id="<%= marca[i].preco %>">
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
                             <a href="/produto/<%= marca[i].id_produto %>">
                                 <div class="bloco">
                                     <img src="/<%= marca[i].imagem %>" alt="">            
                                     <div class='descricao-home'>
+<<<<<<< HEAD
                                         <p><%= marca[i].nome_produto %><br> R$: <%= marca[i].preco %> </p>
                                     </div>
                                     <span class="buy">Comprar</span>         
+=======
+                                        <p class="name-product"><%= marca[i].nome_produto %></p> 
+                                        <p id="preco-produto">R$: <%= marca[i].preco %></p>
+                                    </div>
+                                    <span class="buy">Comprar</span>
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
                                 </div>
                             </a>
                         </div>
@@ -87,12 +101,21 @@
                 <% } %>
                 <% if(capsulas === true) { %> 
                     <% for(let i = 0; i < marca.length; i++) { %>
+<<<<<<< HEAD
                         <div class="marcaSelecionada">
+=======
+                        <div class="marcaSelecionada" id="<%= marca[i].preco %>">
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
                             <a href="/produto/<%= marca[i].id_produto %>">
                                 <div class="bloco">
                                     <img src="/<%= marca[i].imagem %>" alt="">            
                                     <div class='descricao-home'>
+<<<<<<< HEAD
                                         <p><%= marca[i].nome_produto %><br> R$: <%= marca[i].preco %> </p>
+=======
+                                        <p class="name-product"><%= marca[i].nome_produto %></p> 
+                                        <p id="preco-produto">R$: <%= marca[i].preco %></p>
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
                                     </div>
                                     <span class="buy">Comprar</span>         
                                 </div>
@@ -102,12 +125,21 @@
                 <% } %>
                 <% if(marcaSelecionada === true) { %> 
                     <% for(let i = 0; i < marca.length; i++) { %>
+<<<<<<< HEAD
                         <div class="marcaSelecionada">
+=======
+                        <div class="marcaSelecionada"id="<%= marca[i].preco %>">
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
                             <a href="/produto/<%= marca[i].id_produto %>">
                                 <div class="bloco">
                                     <img src="/<%= marca[i].imagem %>" alt="">            
                                     <div class='descricao-home'>
+<<<<<<< HEAD
                                         <p><%= marca[i].nome_produto %><br> R$: <%= marca[i].preco %> </p>
+=======
+                                        <p class="name-product"><%= marca[i].nome_produto %></p> 
+                                        <p id="preco-produto">R$: <%= marca[i].preco %></p>
+>>>>>>> bda186a66cb763ec4020ddbf072799859b52a595
                                     </div>
                                     <span class="buy">Comprar</span>         
                                 </div>
