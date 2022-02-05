@@ -113,32 +113,69 @@ const adminController = {
   editarProduto: async function(req, res) {
 
     const { id } = req.params;
-    let imagem = undefined;
-    let miniaturaUm = undefined;
-    let miniaturaDois = undefined;
-    let nomeImg = [];
+    let imagem = true;
+    let miniaturaUm = true;
+    let miniaturaDois = false;
+    let filtrarCampoVazio = [];
 
     const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
 
     if(req.files){
-
+      
       Array(req.files).forEach((item) => {
+        
+        let validarArquivos = [];
 
         for(img in item){
-
+          
+          validarArquivos.push(img);
+          
           item[img].forEach((nome) => {
-
-            nomeImg.push(nome.filename)
-
+            filtrarCampoVazio.push(nome.filename);
           });
 
         };
         
+        // Verifica quais imagens serão alteradas
+        if(validarArquivos.includes('imagem') == false){
+          filtrarCampoVazio.unshift('semImage');
+          imagem = false;
+        };
+
+        if(validarArquivos.includes('miniaturaUm') == false) {
+          filtrarCampoVazio.splice(1, 0,'semMini');
+          miniaturaUm = false;
+        };
+
+        if (validarArquivos.includes('miniaturaDois') == true){
+          miniaturaDois = true;
+        };
+
       });
 
-      imagem = "images/uploads/imagemDoProduto/"+nomeImg[0];
-      miniaturaUm = "images/uploads/imagemDoProduto/"+nomeImg[1];
-      miniaturaDois = "images/uploads/imagemDoProduto/"+nomeImg[2];
+      // tira [''] do array
+      let nomeImg = filtrarCampoVazio.filter((img) => { return img  });
+
+      // Insere Imagem caso true
+      if(imagem == true) {
+        imagem = "images/uploads/imagemDoProduto/"+nomeImg[0];
+      } else {
+        imagem = undefined;
+      };
+
+      // Insere miniaturaUm caso true
+      if(miniaturaUm == true) {
+        miniaturaUm = "images/uploads/imagemDoProduto/"+nomeImg[1];
+      } else {
+        miniaturaUm = undefined;
+      };
+
+      // Insere miniaturaDois caso true
+      if(miniaturaDois == true){
+        miniaturaDois = "images/uploads/imagemDoProduto/"+nomeImg[2];
+      } else {
+        miniaturaDois = undefined;
+      };
 
     };
 
