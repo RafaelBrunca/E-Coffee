@@ -300,6 +300,10 @@ table .editar a {
     margin-right: 2rem;
 }
 
+.new-produto .imagem .miniatura{
+    margin-top: 3rem;
+}
+
 .new-produto #register{
     background-color: #CE5F20;
     border: 0;

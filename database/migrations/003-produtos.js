@@ -57,14 +57,23 @@ module.exports = {
         type: Sequelize.STRING(200),
         allowNull: false
       },
+      estoque: {
+        type: Sequelize.DOUBLE.UNSIGNED,
+        allowNull: false
+      },
       imagem: {
         type: Sequelize.STRING(200),
         allowNull: false
       },
-      estoque: {
-        type: Sequelize.DOUBLE.UNSIGNED,
+      miniaturaUm: {
+        type: Sequelize.STRING(200),
+        allowNull: false
+      },
+      miniaturaDois: {
+        type: Sequelize.STRING(200),
         allowNull: false
       }
+
     });
   },
 

@@ -9,16 +9,19 @@ const autenticacaoAdmin = require('../../middleware/autenticacaoAdmin');
 /* Importando Middleware do Multer */
 const middleMulter = require('../../middleware/upload');
 
-const uplodaImage = middleMulter.uploadImage;
+const uploadImage = middleMulter.uploadImage;
 
 router.get('/', adminController.telaLogin);
 router.post('/', adminController.login);
 router.get('/painel', adminController.painel);
 router.get('/gerenciamentodeprodutos', autenticacaoAdmin, adminController.gerenciarProdutos);
 router.get('/gerenciamentodeprodutos/adicionarproduto', autenticacaoAdmin, adminController.telaAdicionar);
-router.post('/gerenciamentodeprodutos/adicionarproduto', autenticacaoAdmin, uplodaImage.single("imagem"), validacaoProduto, adminController.adicionarProduto);
+router.post('/gerenciamentodeprodutos/adicionarproduto', autenticacaoAdmin, uploadImage.fields([{name:"imagem", maxCount: 1}, {name:"miniaturaUm", maxCount: 1}, {name:"miniaturaDois", maxCount: 1}]), validacaoProduto, adminController.adicionarProduto);
 router.get('/gerenciamentodeprodutos/:id', autenticacaoAdmin, adminController.telaEditar);
-router.post('/gerenciamentodeprodutos/editar/:id', autenticacaoAdmin, uplodaImage.single("imagem"), validacaoProduto, adminController.editarProduto);
+router.post('/gerenciamentodeprodutos/editar/:id', autenticacaoAdmin, uploadImage.fields([{name:"imagem", maxCount: 1}, {name:"miniaturaUm", maxCount: 1}, {name:"miniaturaDois", maxCount: 1}]), validacaoProduto, adminController.editarProduto);
 router.get('/gerenciamentodeprodutos/excluir/:id', autenticacaoAdmin,adminController.removerProduto)
+
+
+/* uploadImage.single("imagem") */
 
 module.exports = router;

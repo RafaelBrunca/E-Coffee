@@ -13,7 +13,7 @@ formProduto.onsubmit = function(event) {
 
   let valido = true;
 
-  let camposObrigatorios = ["nomeproduto", "sku", "codigobarras", "descricao", "infotecnica", "peso", "preco", "custo", "titulo", "palavrachave", "quantidade", "imagem"];
+  let camposObrigatorios = ["nomeproduto", "sku", "codigobarras", "descricao", "infotecnica", "peso", "preco", "custo", "titulo", "palavrachave", "quantidade", "imagem", "miniaturaUm", "miniaturaDois"];
   camposObrigatorios.forEach(function(campo){
     let form = document.getElementById(campo);
 
