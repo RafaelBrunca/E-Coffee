@@ -6,6 +6,7 @@ var logger = require('morgan');
 var session = require("express-session");
 var locals = require('./middleware/locals');
 var methodOverride = require("method-override");
+const nodemailer = require('nodemailer');
 
 /* Importação de rotas */
 var loginRouter = require('./routes/login');
@@ -35,6 +36,7 @@ app.use(locals);
 /* ROTAS */
 app.use('/', indexRouter);
 app.use('/iniciarsessao', loginRouter);
+app.use('/token', loginRouter);
 app.use('/produto', produtoRouter);
 app.use('/carrinho', carrinhoRouter);
 app.use('/finalizarcompra', checkoutRouter);

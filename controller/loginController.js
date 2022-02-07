@@ -2,22 +2,50 @@ const db = require('../database/models');
 
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const { body } = require('express-validator');
+const nodemailer = require('nodemailer');
+const SMTP_CONFIG = require('../database/config/smtp');
+const { port } = require('../database/config/smtp');
+const { token } = require('morgan');
+
+const transporter = nodemailer.createTransport({
+  host: SMTP_CONFIG.host,
+  port: SMTP_CONFIG.port,
+  secure: false,
+  auth: {
+    user: SMTP_CONFIG.user,
+    pass: SMTP_CONFIG.pass
+  },
+  tls: {
+    rejectUnauthorized: false,
+  },
+});
 
 const loginController = {
-  login: async function(req, res) {
+  login: async function (req, res) {
 
     const { email, password } = req.body;
+    
+    const user = await db.Cliente.findOne({ where: { email: email } })
 
-    const user = await db.Cliente.findOne({ where: { email: email} })
-
-    if(!user){
+    if (!user) {
       return res.render('cadastro', {
         old: [],
         message: "E-mail ou senha inválidos"
       });
     };
 
-    if(!await bcrypt.compare(password, user.senha)) {
+    const usertoken = await db.Cliente.findOne({ where: { email: email, token: null } })
+
+    if (!usertoken) {
+      return res.render('cadastro', {
+        old: [],
+        message: "Token ainda não validado!"
+      });
+    };
+
+
+    if (!await bcrypt.compare(password, user.senha)) {
       return res.render('cadastro', {
         old: [],
         message: "E-mail ou senha inválidos"
@@ -28,19 +56,19 @@ const loginController = {
 
     return res.redirect('/');
   },
-  cadastro: function(req, res) {
+  cadastro: function (req, res) {
     res.render('cadastro', {
       old: [],
       message: []
     });
   },
-  create: async function(req, res) {
+  create: async function (req, res) {
 
     const senhaCriptografada = bcrypt.hashSync(req.body.password, 12);
 
     const erro = validationResult(req);
 
-    if(!erro.isEmpty()) {
+    if (!erro.isEmpty()) {
       res.render('cadastro', {
         erro: erro.mapped(),
         old: req.body,
@@ -50,20 +78,69 @@ const loginController = {
 
       const { name, lastname, telefone, cpf, email } = req.body;
 
+      let r = Math.random().toString(36).substr(2, 3) + "-" + Math.random().toString(36).substr(2, 3) + "-" + Math.random().toString(36).substr(2, 4);
+      //console.log(r.toUpperCase());
+
       await db.Cliente.create({
         nome: name,
         sobrenome: lastname,
         telefone: telefone,
         cpf: cpf,
         email: email,
-        senha: senhaCriptografada
+        senha: senhaCriptografada,
+        token: r.toUpperCase()
+
 
       }).then((result) => {
-        return res.redirect('/iniciarsessao')
+
+        const mailSent = transporter.sendMail({ /* obs: Isso se trata de uma promise, logo, precisa de um ".then" e um ".catch" */
+          text: "Obrigado por se cadastrar",
+          subject: "Cadastro de um novo Email",
+          from: "ecoffe.teste@gmail.com",
+          to: [email],
+          html: `
+        <html>
+            <body>
+                <strong>Seu Token é: `+ r.toUpperCase() + `</strong>
+                <strong><a href="http://localhost:3000/token">Confirme seu TOKEN</a></strong>
+            </body>
+        </html>
+        `,
+        }).then(info => {
+          res.send(info)
+        }).catch(error => {
+          res.send(error)
+        });
       }).catch((err) => {
         console.log(err);
       });
+
+      return res.redirect('/token');
     }
+  },
+
+  confirm: async function (req, res) {
+
+    const { token } = req.body;
+
+    const tokendb = await db.Cliente.findOne({ where: { token: token } })
+
+    if (tokendb == null) {
+      return res.render('token', {
+        erro: "O Token informado está incorreto!"
+      });
+    } else {
+      
+      let updateCliente = db.Cliente.update({
+        token: null,
+      }, {
+        where: { token: token }
+      }
+      )
+
+      return res.redirect('/');
+    }
+
   }
 };
 

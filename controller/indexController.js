@@ -35,7 +35,9 @@ const indexController = {
         res.redirect('/')
     },
     token: function(req, res){
-        res.render('token');
+        res.render('token',{
+            erro: ""
+          });
     },
 }
 

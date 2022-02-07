@@ -1,12 +1,16 @@
 <%- include('./partials/header') %>
 
 <main>
-    <form action="/token/confirm" method="POST" id="confirmToken"></form>
+    <form action="/token/confirm" method="POST" id="confirmToken">
         <div class="telaToken">
             <h2>Insira o Token para a confirmação do E-mail</h2>
             <div class="barraToken">
-                <input type="text" name="token" id="token">
-                <button type="submit" id="token">Confimar</button>
+                <input type="text" name="token">
+                <button type="submit">Confimar</button>
+            </br>
+                    <span style="color: black;">
+                        <b><%= erro %></b>
+                    </span>
             </div>
         </div>
     </form>

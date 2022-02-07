@@ -27,6 +27,10 @@ module.exports = (sequelize, DataTypes) => {
         senha: { 
             type: DataTypes.STRING(100),
             allowNull: false
+        },
+        token: { 
+            type: DataTypes.STRING(45),
+            allowNull: true
         }
     }, {
         tableName: 'clientes',
