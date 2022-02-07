@@ -1,3 +1,4 @@
+const { token } = require('morgan');
 const db = require('../database/models');
 
 const indexController = {
@@ -32,7 +33,10 @@ const indexController = {
     logout: function(req, res) {
         req.session.destroy();
         res.redirect('/')
-    }
+    },
+    token: function(req, res){
+        res.render('token');
+    },
 }
 
 module.exports = indexController;

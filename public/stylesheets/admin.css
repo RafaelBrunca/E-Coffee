@@ -154,13 +154,16 @@ main .dsc {
     margin-right: 3%;
 }
 .painel a{
-    color: black;
+    color: black; 
     font-size: 1.2rem;
     font-weight: bold;
     margin-right: 2rem;
     text-decoration: none;
 }
-
+.painel a:hover{
+    color: #CE5F20;
+    transition-duration: 0.25s;
+}
 .Ciclo{
     margin-top: 2%;
     font-size: 14px;

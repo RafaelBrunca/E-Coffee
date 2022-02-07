@@ -1,3 +1,4 @@
+const { body } = require('express-validator');
 const nodemailer = require('nodemailer');
 const { getMaxListeners } = require('./app');
 const { index } = require('./controller/indexController');
@@ -18,17 +19,25 @@ const transporter = nodemailer.createTransport({
 });
 
 async function run() {
-    const mandarEmail = transporter.sendMail({ /* obs: Isso se trata de uma promise, logo, precisa de um ".then" e um ".catch" */
+    const mailSent = transporter.sendMail({ /* obs: Isso se trata de uma promise, logo, precisa de um ".then" e um ".catch" */
         text: "Obrigado por se cadastrar",
         subject: "Cadastro de um novo Email",
         from: "ecoffe.teste@gmail.com",
-        to: ['/']
+        to: ['rafael.brunca@gmail.com'],
+        html: `
+        <html>
+            <body>
+                <strong>Confirmar E-mail</strong>
+            </body>
+        </html>
+        `,
     }).then(info => {
         res.send(info)
     }).catch(error => {
         res.send(error)
     });
-    console.log(mandarEmail);
+
+    console.log(mailSent);
 }
 
 run();
