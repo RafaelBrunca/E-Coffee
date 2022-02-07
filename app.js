@@ -35,6 +35,7 @@ app.use(locals);
 /* ROTAS */
 app.use('/', indexRouter);
 app.use('/iniciarsessao', loginRouter);
+app.use('/token', loginRouter);
 app.use('/produto', produtoRouter);
 app.use('/carrinho', carrinhoRouter);
 app.use('/finalizarcompra', checkoutRouter);

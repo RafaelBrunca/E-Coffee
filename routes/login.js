@@ -12,6 +12,7 @@ router.use(usuarioLogado);
 router.get('/', loginController.cadastro);
 router.post('/login', loginController.login);
 router.post('/create', validacaoRegistro, loginController.create);
+router.post('/confirm', validacaoRegistro, loginController.confirm);
 router.get('/recuperarsenha', recuperarSenha.recupera);
 
 module.exports = router;

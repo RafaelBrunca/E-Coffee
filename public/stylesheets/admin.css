@@ -146,43 +146,6 @@ main .dsc {
     margin-top: 3px;
 }
 
-/* =================
-        PAINEL
-==================== */
-.painel ul{
-    display: flex;
-    margin-right: 3%;
-}
-.painel a{
-    color: black; 
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-right: 2rem;
-    text-decoration: none;
-}
-.painel a:hover{
-    color: #CE5F20;
-    transition-duration: 0.25s;
-}
-.Ciclo{
-    margin-top: 2%;
-    font-size: 14px;
-    background-color: #CE5F20;
-    border-radius: 11px;
-    width: 30%;
-    padding: 10px;
-}
-.ValorCiclo{
-    font-size: 14px;
-    background-color: #FFF1E0;
-    border-radius: 11px;
-    width: 30%;
-    padding: 10px;
-    height: 40px;
-    margin-right: 10px;
-    margin-top: 50px;
-}
-
 table .produtos {
     background-color: #FFF8F0;
 }
@@ -193,6 +156,32 @@ table .editar {
 
 table .editar a {
     color: black;
+}
+
+/* ==========================
+
+    GERENCIAMENTO DE CLIENTES
+
+============================= */
+
+#table-clientes{
+    margin-left: 40px;
+}
+
+.title-cliente {
+    margin-left: 40px;
+    text-align: left;
+}
+
+#table-clientes .nome-cliente,
+#table-clientes .sobrenome {
+    padding-left: 15px;
+    text-align: left;
+    width: 355px;
+}
+
+.body-clientes {
+    background-color: #FFF8F0;
 }
 
 /* =================

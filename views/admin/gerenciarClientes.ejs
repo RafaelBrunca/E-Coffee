@@ -1,0 +1,27 @@
+<%- include('../partials/admin/header') %>
+    <main>
+        <%- include('../partials/admin/barraDeLinks') %>
+        <div class="title-cliente">
+            <h2>Gerenciamento de Clientes</h2>
+        </div>        
+        <table id="table-clientes">
+            <thead class="descricoes">
+                <tr>
+                    <td class="id">ID</td>
+                    <td class="nome-cliente">Nome</td>
+                    <td class="sobrenome">Sobrenome</td>
+                </tr>
+            </thead>
+            <% for(let i=0; i < cliente.length; i++) {%>
+                <tbody class="body-clientes">
+                    <tr>
+                        <td><%= cliente[i].id_cliente %></td>
+                        <td class="nome-cliente"><%= cliente[i].nome %></td>
+                        <td class="sobrenome"><%= cliente[i].sobrenome %></td>
+                    </tr>
+                </tbody>
+            <% } %>
+        </table>
+    </main>
+</body>
+</html>

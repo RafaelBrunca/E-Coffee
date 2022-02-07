@@ -30,6 +30,19 @@ const adminController = {
     res.render('admin/painel');
   },
 
+  gerenciarClientes: function(req, res) {
+
+    db.Cliente.findAll()
+    .then((clients) => {
+      res.render('admin/gerenciarClientes', { 
+        cliente: clients
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+  },
+
   gerenciarProdutos: function(req, res) {
 
     db.Produto.findAll()
