@@ -94,15 +94,15 @@ const loginController = {
       }).then((result) => {
 
         const mailSent = transporter.sendMail({ /* obs: Isso se trata de uma promise, logo, precisa de um ".then" e um ".catch" */
-          text: "Obrigado por se cadastrar",
-          subject: "Cadastro de um novo Email",
+          text: "Obrigado por se cadastrar insira o token no link abaixo para a confirmação da conta",
+          subject: "Confirmação de cadastro E-Coffee",
           from: "ecoffe.teste@gmail.com",
           to: [email],
           html: `
         <html>
             <body>
                 <strong>Seu Token é: `+ r.toUpperCase() + `</strong>
-                <strong><a href="http://localhost:3000/token">Confirme seu TOKEN</a></strong>
+                <strong> -> <a href="http://localhost:3000/token">Confirme seu TOKEN</a></strong>
             </body>
         </html>
         `,
