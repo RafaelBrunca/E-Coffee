@@ -13,7 +13,8 @@ const uploadImage = middleMulter.uploadImage;
 
 router.get('/', adminController.telaLogin);
 router.post('/', adminController.login);
-router.get('/painel', adminController.painel);
+router.get('/painel', autenticacaoAdmin , adminController.painel);
+router.get('/gerenciarclientes', autenticacaoAdmin, adminController.gerenciarClientes);
 router.get('/gerenciamentodeprodutos', autenticacaoAdmin, adminController.gerenciarProdutos);
 router.get('/gerenciamentodeprodutos/adicionarproduto', autenticacaoAdmin, adminController.telaAdicionar);
 router.post('/gerenciamentodeprodutos/adicionarproduto', autenticacaoAdmin, uploadImage.fields([{name:"imagem", maxCount: 1}, {name:"miniaturaUm", maxCount: 1}, {name:"miniaturaDois", maxCount: 1}]), validacaoProduto, adminController.adicionarProduto);

@@ -34,6 +34,10 @@ module.exports = {
       senha: { 
         type: Sequelize.STRING(100),
         allowNull: false
+      },
+      token: {
+        type: Sequelize.STRING(45),
+        allowNull: true
       }
     });
   },
