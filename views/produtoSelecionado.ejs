@@ -5,14 +5,14 @@
             <div class="produto">
                 <div class="miniaturaProduto" style="height: 0px;">
                     <div class="miniatura">
-                        <img src="/<%= produto.miniaturaDois %>" alt="miniatura1" width="80px" height="80px">
+                        <img src="/<%= produto.miniaturaDois %>" alt="miniaturaUm" id="miniaturaUm" width="80px" height="80px">
                     </div>                    
                     <div class="miniatura">
-                        <img src="/<%= produto.miniaturaUm %>" alt="miniatura2" width="80px" height="80px">
+                        <img src="/<%= produto.miniaturaUm %>" alt="miniaturaDois" id="miniaturaDois" width="80px" height="80px">
                     </div>   
                 </div>
                 <div class="imagemProduto">
-                    <img src="/<%= produto.imagem %>" alt="Cafeteira" width="380px" height="380px">
+                    <img src="/<%= produto.imagem %>" id="imagemPrincipal" alt="Cafeteira" width="380px" height="380px">
                 </div>
                 <div class="compraProduto">
                     <form action="/carrinho/<%= produto.id_produto %>" method="POST">
