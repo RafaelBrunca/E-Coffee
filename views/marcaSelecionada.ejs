@@ -7,7 +7,8 @@
         <div class="filtrar">
             <h4 class="filter-title">Filtrar preço</h4>
             <select id="option-preco">
-                <option value="maior para o menor" select>Maior para o menor</option>
+                <option value="" selected></option>
+                <option value="maior para o menor">Maior para o menor</option>
                 <option value="menor para o maior">Menor para o maior</option>
             </select>
         </div>
@@ -31,7 +32,7 @@
               <input type="radio" name="options" id="option3"> <% if(capsulas === true) { %>
                 Starbucks
                 <% } else { %>
-                    Dolce Gusto
+                    Electrolux
                 <% }  %> 
             </label>
             <label class="btn btn-primary">
@@ -50,7 +51,7 @@
             </label>
             <label class="btn btn-primary">
                 <% if(capsulas === false) { %>
-                    <input type="radio" name="options" id="option6"> Lirika 
+                    <input type="radio" name="options" id="option6"> Multilaser 
                 <% }  %> 
             </label>
         </div>

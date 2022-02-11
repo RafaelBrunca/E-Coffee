@@ -530,11 +530,13 @@ cursor: pointer;
 }
 
 .bloco .name-product {
+    color: black;
     margin-bottom: 0px;
     padding-bottom: 0px;
 }
 
 .bloco #preco-produto{
+    color: black;
     margin-top: 0px;
 }
 
