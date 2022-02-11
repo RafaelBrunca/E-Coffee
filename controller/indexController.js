@@ -36,13 +36,8 @@ const indexController = {
     token: function(req, res){
         res.render('token',{
             erro: ""
-<<<<<<< HEAD
-          });
-    },
-=======
         });
     }
->>>>>>> 7895d2d68d1bda8f8898cc4ab9029c5de615190a
 }
 
 module.exports = indexController;

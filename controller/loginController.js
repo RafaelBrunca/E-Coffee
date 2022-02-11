@@ -20,22 +20,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const nodemailer = require('nodemailer');
-const SMTP_CONFIG = require('../database/config/smtp');
-
-const transporter = nodemailer.createTransport({
-  host: SMTP_CONFIG.host,
-  port: SMTP_CONFIG.port,
-  secure: false,
-  auth: {
-    user: SMTP_CONFIG.user,
-    pass: SMTP_CONFIG.pass
-  },
-  tls: {
-    rejectUnauthorized: false,
-  },
-});
-
 const loginController = {
   login: async function (req, res) {
 
@@ -94,10 +78,6 @@ const loginController = {
       const { name, lastname, telefone, cpf, email } = req.body;
 
       let r = Math.random().toString(36).substr(2, 3) + "-" + Math.random().toString(36).substr(2, 3) + "-" + Math.random().toString(36).substr(2, 4);
-<<<<<<< HEAD
-      //console.log(r.toUpperCase());
-=======
->>>>>>> 7895d2d68d1bda8f8898cc4ab9029c5de615190a
 
       await db.Cliente.create({
         nome: name,
@@ -107,33 +87,19 @@ const loginController = {
         email: email,
         senha: senhaCriptografada,
         token: r.toUpperCase()
-<<<<<<< HEAD
-
-
-      }).then((result) => {
-
-        const mailSent = transporter.sendMail({ /* obs: Isso se trata de uma promise, logo, precisa de um ".then" e um ".catch" */
-          text: "Obrigado por se cadastrar insira o token no link abaixo para a confirmação da conta",
-          subject: "Confirmação de cadastro E-Coffee",
-=======
 
       }).then((result) => {
 
         const mailSent = transporter.sendMail({
           text: "Obrigado por se cadastrar",
-          subject: "Cadastro de um novo Email",
->>>>>>> 7895d2d68d1bda8f8898cc4ab9029c5de615190a
+          subject: "Cadastro de um novo Email E-coffee",
           from: "ecoffe.teste@gmail.com",
           to: [email],
           html: `
         <html>
             <body>
-                <strong>Seu Token é: `+ r.toUpperCase() + `</strong>
-<<<<<<< HEAD
-                <strong> -> <a href="http://localhost:3000/token">Confirme seu TOKEN</a></strong>
-=======
-                <strong><a href="http://localhost:3000/token">Confirme seu TOKEN</a></strong>
->>>>>>> 7895d2d68d1bda8f8898cc4ab9029c5de615190a
+                <strong>Seu Token é: `+ r.toUpperCase() + `</strong> <br></br>
+                <strong>•<a href="http://localhost:3000/token">Confirme seu TOKEN</a></strong>
             </body>
         </html>
         `,
@@ -147,7 +113,6 @@ const loginController = {
       });
 
       return res.redirect('/token');
-<<<<<<< HEAD
     }
   },
 
@@ -172,32 +137,6 @@ const loginController = {
 
       return res.redirect('/');
     }
-=======
-    }
-  },
-
-  confirm: async function (req, res) {
-
-    const { token } = req.body;
-
-    const tokendb = await db.Cliente.findOne({ where: { token: token } })
-
-    if (tokendb == null) {
-      return res.render('token', {
-        erro: "O Token informado está incorreto!"
-      });
-    } else {
-      
-      let updateCliente = db.Cliente.update({
-        token: null,
-      }, {
-        where: { token: token }
-      }
-      )
-
-      return res.redirect('/');
-    }
->>>>>>> 7895d2d68d1bda8f8898cc4ab9029c5de615190a
 
   }
 };
