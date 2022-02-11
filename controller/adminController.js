@@ -119,102 +119,119 @@ const adminController = {
       return res.render('admin/adicionarProduto', {
         id: id,
         produto: result,
+        error: [],
         isEditing: true
       });
     });
   },
   editarProduto: async function(req, res) {
 
+    const error = validationResult(req);
+
     const { id } = req.params;
-    let imagem = true;
-    let miniaturaUm = true;
-    let miniaturaDois = false;
-    let filtrarCampoVazio = [];
+    const informacoes = await db.Produto.findByPk(id);
 
-    const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
-
-    if(req.files){
-      
-      Array(req.files).forEach((item) => {
-        
-        let validarArquivos = [];
-
-        for(img in item){
-          
-          validarArquivos.push(img);
-          
-          item[img].forEach((nome) => {
-            filtrarCampoVazio.push(nome.filename);
-          });
-
-        };
-        
-        // Verifica quais imagens serão alteradas
-        if(validarArquivos.includes('imagem') == false){
-          filtrarCampoVazio.unshift('semImage');
-          imagem = false;
-        };
-
-        if(validarArquivos.includes('miniaturaUm') == false) {
-          filtrarCampoVazio.splice(1, 0,'semMini');
-          miniaturaUm = false;
-        };
-
-        if (validarArquivos.includes('miniaturaDois') == true){
-          miniaturaDois = true;
-        };
-
+    if(!error.isEmpty()){
+      res.render('admin/adicionarProduto', {
+        id: id,
+        produto: informacoes,
+        error: error.mapped(),
+        old: req.body,
+        isEditing: true
       });
+    } else { 
 
-      // tira [''] do array
-      let nomeImg = filtrarCampoVazio.filter((img) => { return img  });
-
-      // Insere Imagem caso true
-      if(imagem == true) {
-        imagem = "images/uploads/imagemDoProduto/"+nomeImg[0];
-      } else {
-        imagem = undefined;
+      let imagem = true;
+      let miniaturaUm = true;
+      let miniaturaDois = false;
+      let filtrarCampoVazio = [];
+  
+      const { nomeproduto, sku, codigobarras, status, categoria, descricao, infotecnica, peso, preco, custo, titulo, palavrachave, estoque } = req.body;
+  
+      if(req.files){
+        
+        Array(req.files).forEach((item) => {
+          
+          let validarArquivos = [];
+  
+          for(img in item){
+            
+            validarArquivos.push(img);
+            
+            item[img].forEach((nome) => {
+              filtrarCampoVazio.push(nome.filename);
+            });
+  
+          };
+          
+          // Verifica quais imagens serão alteradas
+          if(validarArquivos.includes('imagem') == false){
+            filtrarCampoVazio.unshift('semImage');
+            imagem = false;
+          };
+  
+          if(validarArquivos.includes('miniaturaUm') == false) {
+            filtrarCampoVazio.splice(1, 0,'semMini');
+            miniaturaUm = false;
+          };
+  
+          if (validarArquivos.includes('miniaturaDois') == true){
+            miniaturaDois = true;
+          };
+  
+        });
+  
+        // tira [''] do array
+        let nomeImg = filtrarCampoVazio.filter((img) => { return img  });
+  
+        // Insere Imagem caso true
+        if(imagem == true) {
+          imagem = "images/uploads/imagemDoProduto/"+nomeImg[0];
+        } else {
+          imagem = undefined;
+        };
+  
+        // Insere miniaturaUm caso true
+        if(miniaturaUm == true) {
+          miniaturaUm = "images/uploads/imagemDoProduto/"+nomeImg[1];
+        } else {
+          miniaturaUm = undefined;
+        };
+  
+        // Insere miniaturaDois caso true
+        if(miniaturaDois == true){
+          miniaturaDois = "images/uploads/imagemDoProduto/"+nomeImg[2];
+        } else {
+          miniaturaDois = undefined;
+        };
+  
       };
-
-      // Insere miniaturaUm caso true
-      if(miniaturaUm == true) {
-        miniaturaUm = "images/uploads/imagemDoProduto/"+nomeImg[1];
-      } else {
-        miniaturaUm = undefined;
+  
+      const buscarProduto = await db.Produto.findByPk(id);
+  
+      const editar = {
+        nome_produto: nomeproduto,
+        sku: sku,
+        cod_barra: codigobarras,
+        status_produto: status,
+        categoria: categoria,
+        descricao_produto: descricao,
+        informacoes_tecnicas: infotecnica,
+        peso: peso,
+        preco: preco,
+        custo: custo,
+        title_pagina: titulo,
+        palavras_chave: palavrachave,
+        estoque: estoque,
+        imagem: imagem,
+        miniaturaUm: miniaturaUm,
+        miniaturaDois: miniaturaDois
       };
-
-      // Insere miniaturaDois caso true
-      if(miniaturaDois == true){
-        miniaturaDois = "images/uploads/imagemDoProduto/"+nomeImg[2];
-      } else {
-        miniaturaDois = undefined;
-      };
+      buscarProduto.update(editar);
+  
+      return res.redirect('/admin/gerenciamentodeprodutos');
 
     };
-
-    const buscarProduto = await db.Produto.findByPk(id);
-
-    const editar = {
-      nome_produto: nomeproduto,
-      sku: sku,
-      cod_barra: codigobarras,
-      status_produto: status,
-      categoria: categoria,
-      descricao_produto: descricao,
-      informacoes_tecnicas: infotecnica,
-      peso: peso,
-      preco: preco,
-      custo: custo,
-      title_pagina: titulo,
-      palavras_chave: palavrachave,
-      estoque: estoque,
-      imagem: imagem,
-      miniaturaUm: miniaturaUm,
-      miniaturaDois: miniaturaDois
-    };
-    buscarProduto.update(editar);
-
-    return res.redirect('/admin/gerenciamentodeprodutos');
   },
   removerProduto: async function(req, res) {
     const id = req.params.id;

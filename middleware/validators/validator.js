@@ -107,7 +107,7 @@ const validacaoProduto = [
 
     check("sku").notEmpty().withMessage('Digite o SKU do produto'),
 
-    check("codigobarras").notEmpty().withMessage('Digite o código de barras do produto').isNumeric().withMessage('somente números são aceitos'),
+    check("codigobarras").notEmpty().withMessage('Digite o código de barras do produto').isNumeric().withMessage('somente números são aceitos').isLength({ max: 13 }).withMessage('Máximo de 13 números'),
 
     check("descricao").notEmpty().withMessage('Digite a descrição do produto'),
 

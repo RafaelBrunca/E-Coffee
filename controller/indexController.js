@@ -37,7 +37,7 @@ const indexController = {
         res.render('token',{
             erro: ""
         });
-    }
+    },
 }
 
 module.exports = indexController;

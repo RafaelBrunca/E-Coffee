@@ -14,26 +14,40 @@
                         <label for="nomeproduto">Nome:</label>
                         <% if(isEditing) { %>
                             <input type="text" name="nomeproduto" id="nomeproduto" value="<%= produto.nome_produto %>">
+                            <% if(error.nomeproduto) { %>
+                                <%= error.nomeproduto.msg %> 
+                            <% } %>
+
                         <% }else{%>
                             <input type="text" name="nomeproduto" id="nomeproduto" value="<%= old.nomeproduto %>">
                             <% if(error.nomeproduto) { %>
                                 <%= error.nomeproduto.msg %> 
                             <% } %>
+
                         <% } %>
                     </div>
                     <div class="codigo-produto">
                     <label for="sku">SKU:</label>
                     <% if(isEditing) { %>
-                        <input type="text" name="sku" id="sku" value="<%= produto.sku %>">
+                        <input type="text" name="sku" id="sku" value="<%= produto.sku %>" <% if(error.sku) { %>style="margin-right: 0px !important;"<% } %>>
+                        <% if(error.sku) { %>
+                            <%= error.sku.msg %>
+                        <% } %>
+
                     <% }else{ %>
                         <input type="text" name="sku" id="sku" value="<%= old.sku %>" <% if(error.sku) { %>style="margin-right: 0px !important;"<% } %>/>
                         <% if(error.sku) { %>
                             <%= error.sku.msg %>
                         <% } %>
+
                     <% } %>
                     <label for="codigobarras">Código EAN/GTIN:</label>
                     <% if(isEditing) { %>
                         <input type="text" name="codigobarras" id="codigobarras" value="<%= produto.cod_barra %>">
+                        <% if(error.codigobarras) { %>
+                            <%= error.codigobarras.msg %>
+                        <% } %>
+
                     <% }else{ %>
                         <input type="text" name="codigobarras" id="codigobarras" value="<%= old.codigobarras %>" />
                         <% if(error.codigobarras) { %>
@@ -83,6 +97,9 @@
                         <div>
                             <% if(isEditing) { %>
                                 <textarea id="descricao" name="descricao"><%= produto.descricao_produto %></textarea>
+                                <% if(error.descricao) { %>
+                                    <%= error.descricao.msg %> 
+                                <% } %>
                             <% }else{ %>
                                 <textarea id="descricao" name="descricao"><%= old.descricao %></textarea>
                                 <% if(error.descricao) { %>
@@ -97,39 +114,63 @@
                         <div>
                             <% if(isEditing) { %>
                                 <textarea id="infotecnica" name="infotecnica"><%= produto.informacoes_tecnicas %></textarea>
+                                <% if(error.infotecnica) { %>
+                                    <%= error.infotecnica.msg %> 
+                                <% } %>
+
                             <% }else{ %>
                                 <textarea id="infotecnica" name="infotecnica"><%= old.infotecnica %></textarea>
                                 <% if(error.infotecnica) { %>
                                     <%= error.infotecnica.msg %> 
                                 <% } %>
+
                             <% } %>                            
                         </div>                        
                     </div>
                     <p>*Utilize <span style="font-weight:bold">#</span> para indicar quebra de linhas</p>
+
                     <div class="ficha">
                         <label for="peso">Peso <small>Em KG</small>:</label>
                         <% if(isEditing) { %>
-                            <input type="text" name="peso" id="peso" value="<%= produto.peso %> ">
+                            <input type="text" name="peso" id="peso" value="<%= produto.peso %>">
                         <% }else{ %>
                             <input type="text" name="peso" id="peso" <% if(error.peso) { %>value="<%= error.peso.msg %>"<% } %> />
                         <% } %>
                         <label for="preco">Preço:</label>
                         <% if(isEditing) { %>
-                            <input type="text" name="preco" id="preco" value="<%= produto.preco %> ">
+                            <input type="text" name="preco" id="preco" value="<%= produto.preco %>">
                         <% }else{ %>
                             <input type="text" name="preco" id="preco" <% if(error.preco) { %>value="<%= error.preco.msg %>"<% } %> />
-                        <% } %>                        
+                        <% } %>
                         <label for="custo">Custo:</label>
                         <% if(isEditing) { %>
-                            <input type="text" name="custo" id="custo" value="<%= produto.custo %> ">
+                            <input type="text" name="custo" id="custo" value="<%= produto.custo %>">
                         <% }else{ %>
                             <input type="text" name="custo" id="custo" <% if(error.custo) { %>value="<%= error.custo.msg %>"<% } %> />
-                        <% } %>                        
-                    </div>                    
+                        <% } %>
+                        
+                        <% if(isEditing) { %>
+                            <br />
+                            <% if(error.peso) { %>
+                                <span style="margin-right: 60px;"><%= error.peso.msg %></span>
+                            <% } %>
+
+                            <% if(error.preco) { %>
+                                <span style="margin-right: 25px;"><%= error.preco.msg %></span>
+                            <% } %>
+
+                            <% if(error.custo) { %>
+                                <span><%= error.custo.msg %></span>
+                            <% } %>
+                        <% } %> 
+                    </div>
                     <div class="title-pagina">
                         <label for="titulo">Título da Página:</label>
                         <% if(isEditing) { %>
-                            <input type="text" name="titulo" id="titulo" value="<%= produto.title_pagina %> ">
+                            <input type="text" name="titulo" id="titulo" value="<%= produto.title_pagina %>">
+                            <% if(error.titulo) { %>
+                                <%= error.titulo.msg %> 
+                            <% } %>
                         <% }else{ %>
                             <input type="text" name="titulo" id="titulo" value="<%= old.titulo %>" >
                             <% if(error.titulo) { %>
@@ -141,7 +182,10 @@
                         <label for="palavrachave">Palavras-chave:</label>
                         <div>
                             <% if(isEditing) { %>
-                                <textarea id="palavrachave" name="palavrachave"><%= produto.palavras_chave %> </textarea>
+                                <textarea id="palavrachave" name="palavrachave"><%= produto.palavras_chave %></textarea>
+                                <% if(error.palavrachave) { %>
+                                    <%= error.palavrachave.msg %> 
+                                <% } %>
                             <% }else{ %>
                                 <textarea id="palavrachave" name="palavrachave"><%= old.palavrachave %></textarea>
                                 <% if(error.palavrachave) { %>
@@ -154,6 +198,9 @@
                     <label for="estoque">Estoque:</label>
                             <% if(isEditing) { %>
                                 <input type="text" name="estoque" id="quantidade" value="<%= produto.estoque %>"/>
+                                <% if(error.estoque) { %>
+                                    <%= error.estoque.msg %> 
+                                <% } %>
                             <% }else{ %>
                                 <input type="text" name="estoque" id="quantidade" value="<%= old.estoque %>" />
                                 <% if(error.estoque) { %>
@@ -169,30 +216,20 @@
                             <% }else{ %>
                                 <input type="file" name="imagem" id="imagem" accept=".jpg, .jpeg, .png, .webp" />
                             <% } %>
-                            
-                            
                             <div class="miniatura">
-
                                 <label for="miniaturaUm">Miniatura 1:</label><br />
                                 <% if(isEditing) { %>
                                     <img src="/<%= produto.miniaturaUm %>" style="width: 121px; height: 124px;" alt="<%= produto.nome_produto %>">
                                 <% } %>
                                 <input type="file" name="miniaturaUm" id="miniaturaUm" accept=".jpg, .jpeg, .png, .webp"/>
-
                             </div>
-                            
-                            
                             <div class="miniatura">
-
                                 <label for="miniaturaDois">Miniatura 2:</label><br />
                                 <% if(isEditing) { %>
                                     <img src="/<%= produto.miniaturaDois %>" style="width: 121px; height: 124px;" alt="<%= produto.nome_produto %>">
                                 <% } %>
                                 <input type="file" name="miniaturaDois" id="miniaturaDois" accept=".jpg, .jpeg, .png, .webp"/>
-
                             </div>
-
-                            
                         </div>
                     </div>
                     <% if(isEditing) { %>

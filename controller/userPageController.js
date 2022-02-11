@@ -125,14 +125,14 @@ const homeUserController = {
             console.log(err);
         });
     },
-    telaEditarEnderecos: async function(req, res) {
-        const { id_cli_enderecos } = req.params;
+    telaEditarEnderecos: function(req, res) {
+        const { id_endereco } = req.params;
         
-        const editar = await db.Endereco.findByPk(id_cli_enderecos)
-
+        db.Endereco.findByPk(id_endereco)
         .then((result) => 
-        {return res.render('enderecoEditar', 
-            { editarEndereco: result})})
+        {return res.render('enderecoEditar', { 
+            editarEndereco: result })
+        })
         .catch((err) => 
             {console.log(err)});
     },
@@ -150,7 +150,7 @@ const homeUserController = {
             uf: estado,
             complemento: complemento,
         },{
-            where: { id_cli_enderecos: req.params.id_cli_enderecos }
+            where: { id_cli_enderecos: req.params.id_endereco }
         }
         ).then((result) => {
             return res.redirect('/paginadousuario/enderecos');
@@ -159,7 +159,7 @@ const homeUserController = {
         })
     },
     excluir: async function(req, res) {
-        await db.Endereco.destroy({ where: { id_cli_enderecos: req.params.id_cli_enderecos } });
+        await db.Endereco.destroy({ where: { id_cli_enderecos: req.params.id_endereco } });
         return res.redirect('/paginadousuario/enderecos');
     }
 }

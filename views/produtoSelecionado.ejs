@@ -1,6 +1,6 @@
 
 <%- include('./partials/header') %> 
-<main>
+<main style="margin-right: 250px;">
     <div class="wrapper">
             <div class="produto">
                 <div class="miniaturaProduto" style="height: 0px;">
@@ -24,7 +24,7 @@
                         <% } %> 
                     </select>
                     <h1>R$ <%= produto.preco %></h1>
-                    <p>Ou em até 10x de R$<%= produto.preco / 10 %>  sem juros</p>
+                    <p>Ou em até 10x de R$<%= (produto.preco / 10).toFixed(2) %> sem juros</p>
                         <div class="comprar">
                             <button type="submit">Colocar no Carrinho</button>
                         </div>  
