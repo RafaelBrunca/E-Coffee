@@ -54,7 +54,6 @@ const adminController = {
           itemMaisVendido.push({quantidade: maior, ...result[i].produtoPedido});
         };
       };
-      console.log(itemMaisVendido)
     }).catch((erro) => { console.log(erro) })
 
     res.render('admin/painel', {
