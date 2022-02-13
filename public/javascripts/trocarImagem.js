@@ -7,7 +7,6 @@ miniaturaUm.addEventListener('click', function(){
 
     imagemPricipal.setAttribute('src', miniaturaUm.src);
     miniaturaUm.setAttribute('src', srcImg);
-        
 });
 
 miniaturaDois.addEventListener('click', function(){
@@ -15,5 +14,4 @@ miniaturaDois.addEventListener('click', function(){
 
     imagemPricipal.setAttribute('src', miniaturaDois.src);
     miniaturaDois.setAttribute('src', srcImg);
-        
 });

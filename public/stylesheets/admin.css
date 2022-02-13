@@ -158,10 +158,45 @@ table .editar a {
     color: black;
 }
 
+/* ===================
+    Painel
+=================== */
+.container-vendas{
+    display: flex;
+}
+
+.container-vendas .table-vendas{
+    margin-left: 40px;
+}
+
+.container-vendas .vendas-total{
+    background-color: #CE5F20;
+}
+
+.container-vendas tbody {
+    background-color: #FFF8F0;
+}
+
+.container-vendas .info-vendas{
+    font-size: 24px;
+    padding: 10px;
+}
+
+.container-vendas .produto-vendido{
+    margin-left: 30px;
+}
+
+.container-vendas .produtoMaisVendido{
+    background-color: #CE5F20;
+}
+
+.container-vendas .info-produto {
+    font-size: 24px;
+    padding: 10px;
+}
+
 /* ==========================
-
     GERENCIAMENTO DE CLIENTES
-
 ============================= */
 
 #table-clientes{

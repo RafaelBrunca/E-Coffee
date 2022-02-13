@@ -23,7 +23,7 @@
                             <option value="<%= [i] %> "><%= [i] %> </option>
                         <% } %> 
                     </select>
-                    <h1>R$ <%= produto.preco %></h1>
+                    <h1>R$ <%= (produto.preco).toLocaleString('pt-BR') %></h1>
                     <p>Ou em até 10x de R$<%= (produto.preco / 10).toFixed(2) %> sem juros</p>
                         <div class="comprar">
                             <button type="submit">Colocar no Carrinho</button>
