@@ -26,10 +26,10 @@
                 </div>
                 <div class="info-valor">
                     <% for(let i = 0; i < produtos.length; i++) {%>
-                        <p>R$ <%= produtos[i].total%></p>
+                        <p>R$ <%= (produtos[i].total).toFixed(2)%></p>
                     <% } %>
                     <p>R$ xx,xx</p>
-                    <p>R$ <%= produtos.reduce((total, valor) => total + valor.total, 0) %></p>
+                    <p>R$ <%= produtos.reduce((total, valor) => total + valor.total, 0).toFixed(2) %></p>
                 </div>
             </div>
             <% if(!endereco.length) { %>

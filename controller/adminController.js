@@ -2,6 +2,8 @@ const db = require('../database/models');
 
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const { QueryTypes } = require('sequelize');
+const { sequelize } = require('../database/models');
 
 const adminController = {
   telaLogin: function(req, res) {
@@ -26,8 +28,38 @@ const adminController = {
     res.redirect('/admin/painel');
   },
 
-  painel: function(req, res) {
-    res.render('admin/painel');
+  painel: async function(req, res) {
+
+    let itemMaisVendido = [];
+
+    const totalVenda = await sequelize.query('SELECT COUNT(id_pedido) AS total FROM pedidos', {
+      type: QueryTypes.SELECT
+    });
+
+    await db.Pedido.findAll({
+      include: { model: db.Produto, association: "produtoPedido"}
+    })
+    .then((result) => {
+      let maior = 0;
+
+      for(let i = 0; i < result.length; i++){
+        if(result[i].quantidade > maior){
+          maior = result[i].quantidade;
+        };
+      };
+
+      for(let i = 0; i < result.length;i++){
+
+        if(result[i].quantidade == maior){
+          itemMaisVendido.push({quantidade: maior, ...result[i].produtoPedido});
+        };
+      };
+    }).catch((erro) => { console.log(erro) })
+
+    res.render('admin/painel', {
+      totalVenda: totalVenda,
+      produto: itemMaisVendido
+    });
   },
 
   gerenciarClientes: function(req, res) {

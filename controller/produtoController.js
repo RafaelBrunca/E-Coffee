@@ -12,7 +12,7 @@ const produtoController = {
         })
     },
 
-    encontrarprodutos: async function(req, res) {
+    searchBarProduct: async function(req, res) {
         const { produto } = req.params;
 
         const query = `%${produto}%`;
@@ -46,7 +46,6 @@ const produtoController = {
         .then((cafeteiras) => {
             return res.render('marcaSelecionada', {
                 marca: cafeteiras,
-                cafeteiras: cafeteiras,
                 cafeteira: true,
                 capsulas: false,
                 marcaSelecionada: false

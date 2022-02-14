@@ -37,7 +37,7 @@
                     <div class="bloco">
                         <img src="/<%= cafeteiras[i].imagem %>" alt="">            
                         <div class='descricao-home'>
-                            <p><%= cafeteiras[i].nome_produto %><br> R$: <%= cafeteiras[i].preco %> </p>
+                            <p><%= cafeteiras[i].nome_produto %><br> R$: <%= (cafeteiras[i].preco).toLocaleString('pt-BR') %> </p>
                         </div>
                         <span class="buy">Comprar</span>            
                     </div>
@@ -54,7 +54,7 @@
                     <div class="bloco">
                         <img src="/<%= capsulas[i].imagem %>" alt="">            
                         <div class='descricao-home'>
-                            <p><%= capsulas[i].nome_produto %><br> R$: <%= capsulas[i].preco %> </p>
+                            <p><%= capsulas[i].nome_produto %><br> R$: <%= (capsulas[i].preco).toLocaleString('pt-BR') %> </p>
                         </div>
                         <span class="buy">Comprar</span>         
                     </div>
@@ -63,4 +63,5 @@
         <% } %>
     </div>
 </section>
+<%- include('./partials/whatsapp') %>
 <%- include('./partials/footer') %>

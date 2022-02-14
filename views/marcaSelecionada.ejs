@@ -1,6 +1,6 @@
 <%- include('./partials/header'); %>
 <div class="produtos_filtros">
-    <section class="filtro">
+    <section class="filtro" <% if(marcaSelecionada === true) { %>style='height: 430px'<% } %>>
         <a href="/">
             <img src="/images/E- COFFEE 3.png" alt="e-coffee" width="113" height="86"/>
         </a>    
@@ -67,7 +67,7 @@
                                     <img src="/<%= marca[i].imagem %>" alt="">            
                                     <div class='descricao-home'>
                                         <p class="name-product"><%= marca[i].nome_produto %></p> 
-                                        <p id="preco-produto">R$: <%= marca[i].preco %></p>
+                                        <p id="preco-produto">R$: <%= (marca[i].preco).toLocaleString('pt-BR') %></p>
                                     </div>
                                     <span class="buy">Comprar</span>
                                 </div>
@@ -83,7 +83,7 @@
                                     <img src="/<%= marca[i].imagem %>" alt="">            
                                     <div class='descricao-home'>
                                         <p class="name-product"><%= marca[i].nome_produto %></p> 
-                                        <p id="preco-produto">R$: <%= marca[i].preco %></p>
+                                        <p id="preco-produto">R$: <%= (marca[i].preco).toLocaleString('pt-BR') %></p>
                                     </div>
                                     <span class="buy">Comprar</span>         
                                 </div>
@@ -99,7 +99,7 @@
                                     <img src="/<%= marca[i].imagem %>" alt="">            
                                     <div class='descricao-home'>
                                         <p class="name-product"><%= marca[i].nome_produto %></p> 
-                                        <p id="preco-produto">R$: <%= marca[i].preco %></p>
+                                        <p id="preco-produto">R$: <%= (marca[i].preco).toLocaleString('pt-BR') %></p>
                                     </div>
                                     <span class="buy">Comprar</span>         
                                 </div>
@@ -113,6 +113,7 @@
                     </div>
                 <% } %>
             </div>
-        </section>          
+        </section>
+        <%- include('./partials/whatsapp') %>  
 </div>
 <%- include('./partials/footer') %>

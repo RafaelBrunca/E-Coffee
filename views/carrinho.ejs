@@ -28,7 +28,7 @@
                     </div>             
                 </div>
                 <div class="descricao">                
-                    <p>R$<%= produtos[i].dataValues.preco %></p>
+                    <p>R$<%= (produtos[i].dataValues.preco).toLocaleString('pt-BR') %></p>
                 </div>
                 <div class="descricao">
                     <div class="descricao-quantidade">
@@ -36,7 +36,7 @@
                     </div>                
                 </div>
                 <div class="descricao">                
-                    <p>R$<%= produtos[i].total %></p>
+                    <p>R$<%= (produtos[i].total).toLocaleString('pt-BR') %></p>
                 </div>
             </div>
         <% } %>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="resumo-preco">
                     <% for(let i = 0; i < produtos.length; i++) {%>
-                        <p>R$ <%= produtos[i].dataValues.preco%></p>
+                        <p>R$ <%= (produtos[i].dataValues.preco).toLocaleString('pt-BR')%></p>
                     <% } %>
                 </div>
             </div>
@@ -99,7 +99,7 @@
             <div class="total">
                 <p>Valor Total</p>
                 <div class="valor-emDinheiro">
-                    <p>R$<%= produtos.reduce((total, valor) => total + valor.total, 0) %></p>
+                    <p>R$<%= produtos.reduce((total, valor) => total + valor.total, 0).toLocaleString('pt-BR') %></p>
                 </div>
             </div>
         </div>
@@ -118,8 +118,6 @@
             </div>
         <% } %>     
     </div>
-    <div class="whatsapp">
-        <a href="#"><img src="images/icons8-whatsapp-48.png"></a>
-    </div>
+    <%- include('./partials/whatsapp') %> 
 </main>
 <%- include('./partials/footer') %> 

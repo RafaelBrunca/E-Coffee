@@ -626,12 +626,13 @@ main .dsc-quantidade li{
     margin: 10px;
 }
 .container-carrinho .produto img{
-    width: 56px;
+    height: 110px;
+    width: 110px;
 }
 .nome-produto{
     border-left: 1px solid #CEC9C9;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 18px;
     margin-right: auto;
 }
 .nome-produto p{

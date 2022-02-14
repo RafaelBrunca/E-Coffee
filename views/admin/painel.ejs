@@ -1,16 +1,42 @@
 <%- include('../partials/admin/header') %>
 <main>
     <%- include('../partials/admin/barraDeLinks') %> 
-   <!--  <div>
-        <ul class="Ciclo">
-            <li>
-                <h1>Ciclo de Vendas</h1>
-            </li>
-        </ul>
-        <ul class="ValorCiclo"> 
-            <li>
-                <h1>R$ XX,XX</h1>
-            </li>    
-        </ul>
-    </div>    -->
+   <div class="container-vendas">
+       <div class="table-vendas">
+            <table>
+                <thead class="vendas-total">
+                    <tr>
+                        <td class="info-vendas">Total de vendas</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <% for(let i = 0; i < totalVenda.length; i++) { %> 
+                            <td class="info-vendas"><%= totalVenda[i].total %></td>
+                        <% } %> 
+                    </tr>
+                </tbody>
+            </table> 
+       </div>
+       <div class="produto-vendido">
+            <table>
+                <thead class="produtoMaisVendido">
+                    <tr>
+                        <td class="info-produto">Produto mais vendido</td>
+                        <td class="info-produto">Quantidade vendida</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i = 0; i < produto.length; i++) { %> 
+                    <tr>
+                        
+                        <td class="info-produto"><%= produto[i].dataValues.nome_produto %></td>
+                        <td class="info-produto"><%= produto[i].quantidade %></td>
+                         
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table> 
+       </div>    
+   </div>
  </main>
