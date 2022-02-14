@@ -1,6 +1,6 @@
 <%- include('./partials/header'); %>
 <div class="produtos_filtros">
-    <section class="filtro">
+    <section class="filtro" <% if(marcaSelecionada === true) { %>style='height: 430px'<% } %>>
         <a href="/">
             <img src="/images/E- COFFEE 3.png" alt="e-coffee" width="113" height="86"/>
         </a>    
@@ -113,6 +113,7 @@
                     </div>
                 <% } %>
             </div>
-        </section>          
+        </section>
+        <%- include('./partials/whatsapp') %>  
 </div>
 <%- include('./partials/footer') %>
