@@ -22,7 +22,4 @@ router.get('/gerenciamentodeprodutos/:id', autenticacaoAdmin, adminController.te
 router.post('/gerenciamentodeprodutos/editar/:id', autenticacaoAdmin, uploadImage.fields([{name:"imagem", maxCount: 1}, {name:"miniaturaUm", maxCount: 1}, {name:"miniaturaDois", maxCount: 1}]), validacaoProduto, adminController.editarProduto);
 router.get('/gerenciamentodeprodutos/excluir/:id', autenticacaoAdmin,adminController.removerProduto)
 
-
-/* uploadImage.single("imagem") */
-
 module.exports = router;

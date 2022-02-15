@@ -3,6 +3,22 @@ const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const { body } = require('express-validator');
 
+const nodemailer = require('nodemailer');
+const SMTP_CONFIG = require('../database/config/smtp');
+
+const transporter = nodemailer.createTransport({
+  host: SMTP_CONFIG.host,
+  port: SMTP_CONFIG.port,
+  secure: false,
+  auth: {
+    user: SMTP_CONFIG.user,
+    pass: SMTP_CONFIG.pass
+  },
+  tls: {
+    rejectUnauthorized: false,
+  },
+});
+
 const loginController = {
   login: async function (req, res) {
 
@@ -17,15 +33,12 @@ const loginController = {
       });
     };
 
-    const usertoken = await db.Cliente.findOne({ where: { email: email, token: null } })
-
-    if (!usertoken) {
+    if (user.token !== null) {
       return res.render('cadastro', {
         old: [],
         message: "Token ainda não validado!"
       });
-    };
-
+    };  
 
     if (!await bcrypt.compare(password, user.senha)) {
       return res.render('cadastro', {
@@ -61,7 +74,6 @@ const loginController = {
       const { name, lastname, telefone, cpf, email } = req.body;
 
       let r = Math.random().toString(36).substr(2, 3) + "-" + Math.random().toString(36).substr(2, 3) + "-" + Math.random().toString(36).substr(2, 4);
-      //console.log(r.toUpperCase());
 
       await db.Cliente.create({
         nome: name,
@@ -72,10 +84,9 @@ const loginController = {
         senha: senhaCriptografada,
         token: r.toUpperCase()
 
-
       }).then((result) => {
 
-        const mailSent = transporter.sendMail({ /* obs: Isso se trata de uma promise, logo, precisa de um ".then" e um ".catch" */
+        const mailSent = transporter.sendMail({
           text: "Obrigado por se cadastrar insira o token no link abaixo para a confirmação da conta",
           subject: "Confirmação de cadastro E-Coffee",
           from: "ecoffe.teste@gmail.com",
